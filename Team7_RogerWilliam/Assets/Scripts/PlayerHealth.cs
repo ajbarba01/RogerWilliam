@@ -2,35 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Health
 {
-    public float maxHealth = 100f;
-    public static float health;
+    public static float staticHealth;
 
-    void Start(){
-        ResetHealth();
+    public override void SetHealth(float newHealth) {
+        health = newHealth;
+        staticHealth = newHealth;
     }
 
-    void ResetHealth() {
-        health = maxHealth;
-    }
-
-    void TakeDamage(float damage) {
-        health -= damage;
-        if (health < 0) {
-            health = 0;
-            Die();
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            TakeDamage(10);
         }
-    }
 
-    void heal(float value) {
-        health += value;
-        if (health > maxHealth) {
-            health = maxHealth;
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            ResetHealth();
         }
-    }
-
-    void Die() {
-        Debug.Log("PLAYER DEAD");
     }
 }
