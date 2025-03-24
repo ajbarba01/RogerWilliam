@@ -9,21 +9,45 @@ public class HealthBar : MonoBehaviour
     Image barImage;
 
     [SerializeField]
+    Image tweenImage;
+
+    [SerializeField]
     Health health;
+
+    [SerializeField]
+    float lerpSpeed;
+
+    float percentage;
+    float animationPercent;
 
     // Start is called before the first frame update
     void Start()
     {
+        percentage = animationPercent = health.GetPercentage();
         // playerHealth = GameObject.FindWithTag("GameController").GetComponent<Health>();
     }
 
     void Update() {
-        SetHealth(health.GetPercentage());
-    }
+        float prevPercentage = percentage;
+        percentage = health.GetPercentage();
+        if (percentage != prevPercentage) {
+            if (animationPercent == percentage) {
+                animationPercent = prevPercentage;
+            }
+        }
 
-    // Update is called once per frame
-    void SetHealth(float percentage)
-    {
-        barImage.fillAmount = percentage;
+        if (animationPercent != percentage) {
+            animationPercent = Mathf.Lerp(animationPercent, percentage, Time.deltaTime * lerpSpeed);
+
+            if (animationPercent > percentage) {
+            barImage.fillAmount = percentage;
+            tweenImage.fillAmount = animationPercent;
+            }
+
+            if (percentage > animationPercent) {
+                barImage.fillAmount = animationPercent;
+                tweenImage.fillAmount = percentage;
+            }
+        }
     }
 }

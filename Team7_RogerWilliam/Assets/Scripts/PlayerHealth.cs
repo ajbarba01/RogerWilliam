@@ -10,4 +10,14 @@ public class PlayerHealth : Health
         health = newHealth;
         staticHealth = newHealth;
     }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            TakeDamage(10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            ResetHealth();
+        }
+    }
 }
