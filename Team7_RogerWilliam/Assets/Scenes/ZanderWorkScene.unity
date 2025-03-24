@@ -225,6 +225,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 412730196}
     m_Modifications:
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 22af9025190804508add2cebb797c423, type: 2}
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4608756819879366266, guid: 22af9025190804508add2cebb797c423, type: 2}
+    - target: {fileID: 4454995806251774180, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 22af9025190804508add2cebb797c423, type: 2}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4608756819879366266, guid: 22af9025190804508add2cebb797c423, type: 2}
+    - target: {fileID: 7707936719637013919, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8174233141125292332, guid: dc98a9c1badb9124899a7521bb57e70a, type: 3}
       propertyPath: m_Name
       value: Pause
