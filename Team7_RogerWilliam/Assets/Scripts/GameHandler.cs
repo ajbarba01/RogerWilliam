@@ -30,4 +30,9 @@ public class GameHandler : MonoBehaviour
 
     public void Play() {
     }
+
+    public void PlayerDeath() {
+        Debug.Log("PLAYER DIED");
+        ChangeScene("MainMenu");
+    }
 }

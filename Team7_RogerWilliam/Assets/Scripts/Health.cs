@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class Health : MonoBehaviour {
 
-    [SerializeField]
-    float maxHealth;
+    [SerializeField] protected float maxHealth;
+
+    public UnityEvent onDeath;
 
     protected float health;
 
@@ -35,7 +37,7 @@ public class Health : MonoBehaviour {
 
     public void TakeDamage(float damage) {
         SetHealth(health - damage);
-        if (health < 0) {
+        if (health <= 0) {
             SetHealth(0);
             Die();
         }
@@ -49,6 +51,6 @@ public class Health : MonoBehaviour {
     }
 
     void Die() {
-        Debug.Log("DEAD");
+        onDeath.Invoke();
     }
 }

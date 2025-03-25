@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerAttackMelee : MonoBehaviour{
 
       // public Animator animator;
-      public Transform attackPt;
-      public float attackRange = 0.5f;
-      public float attackRate = 2f;
+      [SerializeField] public Transform attackPt;
+      [SerializeField] public float attackRange = 0.5f;
+      [SerializeField] public float attackRate = 2f;
+      [SerializeField] public int attackDamage = 40;
+      [SerializeField] public LayerMask enemyLayers;
+
       private float nextAttackTime = 0f;
-      public int attackDamage = 40;
-      public LayerMask enemyLayers;
+
+      public GameObject lastEnemyHit;
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
@@ -29,11 +32,15 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Attack(){
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
-            Debug.Log("ATTACKING");
+
+            if (hitEnemies.Length != 0) {
+                  lastEnemyHit = hitEnemies[0].gameObject;
+            }
 
             foreach(Collider2D enemy in hitEnemies){
                   Debug.Log("We hit " + enemy.name);
-                  // enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
+                  Debug.Log("We hit " + enemy.GetComponent<Health>().GetHealth());
+                  enemy.GetComponent<Health>().TakeDamage(attackDamage);
             }
       }
 

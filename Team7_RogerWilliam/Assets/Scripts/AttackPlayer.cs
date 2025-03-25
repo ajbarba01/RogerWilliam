@@ -7,12 +7,13 @@ public class AttackPlayer : MonoBehaviour
     protected GameObject gameHandler;
     protected GameObject player;
 
-    public float moveSpeed = 4f;
+    [SerializeField] private float moveSpeed = 4f;
+    [SerializeField] private float attackRange = 2f;
+    [SerializeField] private float attackCooldown = 2f;
+    [SerializeField] private float attackDamage = 10f;
+    
     private float distance;
-    public float attackRange = 2f;
-    public float attackCooldown = 2f;
     private float attackTimer;
-    public float attackDamage = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +47,7 @@ public class AttackPlayer : MonoBehaviour
             if (gameHandler != null)
             {
                 Debug.Log("Hit by Enemy");
-                // gameHandler.GetComponent<Health>().takeDamage(attackDamage);
+                gameHandler.GetComponent<Health>().TakeDamage(attackDamage);
             }
         }
     }

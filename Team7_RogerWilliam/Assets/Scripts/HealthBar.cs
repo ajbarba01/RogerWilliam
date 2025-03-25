@@ -5,25 +5,18 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField]
-    Image barImage;
+    [SerializeField] private Image barImage;
+    [SerializeField] private Image tweenImage;
+    [SerializeField] private Health health;
+    [SerializeField] private float lerpSpeed;
 
-    [SerializeField]
-    Image tweenImage;
-
-    [SerializeField]
-    Health health;
-
-    [SerializeField]
-    float lerpSpeed;
-
-    float percentage;
-    float animationPercent;
+    private float percentage;
+    private float animationPercent;
 
     // Start is called before the first frame update
     void Start()
     {
-        percentage = animationPercent = health.GetPercentage();
+        SetHealth(health);
         // playerHealth = GameObject.FindWithTag("GameController").GetComponent<Health>();
     }
 
@@ -49,5 +42,14 @@ public class HealthBar : MonoBehaviour
                 tweenImage.fillAmount = percentage;
             }
         }
+    }
+
+    public void SetHealth(Health newHealth) {
+        health = newHealth;
+        percentage = health.GetPercentage();
+        animationPercent = percentage;
+
+        barImage.fillAmount = percentage;
+        tweenImage.fillAmount = percentage;
     }
 }

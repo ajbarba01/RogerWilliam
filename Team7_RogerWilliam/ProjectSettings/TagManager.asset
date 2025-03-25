@@ -39,6 +39,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 203136627
+    locked: 0
+  - name: Environment
+    uniqueID: 587123465
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Entity
+    uniqueID: 2307308633
+    locked: 0
+  - name: Projectile
+    uniqueID: 114509955
+    locked: 0
+  - name: OverEntity
+    uniqueID: 2762675353
     locked: 0
