@@ -29,10 +29,15 @@ public class GameHandler : MonoBehaviour
     }
 
     public void Play() {
+        ChangeScene("LevelOne");
     }
 
     public void PlayerDeath() {
         Debug.Log("PLAYER DIED");
+        ChangeScene("MainMenu");
+    }
+
+    public void MainMenu() {
         ChangeScene("MainMenu");
     }
 }
