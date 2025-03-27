@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1366677261624940490}
   - component: {fileID: 1728098499364145437}
   - component: {fileID: 8223463897205444717}
+  - component: {fileID: 5441450763506279050}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -253,6 +254,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
   attack: {fileID: 9112914059352918377}
+--- !u!114 &5441450763506279050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956063942710156782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecfc240f85bfe3e4ca5f710598132239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingAbilities: []
+  abilityCapacity: 5
+  melee: {fileID: 9112914059352918377}
 --- !u!1 &7141117256095446416
 GameObject:
   m_ObjectHideFlags: 0
