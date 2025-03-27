@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine.Events;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
     public UnityEvent<Health> onEnemyHit;
-    public abstract void Activate();
+    public abstract void Attack();
 }

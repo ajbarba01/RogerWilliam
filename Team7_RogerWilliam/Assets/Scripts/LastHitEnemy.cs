@@ -5,9 +5,6 @@ using UnityEngine;
 public class LastHitEnemy : MonoBehaviour
 {
     [SerializeField] private HealthBar healthBar;
-    [SerializeField] private PlayerAttackMelee attack;
-
-    private GameObject lastHit;
 
     // Start is called before the first frame update
     void Start()
@@ -15,19 +12,13 @@ public class LastHitEnemy : MonoBehaviour
         healthBar.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        GameObject enemyHit = attack.lastEnemyHit;
+    public void EnemyHit(Health enemy) {
+        healthBar.SetHealth(enemy);
+        enemy.onDeath.AddListener(EnemyDied);
+        healthBar.gameObject.SetActive(true);
+    }
 
-        // need to update bar
-        if (lastHit != enemyHit) {
-            lastHit = enemyHit;
-            healthBar.SetHealth(lastHit.GetComponent<Health>());
-            healthBar.gameObject.SetActive(true);
-        }
-        else if (lastHit == null) {
-            healthBar.gameObject.SetActive(false);
-        }
+    public void EnemyDied() {
+        healthBar.gameObject.SetActive(false);
     }
 }

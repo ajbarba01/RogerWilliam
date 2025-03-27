@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAttackMelee : Ability {
+public class Fists : Weapon {
 
       // public Animator animator;
       [SerializeField] public Transform attackPt;
@@ -19,27 +19,21 @@ public class PlayerAttackMelee : Ability {
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
 
-      void Update(){
-            if (Input.GetAxis("Attack") > 0){
-                  Activate();
-            }
+      void Update() {
       }
 
-      public override void Activate() {
+      public override void Attack() {
             if (Time.time >= nextAttackTime) {
                   Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 
-                  if (hitEnemies.Length != 0) {
-                        lastEnemyHit = hitEnemies[0].gameObject;
-                  }
-
-                  foreach(Collider2D enemy in hitEnemies){
-                        enemy.GetComponent<Health>().TakeDamage(attackDamage);
+                  foreach (Collider2D enemy in hitEnemies) {
+                        Health enemyHealth = enemy.GetComponent<Health>();
+                        onEnemyHit.Invoke(enemyHealth);
+                        enemyHealth.TakeDamage(attackDamage);
                   }
 
                   nextAttackTime = Time.time + 1f / attackRate;
             }
-            //animator.SetTrigger ("Melee");
       }
 
       //NOTE: to help see the attack sphere in editor:
