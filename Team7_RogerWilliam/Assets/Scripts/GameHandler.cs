@@ -40,4 +40,9 @@ public class GameHandler : MonoBehaviour
     public void MainMenu() {
         ChangeScene("MainMenu");
     }
+
+    public void Credits() {
+        Debug.Log("ERMMM");
+        ChangeScene("CreditsScene");
+    }
 }
