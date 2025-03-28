@@ -6,6 +6,7 @@ public abstract class Menu : MonoBehaviour
 {
     public KeyCode accessKey;
     public bool isOpen;
+    public bool shouldPause = true;
     public GameObject menu;
 
     public void Open() {

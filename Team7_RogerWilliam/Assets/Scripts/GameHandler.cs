@@ -23,13 +23,14 @@ public class GameHandler : MonoBehaviour
 
     public void ChangeScene(string newScence) {
         SceneManager.LoadScene(newScence);
+        Pause.Unfreeze();
     }
 
     public void Controls() {
     }
 
     public void Play() {
-        ChangeScene("LevelOne");
+        HomeBase();
     }
 
     public void PlayerDeath() {
@@ -42,7 +43,10 @@ public class GameHandler : MonoBehaviour
     }
 
     public void Credits() {
-        Debug.Log("ERMMM");
         ChangeScene("CreditsScene");
+    }
+
+    public void HomeBase() {
+        ChangeScene("HomeBase");
     }
 }

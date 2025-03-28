@@ -19,18 +19,16 @@ public class MenuHandler : MonoBehaviour
     void Update()
     {
         foreach(Menu menu in menus) {
-            if (Input.GetKeyDown(menu.accessKey)) {
-                if (menu.isOpen) {
+            bool requested = Input.GetKeyDown(menu.accessKey);
+
+            if (menu == openMenu) {
+                if (!menu.isOpen || requested) {
                     CloseMenu();
                 }
-                else {
-                    OpenMenu(menu);
-                }
             }
-        }
-
-        if (!openMenu.isOpen) {
-            CloseMenu();
+            else if (menu.isOpen || requested) {
+                OpenMenu(menu);
+            }
         }
     }
 
@@ -39,7 +37,13 @@ public class MenuHandler : MonoBehaviour
             CloseMenu();
         }
 
-        Pause.Freeze();
+        if (menu.shouldPause) {
+            Pause.Freeze();
+        }
+        else {
+            Pause.Unfreeze();
+        }
+
         openMenu = menu;
         menu.Open();
         menu.menu.SetActive(true);

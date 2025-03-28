@@ -32,4 +32,8 @@ public class Pulse : MonoBehaviour
         return 0.5f + 0.5f * Mathf.Sin(2 * Mathf.PI * frequency * time);
     }
 
+    public void Reset() {
+        pulseProgress = 0f;
+    }
+
 }

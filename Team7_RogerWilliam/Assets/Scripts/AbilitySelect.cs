@@ -5,17 +5,38 @@ using UnityEngine;
 public class AbilitySelect : Menu
 {
     [SerializeField] private GameObject HUD;
+    [SerializeField] private GameObject[] weaponSlots;
+
+    private bool weaponOpen;
 
     void Start()
     {
         accessKey = KeyCode.I;
+
+        weaponOpen = false;
     }
 
     protected override void OnOpen() {
-        HUD.SetActive(false);
+        if (HUD != null) {
+            HUD.SetActive(false);
+        }
     }
 
     protected override void OnClose() {
-        HUD.SetActive(true);
+        if (HUD != null) {
+            HUD.SetActive(true);
+        }
+    }
+
+    public void WeaponSelect() {
+        weaponOpen = !weaponOpen;
+
+        Reveal(weaponSlots, weaponOpen);
+    }
+
+    private void Reveal(GameObject[] slots, bool reveal) {
+        foreach (GameObject slot in slots) {
+            slot.SetActive(reveal);
+        }
     }
 }
