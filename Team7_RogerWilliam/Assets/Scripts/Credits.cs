@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Credits : MonoBehaviour
 {
-    [SerializeField] private float scrollSpeed = 1f;
+    [SerializeField] private float scrollSpeed = 25f;
     private GameHandler gameHandler;
 
     // Start is called before the first frame update
