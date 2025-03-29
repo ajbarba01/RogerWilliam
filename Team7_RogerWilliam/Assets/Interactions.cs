@@ -5,18 +5,28 @@ using TMPro;
 
 public class Interactions : MonoBehaviour
 {
-    private static TextMeshProUGUI text;
-    private static Pulse pulse;
-    private static bool isActive;
+    private TextMeshProUGUI text;
+    private Pulse pulse;
+    private bool isActive;
 
-    private void Start() {
-        text = GetComponentInChildren<TextMeshProUGUI>();
-        pulse = GetComponent<Pulse>();
-        isActive = true;
-        Hide();
+    private static Interactions instance;
+
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+
+            text = GetComponentInChildren<TextMeshProUGUI>(true);
+            pulse = GetComponent<Pulse>();
+            isActive = false;
+            Hide();
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 
-    public static void Show() {
+    private void _Show(string newText) {
+        SetText(newText);
         if (!isActive) {
             text.gameObject.SetActive(true);
             isActive = true;
@@ -24,14 +34,22 @@ public class Interactions : MonoBehaviour
         }
     }
 
-    public static void Hide() {
+    private void _Hide() {
         if (isActive) {
             text.gameObject.SetActive(false);
             isActive = false;
         }
     }
 
-    public static void SetText(string newText) {
+    public void SetText(string newText) {
         text.text = newText;
+    }
+
+    public static void Show(string newText) {
+        instance._Show(newText);
+    }
+
+    public static void Hide() {
+        instance._Hide();
     }
 }

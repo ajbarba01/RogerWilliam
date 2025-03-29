@@ -222,8 +222,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6131817040130413942}
   - {fileID: 6874395825055198446}
+  - {fileID: 6131817040130413942}
   - {fileID: 1978337040496308112}
   - {fileID: 5007464166437025783}
   m_Father: {fileID: 6623563666941509705}
@@ -364,6 +364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959546166684362465, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_text
+      value: Passive Ability
+      objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name
       value: AbilityTwoSelect
@@ -470,6 +474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5959546166684362465, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_text
+      value: Weapons
+      objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name
       value: WeaponSelect
@@ -575,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 5305076066951553155, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5959546166684362465, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_text
+      value: Active Ability
       objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name

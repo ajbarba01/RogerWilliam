@@ -9,7 +9,7 @@ public class Pulse : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private float frequency = 2f;
 
-    void Start() {
+    void Awake() {
         frequency = 1 / frequency;
     }
 
