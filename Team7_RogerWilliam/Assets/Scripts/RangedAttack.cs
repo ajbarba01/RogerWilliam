@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
-<<<<<<< HEAD
+
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float attackCooldown = 2f;
@@ -70,7 +70,6 @@ public class RangedAttack : MonoBehaviour
         {
             Debug.LogError("Projectile prefab or firePoint is missing on " + gameObject.name);
         }
-=======
 
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform attackPt;
@@ -90,6 +89,8 @@ public class RangedAttack : MonoBehaviour
         script.SetDirection(direction);
         script.SetDamageTag(damageTag);
         script.SetSpeed(speed);
->>>>>>> 667be75edc3ec7adb565f43bab9e4355521e7386
+
     }
+}
+
 }
