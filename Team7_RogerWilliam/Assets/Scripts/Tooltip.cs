@@ -23,6 +23,7 @@ public class Tooltip : MonoBehaviour
     }
 
     private void _ShowTooltip(string tooltipString) {
+        transform.SetAsLastSibling();
         tooltipText.text = tooltipString;
         window.SetActive(true);
 

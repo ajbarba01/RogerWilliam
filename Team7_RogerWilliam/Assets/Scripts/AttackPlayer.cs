@@ -14,6 +14,10 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] private float attackRange = 2f;
     [SerializeField] private float attackCooldown = 2f;
     [SerializeField] private float attackDamage = 10f;
+    [SerializeField] private float rangedAttackRange = 10f; // Ranged attack range
+    [SerializeField] private RangedAttack rangedAttackScript; // Reference to RangedAttack script
+
+
     
     private float distance;
     private float attackTimer;
@@ -34,13 +38,29 @@ public class AttackPlayer : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
-        if (distance > attackRange) {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-        } else 
+        
+        if (distance > rangedAttackRange)
         {
-            Debug.Log("MadeItToAttack");
-            currEnemyAttack();
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        } 
+        else if (distance <= rangedAttackRange && distance > attackRange) 
+        {
+            rangedAttackScript.ShootProjectile(); // Trigger the ranged attack (shoot projectile)
         }
+        else // Melee attack
+        {
+            currEnemyAttack(); // Melee attack
+        }
+        
+        // ORIGINAL CODE BEFORE CHANGE _______
+
+        // if (distance > attackRange) {
+        //     transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        // } else 
+        // {
+        //     Debug.Log("MadeItToAttack");
+        //     currEnemyAttack();
+        // }
     }
 
     protected virtual void currEnemyAttack()

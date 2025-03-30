@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - UI
   - Enemy
   - Environment
-  - 
+  - Projectile
   - 
   - 
   - 
@@ -41,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Ground
     uniqueID: 203136627
+    locked: 0
+  - name: Shadows
+    uniqueID: 2568767211
     locked: 0
   - name: Environment
     uniqueID: 587123465
