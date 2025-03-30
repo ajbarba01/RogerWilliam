@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5535342615591355712}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8881735169223458932
 BoxCollider2D:
@@ -119,6 +119,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66fbb1c1ef2e5c94f96aac8099372f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  hitEffectAnim: {fileID: 0}
+  SelfDestructTime: 4
+  SelfDestructVFX: 0.5
+  projectileArt: {fileID: 0}
+  splatterPrefab: {fileID: 0}
 --- !u!1 &4718566135310622323
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 95
   m_Sprite: {fileID: 21300000, guid: 467f1a870cead7341af86ea2e8faaafd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

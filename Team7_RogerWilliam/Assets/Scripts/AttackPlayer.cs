@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AttackPlayer : MonoBehaviour
 {
+
+    Animator anim;
     protected GameObject gameHandler;
     protected GameObject player;
 
@@ -22,6 +24,7 @@ public class AttackPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         player = GameObject.FindWithTag("Player");
         if(player == null)
         {
@@ -39,14 +42,20 @@ public class AttackPlayer : MonoBehaviour
         
         if (distance > rangedAttackRange)
         {
+            anim.SetBool("Walk", true);
+            anim.SetBool("WalkFront", true);
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         } 
         else if (distance <= rangedAttackRange && distance > attackRange) 
         {
+            anim.SetBool("Walk", false);
+            anim.SetBool("WalkFront", false);
             rangedAttackScript.ShootProjectile(); // Trigger the ranged attack (shoot projectile)
         }
         else // Melee attack
         {
+            anim.SetBool("Walk", false);
+            anim.SetBool("WalkFront", false);
             currEnemyAttack(); // Melee attack
         }
         
@@ -69,6 +78,7 @@ public class AttackPlayer : MonoBehaviour
             attackTimer = attackCooldown;
             if (gameHandler != null)
             {
+                anim.SetTrigger("Attack");
                 gameHandler.GetComponent<Health>().TakeDamage(attackDamage);
             }
         }
