@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5425297429650644988}
   - component: {fileID: 2780431146446784755}
   - component: {fileID: 7094705534523961687}
-  - component: {fileID: 4030830226641057730}
+  - component: {fileID: 1079248026397712296}
   m_Layer: 0
   m_Name: EnemyProjectile
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5425297429650644988
 SpriteRenderer:
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6, y: 0.6}
+    oldSize: {x: 3.75, y: 3.75}
     newSize: {x: 0.6, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4030830226641057730
+--- !u!114 &1079248026397712296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

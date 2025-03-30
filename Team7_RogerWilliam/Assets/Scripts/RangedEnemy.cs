@@ -26,7 +26,7 @@ public class RangedEnemy : MonoBehaviour
         if (attacking) {
             attackChannel += Time.deltaTime;
             if (attackChannel >= attackDuration) {
-                rangeAttack.Attack(new Vector2(1, 1));
+                // rangeAttack.Attack(new Vector2(1, 1));
                 // attacking = false;
                 attackChannel = 0f;
             }

@@ -23,13 +23,15 @@ public class AbilityHandler : MonoBehaviour
     }
 
     void SetAbility(Ability ab, int abNumber) {
+        if (ab != null) {
+            ab.onEnemyHit.AddListener(lastHit.EnemyHit);
+        }
+        
         if (abNumber == 1) {
             abilityOne = ab;
-            abilityOne.onEnemyHit.AddListener(lastHit.EnemyHit);
         }
         else {
             abilityTwo = ab;
-            abilityTwo.onEnemyHit.AddListener(lastHit.EnemyHit);
         }
     }
 

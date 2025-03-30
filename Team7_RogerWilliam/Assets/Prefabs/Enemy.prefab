@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2452586020044235344}
   - component: {fileID: 4001342048714713987}
   - component: {fileID: 2089916773471608194}
-  - component: {fileID: -8005655953350297846}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -102,7 +101,7 @@ MonoBehaviour:
   attackCooldown: 2
   attackDamage: 10
   rangedAttackRange: 10
-  rangedAttackScript: {fileID: -8005655953350297846}
+  rangedAttackScript: {fileID: 0}
 --- !u!114 &4001342048714713987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,21 +130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8005655953350297846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942118541295082568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94218898f4e9a4267bcba8885ecc7a34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 7906959840049907562, guid: 01a3aac10d84042929357c73f8e70125, type: 3}
-  firePoint: {fileID: 7399255972712699121}
-  attackCooldown: 2
 --- !u!1 &4585371046670061466
 GameObject:
   m_ObjectHideFlags: 0

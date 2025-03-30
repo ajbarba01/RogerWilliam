@@ -17,8 +17,6 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] private float rangedAttackRange = 10f; // Ranged attack range
     [SerializeField] private RangedAttack rangedAttackScript; // Reference to RangedAttack script
 
-
-    
     private float distance;
     private float attackTimer;
     // Start is called before the first frame update
