@@ -5,18 +5,19 @@ using UnityEngine;
 public class RangedEnemy : MonoBehaviour
 {
 
+    [SerializeField] private float attackRange = 5f;
+
     private GameObject player;
     
     private bool attacking = true;
-
     private float attackChannel = 0f;
     private float attackDuration = 1.5f;
+    private RangedAttack rangeAttack;
 
-    [SerializeField] private float attackRange = 10f;
-    [SerializeField] private RangedAttack rangeAttack;
 
     void Start()
     {
+        rangeAttack = GetComponent<RangedAttack>();
         player = GameObject.FindWithTag("Player");
         rangeAttack = GetComponent<RangedAttack>();
     }

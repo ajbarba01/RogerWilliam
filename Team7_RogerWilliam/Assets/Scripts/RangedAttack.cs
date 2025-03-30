@@ -6,10 +6,7 @@ public class RangedAttack : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float attackCooldown = 2f;
-
-    private Transform player;
-    private float attackTimer;
+    [SerializeField] private float attackCooldown = 1f;
 
     void Start()
     {
@@ -22,48 +19,15 @@ public class RangedAttack : MonoBehaviour
         {
         Debug.LogError("Projectile Prefab is not assigned in the RangedAttack script.");
         }
-
-        player = GameObject.FindWithTag("Player").transform;
-        attackTimer = 0f;
-    }
-
-    void Update()
-    {
-        attackTimer -= Time.deltaTime;
-
-        if (player != null && attackTimer <= 0)
-        {
-            ShootProjectile();
-            attackTimer = attackCooldown;
-        }
     }
 
     public void ShootProjectile()
     {
         if (projectilePrefab != null && firePoint != null)
         {
-            Debug.Log("FirePoint and Projectile Prefab are assigned properly.");
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            projectile.GetComponent<EnemyProjectile>().Initialize(player.position);
-        }
-        else
-        {
-            if (projectilePrefab == null)
-            {
-                Debug.LogError("Projectile Prefab is null!");
-            }
-
-            if (firePoint == null)
-            {
-                Debug.LogError("FirePoint is null!");
-            }
-        }
-        
-        if (projectilePrefab != null && firePoint != null)
-        {
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
           
-            projectile.GetComponent<EnemyProjectile>().Initialize(player.position);
+            projectile.GetComponent<EnemyProjectile>().Initialize(Player.instance.GetPosition());
         }
         else
         {

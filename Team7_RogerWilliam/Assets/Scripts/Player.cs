@@ -8,17 +8,17 @@ public class Player : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
 
     public static Player instance;
+    public static Health health;
 
     private Vector2 movement;
 
     private void Awake() {
-        if (instance == null) {
-            instance = this;
-        }
+        instance = this;
+        movement = new Vector2(0, 0);
+    }
 
-        else {
-            Destroy(gameObject);
-        }
+    private void Start() {
+        health = GameHandler.playerHealth;
     }
 
     void Update()

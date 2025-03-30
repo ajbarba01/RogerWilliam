@@ -32,17 +32,14 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Health>()?.TakeDamage(damage); // Deal damage to the player
+            Player.health.TakeDamage(damage); // Deal damage to the player
+            Hit();
+
         }
 
-        if (!collision.CompareTag("enemyShooter"))  // Ensure it doesn't hit the enemy that fired it
+        else if (collision.CompareTag("Wall"))
         {
-            if (hitEffectAnim != null)
-            {
-                GameObject animEffect = Instantiate(hitEffectAnim, transform.position, Quaternion.identity);
-                Destroy(animEffect, 0.5f);
-            }
-            Destroy(gameObject);  // Destroy the projectile after it hits
+            Hit();
         }
     }
 
@@ -51,5 +48,14 @@ public class EnemyProjectile : MonoBehaviour
     {
         yield return new WaitForSeconds(selfDestructTime);
         Destroy(gameObject);
+    }
+
+    void Hit() {
+        if (hitEffectAnim != null)
+            {
+                GameObject animEffect = Instantiate(hitEffectAnim, transform.position, Quaternion.identity);
+                Destroy(animEffect, 0.5f);
+            }
+        Destroy(gameObject);  // Destroy the projectile after it hits
     }
 }

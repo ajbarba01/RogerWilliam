@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameHandler instance;
+    public static GameObject gameController;
+    public static Health playerHealth;
+
+    void Awake()
     {
-        
+        instance = this;
+        gameController = gameObject;
+        playerHealth = GetComponent<Health>();
     }
 
     // Update is called once per frame
