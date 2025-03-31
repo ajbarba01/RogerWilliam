@@ -15,6 +15,8 @@ public class Fists : Weapon {
 
       public GameObject lastEnemyHit;
 
+      public AudioSource punchSFX;
+
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
@@ -25,6 +27,9 @@ public class Fists : Weapon {
       public override void Attack() {
             if (Time.time >= nextAttackTime) {
                   Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
+                   if (punchSFX.isPlaying == false){
+                        punchSFX.Play();
+                  }
 
                   foreach (Collider2D enemy in hitEnemies) {
                         Health enemyHealth = enemy.GetComponent<Health>();
