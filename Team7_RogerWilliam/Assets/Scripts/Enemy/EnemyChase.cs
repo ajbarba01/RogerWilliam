@@ -7,13 +7,13 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float minMoveSpeed = 2f;
     [SerializeField] private float maxMoveSpeed = 2.5f;
     [SerializeField] private float moveSpeed;
-
     [SerializeField] private float preferredDistance = 5f;
 
     private Vector2 movement;
     private Rigidbody2D rb;
     private bool active = true;
     private bool inDistance = false;
+    private bool towards = true;
 
     void Awake()
     {
@@ -43,7 +43,9 @@ public class EnemyChase : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        int direction = -1;
+        if (towards) direction = 1;
+        rb.velocity = movement * moveSpeed * direction;
     }
 
     bool HasLOS() {
@@ -60,5 +62,9 @@ public class EnemyChase : MonoBehaviour
 
     public bool GetInDistance() {
         return inDistance;
+    }
+
+    public void SetTowards(bool newTowards) {
+        towards = newTowards;
     }
 }

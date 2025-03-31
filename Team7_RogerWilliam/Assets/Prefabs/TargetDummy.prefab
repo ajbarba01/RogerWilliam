@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1286870611318661990}
   - component: {fileID: 898801496431799236}
   - component: {fileID: 6845328341006671629}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: TargetDummy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

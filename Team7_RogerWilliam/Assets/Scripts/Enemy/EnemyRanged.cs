@@ -28,6 +28,7 @@ public class EnemyRanged : MonoBehaviour
 
     void Update()
     {
+
         if (attacking) {
             enemyChase.SetActive(false);
             TryAttack();
