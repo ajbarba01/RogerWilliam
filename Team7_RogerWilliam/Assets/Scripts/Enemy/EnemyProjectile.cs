@@ -19,6 +19,9 @@ public class EnemyProjectile : MonoBehaviour
     public void Initialize(Vector2 targetPosition)
     {
         targetDirection = (targetPosition - (Vector2)transform.position).normalized; // Calculate direction toward the player
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        
         StartCoroutine(SelfDestruct());
     }
 
