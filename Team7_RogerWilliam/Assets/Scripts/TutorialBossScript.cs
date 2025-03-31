@@ -49,13 +49,11 @@ public class TutorialBossScript : MonoBehaviour
         {
             attackTimer = attackCooldown;
 
-            // Apply damage to the player
             if (gameHandler != null)
             {
                 gameHandler.GetComponent<Health>().TakeDamage(attackDamage);
             }
 
-            // Apply knockback to player
             Vector2 knockbackDirection = player.transform.position - transform.position;
             knockbackDirection.Normalize();
             player.GetComponent<Player>().ApplyKnockback(knockbackDirection, knockBack);
