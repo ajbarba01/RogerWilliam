@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2089916773471608194}
   - component: {fileID: 5785432685666933776}
   - component: {fileID: 5150451799459543671}
-  - component: {fileID: 881578091290693393}
   - component: {fileID: 8822323822487433470}
   m_Layer: 6
   m_Name: Enemy
@@ -39,7 +38,7 @@ Transform:
   - {fileID: 6082551911406329422}
   - {fileID: 7399255972712699121}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &767954002486541685
 BoxCollider2D:
@@ -178,26 +177,6 @@ MonoBehaviour:
   maxMoveSpeed: 2.5
   moveSpeed: 0
   preferredDistance: 5
---- !u!114 &881578091290693393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942118541295082568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5029c31b9caa04685c4d9ee547b610, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMoveSpeed: 1
-  maxMoveSpeed: 4
-  moveSpeed: 0
-  attackRange: 2
-  attackCooldown: 2
-  attackDamage: 10
-  rangedAttackRange: 10
-  rangedAttackScript: {fileID: 0}
 --- !u!114 &8822323822487433470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951648529272508137}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,7 +266,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 90
+  m_SortingOrder: 0
   m_Sprite: {fileID: 241654586, guid: 06147f1f9d567483e831e60c2a500ef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -298,7 +277,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &6893720245773838088
 Animator:
   serializedVersion: 5
