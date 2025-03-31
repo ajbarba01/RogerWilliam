@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public static Health health;
 
     private Vector2 movement;
+    public bool isKnockbackActive = false;  
 
     private void Awake() {
         instance = this;
@@ -23,18 +24,36 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        movement.Normalize();
+        if (!isKnockbackActive)  
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+            movement.Normalize();
+        }
     }
 
     void FixedUpdate()
     {
-        rb.velocity = movement * moveSpeed;
+        if (!isKnockbackActive)  
+        {
+            rb.velocity = movement * moveSpeed;
+        }
+    }
+
+    public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength)
+    {
+        isKnockbackActive = true; 
+        rb.velocity = knockbackDirection * knockbackStrength;  
+        StartCoroutine(StopKnockbackAfterDelay(0.2f));  
+    }
+
+    private IEnumerator StopKnockbackAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isKnockbackActive = false; 
     }
 
     public Vector3 GetPosition() {
         return transform.position;
     }
 }
-

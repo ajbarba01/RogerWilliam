@@ -50,13 +50,15 @@ public class AttackPlayer : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             anim.SetBool("WalkFront", false);
-            rangedAttackScript.ShootProjectile(); // Trigger the ranged attack (shoot projectile)
+            // rangedAttackScript.ShootProjectile(); // Trigger the ranged attack (shoot projectile)
         }
         else // Melee attack
         {
             anim.SetBool("Walk", false);
             anim.SetBool("WalkFront", false);
+            anim.SetBool("attack", true);
             currEnemyAttack(); // Melee attack
+            anim.SetBool("attack", false);
         }
         
         // ORIGINAL CODE BEFORE CHANGE _______
