@@ -21,6 +21,10 @@ public class HealthBar : MonoBehaviour
     }
 
     void Update() {
+        if (health == null) {
+            return;
+        }
+        
         float prevPercentage = percentage;
         percentage = health.GetPercentage();
         if (percentage != prevPercentage) {
@@ -45,11 +49,18 @@ public class HealthBar : MonoBehaviour
     }
 
     public void SetHealth(Health newHealth) {
-        health = newHealth;
-        percentage = health.GetPercentage();
-        animationPercent = percentage;
+        if (newHealth == null) {
+            gameObject.SetActive(false);
+        }
 
-        barImage.fillAmount = percentage;
-        tweenImage.fillAmount = percentage;
+        else {
+            gameObject.SetActive(true);
+            health = newHealth;
+            percentage = health.GetPercentage();
+            animationPercent = percentage;
+
+            barImage.fillAmount = percentage;
+            tweenImage.fillAmount = percentage;
+        }
     }
 }
