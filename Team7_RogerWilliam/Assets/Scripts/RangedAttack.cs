@@ -27,7 +27,7 @@ public class RangedAttack : MonoBehaviour
         {
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
           
-            projectile.GetComponent<EnemyProjectile>().Initialize(Player.instance.GetPosition());
+            projectile.GetComponent<EnemyProjectile>().Initialize(Player.GetPosition());
         }
         else
         {

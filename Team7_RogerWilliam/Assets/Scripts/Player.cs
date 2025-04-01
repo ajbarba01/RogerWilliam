@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         isKnockbackActive = false; 
     }
 
-    public Vector3 GetPosition() {
-        return transform.position;
+    public static Vector3 GetPosition() {
+        return instance.transform.position;
     }
 }

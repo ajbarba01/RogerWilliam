@@ -21,6 +21,9 @@ public class AttackPlayer : MonoBehaviour
 
     private float distance;
     private float attackTimer;
+
+    private bool hasLOS;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +43,7 @@ public class AttackPlayer : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         
-        if (distance > rangedAttackRange)
+        if (distance > rangedAttackRange && hasLOS)
         {
             anim.SetBool("Walk", true);
             anim.SetBool("WalkFront", true);
@@ -83,6 +86,20 @@ public class AttackPlayer : MonoBehaviour
                 anim.SetTrigger("Attack");
                 gameHandler.GetComponent<Health>().TakeDamage(attackDamage);
             }
+        }
+    }
+    
+    private void FixedUpdate() {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Player.GetPosition() - transform.position);
+        if (ray.collider != null) {
+            hasLOS = ray.collider.CompareTag("Player");
+        }
+
+        if (hasLOS) {
+            Debug.DrawRay(transform.position, Player.GetPosition() - transform.position, Color.green);
+        }
+        else {
+            Debug.DrawRay(transform.position, Player.GetPosition() - transform.position, Color.red);
         }
     }
 }

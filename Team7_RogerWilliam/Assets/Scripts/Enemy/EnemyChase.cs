@@ -29,9 +29,9 @@ public class EnemyChase : MonoBehaviour
         }
 
         bool los = HasLOS();
-        if (los && Vector3.Distance(transform.position, Player.instance.GetPosition()) > preferredDistance) {
+        if (los && Vector3.Distance(transform.position, Player.GetPosition()) > preferredDistance) {
             inDistance = false;
-            Vector3 direction = Player.instance.GetPosition() - transform.position;
+            Vector3 direction = Player.GetPosition() - transform.position;
             movement = new Vector2(direction.x, direction.y);
             movement.Normalize();
         }
