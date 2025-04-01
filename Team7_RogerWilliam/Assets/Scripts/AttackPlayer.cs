@@ -56,9 +56,9 @@ public class AttackPlayer : MonoBehaviour
         {
             anim.SetBool("Walk", false);
             anim.SetBool("WalkFront", false);
-            anim.SetBool("attack", true);
+            anim.SetBool("Attack", true);
             currEnemyAttack(); // Melee attack
-            anim.SetBool("attack", false);
+            anim.SetBool("Attack", false);
         }
         
         // ORIGINAL CODE BEFORE CHANGE _______

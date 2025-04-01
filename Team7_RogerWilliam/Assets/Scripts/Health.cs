@@ -41,7 +41,7 @@ public class Health : MonoBehaviour {
 
     public void TakeDamage(float damage) {
         SetHealth(health - damage);
-        damageSFX.PlayDamage();
+        // damageSFX.PlayDamage();
         //anim.SetTrigger("GetHit");
         if (health <= 0) {
             SetHealth(0);
