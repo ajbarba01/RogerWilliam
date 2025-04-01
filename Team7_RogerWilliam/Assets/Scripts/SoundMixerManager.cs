@@ -7,7 +7,7 @@ public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixerInstance;
     private static AudioMixer audioMixer;
-    public static float masterVol = 1f;
+    public static float masterVol = 0.5f;
 
     void Start() {
         audioMixer = audioMixerInstance;

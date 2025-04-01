@@ -32,6 +32,7 @@ public class GameHandler : MonoBehaviour
     }
 
     public void Controls() {
+        ChangeScene("Controls");
     }
 
     public void Play() {
@@ -39,8 +40,7 @@ public class GameHandler : MonoBehaviour
     }
 
     public void PlayerDeath() {
-        Debug.Log("PLAYER DIED");
-        ChangeScene("MainMenu");
+        HomeBase();
     }
 
     public void MainMenu() {
