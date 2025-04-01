@@ -7,7 +7,7 @@ public class EnemyMelee : MonoBehaviour
 
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private float attackDamage = 10f;
-    [SerializeField] private float attackRange = 6f;
+    [SerializeField] private float attackRange = 2f;
 
     private EnemyChase enemyChase;
     private float attackChannel = 0f;
@@ -27,12 +27,17 @@ public class EnemyMelee : MonoBehaviour
     {
         if (enemyChase.HasLOS()) {
             if (attacking) {
-            enemyChase.SetActive(false);
             ChannelAttack();
             }
 
             else if (enemyChase.GetInDistance()) {
+                enemyChase.SetActive(false);
                 attacking = true;
+            }
+
+            else {
+                attacking = false;
+                enemyChase.SetActive(true);
             }
         }
         else {
@@ -48,7 +53,7 @@ public class EnemyMelee : MonoBehaviour
             Attack();
             attackChannel = 0;
             attacking = false;
-            enemyChase.SetActive(true);
+            enemyChase.SetActive(false);
         }
     }
 

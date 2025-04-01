@@ -11,7 +11,7 @@ public class AbilitySelect : Menu
 
     void Start()
     {
-        accessKey = KeyCode.I;
+        accessKey = KeyCode.N;
 
         weaponOpen = false;
     }

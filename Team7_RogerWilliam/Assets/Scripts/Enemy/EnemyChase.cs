@@ -7,14 +7,14 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float minMoveSpeed = 2f;
     [SerializeField] private float maxMoveSpeed = 2.5f;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float preferredDistance = 5f;
+    [SerializeField] private float preferredDistance = 2f;
+    [SerializeField] private float detectionRadius = 8f;
 
-    private float distance = 0f;
+    private float distance = 100f;
 
     private Vector2 movement;
     private Rigidbody2D rb;
     private bool active = true;
-    private bool inDistance = false;
     private bool towards = true;
     private bool hasLOS = false;
 
@@ -30,8 +30,8 @@ public class EnemyChase : MonoBehaviour
         if (!active) {
             return;
         }
-
-        if (hasLOS && !inDistance) {
+        
+        if (hasLOS && !GetInDistance() && Distance() <= detectionRadius) {
             Vector3 direction = Player.GetPosition() - transform.position;
             movement = new Vector2(direction.x, direction.y);
             movement.Normalize();
@@ -62,6 +62,10 @@ public class EnemyChase : MonoBehaviour
 
     public void SetActive(bool isActive) {
         active = isActive;
+
+        if (!active) {
+            movement = new Vector2(0, 0);
+        }
     }
 
     public void SetDistance(float dist) {

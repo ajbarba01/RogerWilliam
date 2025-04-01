@@ -176,7 +176,7 @@ MonoBehaviour:
   minMoveSpeed: 2
   maxMoveSpeed: 2.5
   moveSpeed: 0
-  preferredDistance: 5
+  preferredDistance: 2
 --- !u!114 &1385606772897501140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +192,6 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 10
   attackRange: 2
-  scareDist: 0
 --- !u!1 &951648529272508137
 GameObject:
   m_ObjectHideFlags: 0

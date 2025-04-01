@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour
     private float animationPercent;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         SetHealth(health);
         // playerHealth = GameObject.FindWithTag("GameController").GetComponent<Health>();
@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
         if (health == null) {
             return;
         }
-        
+
         float prevPercentage = percentage;
         percentage = health.GetPercentage();
         if (percentage != prevPercentage) {
