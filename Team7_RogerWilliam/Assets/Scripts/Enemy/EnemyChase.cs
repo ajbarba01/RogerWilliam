@@ -9,11 +9,14 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float preferredDistance = 5f;
 
+    private float distance = 0f;
+
     private Vector2 movement;
     private Rigidbody2D rb;
     private bool active = true;
     private bool inDistance = false;
     private bool towards = true;
+    private bool hasLOS = false;
 
     void Awake()
     {
@@ -28,28 +31,33 @@ public class EnemyChase : MonoBehaviour
             return;
         }
 
-        bool los = HasLOS();
-        if (los && Vector3.Distance(transform.position, Player.GetPosition()) > preferredDistance) {
-            inDistance = false;
+        if (hasLOS && !inDistance) {
             Vector3 direction = Player.GetPosition() - transform.position;
             movement = new Vector2(direction.x, direction.y);
             movement.Normalize();
         }
         else {
-            inDistance = true;
             movement = new Vector2(0, 0);
         }
     }
 
     void FixedUpdate()
     {
+        distance = Vector3.Distance(transform.position, Player.GetPosition());
+
         int direction = -1;
         if (towards) direction = 1;
         rb.velocity = movement * moveSpeed * direction;
+
+        int layerMask = ~LayerMask.GetMask("Enemy");
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, Player.GetPosition() - transform.position, Distance(), layerMask);
+        if (ray.collider != null) {
+            hasLOS = ray.collider.CompareTag("Player");
+        }
     }
 
-    bool HasLOS() {
-        return true;
+    public bool HasLOS() {
+        return hasLOS;
     }
 
     public void SetActive(bool isActive) {
@@ -60,8 +68,12 @@ public class EnemyChase : MonoBehaviour
         preferredDistance = dist;
     }
 
+    public float Distance() {
+        return distance;
+    }
+
     public bool GetInDistance() {
-        return inDistance;
+        return distance <= preferredDistance;
     }
 
     public void SetTowards(bool newTowards) {

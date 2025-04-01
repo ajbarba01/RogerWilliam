@@ -6,7 +6,6 @@ public class RangedAttack : MonoBehaviour
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float attackCooldown = 2.5f;
 
     void Start()
     {

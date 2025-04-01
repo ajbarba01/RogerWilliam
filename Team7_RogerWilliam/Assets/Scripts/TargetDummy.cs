@@ -5,8 +5,6 @@ using UnityEngine;
 public class TargetDummy : MonoBehaviour
 {
     private Health health;
-    private float sinceDeath = 0f;
-    private bool dead = false;
     
     void Start()
     {
