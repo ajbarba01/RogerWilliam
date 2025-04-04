@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyChase))]
 public class EnemyRanged : MonoBehaviour
 {
 
@@ -14,9 +15,14 @@ public class EnemyRanged : MonoBehaviour
     private EnemyChase enemyChase;
     private float attackChannel = 0f;
 
-    private bool attacking = false;
-    private bool running = false;
-    private bool chasing = false;
+    private enum enemyState {
+        attacking,
+        running,
+        chasing,
+        idle
+    }
+
+    private enemyState currentState;
 
     private float attackTimer;
 
@@ -32,13 +38,13 @@ public class EnemyRanged : MonoBehaviour
 
     void Update()
     {
-        if (attacking) {
+        if (currentState == enemyState.attacking) {
             Attacking();
         }
-        else if (running) {
+        else if (currentState == enemyState.running) {
             Running();
         }
-        else if (chasing) {
+        else if (currentState == enemyState.chasing) {
             Chasing();
         }
         else {
@@ -59,13 +65,12 @@ public class EnemyRanged : MonoBehaviour
     void Attacking() {
         if (!enemyChase.HasLOS()) {
             // IDLE
-            attacking = false;
+            currentState = enemyState.idle;
         }
 
         else if (enemyChase.Distance() <= scareDist) {
             // RUNNING
-            attacking = false;
-            running = true;
+            currentState = enemyState.running;
             enemyChase.SetActive(true);
             enemyChase.SetTowards(false);
         }
@@ -74,7 +79,7 @@ public class EnemyRanged : MonoBehaviour
             attackChannel += Time.deltaTime;
             if (attackChannel >= attackCooldown) {
                 // IDLE
-                attacking = false;
+                currentState = enemyState.idle;
                 rangedAttackScript.ShootProjectile();
             }
         }
@@ -83,7 +88,7 @@ public class EnemyRanged : MonoBehaviour
     void Running() {
         if (!enemyChase.HasLOS() || enemyChase.Distance() > scareDist) {
             // IDLE
-            running = false;
+            currentState = enemyState.idle;
             enemyChase.SetActive(false);
             enemyChase.SetTowards(true);
         }
@@ -92,14 +97,13 @@ public class EnemyRanged : MonoBehaviour
     void Chasing() {
         if (!enemyChase.HasLOS()) {
             // IDLE
-            chasing = false;
+            currentState = enemyState.idle;
             enemyChase.SetActive(false);
         }
 
         else if (enemyChase.GetInDistance()) {
             // ATTACKING
-            chasing = false;
-            attacking = true;
+            currentState = enemyState.attacking;
             attackChannel = 0f;
             enemyChase.SetActive(false);
         }
@@ -109,18 +113,18 @@ public class EnemyRanged : MonoBehaviour
         if (enemyChase.HasLOS()) {
             if (enemyChase.Distance() <= scareDist) {
                 // RUNNING
-                running = true;
+                currentState = enemyState.running;
                 enemyChase.SetActive(true);
                 enemyChase.SetTowards(false);
             }
             else if (enemyChase.GetInDistance()) {
                 // ATTACKING
-                attacking = true;
+                currentState = enemyState.attacking;
                 attackChannel = 0f;
             }
             else {
                 // CHASING
-                chasing = true;
+                currentState = enemyState.chasing;
                 enemyChase.SetActive(true);
                 enemyChase.SetTowards(true);
             }
@@ -132,7 +136,7 @@ public class EnemyRanged : MonoBehaviour
         if (attackChannel >= attackCooldown) {
             rangedAttackScript.ShootProjectile(); // Trigger the ranged attack (shoot projectile)
             attackChannel = 0;
-            attacking = false;
+            currentState = enemyState.idle;
         }
     }
 
