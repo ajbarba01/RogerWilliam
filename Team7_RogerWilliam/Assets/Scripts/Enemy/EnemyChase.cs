@@ -10,6 +10,8 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float preferredDistance = 2f;
     [SerializeField] private float detectionRadius = 8f;
 
+    public Animator anim;
+
     private float distance = 100f;
 
     private Vector2 movement;
@@ -23,6 +25,7 @@ public class EnemyChase : MonoBehaviour
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
         rb = GetComponent<Rigidbody2D>();
         movement = new Vector2(0, 0);
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -35,9 +38,11 @@ public class EnemyChase : MonoBehaviour
             Vector3 direction = Player.GetPosition() - transform.position;
             movement = new Vector2(direction.x, direction.y);
             movement.Normalize();
+            anim.SetBool("Walk", true);
         }
         else {
             movement = new Vector2(0, 0);
+            anim.SetBool("Walk", false);
         }
     }
 
