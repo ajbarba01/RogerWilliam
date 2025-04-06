@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
-    public float speed = 3f; // player movement speed
+    public float speed = 20f; // player movement speed
     private Vector3 change; // player movement direction
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -28,12 +28,12 @@ public class PlayerMove : MonoBehaviour {
             change.y = Input.GetAxisRaw("Vertical");
             UpdateAnimationAndMove();
 
-            if (Input.GetAxis ("Horizontal") > 0){
+            if (Input.GetAxisRaw ("Horizontal") > 0){
                 Vector3 newScale = transform.localScale;
                 newScale.x = 1.0f;
                 transform.localScale = newScale;
             }
-            else if (Input.GetAxis ("Horizontal") < 0){
+            else if (Input.GetAxisRaw ("Horizontal") < 0){
                 Vector3 newScale =transform.localScale;
                 newScale.x = -1.0f;
                 transform.localScale = newScale;
