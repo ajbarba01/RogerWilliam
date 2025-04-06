@@ -55,6 +55,9 @@ public class PlayerMove : MonoBehaviour {
                 anim.SetBool("Walk", false);
                 //audioWalk.Stop();
             }
+            anim.SetFloat("Horizontal", change.x);
+            anim.SetFloat("Vertical", change.y);
+
         }
     }
 
