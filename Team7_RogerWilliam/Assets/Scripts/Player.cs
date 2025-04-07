@@ -10,12 +10,14 @@ public class Player : MonoBehaviour
     public static Player instance;
     public static Health health;
 
+    private Animator anim;
     private Vector2 movement;
     public bool isKnockbackActive = false;  
 
     private void Awake() {
         instance = this;
         movement = new Vector2(0, 0);
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Start() {
