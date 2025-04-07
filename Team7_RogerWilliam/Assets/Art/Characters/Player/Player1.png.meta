@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -117,8 +130,8 @@ TextureImporter:
         y: 96
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -138,8 +151,8 @@ TextureImporter:
         y: 96
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,15 +165,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_2
+      name: Player1_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 80
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,15 +186,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_3
+      name: Player1_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 96
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,15 +207,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_4
+      name: Player1_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 112
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,15 +228,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_5
+      name: Player1_13
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,15 +249,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_6
+      name: Player1_14
       rect:
         serializedVersion: 2
         x: 16
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -257,15 +270,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_7
+      name: Player1_15
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,15 +291,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_8
+      name: Player1_16
       rect:
         serializedVersion: 2
         x: 48
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,15 +312,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_9
+      name: Player1_17
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,15 +333,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_10
+      name: Player1_18
       rect:
         serializedVersion: 2
         x: 80
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,15 +354,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_11
+      name: Player1_19
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -362,15 +375,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_12
+      name: Player1_2
       rect:
         serializedVersion: 2
-        x: 112
-        y: 64
+        x: 32
+        y: 96
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,15 +396,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_13
+      name: Player1_20
       rect:
         serializedVersion: 2
-        x: 0
+        x: 112
         y: 32
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -404,15 +417,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_14
+      name: Player1_21
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 0
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -425,15 +438,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_15
+      name: Player1_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 16
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -446,15 +459,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_16
+      name: Player1_23
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 32
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -467,15 +480,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_17
+      name: Player1_24
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 48
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,15 +501,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_18
+      name: Player1_25
       rect:
         serializedVersion: 2
         x: 80
-        y: 32
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -509,15 +522,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_19
+      name: Player1_26
       rect:
         serializedVersion: 2
         x: 96
-        y: 32
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -530,15 +543,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_20
+      name: Player1_27
       rect:
         serializedVersion: 2
         x: 112
-        y: 32
+        y: 0
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -551,15 +564,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_21
+      name: Player1_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 48
+        y: 96
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -572,15 +585,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_22
+      name: Player1_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 64
+        y: 96
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -593,15 +606,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_23
+      name: Player1_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 0
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -614,15 +627,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_24
+      name: Player1_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 16
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -635,15 +648,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_25
+      name: Player1_7
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
+        x: 32
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -656,15 +669,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_26
+      name: Player1_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 48
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -677,15 +690,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player1_27
+      name: Player1_9
       rect:
         serializedVersion: 2
-        x: 112
-        y: 0
+        x: 64
+        y: 64
         width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -710,32 +723,32 @@ TextureImporter:
     nameFileIdTable:
       Player1_0: -823712060
       Player1_1: 1037116375
-      Player1_10: -626366544
-      Player1_11: 158419570
-      Player1_12: 53446395
-      Player1_13: -1104660956
-      Player1_14: -176837617
-      Player1_15: -40844096
-      Player1_16: -1010012021
-      Player1_17: -11119223
-      Player1_18: -1320837574
-      Player1_19: 1338785348
-      Player1_2: 639599489
-      Player1_20: 1897767402
-      Player1_21: -766107375
-      Player1_22: -809190777
-      Player1_23: 460377322
-      Player1_24: -237282020
-      Player1_25: 411667764
-      Player1_26: 2142400349
-      Player1_27: -1342020073
-      Player1_3: -578285329
-      Player1_4: 1517088360
-      Player1_5: 1060688285
-      Player1_6: 1938320843
-      Player1_7: 1163652161
-      Player1_8: 1494031409
-      Player1_9: 1729190978
+      Player1_10: 639599489
+      Player1_11: -578285329
+      Player1_12: 1517088360
+      Player1_13: 1060688285
+      Player1_14: 1938320843
+      Player1_15: 1163652161
+      Player1_16: 1494031409
+      Player1_17: 1729190978
+      Player1_18: -626366544
+      Player1_19: 158419570
+      Player1_2: 53446395
+      Player1_20: -1104660956
+      Player1_21: -176837617
+      Player1_22: -40844096
+      Player1_23: -1010012021
+      Player1_24: -11119223
+      Player1_25: -1320837574
+      Player1_26: 1338785348
+      Player1_27: 1897767402
+      Player1_3: -766107375
+      Player1_4: -809190777
+      Player1_5: 460377322
+      Player1_6: -237282020
+      Player1_7: 411667764
+      Player1_8: 2142400349
+      Player1_9: -1342020073
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
