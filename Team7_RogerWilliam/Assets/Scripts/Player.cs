@@ -2,30 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TopDownDirection))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private AnimationManager anim;
-
     public static Player instance;
     public static Health health;
 
-    private enum Facing {
-        Front,
-        Back,
-        Right,
-        Left
-    }
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private AnimationManager anim;
+    private TopDownDirection direction;
     
-    private Facing direction = Facing.Front;
-
     private Vector2 movement;
     public bool isKnockbackActive = false;  
 
     private void Awake() {
         instance = this;
         movement = new Vector2(0, 0);
+        direction = GetComponent<TopDownDirection>();
     }
 
     private void Start() {
@@ -41,63 +35,14 @@ public class Player : MonoBehaviour
             movement.y = Input.GetAxisRaw("Vertical");
             movement.Normalize();
 
-            UpdateDirection();
-
             // Update Animation
             if (movement.x != 0 || movement.y != 0) {
-                switch (direction) {
-                case Facing.Front:
-                    anim.ChangeState("Player_Walk_Front");
-                    break;
-
-                case Facing.Back:
-                    anim.ChangeState("Player_Walk_Back");
-                    break;
-
-                default:
-                    anim.ChangeState("Player_Walk_Side");
-                    break;
-                }
+                anim.ChangeState("Player_Walk_" + direction.GetFacing());
             }
             else {
-                switch (direction) {
-                case Facing.Front:
-                    anim.ChangeState("Player_Idle_Front");
-                    break;
-
-                case Facing.Back:
-                    anim.ChangeState("Player_Idle_Back");
-                    break;
-
-                default:
-                    anim.ChangeState("Player_Idle_Side");
-                    break;
-                }
+                anim.ChangeState("Player_Idle_" + direction.GetFacing());
             }
             
-        }
-    }
-
-    void UpdateDirection() {
-        if (movement.y > 0) {
-            direction = Facing.Back;
-        }
-
-        else if (movement.y < 0) {
-            direction = Facing.Front;
-        }
-
-        else if (movement.x > 0) {
-            direction = Facing.Right;
-            Vector3 newScale = transform.localScale;
-            newScale.x = 1.0f;
-            transform.localScale = newScale;
-        } 
-        else if (movement.x < 0) {
-            direction = Facing.Left;
-            Vector3 newScale = transform.localScale;
-            newScale.x = -1.0f;
-            transform.localScale = newScale;
         }
     }
 

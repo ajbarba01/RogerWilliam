@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TopDownDirection))]
 public class EnemyChase : MonoBehaviour
 {
     [SerializeField] private float minMoveSpeed = 2f;
