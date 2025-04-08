@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBreath : MonoBehaviour
+public class FireBreathOld : MonoBehaviour
 {
       public float damage = 10f; // Amount of damage dealt per second
     public float zoneWidth = 3f; // Width of the damage zone
