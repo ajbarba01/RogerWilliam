@@ -15,6 +15,8 @@ public class LoadoutManager : MonoBehaviour
     [SerializeField] public Passive currentPassive;
 
     private void Awake() {
+        DontDestroyOnLoad(this);
+
         if (Instance == null) {
             Instance = this;
         }

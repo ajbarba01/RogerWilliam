@@ -12,12 +12,12 @@ public class PlayerHealth : Health
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            TakeDamage(10);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space)) {
+        //     TakeDamage(10);
+        // }
 
-        if (Input.GetKeyDown(KeyCode.Return)) {
-            ResetHealth();
-        }
+        // if (Input.GetKeyDown(KeyCode.Return)) {
+        //     ResetHealth();
+        // }
     }
 }
