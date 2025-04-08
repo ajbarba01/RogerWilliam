@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipText: Fire Breath
   nickname: Firey
-  icon: {fileID: 21300000, guid: c8191b6e09cfc934db1d5033219f965f, type: 3}
+  icon: {fileID: 21300000, guid: 4a0de083fd6e2df4bb3546b9a6b48aee, type: 3}
   prefab: {fileID: 1001088506067808487, guid: 34b79e4384bf64a448bc3da54e798d6d, type: 3}
