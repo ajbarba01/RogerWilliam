@@ -14,10 +14,17 @@ public class AbilitySelect : Menu
 
     private bool weaponOpen;
 
-    void Start()
-    {
+    private WeaponHandler weaponHandler;
+    private AbilityHandler abilityHandler;
+    private PassiveHandler passiveHandler;
+
+    private void Awake() {
         accessKey = KeyCode.N;
         weaponOpen = false;
+
+        weaponHandler = Player.Instance.GetComponentInChildren<WeaponHandler>();
+        abilityHandler = Player.Instance.GetComponentInChildren<AbilityHandler>();
+        passiveHandler = Player.Instance.GetComponentInChildren<PassiveHandler>();
     }
 
     protected override void OnOpen() {

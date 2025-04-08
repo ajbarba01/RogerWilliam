@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(TopDownDirection))]
 public class Player : MonoBehaviour
 {
-    public static Player instance;
+    public static Player Instance;
     public static Health health;
 
     [SerializeField] private float moveSpeed = 5f;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public bool isKnockbackActive = false;  
 
     private void Awake() {
-        instance = this;
+        Instance = this;
         movement = new Vector2(0, 0);
         direction = GetComponent<TopDownDirection>();
     }
@@ -73,6 +73,6 @@ public class Player : MonoBehaviour
     }
 
     public static Vector3 GetPosition() {
-        return instance.transform.position;
+        return Instance.transform.position;
     }
 }

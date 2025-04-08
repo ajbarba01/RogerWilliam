@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4847195472637749049}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6260121324983378308
 MonoBehaviour:
@@ -45,14 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a4b7f952f87804c9fb1782f503753f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
   attackPt: {fileID: 4847195472637749049}
   attackRange: 0.5
   attackRate: 2
-  attackDamage: 40
+  attackDamage: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
