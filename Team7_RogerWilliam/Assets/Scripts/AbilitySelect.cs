@@ -17,12 +17,11 @@ public class AbilitySelect : Menu
     void Start()
     {
         accessKey = KeyCode.N;
-
         weaponOpen = false;
     }
 
     protected override void OnOpen() {
-        Fetch();
+        Refresh();
 
         if (HUD != null) {
             HUD.SetActive(false);
@@ -48,7 +47,7 @@ public class AbilitySelect : Menu
         }
     }
 
-    private void Fetch() {
+    private void Refresh() {
         weapon.SetOption(LoadoutManager.Instance.currentWeapon);
         ability.SetOption(LoadoutManager.Instance.currentAbility);
         passive.SetOption(LoadoutManager.Instance.currentPassive);

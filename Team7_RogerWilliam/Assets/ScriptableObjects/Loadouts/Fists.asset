@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5634bf80a4fa2234eb990a94c96bf74a, type: 3}
+  m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
   m_Name: Fists
   m_EditorClassIdentifier: 
   tooltipText: Fists
   nickname: Roger Williams
   icon: {fileID: 21300000, guid: c4dc3e3e7882cb042a34d837a862609e, type: 3}
-  onEnemyHit:
-    m_PersistentCalls:
-      m_Calls: []
+  prefab: {fileID: 4444084267199400105, guid: 88daf7311c4bee04ab063b66356b88d2, type: 3}

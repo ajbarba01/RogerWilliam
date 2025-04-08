@@ -131,6 +131,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1981752948178267108, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981752948178267108, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981752948178267108, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655328090908501791, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: currentWeapon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4882424763120507927, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4068,6 +4084,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1480237949}
     m_Modifications:
+    - target: {fileID: 2244995010346796463, guid: 94497e5c400a1994994c192696502e0b, type: 3}
+      propertyPath: tooltipText
+      value: Doggy
+      objectReference: {fileID: 0}
     - target: {fileID: 2609108340942883518, guid: 94497e5c400a1994994c192696502e0b, type: 3}
       propertyPath: HUD
       value: 
@@ -5791,7 +5811,7 @@ PrefabInstance:
     - target: {fileID: 2145583425995002254, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: currentWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5014890511960738480, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25

@@ -42,9 +42,6 @@ public class LoadoutSlot : MonoBehaviour
     }
 
     private void UpdateTooltip() {
-        if (tooltipWindow == null) {
-            Debug.Log(gameObject.name);
-        }
         if (current == null) {
             tooltipWindow.SetText(defaultTooltipText);
         }

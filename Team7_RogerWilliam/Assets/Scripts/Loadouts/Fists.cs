@@ -19,10 +19,11 @@ public class Fists : Weapon {
 
       public override void Attack() {
             if (Time.time >= nextAttackTime) {
-                  Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
-                   if (punchSFX.isPlaying == false){
+                  if (punchSFX != null && punchSFX.isPlaying == false){
                         punchSFX.Play();
                   }
+                                    
+                  Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 
                   foreach (Collider2D enemy in hitEnemies) {
                         Health enemyHealth = enemy.GetComponent<Health>();

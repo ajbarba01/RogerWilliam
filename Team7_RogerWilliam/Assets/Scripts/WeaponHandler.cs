@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class WeaponHandler : MonoBehaviour
 {
-    [SerializeField] private Weapon currentWeapon;
+    private Weapon currentWeapon;
     [SerializeField] private LastHitEnemy lastHit;
 
-    // Start is called before the first frame update
     void Start()
     {
-        if (currentWeapon != null) {
-            SetWeapon(currentWeapon);
-        }
+        SetWeapon(LoadoutManager.Instance.currentWeapon.GetPrefab());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Attack") > 0){
+        if (currentWeapon != null && Input.GetAxis("Attack") > 0){
             currentWeapon.Attack();
         }
     }
 
-    void SetWeapon(Weapon weapon) {
-        if (currentWeapon != null) {
-            weapon.onEnemyHit.RemoveListener(lastHit.EnemyHit);
+    void SetWeapon(GameObject weaponPrefab) {
+        if (weaponPrefab == null) {
+            return;
         }
-        currentWeapon = weapon;
-        weapon.onEnemyHit.AddListener(lastHit.EnemyHit);
+
+        RemoveWeapon();
+
+        GameObject newWeapon = Instantiate(weaponPrefab, transform);
+        
+        currentWeapon = newWeapon.GetComponent<Weapon>();
+        currentWeapon.onEnemyHit.AddListener(lastHit.EnemyHit);
+    }
+
+    void RemoveWeapon() {
+        if (currentWeapon != null) {
+            currentWeapon.onEnemyHit.RemoveListener(lastHit.EnemyHit);
+            Destroy(currentWeapon);
+        }
+
     }
 }

@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - icon: {fileID: 21300000, guid: c4dc3e3e7882cb042a34d837a862609e, type: 3}
+  - data: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
   - attackPt: {instanceID: 0}
   - lastEnemyHit: {instanceID: 0}
   - punchSFX: {instanceID: 0}

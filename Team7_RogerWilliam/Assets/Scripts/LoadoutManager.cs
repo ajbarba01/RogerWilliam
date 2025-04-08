@@ -11,8 +11,8 @@ public class LoadoutManager : MonoBehaviour
     private List<Passive> unlockedPassives;
     
     [SerializeField] public LoadoutOption currentWeapon;
-    [SerializeField] public Ability currentAbility;
-    [SerializeField] public Passive currentPassive;
+    [SerializeField] public LoadoutOption currentAbility;
+    [SerializeField] public LoadoutOption currentPassive;
 
     private void Awake() {
         DontDestroyOnLoad(this);
