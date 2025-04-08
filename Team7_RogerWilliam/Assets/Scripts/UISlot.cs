@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UISlot : MonoBehaviour
 {
-    // private Image icon;
+    private static Sprite defaultIcon;
 
-    public void SetIcon() {
-        // icon = img;
+    [SerializeField] private Image icon;
+
+    public void SetIcon(Sprite newIcon) {
+        icon.sprite = newIcon;
+    }
+
+    public void Remove() {
+        icon.sprite = defaultIcon;
     }
 }

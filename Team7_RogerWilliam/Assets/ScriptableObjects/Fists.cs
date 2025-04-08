@@ -17,13 +17,6 @@ public class Fists : Weapon {
 
       public AudioSource punchSFX;
 
-      void Start(){
-           //animator = gameObject.GetComponentInChildren<Animator>();
-      }
-
-      void Update() {
-      }
-
       public override void Attack() {
             if (Time.time >= nextAttackTime) {
                   Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
@@ -39,11 +32,5 @@ public class Fists : Weapon {
 
                   nextAttackTime = Time.time + 1f / attackRate;
             }
-      }
-
-      //NOTE: to help see the attack sphere in editor:
-      void OnDrawGizmosSelected(){
-           if (attackPt == null) {return;}
-            Gizmos.DrawWireSphere(attackPt.position, attackRange);
       }
 }

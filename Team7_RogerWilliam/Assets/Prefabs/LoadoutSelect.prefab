@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6623563666941509705}
   - component: {fileID: 2609108340942883518}
   m_Layer: 5
-  m_Name: AbilitySelect
+  m_Name: LoadoutSelect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,10 @@ MonoBehaviour:
   HUD: {fileID: 0}
   weaponSlots:
   - {fileID: 0}
+  weapon: {fileID: 2185913841106151258}
+  ability: {fileID: 5780666011167710652}
+  passive: {fileID: 1023280503721887195}
+  nickname: {fileID: 3990535923736707545}
 --- !u!1 &4747903848628555834
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,15 +372,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Passive Ability
       objectReference: {fileID: 0}
+    - target: {fileID: 6562625691884489939, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487239352962106008, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: PassiveSlot
+      objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name
-      value: AbilityTwoSelect
+      value: PassiveSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+--- !u!114 &1023280503721887195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 203243083398517423, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+  m_PrefabInstance: {fileID: 928160109625546612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb44c9d7d703b5e4fa08960fc7cdd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5007464166437025783 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5305076066951553155, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
@@ -478,6 +501,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Weapons
       objectReference: {fileID: 0}
+    - target: {fileID: 6562625691884489939, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487239352962106008, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: WeaponSlot
+      objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name
       value: WeaponSelect
@@ -487,6 +518,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+--- !u!114 &2185913841106151258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 203243083398517423, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+  m_PrefabInstance: {fileID: 2055890547515323893}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb44c9d7d703b5e4fa08960fc7cdd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6131817040130413942 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5305076066951553155, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
@@ -588,9 +630,17 @@ PrefabInstance:
       propertyPath: m_text
       value: Active Ability
       objectReference: {fileID: 0}
+    - target: {fileID: 6562625691884489939, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 8487239352962106008, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+      propertyPath: m_Name
+      value: AbilitySlot
+      objectReference: {fileID: 0}
     - target: {fileID: 8993617194740654167, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
       propertyPath: m_Name
-      value: AbilityOneSelect
+      value: AbilitySelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -602,3 +652,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5305076066951553155, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
   m_PrefabInstance: {fileID: 5974901894237474579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5780666011167710652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 203243083398517423, guid: 5986dbc0342addf44946c50c7c012374, type: 3}
+  m_PrefabInstance: {fileID: 5974901894237474579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb44c9d7d703b5e4fa08960fc7cdd7fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
