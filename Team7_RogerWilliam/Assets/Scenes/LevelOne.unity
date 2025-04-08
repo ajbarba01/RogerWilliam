@@ -5551,6 +5551,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2356901996380481523, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1994138652}
+    - targetCorrespondingSourceObject: {fileID: 2356901996380481523, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1994138651}
     - targetCorrespondingSourceObject: {fileID: 1230482090229013227, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       insertIndex: -1
       addedObject: {fileID: 627299120}
@@ -22721,6 +22727,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756f5db2f01181c49bdf7963df71bbc5, type: 3}
+--- !u!1 &1789683884 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2356901996380481523, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
+  m_PrefabInstance: {fileID: 1157543353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1807483902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22858,6 +22869,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8745091009319158066, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
   m_PrefabInstance: {fileID: 1157543353}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1994138651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789683884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1994138652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789683884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5cb5443947f7542ad8c30c425cd346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 80
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1994343292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6727260406948360030, guid: d99cbd9bf094a2343803fe13e19bc85a, type: 3}
