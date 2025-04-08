@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3766984651683084248}
   - component: {fileID: 7843157001389825395}
   m_Layer: 5
-  m_Name: WeaponBG
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 5305076066951553155}
   - component: {fileID: 1909650679872540197}
   m_Layer: 5
-  m_Name: WeaponSelector
+  m_Name: LoadoutSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248862265012749859, guid: 7e027588139d34f42bfa1749a7084aad, type: 3}
       propertyPath: m_Name
-      value: WeaponSlot
+      value: Slot
       objectReference: {fileID: 0}
     - target: {fileID: 7248862265012749859, guid: 7e027588139d34f42bfa1749a7084aad, type: 3}
       propertyPath: m_IsActive

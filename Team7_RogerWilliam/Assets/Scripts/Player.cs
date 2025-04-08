@@ -29,19 +29,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Pause.isPaused) {
+            return;
+        }
+        
         if (!isKnockbackActive)  
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
             movement.Normalize();
 
-            // Update Animation
-            if (movement.x != 0 || movement.y != 0) {
-                anim.ChangeState("Player_Walk_" + direction.GetFacing());
-            }
-            else {
-                anim.ChangeState("Player_Idle_" + direction.GetFacing());
-            }
+            
             
         }
     }
@@ -51,7 +49,14 @@ public class Player : MonoBehaviour
         if (!isKnockbackActive)  
         {
             rb.velocity = movement * moveSpeed;
-        }
+
+            if (rb.velocity.sqrMagnitude != 0) {
+                anim.ChangeState("Player_Walk_" + direction.GetFacing());
+            }
+            else {
+                anim.ChangeState("Player_Idle_" + direction.GetFacing());
+            }
+        }            
     }
 
     public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength)

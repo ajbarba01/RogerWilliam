@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.Events;
 using UnityEngine;
 
-public abstract class Ability : MonoBehaviour
+public abstract class Ability : LoadoutOption
 {
     public UnityEvent<Health> onEnemyHit;
     public abstract void Activate();

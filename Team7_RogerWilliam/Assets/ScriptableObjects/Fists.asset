@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5634bf80a4fa2234eb990a94c96bf74a, type: 3}
+  m_Name: Fists
+  m_EditorClassIdentifier: 
+  tooltipText: Fists
+  nickname: Roger Williams
+  icon: {fileID: 21300000, guid: c4dc3e3e7882cb042a34d837a862609e, type: 3}
+  onEnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
