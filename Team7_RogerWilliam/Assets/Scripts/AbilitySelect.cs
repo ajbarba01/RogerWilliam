@@ -29,6 +29,7 @@ public class AbilitySelect : Menu
 
     protected override void OnOpen() {
         Refresh();
+        UpdateNickname();
 
         if (HUD != null) {
             HUD.SetActive(false);
@@ -63,18 +64,18 @@ public class AbilitySelect : Menu
     private void UpdateNickname() {
         currentNickname = "\"";
         if (ability.GetOption() != null) {
-            currentNickname += ability.GetOption().GetNickname();
+            currentNickname += ability.GetOption().GetNickname() + " ";
         }
 
         if (weapon.GetOption() != null) {
-            currentNickname += weapon.GetOption().GetNickname();
+            currentNickname += weapon.GetOption().GetNickname() + " ";
         }
 
         if (passive.GetOption() != null) {
             currentNickname += passive.GetOption().GetNickname();
         }
 
-        nickname.text = currentNickname + "\"";
+        nickname.text = currentNickname.Trim() + "\"";
 
     }
 }

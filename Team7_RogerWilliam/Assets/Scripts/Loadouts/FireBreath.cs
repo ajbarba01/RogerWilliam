@@ -7,8 +7,7 @@ public class FireBreath : Ability
     public float damage = 10f; // Amount of damage dealt per second
     public float zoneWidth = 3f; // Width of the damage zone
     public float zoneLength = 5f; // Length of the damage zone
-    // public LayerMask enemyLayer; // Define what is considered an enemy
-    // public KeyCode attackKey;// Primary attack button
+    public LayerMask enemyLayer; // Define what is considered an enemy
     public float attackDuration = 10f; // Duration the zone stays active
     public GameObject fireEffect; // Assign the fire effect sprite in the Inspector
     private bool isAttacking = false;

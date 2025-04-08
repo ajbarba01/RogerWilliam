@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
-  m_Name: TestAbility
+  m_Name: FireBreath
   m_EditorClassIdentifier: 
-  tooltipText: TEST
-  nickname: 
+  tooltipText: Fire Breath
+  nickname: Firey
   icon: {fileID: 21300000, guid: c8191b6e09cfc934db1d5033219f965f, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 1001088506067808487, guid: 34b79e4384bf64a448bc3da54e798d6d, type: 3}
