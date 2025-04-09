@@ -14,7 +14,7 @@ public class WeaponHandler : MonoBehaviour
 
     void Update()
     {
-        if (currentWeapon != null && Input.GetAxis("Attack") > 0){
+        if (currentWeapon != null && Input.GetMouseButtonDown(0)){
             currentWeapon.Attack();
         }
     }

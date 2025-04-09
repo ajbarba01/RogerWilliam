@@ -8,9 +8,15 @@ public class FireBreath : Ability
     public float zoneWidth = 3f; // Width of the damage zone
     public float zoneLength = 5f; // Length of the damage zone
     public LayerMask enemyLayer; // Define what is considered an enemy
-    public float attackDuration = 10f; // Duration the zone stays active
+    private float attackDuration = 5f; // Duration the zone stays active
     public GameObject fireEffect; // Assign the fire effect sprite in the Inspector
     private bool isAttacking = false;
+
+    private Collider2D[] enemyHits = new Collider2D[20];
+
+    private void Awake() {
+        cooldown = 15f;
+    }
 
     void Start()
     {
@@ -20,7 +26,7 @@ public class FireBreath : Ability
         }
     }
 
-    public override void Activate() {
+    public override void OnActivate() {
         if (isAttacking) {
             return;
         }
@@ -33,8 +39,7 @@ public class FireBreath : Ability
         isAttacking = true;
         if (fireEffect != null)
         {
-            Debug.Log("Lebron Lebron Lebron");
-            fireEffect.SetActive(true); // Show fire effect
+            fireEffect.SetActive(true);
         }
 
         float timer = 0f;
@@ -54,19 +59,45 @@ public class FireBreath : Ability
 
     void DealDamageInZone()
     {
-        Collider[] enemies = Physics.OverlapBox(transform.position + transform.forward * (zoneLength / 2),
-                                                new Vector3(zoneWidth / 2, 1f, zoneLength / 2),
-                                                transform.rotation, enemyLayer);
-        
-        foreach (Collider enemy in enemies)
+        int hitCount = DetectEnemies();
+        for (int i = 0; i < hitCount; i++)
         {
-            Health enemyHealth = enemy.GetComponent<Health>();
-            if (enemyHealth != null)
-            {
-                enemyHealth.TakeDamage(damage * Time.deltaTime);
-                onEnemyHit.Invoke(enemyHealth);
-            }
+            Collider2D enemyCollider = enemyHits[i];
+            Health enemyHealth = enemyCollider.GetComponent<Health>();
+            enemyHealth.TakeDamage(damage * Time.deltaTime);
+            onEnemyHit.Invoke(enemyHealth);
         }
+
+        // Collider[] enemies = Physics.OverlapBox(transform.position + transform.forward * (zoneLength / 2),
+        //                                         new Vector3(zoneWidth / 2, 1f, zoneLength / 2),
+        //                                         transform.rotation, enemyLayer);
+
+        // foreach (Collider2D enemy in enemies)
+        // {
+        //     Health enemyHealth = enemy.GetComponent<Health>();
+        //     if (enemyHealth != null)
+        //     {
+        //         Debug.Log("ENEMY DAMAGE");
+        //         enemyHealth.TakeDamage(damage * Time.deltaTime);
+        //         onEnemyHit.Invoke(enemyHealth);
+        //     }
+        // }
+    }
+
+    private int DetectEnemies()
+    {
+        Vector2 center = (Vector2)(transform.position + transform.forward * (zoneLength / 2));
+        Vector2 halfExtents = new Vector3(zoneWidth / 2, zoneLength / 2);
+
+        int hitCount = Physics2D.OverlapBoxNonAlloc(
+        center,
+        halfExtents,
+        0,
+        enemyHits,
+        enemyLayer
+        );
+
+        return hitCount;
     }
 
     void OnDrawGizmos()

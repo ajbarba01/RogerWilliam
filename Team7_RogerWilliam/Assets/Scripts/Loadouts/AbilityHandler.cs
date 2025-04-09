@@ -14,7 +14,7 @@ public class AbilityHandler : MonoBehaviour
 
     void Update()
     {
-        if (currentAbility != null && Input.GetKeyDown(KeyCode.Space)){
+        if (currentAbility != null && !currentAbility.OnCooldown() && Input.GetKeyDown(KeyCode.Space)){
             currentAbility.Activate();
         }
     }
@@ -32,6 +32,10 @@ public class AbilityHandler : MonoBehaviour
         
         currentAbility = newAbility.GetComponent<Ability>();
         currentAbility.onEnemyHit.AddListener(lastHit.EnemyHit);
+    }
+
+    public Ability GetAbility() {
+        return currentAbility;
     }
 
     void RemoveAbility() {
