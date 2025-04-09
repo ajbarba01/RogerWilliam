@@ -9,7 +9,7 @@ public abstract class Ability : Loadout
     protected float cooldown;
     public abstract void OnActivate();
     protected float cooldownProgress;
-    protected bool onCooldown;
+    protected bool onCooldown = false;
 
     public float GetCooldown() {
         return cooldownProgress / cooldown;
@@ -31,5 +31,6 @@ public abstract class Ability : Loadout
             yield return null;
         }
         onCooldown = false;
+        cooldownProgress = 0f;
     }
 }

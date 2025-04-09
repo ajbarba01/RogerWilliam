@@ -18,7 +18,7 @@ public class AbilitySelect : Menu
     private AbilityHandler abilityHandler;
     private PassiveHandler passiveHandler;
 
-    private void Awake() {
+    private void Start() {
         accessKey = KeyCode.N;
         weaponOpen = false;
 

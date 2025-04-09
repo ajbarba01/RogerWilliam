@@ -7,7 +7,7 @@ public class WeaponHandler : MonoBehaviour
     private Weapon currentWeapon;
     [SerializeField] private LastHitEnemy lastHit;
 
-    void Start()
+    void Awake()
     {
         SetWeapon(LoadoutManager.Instance.currentWeapon.GetPrefab());
     }

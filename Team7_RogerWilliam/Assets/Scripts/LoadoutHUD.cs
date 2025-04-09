@@ -16,7 +16,9 @@ public class LoadoutHUD : MonoBehaviour
     
     void Start()
     {
-        Refresh();
+        // Ewww I hate the way I did this but I have no idea how else to call this function after all starts have been called.
+        // Could use unity event but i dont want to deal with that rn
+        Invoke("Refresh", 0.1f);
     }
 
     private void Update() {
@@ -32,6 +34,8 @@ public class LoadoutHUD : MonoBehaviour
         weapon.SetOption(LoadoutManager.Instance.currentWeapon);
         ability.SetOption(LoadoutManager.Instance.currentAbility);
         passive.SetOption(LoadoutManager.Instance.currentPassive);
+
+        GetLoadout();
     }
 
     private void GetLoadout() {

@@ -21,27 +21,19 @@ public class HealthBar : MonoBehaviour
     }
 
     void Update() {
-        if (health == null) {
-            return;
-        }
+        if (health == null) return;
 
-        float prevPercentage = percentage;
         percentage = health.GetPercentage();
-        if (percentage != prevPercentage) {
-            if (animationPercent == percentage) {
-                animationPercent = prevPercentage;
-            }
-        }
 
         if (animationPercent != percentage) {
             animationPercent = Mathf.Lerp(animationPercent, percentage, Time.deltaTime * lerpSpeed);
 
             if (animationPercent > percentage) {
-            barImage.fillAmount = percentage;
-            tweenImage.fillAmount = animationPercent;
+                barImage.fillAmount = percentage;
+                tweenImage.fillAmount = animationPercent;
             }
 
-            if (percentage > animationPercent) {
+            else {
                 barImage.fillAmount = animationPercent;
                 tweenImage.fillAmount = percentage;
             }

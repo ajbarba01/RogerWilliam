@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoadoutManager : MonoBehaviour
 {
     public static LoadoutManager Instance;
-
+    
     private List<Weapon> unlockedWeapons;
     private List<Ability> unlockedAbilities;
     private List<Passive> unlockedPassives;

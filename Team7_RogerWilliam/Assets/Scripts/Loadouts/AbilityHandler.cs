@@ -14,9 +14,15 @@ public class AbilityHandler : MonoBehaviour
 
     void Update()
     {
-        if (currentAbility != null && !currentAbility.OnCooldown() && Input.GetKeyDown(KeyCode.Space)){
-            currentAbility.Activate();
+        if (currentAbility != null && Input.GetKeyDown(KeyCode.Space)) {
+            if (!currentAbility.OnCooldown()){
+                currentAbility.Activate();
+            }
+            else {
+                Warning.ShowWarning("Ability on Cooldown");
+            }
         }
+        
     }
 
     void SetAbility(LoadoutOption ability) {
