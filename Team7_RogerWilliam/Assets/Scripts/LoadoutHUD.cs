@@ -10,6 +10,8 @@ public class LoadoutHUD : MonoBehaviour
     [SerializeField] private Image abilityCooldown;
 
     private Ability currentAbility;
+    private Weapon currentWeapon;
+
     private float currentCooldown;
     
     void Start()
@@ -30,11 +32,10 @@ public class LoadoutHUD : MonoBehaviour
         weapon.SetOption(LoadoutManager.Instance.currentWeapon);
         ability.SetOption(LoadoutManager.Instance.currentAbility);
         passive.SetOption(LoadoutManager.Instance.currentPassive);
-
-        GetAbility();
     }
 
-    private void GetAbility() {
+    private void GetLoadout() {
         currentAbility = Player.Instance.GetComponentInChildren<AbilityHandler>().GetAbility();
+        // currentWeapon = Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon();
     }
 }
