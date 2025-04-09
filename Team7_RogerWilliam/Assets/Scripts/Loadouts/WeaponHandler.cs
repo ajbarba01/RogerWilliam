@@ -7,14 +7,14 @@ public class WeaponHandler : MonoBehaviour
     private Weapon currentWeapon;
     [SerializeField] private LastHitEnemy lastHit;
 
-    void Awake()
+    void Start()
     {
         SetWeapon(LoadoutManager.Instance.currentWeapon.GetPrefab());
     }
 
     void Update()
     {
-        if (currentWeapon != null && Input.GetMouseButtonDown(0)){
+        if (currentWeapon != null && Input.GetMouseButton(0) && !currentWeapon.OnCooldown()){
             currentWeapon.Attack();
         }
     }
@@ -30,6 +30,10 @@ public class WeaponHandler : MonoBehaviour
         
         currentWeapon = newWeapon.GetComponent<Weapon>();
         currentWeapon.onEnemyHit.AddListener(lastHit.EnemyHit);
+    }
+
+    public Weapon GetWeapon() {
+        return currentWeapon;
     }
 
     void RemoveWeapon() {

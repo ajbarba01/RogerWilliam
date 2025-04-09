@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour
     }
 
     void Update() {
-        if (health == null) return;
+        if (health == null) SetHealth(null);
 
         percentage = health.GetPercentage();
 

@@ -7,12 +7,10 @@ using UnityEngine.UI;
 public class LoadoutHUD : MonoBehaviour
 {
     [SerializeField] private LoadoutSlot weapon, ability, passive;
-    [SerializeField] private Image abilityCooldown;
+    [SerializeField] private Image abilityCooldown, weaponCooldown;
 
     private Ability currentAbility;
     private Weapon currentWeapon;
-
-    private float currentCooldown;
     
     void Start()
     {
@@ -28,6 +26,13 @@ public class LoadoutHUD : MonoBehaviour
         else {
             abilityCooldown.fillAmount = 0f;
         }
+
+        if (currentWeapon != null && currentWeapon.OnCooldown()) {
+            weaponCooldown.fillAmount = 1 - currentWeapon.GetCooldown();
+        }
+        else {
+            weaponCooldown.fillAmount = 0f;
+        }
     }
 
     public void Refresh() {
@@ -40,6 +45,6 @@ public class LoadoutHUD : MonoBehaviour
 
     private void GetLoadout() {
         currentAbility = Player.Instance.GetComponentInChildren<AbilityHandler>().GetAbility();
-        // currentWeapon = Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon();
+        currentWeapon = Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon();
     }
 }
