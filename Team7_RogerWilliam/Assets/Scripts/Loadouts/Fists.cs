@@ -34,9 +34,11 @@ public class Fists : Weapon {
 
                   // Knockback
                   AgentMover mover = enemy.GetComponent<AgentMover>();
-                  Vector2 knockback = (Vector2)(enemy.transform.position - transform.position);
-                  knockback.Normalize();
-                  mover.ApplyKnockback(knockback, knockBackForce);
+                  if (mover != null) {
+                        Vector2 knockback = (Vector2)(enemy.transform.position - transform.position);
+                        knockback.Normalize();
+                        mover.ApplyKnockback(knockback, knockBackForce);
+                  }
             }
       }
 }
