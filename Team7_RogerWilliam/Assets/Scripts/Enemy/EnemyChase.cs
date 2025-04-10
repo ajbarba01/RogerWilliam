@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AgentMover))]
 [RequireComponent(typeof(TopDownDirection))]
 public class EnemyChase : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float preferredDistance = 2f;
     [SerializeField] private float detectionRadius = 8f;
 
+    private AgentMover mover;
+
     public Animator anim;
 
     private float distance = 100f;
 
     private Vector2 movement;
-    private Rigidbody2D rb;
     private bool active = true;
     private bool towards = true;
     private bool hasLOS = false;
@@ -24,9 +26,13 @@ public class EnemyChase : MonoBehaviour
     void Awake()
     {
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
-        rb = GetComponent<Rigidbody2D>();
         movement = new Vector2(0, 0);
         anim = gameObject.GetComponent<Animator>();
+        mover = GetComponent<AgentMover>();
+    }
+    
+    private void Start() {
+        mover.SetMovespeed(moveSpeed);
     }
 
     void Update()
@@ -37,23 +43,26 @@ public class EnemyChase : MonoBehaviour
         
         if (hasLOS && !GetInDistance() && Distance() <= detectionRadius) {
             Vector3 direction = Player.GetPosition() - transform.position;
-            movement = new Vector2(direction.x, direction.y);
+
+            int directionTowards = -1;
+            if (towards) directionTowards = 1;
+
+            movement = new Vector2(direction.x, direction.y) * directionTowards;
             movement.Normalize();
+            
             anim.SetBool("Walk", true);
         }
         else {
             movement = new Vector2(0, 0);
             anim.SetBool("Walk", false);
         }
+
+        mover.SetMovement(movement * moveSpeed);
     }
 
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, Player.GetPosition());
-
-        int direction = -1;
-        if (towards) direction = 1;
-        rb.velocity = movement * moveSpeed * direction;
 
         int layerMask = ~LayerMask.GetMask("Enemy");
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Player.GetPosition() - transform.position, Distance(), layerMask);
@@ -67,10 +76,17 @@ public class EnemyChase : MonoBehaviour
     }
 
     public void SetActive(bool isActive) {
+        bool wasActive = active;
         active = isActive;
 
-        if (!active) {
-            movement = new Vector2(0, 0);
+        if (active = wasActive) return;
+        
+        if (active) {
+            mover.Unfreeze();
+        }
+
+        else {
+            mover.Freeze();
         }
     }
 

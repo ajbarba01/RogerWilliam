@@ -208,6 +208,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8392577838987225713
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4621708676519041730, guid: 2d543911a9d9da64591765fad7f95207, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 100
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 4621708676519041730, guid: 2d543911a9d9da64591765fad7f95207, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -11,6 +11,7 @@ public class Health : MonoBehaviour {
     public static DamageSFX damageSFX;
 
     public UnityEvent onDeath;
+    public UnityEvent tookDamage;
 
     protected float health;
 
@@ -41,6 +42,8 @@ public class Health : MonoBehaviour {
     }
 
     public void TakeDamage(float damage) {
+        tookDamage.Invoke();
+        
         SetHealth(health - damage);
 
         if (damageSFX != null) {

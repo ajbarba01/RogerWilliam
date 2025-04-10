@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AgentMover))]
 [RequireComponent(typeof(TopDownDirection))]
 public class Player : MonoBehaviour
 {
     public static Player Instance;
     public static Health health;
 
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private AnimationManager anim;
+    [SerializeField] private Rigidbody2D rb;
     private TopDownDirection direction;
+    private AgentMover mover;
     
     private Vector2 movement;
     public bool isKnockbackActive = false;  
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
         Instance = this;
         movement = new Vector2(0, 0);
         direction = GetComponent<TopDownDirection>();
+        mover = GetComponent<AgentMover>();
     }
 
     private void Start() {
@@ -37,20 +39,19 @@ public class Player : MonoBehaviour
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            movement.Normalize();
-
-            
-            
+            mover.SetDirection(movement);
         }
+
+        // if (Input.GetKeyDown(KeyCode.K)) {
+        //     mover.ApplyKnockback(new Vector2(1, 1), 7f);
+        // }
     }
 
     void FixedUpdate()
     {
         if (!isKnockbackActive)  
         {
-            rb.velocity = movement * moveSpeed;
-
-            if (rb.velocity.sqrMagnitude != 0) {
+            if (mover.GetMovement() != Vector2.zero) {
                 anim.ChangeState("Player_Walk_" + direction.GetFacing());
             }
             else {
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
 
     public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength)
     {
-        isKnockbackActive = true; 
+        isKnockbackActive = true;
         rb.velocity = knockbackDirection * knockbackStrength;  
         StartCoroutine(StopKnockbackAfterDelay(0.2f));  
     }

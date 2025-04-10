@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(EnemyChase))]
 public class EnemyMelee : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void Start() {
         enemyChase.SetDistance(attackRange);
+        GetComponent<Health>().tookDamage.AddListener(Damaged);
     }
 
     void Update()
@@ -65,6 +67,13 @@ public class EnemyMelee : MonoBehaviour
             anim.SetBool("Attack", true);
             Player.health.TakeDamage(attackDamage);
             anim.SetBool("Attack", false);
+        }
+    }
+
+    void Damaged() {
+        if (attacking) {
+            attacking = false;
+            attackChannel = 0f;
         }
     }
 }
