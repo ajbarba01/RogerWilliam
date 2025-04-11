@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class FireBreath : Ability
 {
-    public float damage = 10f; // Amount of damage dealt per second
-    public float zoneWidth = 3f; // Width of the damage zone
-    public float zoneLength = 5f; // Length of the damage zone
-    public LayerMask enemyLayer; // Define what is considered an enemy
-    public GameObject fireEffect; // Assign the fire effect sprite in the Inspector
+    [SerializeField] private float damage = 30f; // Amount of damage dealt per second
+    // public float zoneWidth = 3f; // Width of the damage zone
+    // public float zoneLength = 5f; // Length of the damage zone
+    [SerializeField] private LayerMask enemyLayer; // Define what is considered an enemy
+    [SerializeField] private GameObject fireEffect; // Assign the fire effect sprite in the Inspector
 
     private Collider2D[] enemyHits = new Collider2D[20];
-
-    private void Awake() {
-        cooldown = 15f;
-        duration = 5f;
-    }
 
     void Start()
     {
@@ -38,6 +33,12 @@ public class FireBreath : Ability
 
         while (channeling)
         {
+            // Move fire effect;
+            Vector3 direction = Util.TowardsMouse(transform.position);
+
+            fireEffect.transform.position = transform.position + direction * 2f;
+            fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
+
             DealDamageInZone();
             yield return null;
         }
@@ -62,25 +63,27 @@ public class FireBreath : Ability
 
     private int DetectEnemies()
     {
-        Vector2 center = (Vector2)(transform.position + transform.forward * (zoneLength / 2));
-        Vector2 halfExtents = new Vector3(zoneWidth / 2, zoneLength / 2);
+        // Vector2 center = (Vector2)(transform.position + transform.forward * (zoneLength / 2));
+        // Vector2 halfExtents = new Vector3(zoneWidth / 2, zoneLength / 2);
 
-        int hitCount = Physics2D.OverlapBoxNonAlloc(
-        center,
-        halfExtents,
-        0,
-        enemyHits,
-        enemyLayer
-        );
+        // int hitCount = Physics2D.OverlapBoxNonAlloc(
+        // center,
+        // halfExtents,
+        // 0,
+        // enemyHits,
+        // enemyLayer
+        // );
+
+        int hitCount = Physics2D.OverlapCircleNonAlloc(fireEffect.transform.position, 1f, enemyHits, enemyLayer);
 
         return hitCount;
     }
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.matrix = Matrix4x4.TRS(transform.position + transform.forward * (zoneLength / 2), transform.rotation, Vector3.one);
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(zoneWidth, 2f, zoneLength));
-    }
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.matrix = Matrix4x4.TRS(transform.position + transform.forward * (zoneLength / 2), transform.rotation, Vector3.one);
+    //     Gizmos.DrawWireCube(Vector3.zero, new Vector3(zoneWidth, 2f, zoneLength));
+    // }
     
 }

@@ -6,6 +6,10 @@ using UnityEngine;
 public class AgentMover : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
+
+    // Between 0 and 1, with 0 being a rock
+    [SerializeField] private float knockbackResistance; 
+
     private Rigidbody2D rb;
     private Vector2 direction;
     private Vector2 movement;
@@ -54,11 +58,35 @@ public class AgentMover : MonoBehaviour
         StartCoroutine(_ApplyKnockback(knockbackDirection, knockbackStrength));
     }
 
+    // private IEnumerator _ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength) {
+    //     Freeze();
+    //     rb.drag = 10f;
+    //     rb.velocity = knockbackDirection * knockbackStrength;
+    //     yield return new WaitForSeconds(0.2f);
+    //     rb.drag = 0f;
+    //     Unfreeze();
+    // }
+
     private IEnumerator _ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength) {
         Freeze();
-        rb.velocity = knockbackDirection * knockbackStrength;
-        yield return new WaitForSeconds(0.2f);
-        rb.velocity = Vector2.zero;
+
+        float initialDrag = rb.drag;
+        rb.drag = 10f;
+
+        float duration = 0.3f;
+        duration *= (1 - knockbackResistance);
+
+        float durationProgress = duration;
+
+        knockbackStrength *= (1 - knockbackResistance);
+
+        while (durationProgress > 0f) {
+            durationProgress -= Time.deltaTime;
+            rb.velocity = (durationProgress / duration) * (knockbackDirection * knockbackStrength);
+            yield return null;
+        }
+
+        rb.drag = initialDrag;
         Unfreeze();
     }
 

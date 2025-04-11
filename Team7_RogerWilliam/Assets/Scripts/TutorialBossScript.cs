@@ -56,7 +56,7 @@ public class TutorialBossScript : MonoBehaviour
 
             Vector2 knockbackDirection = player.transform.position - transform.position;
             knockbackDirection.Normalize();
-            player.GetComponent<Player>().ApplyKnockback(knockbackDirection, knockBack);
+            player.GetComponent<AgentMover>().ApplyKnockback(knockbackDirection, knockBack);
 
             Debug.Log("Knockback applied");
         }

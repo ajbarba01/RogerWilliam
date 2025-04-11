@@ -9,19 +9,28 @@ public class Fists : Weapon {
       [SerializeField] public float attackRange = 0.5f;
       [SerializeField] public int attackDamage = 40;
       [SerializeField] public LayerMask enemyLayers;
+      [SerializeField] private AudioSource punchSFX;
+      [SerializeField] private GameObject punchVFX;
 
-      private float knockBackForce = 10f;
+      private float knockBackForce = 15f;
 
-      public AudioSource punchSFX;
 
       private void Awake() {
             cooldown = 0.5f;
+      }
+
+      private void Update() {
+            Vector3 targetPosition = transform.position + Util.TowardsMouse(transform.position) * 1f;
+
+            attackPt.position = targetPosition;
       }
 
       public override void OnAttack() {
             if (punchSFX != null && punchSFX.isPlaying == false){
                   punchSFX.Play();
             }
+            
+            Destroy(Instantiate(punchVFX, attackPt.position, Quaternion.identity), 0.2f);
                               
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 

@@ -128,7 +128,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -257,6 +257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  tookDamage:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &6845328341006671629
