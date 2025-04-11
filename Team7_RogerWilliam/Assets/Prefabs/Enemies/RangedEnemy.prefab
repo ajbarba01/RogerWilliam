@@ -101,7 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 2
-  attackDamage: 10
   attackRange: 6
   scareDist: 3
 --- !u!114 &2274634605320094883
@@ -118,7 +117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7906959840049907562, guid: 01a3aac10d84042929357c73f8e70125, type: 3}
   firePoint: {fileID: 8609324483035257926}
-  attackCooldown: 1
 --- !u!114 &3645484077703382664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +133,8 @@ MonoBehaviour:
   maxMoveSpeed: 2.5
   moveSpeed: 0
   preferredDistance: 5
+  detectionRadius: 8
+  anim: {fileID: 0}
 --- !u!4 &8609324483035257926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7399255972712699121, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}

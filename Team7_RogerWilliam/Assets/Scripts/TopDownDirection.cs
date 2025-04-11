@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class TopDownDirection : MonoBehaviour
 {
+    [SerializeField] private Transform art;
     private Rigidbody2D rb;
     private string direction = "Front";
     private string facing = "Front";
@@ -35,16 +36,20 @@ public class TopDownDirection : MonoBehaviour
         else if (movement.x > 0) {
             direction = "Right";
             facing = "Side";
-            Vector3 newScale = transform.localScale;
-            newScale.x = 1.0f;
-            transform.localScale = newScale;
+            if (art != null) {
+                Vector3 newScale = art.localScale;
+                newScale.x = 1.0f;
+                art.localScale = newScale;
+            }  
         } 
         else if (movement.x < 0) {
             direction = "Left";
             facing = "Side";
-            Vector3 newScale = transform.localScale;
-            newScale.x = -1.0f;
-            transform.localScale = newScale;
+            if (art != null) {
+                Vector3 newScale = art.localScale;
+                newScale.x = -1.0f;
+                art.localScale = newScale;
+            }
         }
     }
 

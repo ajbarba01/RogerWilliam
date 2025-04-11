@@ -8,7 +8,7 @@ public class Player_EndKnockBack: MonoBehaviour
 
        public void EndKnockBack(){
               Player playerScript = gameObject.GetComponent<Player>();
-              playerScript.isKnockbackActive = false;
+              // playerScript.isKnockbackActive = false;
               playerRB = gameObject.GetComponent<Rigidbody2D>();
               StartCoroutine(StopKnockBack(playerRB));
        }
@@ -16,7 +16,7 @@ public class Player_EndKnockBack: MonoBehaviour
        IEnumerator StopKnockBack(Rigidbody2D myRB){
               yield return new WaitForSeconds(0.2f);
               Player playerScript = gameObject.GetComponent<Player>();
-              playerScript.isKnockbackActive = false;
+              // playerScript.isKnockbackActive = false;
               // myRB.velocity= new Vector3(0,0,0);
        }
 }
