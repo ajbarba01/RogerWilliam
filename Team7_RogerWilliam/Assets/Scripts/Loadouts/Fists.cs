@@ -30,8 +30,11 @@ public class Fists : Weapon {
                   punchSFX.Play();
             }
             
-            Destroy(Instantiate(punchVFX, attackPt.position, Quaternion.identity), 0.2f);
-                              
+            Quaternion rot = Util.QuaternionOfVector3(attackPt.localPosition, -90f);
+            GameObject punch = Instantiate(punchVFX, attackPt.position, rot);
+            float animLength = punch.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+            Destroy(punch, animLength);
+            
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies) {

@@ -139,18 +139,6 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 824792526}
-    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
-      propertyPath: flashColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
-      propertyPath: flashColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
-      propertyPath: flashColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4882424763120507927, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: m_RootOrder
       value: 2
