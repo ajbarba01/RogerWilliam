@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1286870611318661990}
   - component: {fileID: 898801496431799236}
   - component: {fileID: 6845328341006671629}
+  - component: {fileID: 5868824148577717403}
   m_Layer: 6
   m_Name: TargetDummy
   m_TagString: Enemy
@@ -274,6 +275,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fdb3cbeed46754abba4395be352570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5868824148577717403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042881145514726771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c303db026b4830a4eb187223aaccf08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  spriteRenderer: {fileID: 7839907921070713000}
+  health: {fileID: 898801496431799236}
 --- !u!1001 &5569358197208534372
 PrefabInstance:
   m_ObjectHideFlags: 0

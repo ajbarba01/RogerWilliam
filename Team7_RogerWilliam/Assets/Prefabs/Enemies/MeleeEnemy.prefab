@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 5150451799459543671}
   - component: {fileID: 1385606772897501140}
   - component: {fileID: 6940840717702989241}
+  - component: {fileID: 2768249325191831170}
+  - component: {fileID: 2114324179697980892}
   m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -129,6 +131,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2089916773471608194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +213,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  art: {fileID: 0}
+--- !u!114 &2768249325191831170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942118541295082568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603c026687c2dcb45bc5db8d95af49dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  knockbackResistance: 0
+--- !u!114 &2114324179697980892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942118541295082568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c303db026b4830a4eb187223aaccf08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  spriteRenderer: {fileID: 4421326837406588113}
+  health: {fileID: 4001342048714713987}
 --- !u!1 &951648529272508137
 GameObject:
   m_ObjectHideFlags: 0

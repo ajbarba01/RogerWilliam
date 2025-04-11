@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &113162126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6956063942710156782, guid: 62529443ce631714db9def64739b9022, type: 3}
-  m_PrefabInstance: {fileID: 228232758}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &113162134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113162126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d62259f31ef975f4aadedbfc02a24857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &228232758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +134,22 @@ PrefabInstance:
     - target: {fileID: 2655328090908501791, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: currentWeapon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 824792526}
+    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: flashColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: flashColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695385012628232541, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: flashColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4882424763120507927, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: m_RootOrder
@@ -211,10 +210,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6956063942710156782, guid: 62529443ce631714db9def64739b9022, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 113162134}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62529443ce631714db9def64739b9022, type: 3}
 --- !u!224 &412730196 stripped
 RectTransform:
