@@ -50,7 +50,7 @@ MonoBehaviour:
       m_Calls: []
   cooldown: 10
   duration: 3
-  damage: 30
+  damage: 50
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
