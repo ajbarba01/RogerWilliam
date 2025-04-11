@@ -10,6 +10,9 @@ public class Health : MonoBehaviour {
 
     public static DamageSFX damageSFX;
 
+    public UnityEvent beforeDeath;
+
+    // Should only be used to destroy object
     public UnityEvent onDeath;
     public UnityEvent tookDamage;
 
@@ -64,6 +67,7 @@ public class Health : MonoBehaviour {
     }
 
     void Die() {
+        beforeDeath.Invoke();
         onDeath.Invoke();
     }
 }

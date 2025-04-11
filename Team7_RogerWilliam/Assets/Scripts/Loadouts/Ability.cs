@@ -45,7 +45,7 @@ public abstract class Ability : Loadout
         channeling = true;
         while (durationProgress < duration) {
             if (!channeling) {
-                OnInterrupt();
+                Interrupt();
                 yield break;
             }
 
@@ -81,5 +81,10 @@ public abstract class Ability : Loadout
     public void RefreshCooldown() {
         onCooldown = false;
         cooldownProgress = 0f;
+    }
+
+    private void Interrupt() {
+        Warning.ShowWarning("Ability Interrupted");
+        OnInterrupt();
     }
 }

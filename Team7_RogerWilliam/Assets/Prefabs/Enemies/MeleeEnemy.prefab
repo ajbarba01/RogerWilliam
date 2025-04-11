@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6940840717702989241}
   - component: {fileID: 2768249325191831170}
   - component: {fileID: 2114324179697980892}
+  - component: {fileID: 8651212645525667645}
   m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -128,6 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  beforeDeath:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -146,6 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
+  art: {fileID: 951648529272508137}
 --- !u!95 &5785432685666933776
 Animator:
   serializedVersion: 5
@@ -244,6 +250,20 @@ MonoBehaviour:
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 4421326837406588113}
   health: {fileID: 4001342048714713987}
+--- !u!114 &8651212645525667645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942118541295082568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e9ad6ff3a169441b388f10500f6b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  art: {fileID: 951648529272508137}
+  deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
 --- !u!1 &951648529272508137
 GameObject:
   m_ObjectHideFlags: 0

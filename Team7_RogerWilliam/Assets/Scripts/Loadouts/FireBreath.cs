@@ -31,8 +31,14 @@ public class FireBreath : Ability
             fireEffect.SetActive(true);
         }
 
+        Player.Instance.PauseMovement();
+
         while (channeling)
         {
+            if (Player.Instance.moving) {
+                channeling = false;
+                break;
+            }
             // Move fire effect;
             Vector3 direction = Util.TowardsMouse(transform.position);
 
@@ -63,17 +69,6 @@ public class FireBreath : Ability
 
     private int DetectEnemies()
     {
-        // Vector2 center = (Vector2)(transform.position + transform.forward * (zoneLength / 2));
-        // Vector2 halfExtents = new Vector3(zoneWidth / 2, zoneLength / 2);
-
-        // int hitCount = Physics2D.OverlapBoxNonAlloc(
-        // center,
-        // halfExtents,
-        // 0,
-        // enemyHits,
-        // enemyLayer
-        // );
-
         int hitCount = Physics2D.OverlapCircleNonAlloc(fireEffect.transform.position, 1f, enemyHits, enemyLayer);
 
         return hitCount;

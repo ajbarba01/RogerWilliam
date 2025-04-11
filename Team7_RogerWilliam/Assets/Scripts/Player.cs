@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     
     private Vector2 movement;
 
+    private bool movementPaused = false;
+    public bool moving = false;
+
     private void Awake() {
         Instance = this;
         movement = new Vector2(0, 0);
@@ -36,7 +39,18 @@ public class Player : MonoBehaviour
         
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        mover.SetDirection(movement);
+        
+        if (movement == Vector2.zero) {
+            movementPaused = false;
+        }
+
+        if (!movementPaused) {
+            mover.SetDirection(movement);
+            moving = true;
+        }
+        else {
+            mover.SetMovement(Vector2.zero);
+        }
     }
 
     void FixedUpdate()
@@ -49,12 +63,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    // public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength)
-    // {
-    //     isKnockbackActive = true;
-    //     rb.velocity = knockbackDirection * knockbackStrength;  
-    //     StartCoroutine(StopKnockbackAfterDelay(0.2f));  
-    // }
+    public void PauseMovement() {
+        movementPaused = true;
+        moving = false;
+    }
+
 
     public void ApplyFreeze(float delay) {
         mover.Freeze();
@@ -66,18 +79,6 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(delay);
         mover.Unfreeze();
     }
-
-    // private IEnumerator StopKnockbackAfterDelay(float delay)
-    // {
-    //     yield return new WaitForSeconds(delay);
-    //     isKnockbackActive = false; 
-    //     if (mover.GetMovement() != Vector2.zero) {
-    //         anim.ChangeState("Player_Walk_" + direction.GetFacing());
-    //     }
-    //     else {
-    //         anim.ChangeState("Player_Idle_" + direction.GetFacing());
-    //     }
-    // }
 
     public static Vector3 GetPosition() {
         return Instance.transform.position;
