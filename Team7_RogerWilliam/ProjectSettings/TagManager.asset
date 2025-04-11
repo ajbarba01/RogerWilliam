@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Wall
   - HotRod
+  - MonologueManager
+  - IceCube
   layers:
   - Default
   - TransparentFX

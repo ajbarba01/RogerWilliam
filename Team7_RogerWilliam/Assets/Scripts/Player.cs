@@ -67,6 +67,17 @@ public class Player : MonoBehaviour
         StartCoroutine(StopKnockbackAfterDelay(0.2f));  
     }
 
+    public void ApplyFreeze(float delay) {
+        mover.Freeze();
+        StartCoroutine(UnFreezeAfterDelay(delay));
+    }
+
+    private IEnumerator UnFreezeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        mover.Unfreeze();
+    }
+
     private IEnumerator StopKnockbackAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);

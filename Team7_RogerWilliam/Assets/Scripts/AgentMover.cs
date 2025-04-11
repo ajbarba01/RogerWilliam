@@ -11,6 +11,7 @@ public class AgentMover : MonoBehaviour
     private Vector2 movement;
 
     private bool frozen = false;
+    private bool trueFrozen = false;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -36,10 +37,12 @@ public class AgentMover : MonoBehaviour
 
     public void Freeze() {
         frozen = true;
+        trueFrozen = true;
     }
 
     public void Unfreeze() {
         frozen = false;
+        trueFrozen = false;
     }
 
     public void SetMovespeed(float newSpeed) {
