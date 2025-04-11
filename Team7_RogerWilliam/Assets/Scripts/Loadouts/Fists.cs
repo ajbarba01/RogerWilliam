@@ -20,22 +20,9 @@ public class Fists : Weapon {
       }
 
       private void Update() {
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mouseWorld.z = transform.position.z;
-
-            Vector3 direction = (mouseWorld - transform.position).normalized;
-            Vector3 targetPosition = transform.position + direction * 1f;
+            Vector3 targetPosition = transform.position + Util.TowardsMouse(transform.position) * 1f;
 
             attackPt.position = targetPosition;
-      }
-
-      void OnDrawGizmos()
-      {
-            if (attackPt != null)
-            {
-                  Gizmos.color = Color.red;
-                  Gizmos.DrawWireSphere(attackPt.position, 1f);
-            }
       }
 
       public override void OnAttack() {
@@ -43,7 +30,6 @@ public class Fists : Weapon {
                   punchSFX.Play();
             }
             
-            Debug.Log(punchVFX == null);
             Destroy(Instantiate(punchVFX, attackPt.position, Quaternion.identity), 0.2f);
                               
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);

@@ -7,11 +7,11 @@ public abstract class Ability : Loadout
 {
     public UnityEvent<Health> onEnemyHit;
 
-    protected float cooldown;
+    [SerializeField] protected float cooldown;
     protected float cooldownProgress;
     protected bool onCooldown = false;
 
-    protected float duration = 0f;
+    [SerializeField] protected float duration = 0f;
     protected float durationProgress;
 
     protected bool channeling;

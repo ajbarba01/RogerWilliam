@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3895810237728464365}
+  - {fileID: 2179343766627206629}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48,15 +48,14 @@ MonoBehaviour:
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
-  damage: 10
-  zoneWidth: 3
-  zoneLength: 5
+  cooldown: 10
+  duration: 3
+  damage: 30
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  attackDuration: 10
-  fireEffect: {fileID: 4335441627019464581}
---- !u!1001 &6069175239604985958
+  fireEffect: {fileID: 1442473967583205261}
+--- !u!1001 &8940821633168586862
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -81,22 +80,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -106,24 +89,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 7498668794469920739, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
       propertyPath: m_Name
-      value: fire_effect
+      value: FireEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
---- !u!4 &3895810237728464365 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-  m_PrefabInstance: {fileID: 6069175239604985958}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4335441627019464581 stripped
+--- !u!1 &1442473967583205261 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7498668794469920739, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-  m_PrefabInstance: {fileID: 6069175239604985958}
+  m_PrefabInstance: {fileID: 8940821633168586862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2179343766627206629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
+  m_PrefabInstance: {fileID: 8940821633168586862}
   m_PrefabAsset: {fileID: 0}
