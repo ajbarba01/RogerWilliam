@@ -10,6 +10,8 @@ public class DamageFlash : MonoBehaviour
     [SerializeField] private Health health;
 
     private Material flashInstance;
+    private float cooldown = 0.15f;
+    private bool onCooldown = false;
 
     private float duration = 0.2f;
     private bool flashing = false;
@@ -19,7 +21,7 @@ public class DamageFlash : MonoBehaviour
     }
 
     void Flash() {
-        if (flashing) return;
+        if (flashing || onCooldown) return;
         StartCoroutine(_Flash());
     }
 
@@ -47,9 +49,19 @@ public class DamageFlash : MonoBehaviour
         spriteRenderer.material = originalMat;
 
         flashing = false;
+
+        StartCoroutine(Cooldown());
     }
 
     void SetFlashAmount(float amount) {
         flashInstance.SetFloat("_FlashAmount", amount);
+    }
+
+    private IEnumerator Cooldown() {
+        onCooldown = true;
+
+        yield return new WaitForSeconds(cooldown);
+
+        onCooldown = false;
     }
 }
