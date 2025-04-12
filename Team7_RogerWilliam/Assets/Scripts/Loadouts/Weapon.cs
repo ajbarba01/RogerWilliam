@@ -12,6 +12,14 @@ public abstract class Weapon : Loadout {
     protected float cooldownProgress;
     protected bool onCooldown = false;
 
+    protected AnimationManager anim;
+    protected AgentMover mover;
+
+    public void Initialize(AnimationManager animManage, AgentMover agentMover) {
+        anim = animManage;
+        mover = agentMover;
+    }
+
     public float GetCooldown() {
         return cooldownProgress / cooldown;
     }

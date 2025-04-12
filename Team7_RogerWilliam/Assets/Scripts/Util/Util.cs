@@ -18,4 +18,12 @@ public class Util : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0f, 0f, angle + offset);
         return rot;
     }
+
+    public static int MouseFacing(Vector3 fromPosition)
+    {
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mouseWorld - fromPosition;
+
+        return direction.x >= 0 ? 1 : -1;
+    }
 }

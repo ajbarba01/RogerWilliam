@@ -1679,6 +1679,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
+--- !u!114 &464973578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5132436826732264219, guid: 39d1d9889e3b7814ab7d4ff5172cac34, type: 3}
+  m_PrefabInstance: {fileID: 1507990175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &494907888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6257718617765951313, guid: e43d7daac9bd466418f87e6551ac349b, type: 3}
@@ -10354,6 +10365,10 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1558957019}
+    - target: {fileID: 2904647974880810547, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: cooldownBar
+      value: 
+      objectReference: {fileID: 464973578}
     - target: {fileID: 3730966856232128516, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
       value: -0.00029993057
@@ -29008,6 +29023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 0}
+  art: {fileID: 0}
 --- !u!114 &1994138652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29021,6 +29038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 80
+  beforeDeath:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []

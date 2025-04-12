@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AbilityHandler : MonoBehaviour
 {
     private Ability currentAbility;
     [SerializeField] private LastHitEnemy lastHit;
+
+    [SerializeField] private WeaponHandler weaponHandler;
+    [SerializeField] private AnimationManager playerAnim;
+    [SerializeField] private AgentMover mover;
+
+    private bool paused;
+
+    // public UnityEvent startChannel, stopChannel;
 
     void Start()
     {
@@ -14,7 +23,9 @@ public class AbilityHandler : MonoBehaviour
 
     void Update()
     {
-        if (currentAbility != null && Input.GetKeyDown(KeyCode.Space)) {
+        if (paused) return;
+
+        if (currentAbility != null && Input.GetMouseButtonDown(1)) {
             if (!currentAbility.OnCooldown()){
                 currentAbility.Activate();
             }
@@ -38,6 +49,7 @@ public class AbilityHandler : MonoBehaviour
         
         currentAbility = newAbility.GetComponent<Ability>();
         currentAbility.onEnemyHit.AddListener(lastHit.EnemyHit);
+        currentAbility.Initialize(playerAnim, mover);
     }
 
     public Ability GetAbility() {
@@ -50,5 +62,15 @@ public class AbilityHandler : MonoBehaviour
             Destroy(currentAbility);
         }
 
+    }
+
+    public void InterruptAbility() {
+        if (currentAbility != null) {
+            currentAbility.StopChannel();
+        }
+    }
+
+    public void SetPause(bool pause) {
+        paused = pause;
     }
 }

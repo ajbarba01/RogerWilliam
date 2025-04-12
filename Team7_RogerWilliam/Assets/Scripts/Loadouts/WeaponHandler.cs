@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponHandler : MonoBehaviour
 {
     private Weapon currentWeapon;
     [SerializeField] private LastHitEnemy lastHit;
+    [SerializeField] private AnimationManager playerAnim;
+    [SerializeField] private AgentMover mover;
+
+
+    public UnityEvent onAttack;
+
+    private bool paused;
 
     void Start()
     {
@@ -14,8 +22,11 @@ public class WeaponHandler : MonoBehaviour
 
     void Update()
     {
+        if (paused) return;
+
         if (currentWeapon != null && Input.GetMouseButton(0) && !currentWeapon.OnCooldown()){
             currentWeapon.Attack();
+            onAttack.Invoke();
         }
     }
 
@@ -30,6 +41,7 @@ public class WeaponHandler : MonoBehaviour
         
         currentWeapon = newWeapon.GetComponent<Weapon>();
         currentWeapon.onEnemyHit.AddListener(lastHit.EnemyHit);
+        currentWeapon.Initialize(playerAnim, mover);
     }
 
     public Weapon GetWeapon() {
@@ -42,5 +54,9 @@ public class WeaponHandler : MonoBehaviour
             Destroy(currentWeapon);
         }
 
+    }
+
+    public void SetPause(bool pause) {
+        paused = pause;
     }
 }

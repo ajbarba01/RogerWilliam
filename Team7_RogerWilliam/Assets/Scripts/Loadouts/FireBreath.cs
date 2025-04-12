@@ -36,11 +36,12 @@ public class FireBreath : Ability
         while (channeling)
         {
             if (Player.Instance.moving) {
-                channeling = false;
+                StopChannel();
                 break;
             }
             // Move fire effect;
             Vector3 direction = Util.TowardsMouse(transform.position);
+            mover.FaceTowardsMouse(transform.position);
 
             fireEffect.transform.position = transform.position + direction * 2f;
             fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
