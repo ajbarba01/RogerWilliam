@@ -19,6 +19,11 @@ public class Util : MonoBehaviour
         return rot;
     }
 
+    public static Quaternion QuaternionTowardsMouse(Vector3 origin, float offset=0f) {
+        Vector3 dir = TowardsMouse(origin);
+        return QuaternionOfVector3(dir, offset);
+    }
+
     public static int MouseFacing(Vector3 fromPosition)
     {
         Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);

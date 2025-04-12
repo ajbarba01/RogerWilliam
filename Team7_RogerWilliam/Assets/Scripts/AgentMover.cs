@@ -49,6 +49,8 @@ public class AgentMover : MonoBehaviour
     }
 
     public void Freeze() {
+        movement = Vector2.zero;
+        direction = Vector2.zero;
         frozen = true;
         trueFrozen = true;
     }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
-  m_Name: Rocks
+  m_Name: Slingshot
   m_EditorClassIdentifier: 
-  tooltipText: Throwing Rocks
+  tooltipText: Slingshot
   nickname: The Rock
-  icon: {fileID: 21300000, guid: 6812144e9b547554aaeada53264cafe0, type: 3}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6a25aa62c6cb70844a149649b7c62ca0, type: 3}
+  prefab: {fileID: 4469930888496290003, guid: 03baf88cc2f7c0048adf853e934665c8, type: 3}

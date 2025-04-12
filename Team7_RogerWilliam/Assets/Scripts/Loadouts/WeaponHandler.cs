@@ -22,7 +22,7 @@ public class WeaponHandler : MonoBehaviour
 
     void Update()
     {
-        if (paused) return;
+        if (Pause.isPaused || paused) return;
 
         if (currentWeapon != null && Input.GetMouseButton(0) && !currentWeapon.OnCooldown()){
             currentWeapon.Attack();

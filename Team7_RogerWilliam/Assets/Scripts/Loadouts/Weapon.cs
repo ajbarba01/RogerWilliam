@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public abstract class Weapon : Loadout {
     public UnityEvent<Health> onEnemyHit;
-    protected float cooldown;
+    [SerializeField] protected float cooldown;
     public abstract void OnAttack();
 
     protected float cooldownProgress;
@@ -24,11 +24,17 @@ public abstract class Weapon : Loadout {
         return cooldownProgress / cooldown;
     }
 
+    public virtual float HUDFill() {
+        if (onCooldown) return 1 - GetCooldown();
+
+        return 0;
+    }
+
     public bool OnCooldown() {
         return onCooldown;
     }
 
-    public void Attack() {
+    public virtual void Attack() {
         OnAttack();
         StartCoroutine(Cooldown());
     }

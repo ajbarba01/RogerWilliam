@@ -23,7 +23,7 @@ public class AbilityHandler : MonoBehaviour
 
     void Update()
     {
-        if (paused) return;
+        if (Pause.isPaused || paused) return;
 
         if (currentAbility != null && Input.GetMouseButtonDown(1)) {
             if (!currentAbility.OnCooldown()){

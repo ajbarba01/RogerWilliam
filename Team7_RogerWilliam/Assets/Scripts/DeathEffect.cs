@@ -19,8 +19,6 @@ public class DeathEffect : MonoBehaviour
     }
 
     private IEnumerator Lifetime() {
-        Debug.Log("DEATHH");
-
         durationProgress = duration;
         while (durationProgress > 0f) {
             float alpha = Mathf.Lerp(0f, 1f, durationProgress / duration);

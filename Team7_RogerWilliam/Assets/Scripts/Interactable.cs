@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
     private Collider2D interactArea;
 
     void Update() {
+        if (Pause.isPaused) return;
         if (inRange && Input.GetKeyDown(key)) {
             onInteract.Invoke();
         }

@@ -33,8 +33,8 @@ public class LoadoutHUD : MonoBehaviour
             abilityCooldown.fillAmount = 0f;
         }
 
-        if (currentWeapon != null && currentWeapon.OnCooldown()) {
-            weaponCooldown.fillAmount = 1 - currentWeapon.GetCooldown();
+        if (currentWeapon != null) {
+            weaponCooldown.fillAmount = currentWeapon.HUDFill();
         }
         else {
             weaponCooldown.fillAmount = 0f;

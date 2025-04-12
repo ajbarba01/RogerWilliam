@@ -14,11 +14,6 @@ public class Fists : Weapon {
 
       private float knockBackForce = 10f;
 
-
-      private void Awake() {
-            cooldown = 0.5f;
-      }
-
       private void Update() {
             Vector3 targetPosition = transform.position + Util.TowardsMouse(transform.position) * 1f;
 

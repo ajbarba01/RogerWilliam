@@ -48,6 +48,7 @@ MonoBehaviour:
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
+  cooldown: 0.5
   attackPt: {fileID: 4847195472637749049}
   attackRange: 0.5
   attackDamage: 20
