@@ -6,13 +6,14 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class AgentMover : MonoBehaviour
 {
-    [SerializeField] private AnimationManager anim;
 
     [SerializeField] private float moveSpeed;
 
     // Between 0 and 1, with 0 being a rock
     [SerializeField] private float knockbackResistance; 
     
+    
+    private AnimationManager anim;
     private Rigidbody2D rb;
     private Vector2 direction;
     private Vector2 movement;
@@ -26,6 +27,7 @@ public class AgentMover : MonoBehaviour
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<AnimationManager>();
     }
     
     public void SetDirection(Vector2 newDirection) {
@@ -119,6 +121,8 @@ public class AgentMover : MonoBehaviour
 
     public void SetFacing(int newFacing) {
         facing = newFacing;
+
+        if (anim == null) return;
         anim.SetFacing(facing);
     }
 

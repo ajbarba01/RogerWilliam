@@ -12,6 +12,7 @@ public class Roll : MonoBehaviour
     [SerializeField] private Image cooldownBar;
 
     private AgentMover mover;
+    private AnimationManager anim;
 
     private float rollProgress, cooldownProgress = 0f;
     private bool rolling, onCooldown = false;
@@ -20,6 +21,7 @@ public class Roll : MonoBehaviour
 
     private void Awake() {
         mover = GetComponent<AgentMover>();
+        anim = GetComponentInChildren<AnimationManager>();
         cooldownBar.fillAmount = 0f;
     }
 
@@ -36,6 +38,7 @@ public class Roll : MonoBehaviour
     private IEnumerator ActivateRoll() {
         rolling = true;
 
+        anim.PlayOnce("Player_Roll", rollDuration);
         // ALSO NEED TO PAUSE MOVEMENT
 
         Vector3 direction = mover.GetDirection();
