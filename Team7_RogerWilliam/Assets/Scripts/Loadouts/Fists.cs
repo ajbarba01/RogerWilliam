@@ -29,6 +29,9 @@ public class Fists : Weapon {
             if (punchSFX != null && punchSFX.isPlaying == false){
                   punchSFX.Play();
             }
+
+            mover.FaceTowardsMouse(transform.position);
+            anim.PlayOnce("Player_Punch");
             
             Quaternion rot = Util.QuaternionOfVector3(attackPt.localPosition, -90f);
             GameObject punch = Instantiate(punchVFX, attackPt.position, rot);

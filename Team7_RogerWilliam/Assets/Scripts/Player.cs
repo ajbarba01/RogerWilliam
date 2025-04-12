@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AgentMover))]
-[RequireComponent(typeof(TopDownDirection))]
+// [RequireComponent(typeof(TopDownDirection))]
 public class Player : MonoBehaviour
 {
     public static Player Instance;
@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private AnimationManager anim;
     [SerializeField] private Rigidbody2D rb;
-    private TopDownDirection direction;
+    // private TopDownDirection direction;
     private AgentMover mover;
     
     private Vector2 movement;
@@ -22,13 +22,13 @@ public class Player : MonoBehaviour
     private void Awake() {
         Instance = this;
         movement = new Vector2(0, 0);
-        direction = GetComponent<TopDownDirection>();
+        // direction = GetComponent<TopDownDirection>();
         mover = GetComponent<AgentMover>();
     }
 
     private void Start() {
         health = GameHandler.playerHealth;
-        anim.ChangeState("Player_Idle_Front");
+        anim.ChangeState("Player_Idle");
     }
 
     void Update()
@@ -46,7 +46,13 @@ public class Player : MonoBehaviour
 
         if (!movementPaused) {
             mover.SetDirection(movement);
-            moving = true;
+
+            if (movement != Vector2.zero) {
+                moving = true;
+            }
+            else {
+                moving = false;
+            }
         }
         else {
             mover.SetMovement(Vector2.zero);
@@ -56,10 +62,10 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         if (mover.GetMovement() != Vector2.zero) {
-            anim.ChangeState("Player_Walk_" + direction.GetFacing());
+            anim.ChangeState("Player_Walk");
         }
         else {
-            anim.ChangeState("Player_Idle_" + direction.GetFacing());
+            anim.ChangeState("Player_Idle");
         }
     }
 

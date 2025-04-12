@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class AgentMover : MonoBehaviour
 {
+    [SerializeField] private AnimationManager anim;
+
     [SerializeField] private float moveSpeed;
 
     // Between 0 and 1, with 0 being a rock
     [SerializeField] private float knockbackResistance; 
-
+    
     private Rigidbody2D rb;
     private Vector2 direction;
     private Vector2 movement;
 
+    public int facing { get; private set; } = 1;
+
     private bool frozen = false;
     private bool trueFrozen = false;
+
+    public UnityEvent onMove;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -93,6 +100,29 @@ public class AgentMover : MonoBehaviour
     private void FixedUpdate() {
         if (frozen) return;
 
+        if (movement != Vector2.zero) {
+            onMove.Invoke();
+        }
+
+        if (movement.x > 0) {
+            facing = 1;
+        }
+
+        else if (movement.x < 0) {
+            facing = -1;
+        }
+        
+        SetFacing(facing);
+
         rb.velocity = movement;
+    }
+
+    public void SetFacing(int newFacing) {
+        facing = newFacing;
+        anim.SetFacing(facing);
+    }
+
+    public void FaceTowardsMouse(Vector3 fromPos) {
+        SetFacing(Util.MouseFacing(fromPos));
     }
 }

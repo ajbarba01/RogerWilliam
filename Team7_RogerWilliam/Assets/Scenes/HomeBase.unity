@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 824792526}
+    - target: {fileID: 2904647974880810547, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: cooldownBar
+      value: 
+      objectReference: {fileID: 496232506}
     - target: {fileID: 4882424763120507927, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -327,6 +331,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7947020296838817160, guid: 756f5db2f01181c49bdf7963df71bbc5, type: 3}
   m_PrefabInstance: {fileID: 442416802}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &496232506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5132436826732264219, guid: 39d1d9889e3b7814ab7d4ff5172cac34, type: 3}
+  m_PrefabInstance: {fileID: 7211445825041435125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &755406799 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7947020296838817160, guid: 756f5db2f01181c49bdf7963df71bbc5, type: 3}
@@ -4257,67 +4272,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9199545994920527906, guid: 39d1d9889e3b7814ab7d4ff5172cac34, type: 3}
   m_PrefabInstance: {fileID: 7211445825041435125}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1621917768
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 942118541295082568, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_Name
-      value: MeleeEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
 --- !u!1001 &1686773772
 PrefabInstance:
   m_ObjectHideFlags: 0

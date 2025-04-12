@@ -14,10 +14,18 @@ public abstract class Ability : Loadout
     [SerializeField] protected float duration = 0f;
     protected float durationProgress;
 
-    protected bool channeling;
+    protected bool channeling { get; private set; }
 
     protected abstract void OnActivate();
     protected virtual void OnInterrupt() { }
+
+    protected AnimationManager anim;
+    protected AgentMover mover;
+
+    public void Initialize(AnimationManager animManage, AgentMover agentMover) {
+        anim = animManage;
+        mover = agentMover;
+    }
 
     public void Activate() {
         if (onCooldown || channeling) return;
