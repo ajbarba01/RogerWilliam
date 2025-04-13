@@ -137,7 +137,7 @@ MonoBehaviour:
   attackPt: {fileID: 2645037175199286841}
   maxCharge: 1
   minVelocity: 7
-  maxVelocity: 20
+  maxVelocity: 30
   minDamage: 3
   maxDamage: 30
   knockBackForce: 10

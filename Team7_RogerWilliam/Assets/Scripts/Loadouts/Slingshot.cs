@@ -79,10 +79,11 @@ public class Slingshot : Weapon
     }
 
     public void EnemyHit(GameObject projectile, GameObject enemy) {
-        mover = enemy.GetComponent<AgentMover>();
-        if (mover == null) return;
+        onEnemyHit.Invoke(enemy.GetComponent<Health>());
+        AgentMover enemyMover = enemy.GetComponent<AgentMover>();
+        if (enemyMover == null) return;
         Projectile proj = projectile.GetComponent<Projectile>();
         Vector3 direction = (Vector3)(proj.GetDirection());
-        mover.ApplyKnockback(direction, knockBackForce * proj.GetSpeed() / maxVelocity);
+        enemyMover.ApplyKnockback(direction, knockBackForce * proj.GetSpeed() / maxVelocity);
     }
 }

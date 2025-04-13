@@ -331,6 +331,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7947020296838817160, guid: 756f5db2f01181c49bdf7963df71bbc5, type: 3}
   m_PrefabInstance: {fileID: 442416802}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &477915190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678763066920795786, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
+  m_PrefabInstance: {fileID: 2111797640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &477915193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477915190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9449166a86015414ca084bc5f4c0c562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
+  - {fileID: 11400000, guid: 730b57ff4d7072748af808c08fd1f2eb, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
+  passives: []
+  weapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
+  ability: {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
+  passive: {fileID: 0}
 --- !u!114 &496232506 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5132436826732264219, guid: 39d1d9889e3b7814ab7d4ff5172cac34, type: 3}
@@ -6102,18 +6128,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6402578357179533640, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
-      propertyPath: currentWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: 730b57ff4d7072748af808c08fd1f2eb, type: 2}
-    - target: {fileID: 6402578357179533640, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
-      propertyPath: currentAbility
-      value: 
-      objectReference: {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 678763066920795786, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 477915193}
   m_SourcePrefab: {fileID: 100100000, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
 --- !u!1001 &3946048263689222331
 PrefabInstance:

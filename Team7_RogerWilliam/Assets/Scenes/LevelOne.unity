@@ -9582,7 +9582,7 @@ PrefabInstance:
     - target: {fileID: 6402578357179533640, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
       propertyPath: currentWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
+      objectReference: {fileID: 11400000, guid: 730b57ff4d7072748af808c08fd1f2eb, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

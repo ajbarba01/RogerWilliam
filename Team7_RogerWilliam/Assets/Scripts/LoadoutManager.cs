@@ -6,13 +6,9 @@ public class LoadoutManager : MonoBehaviour
 {
     public static LoadoutManager Instance;
     
-    private List<Weapon> unlockedWeapons;
-    private List<Ability> unlockedAbilities;
-    private List<Passive> unlockedPassives;
+    private HashSet<LoadoutOption> unlockedWeapons, unlockedAbilities, unlockedPassives;
     
-    [SerializeField] public LoadoutOption currentWeapon;
-    [SerializeField] public LoadoutOption currentAbility;
-    [SerializeField] public LoadoutOption currentPassive;
+    [SerializeField] public LoadoutOption currentWeapon, currentAbility, currentPassive;
 
     private void Awake() {
         DontDestroyOnLoad(this);
@@ -24,17 +20,19 @@ public class LoadoutManager : MonoBehaviour
         else {
             Destroy(gameObject);
         }
+
+        Reset();
     }
 
-    public void UnlockWeapon(Weapon newWeapon) {
+    public void UnlockWeapon(LoadoutOption newWeapon) {
         unlockedWeapons.Add(newWeapon);
     }
 
-    public void UnlockAbility(Ability newAbility) {
+    public void UnlockAbility(LoadoutOption newAbility) {
         unlockedAbilities.Add(newAbility);
     }
 
-    public void UnlockPassive(Passive newPassive) {
+    public void UnlockPassive(LoadoutOption newPassive) {
         unlockedPassives.Add(newPassive);
     }
 
@@ -43,8 +41,8 @@ public class LoadoutManager : MonoBehaviour
         currentAbility = null;
         currentPassive = null;
 
-        unlockedWeapons = new List<Weapon>();
-        unlockedAbilities = new List<Ability>();
-        unlockedPassives = new List<Passive>();
+        unlockedWeapons = new HashSet<LoadoutOption>();
+        unlockedAbilities = new HashSet<LoadoutOption>();
+        unlockedPassives = new HashSet<LoadoutOption>();
     }
 }
