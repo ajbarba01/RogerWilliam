@@ -15,9 +15,11 @@ public class WeaponHandler : MonoBehaviour
 
     private bool paused;
 
-    void Start()
+    void Awake()
     {
-        SetWeapon(LoadoutManager.Instance.currentWeapon.GetPrefab());
+        Debug.Log("WEAPON HANDLER LISTENING");
+
+        LoadoutManager.Instance.weaponUpdated.AddListener(SetWeapon);
     }
 
     void Update()
@@ -30,10 +32,12 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    void SetWeapon(GameObject weaponPrefab) {
-        if (weaponPrefab == null) {
+    void SetWeapon(LoadoutOption weapon) {
+        if (weapon == null || weapon.GetPrefab() == null) {
             return;
         }
+
+        GameObject weaponPrefab = weapon.GetPrefab();
 
         RemoveWeapon();
 

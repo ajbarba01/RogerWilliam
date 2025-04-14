@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
   m_Name: Fists
   m_EditorClassIdentifier: 
+  loadoutName: Fists
   tooltipText: Fists
   nickname: Roger Williams
   icon: {fileID: 21300000, guid: c4dc3e3e7882cb042a34d837a862609e, type: 3}

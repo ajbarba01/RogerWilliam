@@ -10,6 +10,8 @@ public class LoadoutStarter : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("LOADOUT STARTER RUN");
+
         foreach (LoadoutOption weapon in weapons) {
             if (weapon == null) continue;
             LoadoutManager.Instance.UnlockWeapon(weapon);
@@ -26,15 +28,15 @@ public class LoadoutStarter : MonoBehaviour
         }
 
         if (weapon != null) {
-            LoadoutManager.Instance.currentWeapon = weapon;
+            LoadoutManager.Instance.SetWeapon(weapon);
         }
         
         if (ability != null) {
-            LoadoutManager.Instance.currentAbility = ability;
+            LoadoutManager.Instance.SetAbility(ability);
         }
 
         if (passive != null) {
-            LoadoutManager.Instance.currentPassive = passive;
+            LoadoutManager.Instance.SetPassive(passive);
         }
     }
 }

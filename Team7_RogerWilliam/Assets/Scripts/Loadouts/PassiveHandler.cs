@@ -7,9 +7,9 @@ public class PassiveHandler : MonoBehaviour
     private Passive currentPassive;
     // [SerializeField] private LastHitEnemy lastHit;
 
-    void Start()
+    void Awake()
     {
-        SetPassive(LoadoutManager.Instance.currentPassive);
+        LoadoutManager.Instance.passiveUpdated.AddListener(SetPassive);
     }
 
     void SetPassive(LoadoutOption passive) {

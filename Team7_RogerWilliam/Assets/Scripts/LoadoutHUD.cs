@@ -16,13 +16,15 @@ public class LoadoutHUD : MonoBehaviour
     private Ability currentAbility;
     private Weapon currentWeapon;
     
-    void Start()
+    void Awake()
     {
-        // Ewww I hate the way I did this but I have no idea how else to call this function after all starts have been called.
-        // Could use unity event but i dont want to deal with that rn
-        Invoke("Refresh", 0.1f);
+        Debug.Log("LOADOUT HUD LISTENING");
 
         abilityChannel.SetActive(false);
+
+        LoadoutManager.Instance.postWeaponUpdated.AddListener(UpdateWeapon);
+        LoadoutManager.Instance.postAbilityUpdated.AddListener(UpdateAbility);
+        LoadoutManager.Instance.postPassiveUpdated.AddListener(UpdatePassive);
     }
 
     private void Update() {
@@ -58,16 +60,17 @@ public class LoadoutHUD : MonoBehaviour
         // }
     }
 
-    public void Refresh() {
-        weapon.SetOption(LoadoutManager.Instance.currentWeapon);
-        ability.SetOption(LoadoutManager.Instance.currentAbility);
-        passive.SetOption(LoadoutManager.Instance.currentPassive);
-
-        GetLoadout();
+    public void UpdateWeapon(LoadoutOption option) {
+        weapon.SetOption(option);
+        currentWeapon = Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon();
+    }
+    
+    public void UpdateAbility(LoadoutOption option) {
+        ability.SetOption(option);
+        currentAbility = Player.Instance.GetComponentInChildren<AbilityHandler>().GetAbility();
     }
 
-    private void GetLoadout() {
-        currentAbility = Player.Instance.GetComponentInChildren<AbilityHandler>().GetAbility();
-        currentWeapon = Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon();
+    public void UpdatePassive(LoadoutOption option) {
+        passive.SetOption(option);
     }
 }

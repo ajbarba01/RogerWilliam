@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class PopoutSelector : MonoBehaviour
@@ -8,10 +9,12 @@ public class PopoutSelector : MonoBehaviour
 
     [SerializeField] private PopoutOption[] options;
     [SerializeField] private TextMeshProUGUI title;
+    private HashSet<LoadoutOption> data;
     private bool visible = false;
-    private int active;
+    private LoadoutOption active;
 
-    // Start is called before the first frame update
+    public UnityEvent<LoadoutOption> newOption;
+
     void Start()
     {
         foreach (PopoutOption option in options) {
@@ -22,23 +25,48 @@ public class PopoutSelector : MonoBehaviour
         title.gameObject.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ToggleVisibility() {
         visible = !visible;
-        title.gameObject.SetActive(!visible);
 
-        foreach (PopoutOption option in options) {
-            option.gameObject.SetActive(visible);
+        if (visible) {
+            int i = 0;
+            foreach (LoadoutOption option in data) {
+                if (active.GetName() == option.GetName()) {
+                    continue;
+                }
+
+                options[i].gameObject.SetActive(true);
+                options[i].SetOption(option);
+                i++;
+            }
+
+            if (i != 0) {
+                title.gameObject.SetActive(false);
+            }
+        }
+
+        else {
+            foreach (PopoutOption option in options) {
+                option.gameObject.SetActive(false);
+            }
+
+            title.gameObject.SetActive(true);
         }
     }
 
-    public void SelectOption(int option) {
-        active = option;
+    public void SelectOption(LoadoutOption option) {
+        SetActive(option);
+        newOption.Invoke(active);
         ToggleVisibility();
+    }
+
+    public void SetActive(LoadoutOption newActive) {
+        active = newActive;
+    }
+
+    public void SetOptions(HashSet<LoadoutOption> newOptions) {
+
+        data = newOptions;
+        return;
     }
 }

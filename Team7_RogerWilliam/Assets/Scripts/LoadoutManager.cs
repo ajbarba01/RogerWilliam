@@ -1,27 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LoadoutManager : MonoBehaviour
 {
     public static LoadoutManager Instance;
     
-    private HashSet<LoadoutOption> unlockedWeapons, unlockedAbilities, unlockedPassives;
+    public HashSet<LoadoutOption> unlockedWeapons = new HashSet<LoadoutOption>();
+    public HashSet<LoadoutOption> unlockedAbilities = new HashSet<LoadoutOption>();
+    public HashSet<LoadoutOption> unlockedPassives = new HashSet<LoadoutOption>();
     
-    [SerializeField] public LoadoutOption currentWeapon, currentAbility, currentPassive;
+    [SerializeField] public LoadoutOption currentWeapon = null;
+    [SerializeField] public LoadoutOption currentAbility = null;
+    [SerializeField] public LoadoutOption currentPassive = null;
+
+    public UnityEvent<LoadoutOption> postWeaponUpdated, postAbilityUpdated, postPassiveUpdated;
+    public UnityEvent<LoadoutOption> weaponUpdated, abilityUpdated, passiveUpdated;
+
+    public bool shouldRelay = false;
 
     private void Awake() {
         DontDestroyOnLoad(this);
 
         if (Instance == null) {
             Instance = this;
+            shouldRelay = false;
+            Debug.Log("LOADOUT MANAGER CREATED");
         }
 
         else {
+            Instance.shouldRelay = true;
+        }
+    }
+
+    private void Start() {
+        if (Instance.shouldRelay) {
+            Instance.Relay();
+            Debug.Log("RELAYING");
+            Instance.shouldRelay = false;
             Destroy(gameObject);
         }
-
-        Reset();
     }
 
     public void UnlockWeapon(LoadoutOption newWeapon) {
@@ -34,6 +53,35 @@ public class LoadoutManager : MonoBehaviour
 
     public void UnlockPassive(LoadoutOption newPassive) {
         unlockedPassives.Add(newPassive);
+    }
+
+    public void SetWeapon(LoadoutOption weapon) {
+        weaponUpdated.Invoke(weapon);
+        postWeaponUpdated.Invoke(weapon);
+        currentWeapon = weapon;
+    }
+
+    public void SetAbility(LoadoutOption ability) {
+        abilityUpdated.Invoke(ability);
+        postAbilityUpdated.Invoke(ability);
+        currentAbility = ability;
+    }
+    
+    public void SetPassive(LoadoutOption passive) {
+        passiveUpdated.Invoke(passive);
+        postPassiveUpdated.Invoke(passive);
+        currentPassive = passive;
+    }
+
+    public void Relay() {
+        weaponUpdated.Invoke(currentWeapon);
+        postWeaponUpdated.Invoke(currentWeapon);
+
+        abilityUpdated.Invoke(currentAbility);
+        postAbilityUpdated.Invoke(currentAbility);
+
+        passiveUpdated.Invoke(currentPassive);
+        postPassiveUpdated.Invoke(currentPassive);
     }
 
     private void Reset() {

@@ -4306,10 +4306,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1480237949}
     m_Modifications:
-    - target: {fileID: 2244995010346796463, guid: 94497e5c400a1994994c192696502e0b, type: 3}
-      propertyPath: tooltipText
-      value: Doggy
-      objectReference: {fileID: 0}
     - target: {fileID: 2609108340942883518, guid: 94497e5c400a1994994c192696502e0b, type: 3}
       propertyPath: HUD
       value: 

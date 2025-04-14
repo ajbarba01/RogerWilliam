@@ -16,9 +16,11 @@ public class AbilityHandler : MonoBehaviour
 
     // public UnityEvent startChannel, stopChannel;
 
-    void Start()
+    void Awake()
     {
-        SetAbility(LoadoutManager.Instance.currentAbility);
+        Debug.Log("ABILITY HANDLER LISTENING");
+
+        LoadoutManager.Instance.abilityUpdated.AddListener(SetAbility);
     }
 
     void Update()
