@@ -19,7 +19,7 @@ public class LoadoutSelect : Menu
     // private PassiveHandler passiveHandler;
 
     private void Awake() {
-        Debug.Log("ABILITY SELECT LISTENING");
+        // Debug.Log("ABILITY SELECT LISTENING");
 
         accessKey = KeyCode.N;
         weaponOpen = false;
@@ -81,7 +81,6 @@ public class LoadoutSelect : Menu
     }
 
     public void UpdateWeapon(LoadoutOption option) {
-        Debug.Log("WEAPON UPDATE");
         weapon.SetOption(option);
         weaponSlots.SetOptions(LoadoutManager.Instance.unlockedWeapons);
         weaponSlots.SetActive(option);

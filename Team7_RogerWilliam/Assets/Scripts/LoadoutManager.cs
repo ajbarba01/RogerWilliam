@@ -18,27 +18,26 @@ public class LoadoutManager : MonoBehaviour
     public UnityEvent<LoadoutOption> postWeaponUpdated, postAbilityUpdated, postPassiveUpdated;
     public UnityEvent<LoadoutOption> weaponUpdated, abilityUpdated, passiveUpdated;
 
-    public bool shouldRelay = false;
+    public bool duplicate = false;
 
     private void Awake() {
         DontDestroyOnLoad(this);
 
         if (Instance == null) {
             Instance = this;
-            shouldRelay = false;
-            Debug.Log("LOADOUT MANAGER CREATED");
+            duplicate = false;
+            // Debug.Log("LOADOUT MANAGER CREATED");
         }
 
         else {
-            Instance.shouldRelay = true;
+            duplicate = true;
         }
     }
 
     private void Start() {
-        if (Instance.shouldRelay) {
+        if (duplicate) {
             Instance.Relay();
-            Debug.Log("RELAYING");
-            Instance.shouldRelay = false;
+            // Debug.Log("RELAYING");
             Destroy(gameObject);
         }
     }

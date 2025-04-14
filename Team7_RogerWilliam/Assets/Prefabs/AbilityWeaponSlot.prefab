@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 594422017782568561}
   - component: {fileID: 5605442984527431250}
   - component: {fileID: 8626880590730629340}
-  - component: {fileID: 3280428474579438104}
   m_Layer: 5
   m_Name: Weapon
   m_TagString: Untagged
@@ -134,21 +133,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3280428474579438104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898688604707722140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6117f9c38efe26b4697fefef68772d40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tooltipText: Locked
-  requiredHover: 0
-  window: {fileID: 8626880590730629340}
 --- !u!1001 &5721981445460173940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,7 +281,6 @@ MonoBehaviour:
   optionSelected:
     m_PersistentCalls:
       m_Calls: []
-  identity: 0
 --- !u!224 &9212520368923369151 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3508864559060220619, guid: 7e027588139d34f42bfa1749a7084aad, type: 3}

@@ -18,7 +18,7 @@ public class AbilityHandler : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("ABILITY HANDLER LISTENING");
+        // Debug.Log("ABILITY HANDLER LISTENING");
 
         LoadoutManager.Instance.abilityUpdated.AddListener(SetAbility);
     }

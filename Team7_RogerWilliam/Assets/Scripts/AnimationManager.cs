@@ -24,6 +24,7 @@ public class AnimationManager : MonoBehaviour
     }
 
     public void PlayOnce(string newState, float duration=-1f) {
+        // if (playing) return;
         StartCoroutine(_PlayOnce(newState, duration));
     }
 

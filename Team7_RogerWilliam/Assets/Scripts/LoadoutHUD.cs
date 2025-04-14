@@ -18,7 +18,7 @@ public class LoadoutHUD : MonoBehaviour
     
     void Awake()
     {
-        Debug.Log("LOADOUT HUD LISTENING");
+        // Debug.Log("LOADOUT HUD LISTENING");
 
         abilityChannel.SetActive(false);
 
