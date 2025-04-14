@@ -2,38 +2,78 @@ using UnityEngine;
 
 public class SalamiSpinner : MonoBehaviour
 {
-    public float damageAmount = 10f;
+    public float moveSpeed = 10f;
+    public float aoeRange = 3f;
+    public float aoeDamage = 20f;
+    public float aoeCooldown = 2f;
+    public float maxHealth = 100f;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private float currentHealth;
+    private float aoeTimer = 0f;
+    private Transform player;
+    private Rigidbody2D rb;
+
+    void Start()
     {
-        if (collision.CompareTag("Player"))
-        {
-            //PlayerHealth2D playerHealth = collision.GetComponent<PlayerHealth2D>();
-           // if (playerHealth != null)
-           // {
-             //   playerHealth.TakeDamage(damageAmount);
-            //}
-        }
-    }[Header("Spinner Settings")]
-    public Transform spinner;              // The child GameObject that spins
-    public float rotationSpeed = 200f;     // Rotation speed of the spinner
-    public float orbitRadius = 1.5f;       // How far from the enemy it spins
-    public float orbitSpeed = 2f;          // Orbit speed around the enemy
-
-    private float angle;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+    }
 
     void Update()
     {
-        if (spinner == null) return;
+        if (player == null) return;
 
-        // Orbit calculation (2D - x and y only)
-        angle += orbitSpeed * Time.deltaTime;
-        float x = Mathf.Cos(angle) * orbitRadius;
-        float y = Mathf.Sin(angle) * orbitRadius;
+        aoeTimer -= Time.deltaTime;
 
-        spinner.localPosition = new Vector3(x, y, 0f);
+        MoveTowardPlayer();
 
-        // Spin the object around its own axis
-        spinner.Rotate(0f, 0f, rotationSpeed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, player.position) <= aoeRange && aoeTimer <= 0f)
+        {
+            DoAOEDamage();
+            aoeTimer = aoeCooldown;
+        }
+    }
+
+    void MoveTowardPlayer()
+    {
+        Vector2 direction = ((Vector2)player.position - rb.position).normalized;
+        rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
+    }
+
+    void DoAOEDamage()
+    {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, aoeRange);
+        foreach (var hit in hits)
+        {
+            if (hit.CompareTag("Player"))
+            {
+                Debug.Log("Player takes " + aoeDamage + " AoE damage!");
+                // hit.GetComponent<PlayerHealth>()?.TakeDamage(aoeDamage);
+            }
+        }
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+        Debug.Log("Enemy took " + damageAmount + " damage. Current HP: " + currentHealth);
+
+        if (currentHealth <= 0f)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Enemy died.");
+        Destroy(gameObject);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, aoeRange);
     }
 }
