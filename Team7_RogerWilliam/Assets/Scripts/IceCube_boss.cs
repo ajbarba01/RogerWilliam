@@ -36,7 +36,9 @@ public class IceCube_boss : MonoBehaviour
             Debug.Log("ERROR: Player not found");
         }
         rb2D = GetComponent<Rigidbody2D>();
-        gameHandler = GameObject.FindWithTag("GameController");
+        gameHandler = GameHandler.instance.gameObject;
+
+        GetComponent<Health>().onDeath.AddListener(OnDeath);
     }
 
     void Update()
@@ -95,6 +97,10 @@ public class IceCube_boss : MonoBehaviour
             }
 
         }
+    }
+
+    public void OnDeath() {
+        GameHandler.instance.ChangeScene("HomeBase");
     }
 
 }

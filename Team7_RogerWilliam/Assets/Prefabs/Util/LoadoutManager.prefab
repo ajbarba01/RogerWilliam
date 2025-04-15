@@ -30,7 +30,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -49,6 +49,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e86c481852e9645aae50fa3d238cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWeapon: {fileID: 0}
+  currentWeapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
   currentAbility: {fileID: 0}
   currentPassive: {fileID: 0}
+  postWeaponUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  postAbilityUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  postPassiveUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  weaponUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  abilityUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  passiveUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  duplicate: 0

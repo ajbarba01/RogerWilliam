@@ -40,6 +40,9 @@ public class LoadoutManager : MonoBehaviour
             // Debug.Log("RELAYING");
             Destroy(gameObject);
         }
+
+        weaponUpdated.Invoke(currentWeapon);
+        postWeaponUpdated.Invoke(currentWeapon);
     }
 
     public void UnlockWeapon(LoadoutOption newWeapon) {

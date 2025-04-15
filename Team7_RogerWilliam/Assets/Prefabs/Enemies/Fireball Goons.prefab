@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7568874265010375899}
   - component: {fileID: 3313326449128404255}
   - component: {fileID: 9201593388608403942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fireball Goons
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &688830783282831158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605971462496660120}
   - component: {fileID: 4433643534040477496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StockArtHotRodGoon
   m_TagString: Enemy
   m_Icon: {fileID: 0}

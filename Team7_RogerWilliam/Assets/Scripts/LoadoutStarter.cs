@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class LoadoutStarter : MonoBehaviour
 {
+    private static bool started = false;
+
     [SerializeField] private LoadoutOption[] weapons, abilities, passives;
 
     [SerializeField] private LoadoutOption weapon, ability, passive;
 
     void Start()
     {
+        if (started) return;
         // Debug.Log("LOADOUT STARTER");
 
         foreach (LoadoutOption weapon in weapons) {
@@ -38,5 +41,7 @@ public class LoadoutStarter : MonoBehaviour
         if (passive != null) {
             LoadoutManager.Instance.SetPassive(passive);
         }
+
+        started = true;
     }
 }
