@@ -11,12 +11,14 @@ public class fireballProjectile : MonoBehaviour
        private Transform playerTrans;
        private Vector2 target;
        public GameObject hitEffectAnim;
-       public float SelfDestructTime = 2.0f;
-
+       public float SelfDestructTime = 5.0f;
+       private Rigidbody2D rb;
+       
        void Start() {
              //NOTE: transform gets location, but we need Vector2 for direction, so we can use MoveTowards.
              playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
              target = new Vector2(playerTrans.position.x, playerTrans.position.y);
+              rb = GetComponent<Rigidbody2D>();
 
              StartCoroutine(selfDestruct());
 
@@ -29,16 +31,21 @@ public class fireballProjectile : MonoBehaviour
              target = (startPos + difference);
        }
 
-       void Update () {
-              transform.position = Vector2.MoveTowards (transform.position, target, speed * Time.deltaTime);
+       void FixedUpdate() {
+              rb.MovePosition(Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime));
        }
+
 
        //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
        void OnTriggerEnter2D(Collider2D collision){
               if (collision.gameObject.tag == "Player") {
+                     Debug.Log("Hit!");
                      Player.health.TakeDamage(attackDamage);
+                     GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
+                     Destroy (animEffect, 0.5f);
+                     Destroy (gameObject);
               }
-              if (collision.gameObject.tag != "enemyShooter") {
+              if (collision.gameObject.tag != "Enemy") {
                      GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                      Destroy (animEffect, 0.5f);
                      Destroy (gameObject);

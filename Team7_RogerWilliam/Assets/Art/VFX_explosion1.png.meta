@@ -131,7 +131,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,14 +152,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 663562a813f7eaa48a1bfbf7d70197cb
-      internalID: -1104725886
+      spriteID: 590198b72e2d4e24aae59063b7e44c00
+      internalID: 1923584674
       vertices: []
       indices: 
       edges: []
@@ -173,14 +173,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45a0843b2be4b8641b4f823decefc483
-      internalID: -1840255283
+      spriteID: 8cf8c1358589e504aaf759bac8ef8bb7
+      internalID: 82458590
       vertices: []
       indices: 
       edges: []
@@ -194,14 +194,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37323836b7da578409b5c2b868644d74
-      internalID: -1503525062
+      spriteID: 4c90c6882236df64caf607b74a14b67d
+      internalID: 258794606
       vertices: []
       indices: 
       edges: []
@@ -218,9 +218,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       VFX_explosion1_0: -1427839120
-      VFX_explosion1_1: -1104725886
-      VFX_explosion1_2: -1840255283
-      VFX_explosion1_3: -1503525062
+      VFX_explosion1_1: 1923584674
+      VFX_explosion1_2: 82458590
+      VFX_explosion1_3: 258794606
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
