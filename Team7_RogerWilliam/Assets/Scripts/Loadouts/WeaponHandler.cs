@@ -17,7 +17,7 @@ public class WeaponHandler : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("WEAPON HANDLER LISTENING");
+        // Debug.Log("WEAPON HANDLER LISTENING");
 
         LoadoutManager.Instance.weaponUpdated.AddListener(SetWeapon);
     }
@@ -55,7 +55,7 @@ public class WeaponHandler : MonoBehaviour
     void RemoveWeapon() {
         if (currentWeapon != null) {
             currentWeapon.onEnemyHit.RemoveListener(lastHit.EnemyHit);
-            Destroy(currentWeapon);
+            Destroy(currentWeapon.gameObject);
         }
 
     }

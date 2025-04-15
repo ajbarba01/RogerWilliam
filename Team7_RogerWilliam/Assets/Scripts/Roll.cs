@@ -29,17 +29,17 @@ public class Roll : MonoBehaviour
     {
         bool moving = Player.Instance.moving;
         if (!rolling && !onCooldown && moving && Input.GetKeyDown(KeyCode.Space)) {
-            startRoll.Invoke();
             StartCoroutine(ActivateRoll());
             StartCoroutine(Cooldown());
         }
     }
 
     private IEnumerator ActivateRoll() {
+        startRoll.Invoke();
+
         rolling = true;
 
         anim.PlayOnce("Player_Roll", rollDuration);
-        // ALSO NEED TO PAUSE MOVEMENT
 
         Vector3 direction = mover.GetDirection();
 
