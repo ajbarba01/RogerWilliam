@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 9201593388608403942}
   m_Layer: 0
   m_Name: Fireball Goons
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,12 +34,12 @@ Transform:
   m_GameObject: {fileID: 2301758031551305530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.8, y: 2.87, z: -0.03570051}
-  m_LocalScale: {x: 2.9625, y: 2.3875, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1605971462496660120}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &228706621000452244
 MonoBehaviour:
@@ -53,6 +53,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
+  art: {fileID: 0}
 --- !u!50 &5594790518500724643
 Rigidbody2D:
   serializedVersion: 4
@@ -93,6 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+  knockbackResistance: 0
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8347582975363180084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  art: {fileID: 0}
 --- !u!114 &6136510739354419720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 15
+  beforeDeath:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -157,7 +167,7 @@ MonoBehaviour:
   fireBase: {fileID: 0}
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 8117433055548014173, guid: d68dae087919226419e86fb3cdc84540, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 2
   attackCooldown: 1
   attackRange: 10
   anim: {fileID: 0}
@@ -239,7 +249,7 @@ GameObject:
   - component: {fileID: 4433643534040477496}
   m_Layer: 0
   m_Name: StockArtHotRodGoon
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,12 +310,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcf46c6701e7b914e95c52f7db3ef541, type: 3}
+  m_Sprite: {fileID: -1921335078, guid: a93a767b7844c48888043d25d08043c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

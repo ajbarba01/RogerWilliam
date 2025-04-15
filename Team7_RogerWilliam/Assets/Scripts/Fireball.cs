@@ -12,7 +12,7 @@ public class Fireball : MonoBehaviour
     private float scaleX;
     private Vector2 PlayerVect;
     private Renderer rend;
-    public float projectileSpeed = 10f;
+    public float projectileSpeed = 2f;
        private float attackChannel = 0f;
            [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private float attackRange = 10f;

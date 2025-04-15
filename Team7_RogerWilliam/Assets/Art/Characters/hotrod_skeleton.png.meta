@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a93a767b7844c48888043d25d08043c5
+guid: 34f9b78a5268c46289074fe8ca49defc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HotRodEnemy_0
+      name: hotrod_skeleton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,19 +137,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69e79b3106d3f4515a33b6dcd3e53b05
-      internalID: -1921335078
+      spriteID: 114ad0d458baf45598d8c606e4b7079a
+      internalID: -1225428365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HotRodEnemy_1
+      name: hotrod_skeleton_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9e250ce787a4b248b2240ffbd5b876
+      internalID: 2084976168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hotrod_skeleton_2
       rect:
         serializedVersion: 2
         x: 32
         y: 32
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -158,19 +179,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e45f46cc2b86140cba3030b2bc13d5cd
-      internalID: -1523877096
+      spriteID: cd3a13b45c62041f0aeb741973175dfa
+      internalID: 277409222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HotRodEnemy_2
+      name: hotrod_skeleton_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 32
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,40 +200,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 741d5ff43c94447738ccc39d8a396df6
-      internalID: 1838924055
+      spriteID: 8d41610611eaf4b0f8139bfa6abfd2c4
+      internalID: 243170740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HotRodEnemy_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 483a206ede3474f1fb99c03d21725a1e
-      internalID: -994418592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HotRodEnemy_4
+      name: hotrod_skeleton_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,19 +221,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4abe61569a91d4eef9a9d18a6112453a
-      internalID: 294686744
+      spriteID: 379b075bb998c4e9589c3ef1289aa9e6
+      internalID: -1655048697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HotRodEnemy_5
+      name: hotrod_skeleton_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b95997922eb7a46149d17e4875532f2e
+      internalID: 166439422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hotrod_skeleton_6
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -242,19 +263,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1c8709c78f34cb5802618997a9d263
-      internalID: -1453751282
+      spriteID: a0cf8d02c29eb4eb6b83574f6777e5d9
+      internalID: 30376086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HotRodEnemy_6
+      name: hotrod_skeleton_7
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -263,29 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3b1e2768610141a7b6c3029b5fa8784
-      internalID: -1464859910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HotRodEnemy_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7bb9354ccb0d42d98eaa6b737b4f7a6
-      internalID: 852104528
+      spriteID: 6d014e8f5dc1644a8ae11cd0c4c3e0db
+      internalID: -622759753
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HotRodEnemy_0: -1921335078
-      HotRodEnemy_1: -1523877096
-      HotRodEnemy_2: 1838924055
-      HotRodEnemy_3: -994418592
-      HotRodEnemy_4: 294686744
-      HotRodEnemy_5: -1453751282
-      HotRodEnemy_6: -1464859910
-      HotRodEnemy_7: 852104528
+      hotrod_skeleton_0: -1225428365
+      hotrod_skeleton_1: 2084976168
+      hotrod_skeleton_2: 277409222
+      hotrod_skeleton_3: 243170740
+      hotrod_skeleton_4: -1655048697
+      hotrod_skeleton_5: 166439422
+      hotrod_skeleton_6: 30376086
+      hotrod_skeleton_7: -622759753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
