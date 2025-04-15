@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AgentMover))]
-[RequireComponent(typeof(TopDownDirection))]
 public class EnemyChase : MonoBehaviour
 {
     [SerializeField] private float minMoveSpeed = 2f;

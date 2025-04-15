@@ -135,7 +135,7 @@ MonoBehaviour:
   cooldown: 0.5
   projectile: {fileID: 7301763125333033888, guid: 0b56f63cb0a411b4ca06fe4673bb351a, type: 3}
   attackPt: {fileID: 2645037175199286841}
-  maxCharge: 1
+  maxCharge: 0.3
   minVelocity: 7
   maxVelocity: 30
   minDamage: 3

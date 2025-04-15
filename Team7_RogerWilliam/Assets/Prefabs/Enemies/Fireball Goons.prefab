@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 228706621000452244}
   - component: {fileID: 5594790518500724643}
   - component: {fileID: 688830783282831158}
-  - component: {fileID: 8347582975363180084}
   - component: {fileID: 6136510739354419720}
   - component: {fileID: 698274327335941688}
   - component: {fileID: 7568874265010375899}
@@ -54,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
-  art: {fileID: 0}
+  art: {fileID: 4635501758845413021}
 --- !u!50 &5594790518500724643
 Rigidbody2D:
   serializedVersion: 4
@@ -99,19 +98,6 @@ MonoBehaviour:
   onMove:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &8347582975363180084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2301758031551305530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  art: {fileID: 0}
 --- !u!114 &6136510739354419720
 MonoBehaviour:
   m_ObjectHideFlags: 0
