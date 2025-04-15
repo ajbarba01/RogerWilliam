@@ -38,7 +38,7 @@ Transform:
   - {fileID: 2764461267624572550}
   - {fileID: 5591497713883193875}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4213407146483567427
 Rigidbody2D:
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  art: {fileID: 0}
 --- !u!114 &855132402646569688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathEffect: {fileID: 0}
+  art: {fileID: 0}
 --- !u!114 &8334067003209096445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +193,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 60
+  beforeDeath:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  tookDamage:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &4013999657840924270
@@ -267,7 +276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: aa7bde9b32cae1a42a8d95a378e0d71c, type: 3}
+  m_Sprite: {fileID: -1225428365, guid: 34f9b78a5268c46289074fe8ca49defc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
