@@ -21,7 +21,7 @@ public class Fists : Weapon {
       }
 
       public override void OnAttack() {
-            if (punchSFX != null && punchSFX.isPlaying == false){
+            if (punchSFX != null && !punchSFX.isPlaying){
                   punchSFX.Play();
             }
 

@@ -23,7 +23,7 @@ public class DamagePopup : MonoBehaviour
 
     private TextMeshPro text;
 
-    private float dissapearProgress = 0f;
+    // private float dissapearProgress = 0f;
     private float fadeProgress = 0f;
 
     private void Awake() {

@@ -356,6 +356,8 @@ MonoBehaviour:
   weapons:
   - {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
   - {fileID: 11400000, guid: 730b57ff4d7072748af808c08fd1f2eb, type: 2}
+  - {fileID: 11400000, guid: 70e5ad6aa650dcf4b9d690510a4f1dc7, type: 2}
+  - {fileID: 11400000, guid: 3bbc8afef758c1a45a5a361fcc4805e1, type: 2}
   abilities:
   - {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
   passives: []
@@ -9566,7 +9568,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4335311053926523468, guid: 59eaf4719c4e7b5409de0c2228ef1ec0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 59eaf4719c4e7b5409de0c2228ef1ec0, type: 3}
 --- !u!1001 &7211445825041435125
 PrefabInstance:

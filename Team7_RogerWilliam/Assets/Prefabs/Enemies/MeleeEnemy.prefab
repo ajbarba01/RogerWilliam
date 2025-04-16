@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2768249325191831170}
   - component: {fileID: 2114324179697980892}
   - component: {fileID: 8651212645525667645}
+  - component: {fileID: 5967033885826821340}
   m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -133,6 +134,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -229,6 +233,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   art: {fileID: 951648529272508137}
   deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
+--- !u!114 &5967033885826821340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942118541295082568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea48a7fc04f018e4aab552edc6a5f0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 0
+  cooldown: 0.25
 --- !u!1 &951648529272508137
 GameObject:
   m_ObjectHideFlags: 0

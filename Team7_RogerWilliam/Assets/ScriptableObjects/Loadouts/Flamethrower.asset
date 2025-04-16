@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
+  m_Name: Flamethrower
+  m_EditorClassIdentifier: 
+  loadoutName: Flamethrower
+  tooltipText: Flamethrower
+  nickname: Hotrod
+  icon: {fileID: 21300000, guid: 4a0de083fd6e2df4bb3546b9a6b48aee, type: 3}
+  prefab: {fileID: 7604326603023450606, guid: 139dfee0909ca0e47b2b941ec3d0a6d5, type: 3}

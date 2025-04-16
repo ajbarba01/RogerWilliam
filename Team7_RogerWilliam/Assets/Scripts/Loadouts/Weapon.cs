@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public abstract class Weapon : Loadout {
     public UnityEvent<Health> onEnemyHit;
     [SerializeField] protected float cooldown;
-    public abstract void OnAttack();
 
     protected float cooldownProgress;
     protected bool onCooldown = false;
 
     protected AnimationManager anim;
     protected AgentMover mover;
+
+    public virtual void OnAttack() { }
 
     public void Initialize(AnimationManager animManage, AgentMover agentMover) {
         anim = animManage;
