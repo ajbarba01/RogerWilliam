@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 898801496431799236}
   - component: {fileID: 6845328341006671629}
   - component: {fileID: 5868824148577717403}
+  - component: {fileID: 7764390537943000000}
   m_Layer: 6
   m_Name: TargetDummy
   m_TagString: Enemy
@@ -263,6 +264,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -294,6 +298,20 @@ MonoBehaviour:
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 7839907921070713000}
   health: {fileID: 898801496431799236}
+--- !u!114 &7764390537943000000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042881145514726771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea48a7fc04f018e4aab552edc6a5f0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  cooldown: 0.25
 --- !u!1001 &5569358197208534372
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class fireballProjectile : MonoBehaviour
              Vector2 difference = target - startPos;
              difference = difference.normalized * distance;
              target = (startPos + difference);
+
+             transform.rotation = Util.QuaternionOfVector3(Player.GetPosition() - transform.position);
        }
 
        void FixedUpdate() {

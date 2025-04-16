@@ -13,7 +13,7 @@ public class WhiteHurt : MonoBehaviour
     private void Start() {
         if (health == null) return;
 
-        health.tookDamage.AddListener(FlashWhite);
+        health.onDamage.AddListener(FlashWhite);
     }
 
     void FlashWhite()

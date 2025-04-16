@@ -57,6 +57,14 @@ public class Player : MonoBehaviour
         else {
             mover.SetMovement(Vector2.zero);
         }
+
+        if (Input.GetKeyDown(KeyCode.P)) {
+            health.TakeDamage(1);
+        }
+
+        if (Input.GetKey(KeyCode.L)) {
+            health.TakeDamage(1 * Time.deltaTime);
+        }
     }
 
     void FixedUpdate()

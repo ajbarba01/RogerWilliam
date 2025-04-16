@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 1078073453066311308}
   - component: {fileID: 4001342048714713987}
   - component: {fileID: 2089916773471608194}
-  - component: {fileID: 5785432685666933776}
   - component: {fileID: 5150451799459543671}
   - component: {fileID: 1385606772897501140}
-  - component: {fileID: 6940840717702989241}
   - component: {fileID: 2768249325191831170}
   - component: {fileID: 2114324179697980892}
   - component: {fileID: 8651212645525667645}
@@ -150,29 +148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
-  art: {fileID: 951648529272508137}
---- !u!95 &5785432685666933776
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942118541295082568}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 895ea72a2a5644f448ef72a51a0ce78b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5150451799459543671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,19 +182,6 @@ MonoBehaviour:
   attackDamage: 5
   attackRange: 2
   anim: {fileID: 0}
---- !u!114 &6940840717702989241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942118541295082568}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  art: {fileID: 0}
 --- !u!114 &2768249325191831170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,9 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603c026687c2dcb45bc5db8d95af49dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  art: {fileID: 6082551911406329422}
   moveSpeed: 0
   knockbackResistance: 0
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2114324179697980892
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,8 @@ public class LoadoutStarter : MonoBehaviour
     void Start()
     {
         if (started) return;
-        // Debug.Log("LOADOUT STARTER");
+        
+        Debug.Log("LOADOUT STARTER");
 
         foreach (LoadoutOption weapon in weapons) {
             if (weapon == null) continue;

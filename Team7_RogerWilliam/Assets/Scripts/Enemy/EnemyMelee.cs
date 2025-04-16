@@ -25,7 +25,7 @@ public class EnemyMelee : MonoBehaviour
 
     private void Start() {
         enemyChase.SetDistance(attackRange);
-        GetComponent<Health>().tookDamage.AddListener(Damaged);
+        GetComponent<Health>().onDamage.AddListener(Damaged);
     }
 
     void Update()

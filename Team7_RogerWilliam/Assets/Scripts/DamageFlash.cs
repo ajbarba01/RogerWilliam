@@ -17,7 +17,7 @@ public class DamageFlash : MonoBehaviour
     private bool flashing = false;
 
     private void Awake() {
-        health.tookDamage.AddListener(Flash);
+        health.onDamage.AddListener(Flash);
     }
 
     void Flash() {

@@ -14,7 +14,8 @@ public class Health : MonoBehaviour {
 
     // Should only be used to destroy object
     public UnityEvent onDeath;
-    public UnityEvent tookDamage;
+    public UnityEvent onDamage;
+    public UnityEvent<float> tookDamage;
 
     protected float health;
 
@@ -45,7 +46,8 @@ public class Health : MonoBehaviour {
     }
 
     public void TakeDamage(float damage) {
-        tookDamage.Invoke();
+        onDamage.Invoke();
+        tookDamage.Invoke(damage);
         
         SetHealth(health - damage);
 

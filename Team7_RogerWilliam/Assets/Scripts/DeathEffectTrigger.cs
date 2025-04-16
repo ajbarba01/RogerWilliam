@@ -14,6 +14,7 @@ public class DeathEffectTrigger : MonoBehaviour
 
     private void BeforeDeath() {
         GameObject death = Instantiate(deathEffect, art.transform.position, art.transform.rotation);
+        death.transform.localScale = art.transform.localScale;
         death.GetComponent<DeathEffect>().Run(art.GetComponent<SpriteRenderer>().sprite);
     }
 }

@@ -6,9 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject deathEffect;
-    [SerializeField] private GameObject art;
-
     private Health health;
     // Start is called before the first frame update
     void Start()

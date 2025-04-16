@@ -49,11 +49,11 @@ public class EnemyChase : MonoBehaviour
             movement = new Vector2(direction.x, direction.y) * directionTowards;
             movement.Normalize();
             
-            anim.SetBool("Walk", true);
+            // anim.SetBool("Walk", true);
         }
         else {
             movement = new Vector2(0, 0);
-            anim.SetBool("Walk", false);
+            // anim.SetBool("Walk", false);
         }
 
         mover.SetMovement(movement * moveSpeed);
