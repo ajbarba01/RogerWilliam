@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameHandler : MonoBehaviour
 {
-    public static GameHandler instance;
+    public static GameHandler Instance;
     public static GameObject gameController;
     public static Health playerHealth;
 
     void Awake()
     {
-        instance = this;
+        Instance = this;
         gameController = gameObject;
         playerHealth = GetComponent<Health>();
     }
