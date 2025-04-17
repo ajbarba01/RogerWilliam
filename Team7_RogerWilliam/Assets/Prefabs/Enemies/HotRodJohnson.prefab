@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3900418493201286723}
   - component: {fileID: 8334067003209096445}
   m_Layer: 6
-  m_Name: Rod _HotRod_ Johnson
+  m_Name: HotRodJohnson
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

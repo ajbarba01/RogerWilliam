@@ -22,7 +22,7 @@ public class AgentMover : MonoBehaviour
     public int facing { get; private set; } = 1;
 
     private bool frozen = false;
-    private bool trueFrozen = false;
+    // private bool trueFrozen = false;
 
     public UnityEvent onMove;
 
@@ -53,12 +53,12 @@ public class AgentMover : MonoBehaviour
         movement = Vector2.zero;
         direction = Vector2.zero;
         frozen = true;
-        trueFrozen = true;
+        // trueFrozen = true;
     }
 
     public void Unfreeze() {
         frozen = false;
-        trueFrozen = false;
+        // trueFrozen = false;
     }
 
     public void SetMovespeed(float newSpeed) {

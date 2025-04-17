@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6193392494567431050}
   - component: {fileID: 8012711814268951379}
   m_Layer: 6
-  m_Name: IceCube(boss)
+  m_Name: IceCubeBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

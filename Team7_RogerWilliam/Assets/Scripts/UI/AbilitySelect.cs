@@ -12,8 +12,6 @@ public class LoadoutSelect : Menu
     [SerializeField] private TextMeshProUGUI nickname;
     private string currentNickname = "";
 
-    private bool weaponOpen;
-
     // private WeaponHandler weaponHandler;
     // private AbilityHandler abilityHandler;
     // private PassiveHandler passiveHandler;
@@ -22,7 +20,6 @@ public class LoadoutSelect : Menu
         // Debug.Log("ABILITY SELECT LISTENING");
 
         accessKey = KeyCode.N;
-        weaponOpen = false;
 
         weaponSlots.newOption.AddListener(WeaponSelect);
         abilitySlots.newOption.AddListener(AbilitySelect);
