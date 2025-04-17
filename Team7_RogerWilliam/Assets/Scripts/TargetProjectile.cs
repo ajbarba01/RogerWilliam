@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class TargetProjectile : Projectile
 {
-    [SerializeField] private float distanceToHit = 0.5f;
+    [SerializeField] private float distanceToHit = 0.1f;
 
     // private AnimationCurve speedCurve;
     private Vector3 target;

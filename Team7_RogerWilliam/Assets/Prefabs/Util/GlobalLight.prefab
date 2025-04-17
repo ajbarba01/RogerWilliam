@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2964325657878139540
 MonoBehaviour:
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 0.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 739e1b0ceb461c9909cbfe2261fa560b0000000059bc8689ebb5d22e8348d306eb7afdd59914aba4
+  m_ApplyToSortingLayers: 739e1b0ceb461c995b360e4b09cbfe2261fa560b0000000059bc8689ebb5d22e8348d306eb7afdd59914aba4550c222c
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0

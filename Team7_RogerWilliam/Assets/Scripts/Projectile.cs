@@ -71,6 +71,7 @@ public class Projectile : MonoBehaviour
         }
         else if (other.CompareTag("Wall"))
         {
+            Debug.Log("WALL");
             OnHit();
         }
     }

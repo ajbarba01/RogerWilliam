@@ -9,6 +9,15 @@ public class MolotovCocktail : Ability
     [SerializeField] private GameObject fire;
     [SerializeField] private float fireDuration = 2f;
     [SerializeField] private float speed = 3f;
+    [SerializeField] private float dps = 3f;
+    [SerializeField] private float radius = 1.5f;
+    [SerializeField] public LayerMask enemyLayers;
+
+    private float damagePerTick;
+
+    private void Awake() {
+        damagePerTick = dps * Globals.TickRate;
+    }
 
     protected override void OnActivate() {
         mover.FaceTowardsMouse(transform.position);
@@ -31,6 +40,22 @@ public class MolotovCocktail : Ability
 
     private void CocktailHit(GameObject cocktail) {
         GameObject fireObject = Instantiate(fire, cocktail.transform.position, Quaternion.identity);
-        Destroy(fireObject, fireDuration);
-    } 
+        StartCoroutine(DamageTickLoop(fireObject));
+    }
+
+    private IEnumerator DamageTickLoop(GameObject fireObject) {
+        float fireProgress = 0f;
+
+        while (fireProgress < fireDuration) {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(fireObject.transform.position, radius, enemyLayers);
+            foreach (var hit in hits) {
+                hit.GetComponent<Health>()?.TakeDamage(damagePerTick);
+            }
+
+            fireProgress += Globals.TickRate;
+            yield return new WaitForSeconds(Globals.TickRate);
+        }
+
+        Destroy(fireObject);
+    }
 }
