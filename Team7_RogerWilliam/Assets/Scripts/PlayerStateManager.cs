@@ -22,6 +22,7 @@ public class PlayerStateManager : MonoBehaviour
         weaponHandler.SetPause(true);
         abilityHandler.SetPause(true);
         abilityHandler.InterruptAbility();
+        weaponHandler.Interrupt();
     }
 
     private void EndRoll() {

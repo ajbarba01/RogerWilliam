@@ -84,18 +84,24 @@ public class LoadoutSelect : Menu
         weapon.SetOption(option);
         weaponSlots.SetOptions(LoadoutManager.Instance.unlockedWeapons);
         weaponSlots.SetActive(option);
+
+        UpdateNickname();
     }
 
     public void UpdateAbility(LoadoutOption option) {
         ability.SetOption(option);
         abilitySlots.SetOptions(LoadoutManager.Instance.unlockedAbilities);
         abilitySlots.SetActive(option);
+
+        UpdateNickname();
     }
 
     public void UpdatePassive(LoadoutOption option) {
         passive.SetOption(option);
         passiveSlots.SetOptions(LoadoutManager.Instance.unlockedPassives);
         passiveSlots.SetActive(option);
+
+        UpdateNickname();
     }
 
     private void UpdateNickname() {

@@ -16,6 +16,8 @@ public abstract class Weapon : Loadout {
 
     public virtual void OnAttack() { }
 
+    public virtual void OnInterrupt() { }
+
     public void Initialize(AnimationManager animManage, AgentMover agentMover) {
         anim = animManage;
         mover = agentMover;

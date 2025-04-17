@@ -6,14 +6,18 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider2D))]
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private GameObject hitFX;
     [SerializeField] private float lifespan = 3f;
 
     private float speed = 0f;
-    private string damageTag;
+    private string damageTag = "";
     private Vector2 direction;
     private float damage = 0f;
 
     public UnityEvent<GameObject, GameObject> onTagHit;
+    public UnityEvent<GameObject> onHit;
+
+    public virtual void BeforeMove() { }
 
     private void Start()
     {
@@ -22,6 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
+        BeforeMove();
         MoveProjectile();
     }
 
@@ -58,15 +63,24 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag(damageTag))
+        if (damageTag != "" && other.CompareTag(damageTag))
         {
             onTagHit.Invoke(gameObject, other.gameObject);
             other.GetComponent<Health>().TakeDamage(damage);
-            Destroy(gameObject);
+            OnHit();
         }
         else if (other.CompareTag("Wall"))
         {
-            Destroy(gameObject);
+            OnHit();
         }
+    }
+
+    protected void OnHit() {
+        if (hitFX != null) {
+            Instantiate(hitFX, transform.position, Quaternion.identity);
+        }
+
+        onHit.Invoke(gameObject);
+        Destroy(gameObject);
     }
 }

@@ -11,6 +11,7 @@ public class Slingshot : Weapon
     [SerializeField] private float minDamage, maxDamage;
     [SerializeField] private float knockBackForce;
     [SerializeField] private GameObject art;
+    [SerializeField] private float slow = 0.7f;
 
     private float charge = 0f;
     private bool charging;
@@ -28,6 +29,7 @@ public class Slingshot : Weapon
 
     private IEnumerator Charging() {
         art.SetActive(true);
+        mover.SetSlow(slow);
 
         charging = true;
         charge = 0f;
@@ -38,6 +40,7 @@ public class Slingshot : Weapon
             yield return null;
         }
 
+        mover.RemoveSlow();
         art.SetActive(false);
     }
 
@@ -48,6 +51,10 @@ public class Slingshot : Weapon
 
     public override void OnAttack() {
         StartCoroutine(Charging());
+    }
+
+    public override void OnInterrupt() {
+        Release();
     }
 
     private void Release() {

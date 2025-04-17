@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Health))]
+[RequireComponent(typeof(DamageFlash))]
+[RequireComponent(typeof(DeathEffectTrigger))]
+[RequireComponent(typeof(DamagePopupTrigger))]
 public class Enemy : MonoBehaviour
 {
     private Health health;

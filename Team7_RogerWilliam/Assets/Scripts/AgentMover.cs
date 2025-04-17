@@ -12,7 +12,8 @@ public class AgentMover : MonoBehaviour
     // Between 0 and 1, with 0 being a rock
     [SerializeField] private float knockbackResistance; 
     
-    
+    private float slow = 1f;
+
     private AnimationManager anim;
     private Rigidbody2D rb;
     private Vector2 direction;
@@ -33,7 +34,7 @@ public class AgentMover : MonoBehaviour
     public void SetDirection(Vector2 newDirection) {
         direction = newDirection;
         direction.Normalize();
-        movement = direction * moveSpeed;
+        movement = direction * moveSpeed * slow;
     }
 
     public void SetMovement(Vector2 newMovement) {
@@ -62,6 +63,14 @@ public class AgentMover : MonoBehaviour
 
     public void SetMovespeed(float newSpeed) {
         moveSpeed = newSpeed;
+    }
+
+    public void SetSlow(float newSlow) {
+        slow = newSlow;
+    }
+
+    public void RemoveSlow() {
+        slow = 1f;
     }
 
     public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength) {

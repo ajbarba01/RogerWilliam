@@ -10,6 +10,7 @@ public class Flamethrower : Weapon
 
     [SerializeField] private float attackTime = 3f;
     [SerializeField] private float reloadTime = 5f;
+    [SerializeField] private float slow = 0.7f;
 
     private float reloadSpeed;
     private float fuelSpeed;
@@ -60,6 +61,7 @@ public class Flamethrower : Weapon
         canAttack = false;
         attacking = true;
         fireEffect.SetActive(true);
+        mover.SetSlow(slow);
 
         while (attacking) {
             capacity -= fuelSpeed * Time.deltaTime;
@@ -73,6 +75,7 @@ public class Flamethrower : Weapon
             yield return null;
         }
 
+        mover.RemoveSlow();
         fireEffect.SetActive(false);
     }
 
@@ -96,6 +99,11 @@ public class Flamethrower : Weapon
     }
 
     public override float HUDFill() {
-        return capacity;
+        return 1 - capacity;
+    }
+
+    public override void OnInterrupt() {
+        attacking = false;
+        canAttack = true;
     }
 }

@@ -5,12 +5,17 @@ using UnityEngine;
 public class Util : MonoBehaviour
 {
     public static Vector3 TowardsMouse(Vector3 origin) {
-        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 direction = mouseWorld - origin;
-        direction.z = 0;
+        Vector3 direction = DistToMouse(origin);
         direction.Normalize();
         
         return direction;
+    }
+
+    public static Vector3 DistToMouse(Vector3 origin) {
+        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 dist = mouseWorld - origin;
+        dist.z = 0;
+        return dist;
     }
 
     public static Quaternion QuaternionOfVector3(Vector3 input, float offset=0f) {

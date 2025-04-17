@@ -359,10 +359,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 70e5ad6aa650dcf4b9d690510a4f1dc7, type: 2}
   - {fileID: 11400000, guid: 3bbc8afef758c1a45a5a361fcc4805e1, type: 2}
   abilities:
-  - {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
+  - {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
   passives: []
   weapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
-  ability: {fileID: 11400000, guid: afece5e19bc0c324285b6331dc48c05e, type: 2}
+  ability: {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
   passive: {fileID: 0}
 --- !u!114 &496232506 stripped
 MonoBehaviour:

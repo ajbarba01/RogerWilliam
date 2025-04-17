@@ -52,6 +52,10 @@ public class WeaponHandler : MonoBehaviour
         return currentWeapon;
     }
 
+    public void Interrupt() {
+        currentWeapon.OnInterrupt();
+    }
+
     void RemoveWeapon() {
         if (currentWeapon != null) {
             currentWeapon.onEnemyHit.RemoveListener(lastHit.EnemyHit);
