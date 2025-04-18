@@ -13,8 +13,8 @@ public class HotRodBoss : MonoBehaviour
     private bool isAttacking = false;
 
     [SerializeField] private float attackCooldown = 2f;
-    [SerializeField] private float attackDamage = 8f;
-    [SerializeField] private float attackRange = 3f;
+    [SerializeField] private float attackDamage = 5f;
+    [SerializeField] private float attackRange = 1f;
 
     [SerializeField] private float fireBreathCD = 10f;
     private float fireBreathTimer = 0f;
@@ -35,45 +35,45 @@ public class HotRodBoss : MonoBehaviour
     }
 
     void Update()
-{
-    if (!enemyChase.HasLOS())
     {
-        attacking = false;
-        attackChannel = 0f;
-        fireBreathTimer = 0f; // optional: reset when out of sight
-        return;
-    }
-
-    // Update timers
-    attackChannel += Time.deltaTime;
-    fireBreathTimer += Time.deltaTime;
-
-    bool inRange = enemyChase.GetInDistance();
-
-    if (inRange)
-    {
-        enemyChase.SetActive(false); // Stop chasing to attack
-
-        // Handle regular attack
-        if (!attacking && attackChannel >= attackCooldown)
+        if (!enemyChase.HasLOS())
         {
-            Attack();
+            attacking = false;
             attackChannel = 0f;
+            fireBreathTimer = 0f; // optional: reset when out of sight
+            return;
         }
 
-        // Handle fire breath
-        if (!isAttacking && fireBreathTimer >= fireBreathCD)
+        // Update timers
+        attackChannel += Time.deltaTime;
+        fireBreathTimer += Time.deltaTime;
+
+        bool inRange = enemyChase.GetInDistance();
+
+        if (inRange)
         {
-            StartCoroutine(ActivateDamageZone());
-            fireBreathTimer = 0f;
+            enemyChase.SetActive(false); // Stop chasing to attack
+
+            // Handle regular attack
+            if (!attacking && attackChannel >= attackCooldown)
+            {
+                Attack();
+                attackChannel = 0f;
+            }
+
+            // Handle fire breath
+            if (!isAttacking && fireBreathTimer >= fireBreathCD)
+            {
+                StartCoroutine(ActivateDamageZone());
+                fireBreathTimer = 0f;
+            }
+        }
+        else
+        {
+            enemyChase.SetActive(true); // Resume chasing
+            attacking = false;
         }
     }
-    else
-    {
-        enemyChase.SetActive(true); // Resume chasing
-        attacking = false;
-    }
-}
 
     private IEnumerator FireBreathLoop()
     {
@@ -101,7 +101,7 @@ public class HotRodBoss : MonoBehaviour
         if (enemyChase.GetInDistance()) {
             // anim.SetBool("Attack", true);
             Player.health.TakeDamage(attackDamage);
-            StartCoroutine(applyBurn(Player.health, 7f, 1f, 2f));
+            StartCoroutine(applyBurn(Player.health, 3f, 1f, 4f));
             // anim.SetBool("Attack", false);
         }
     }
