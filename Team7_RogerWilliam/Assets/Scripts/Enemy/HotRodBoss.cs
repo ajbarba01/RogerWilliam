@@ -16,7 +16,7 @@ public class HotRodBoss : MonoBehaviour
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private float attackRange = 1f;
 
-    [SerializeField] private float fireBreathCD = 10f;
+    [SerializeField] private float fireBreathCD = 5f;
     private float fireBreathTimer = 0f;
     // public Animator anim;
     private HotRodMovement enemyChase;
