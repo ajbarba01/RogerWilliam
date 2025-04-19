@@ -240,13 +240,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicProjectile: {fileID: 1482281509341788806, guid: 5ca78f6030c6e2f4f91d486a9b10dde2, type: 3}
   firePoint: {fileID: 2833576233254879155}
-  moveSpeed: 2.5
-  Range1: 7
+  moveSpeed: 2.3
+  Range1: 5
   attack1Range: 2
   attack1Cooldown: 3
   attack1Damage: 20
-  Range2: 15
-  attack2Range: 11
+  Range2: 16
+  attack2Range: 14
   attack2Cooldown: 2
 --- !u!114 &8619128322032597052
 MonoBehaviour:
@@ -265,6 +265,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
     m_PersistentCalls:
       m_Calls: []
   tookDamage:

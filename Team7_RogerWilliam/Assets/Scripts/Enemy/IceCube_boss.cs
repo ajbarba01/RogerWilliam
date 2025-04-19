@@ -55,7 +55,7 @@ public class IceCube_boss : MonoBehaviour
         else if (distance <= Range1 && distance > attack1Range) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         }
-        else {
+        else if (distance <= attack1Range) {
             BossAttack1();
         }
     }

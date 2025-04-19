@@ -8,7 +8,7 @@ public class IceCube_proj : MonoBehaviour
     protected GameObject player;
     public float damage = 15f;
     //public GameObject hitEffectAnim;  When there is an animation implemented
-    public float lifetime = 5f;
+    public float lifetime = 3f;
     public float freezetime = 2f;
 
     void Start()
@@ -21,6 +21,7 @@ public class IceCube_proj : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {   
+            Debug.Log("hit player");
             //taking damage
             gameHandler = GameObject.FindWithTag("GameController");
             if (gameHandler != null) {

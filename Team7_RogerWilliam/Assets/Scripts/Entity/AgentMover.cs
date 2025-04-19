@@ -19,6 +19,8 @@ public class AgentMover : MonoBehaviour
     private Vector2 direction;
     private Vector2 movement;
 
+    private float iceInertia = 0.005f;
+
     public int facing { get; private set; } = 1;
 
     private bool frozen = false;
@@ -35,6 +37,13 @@ public class AgentMover : MonoBehaviour
         direction = newDirection;
         direction.Normalize();
         movement = direction * moveSpeed * slow;
+    }
+
+    public void SetIceDirection(Vector2 newDirection) {
+        direction = newDirection;
+        direction.Normalize();
+        Vector2 targetMovement = direction * moveSpeed * slow;
+        movement = Vector2.Lerp(movement, targetMovement, iceInertia);
     }
 
     public void SetMovement(Vector2 newMovement) {

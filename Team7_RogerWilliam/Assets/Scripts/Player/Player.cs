@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     
     private Vector2 movement;
 
+    private bool OnIce = false;
     private bool movementPaused = false;
     public bool moving = false;
 
@@ -45,13 +46,25 @@ public class Player : MonoBehaviour
         }
 
         if (!movementPaused) {
-            mover.SetDirection(movement);
+            if (!OnIce) {
+                mover.SetDirection(movement);
 
-            if (movement != Vector2.zero) {
-                moving = true;
+                if (movement != Vector2.zero) {
+                    moving = true;
+                }
+                else {
+                    moving = false;
+                }
             }
             else {
-                moving = false;
+                mover.SetIceDirection(movement);
+
+                if (movement != Vector2.zero) {
+                    moving = true;
+                }
+                else {
+                    moving = false;
+                }
             }
         }
         else {
@@ -77,11 +90,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("IcePuddle")) {
+            OnIce = true;
+            Debug.Log("On Ice");
+        }
+    }
+    
+    void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag("IcePuddle")) {
+            OnIce = false;
+            Debug.Log("Off Ice");
+        }
+    }
+
     public void PauseMovement() {
         movementPaused = true;
         moving = false;
     }
-
 
     public void ApplyFreeze(float delay) {
         mover.Freeze();

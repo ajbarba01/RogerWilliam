@@ -9,6 +9,7 @@ TagManager:
   - HotRod
   - MonologueManager
   - IceCube
+  - IcePuddle
   layers:
   - Default
   - TransparentFX
