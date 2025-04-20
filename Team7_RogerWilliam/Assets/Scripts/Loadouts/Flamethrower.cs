@@ -7,6 +7,7 @@ public class Flamethrower : Weapon
     [SerializeField] private float dps = 30f;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private GameObject fireEffect;
+    [SerializeField] private GameObject flamethrower;
 
     [SerializeField] private float attackTime = 3f;
     [SerializeField] private float reloadTime = 5f;
@@ -32,6 +33,8 @@ public class Flamethrower : Weapon
         {
             fireEffect.SetActive(false);
         }
+
+        flamethrower.SetActive(false);
     }
 
     private void Update() {
@@ -61,8 +64,8 @@ public class Flamethrower : Weapon
         canAttack = false;
         attacking = true;
         fireEffect.SetActive(true);
+        flamethrower.SetActive(true);
         mover.SetSlow(slow);
-        anim.SetPriorityState("Player_Flamethrower");
 
         StartCoroutine(DamageTickLoop());
 
@@ -77,9 +80,9 @@ public class Flamethrower : Weapon
             yield return null;
         }
 
-        anim.RemovePriorityState();
         mover.RemoveSlow();
         fireEffect.SetActive(false);
+        flamethrower.SetActive(false);
     }
 
     void DealDamageInZone(float amount)
