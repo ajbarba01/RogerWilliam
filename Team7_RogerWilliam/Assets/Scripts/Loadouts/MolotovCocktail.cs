@@ -13,11 +13,6 @@ public class MolotovCocktail : Ability
     [SerializeField] private float radius = 1.5f;
     [SerializeField] public LayerMask enemyLayers;
 
-    private float damagePerTick;
-
-    private void Awake() {
-        damagePerTick = dps * Globals.TickRate;
-    }
 
     protected override void OnActivate() {
         mover.FaceTowardsMouse(transform.position);
@@ -49,10 +44,10 @@ public class MolotovCocktail : Ability
         while (fireProgress < fireDuration) {
             Collider2D[] hits = Physics2D.OverlapCircleAll(fireObject.transform.position, radius, enemyLayers);
             foreach (var hit in hits) {
-                hit.GetComponent<Health>()?.TakeDamage(damagePerTick);
+                hit.GetComponent<Health>()?.TakeDamage(dps * Globals.deltaTick);
             }
 
-            fireProgress += Globals.TickRate;
+            fireProgress += Globals.deltaTick;
             yield return new WaitForSeconds(Globals.TickRate);
         }
 

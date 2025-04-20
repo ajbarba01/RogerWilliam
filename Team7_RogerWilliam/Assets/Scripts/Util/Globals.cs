@@ -5,4 +5,6 @@ using UnityEngine;
 public class Globals : MonoBehaviour
 {
     public static float TickRate = 0.1f;
+    public static float deltaTick = TickRate;
+    public static string WallTag = "Wall";
 }

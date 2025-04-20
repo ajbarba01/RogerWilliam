@@ -69,9 +69,8 @@ public class Projectile : MonoBehaviour
             other.GetComponent<Health>().TakeDamage(damage);
             OnHit();
         }
-        else if (other.CompareTag("Wall"))
+        else if (other.CompareTag(Globals.WallTag))
         {
-            Debug.Log("WALL");
             OnHit();
         }
     }

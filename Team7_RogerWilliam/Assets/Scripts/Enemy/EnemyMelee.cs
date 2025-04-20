@@ -64,9 +64,9 @@ public class EnemyMelee : MonoBehaviour
 
     void Attack() {
         if (enemyChase.GetInDistance()) {
-            anim.SetBool("Attack", true);
+            // anim.SetBool("Attack", true);
             Player.health.TakeDamage(attackDamage);
-            anim.SetBool("Attack", false);
+            // anim.SetBool("Attack", false);
         }
     }
 

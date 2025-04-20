@@ -63,6 +63,8 @@ public class Flamethrower : Weapon
         fireEffect.SetActive(true);
         mover.SetSlow(slow);
 
+        StartCoroutine(DamageTickLoop());
+
         while (attacking) {
             capacity -= fuelSpeed * Time.deltaTime;
             Vector3 direction = Util.TowardsMouse(transform.position);
@@ -71,7 +73,6 @@ public class Flamethrower : Weapon
             fireEffect.transform.position = transform.position + direction * 2f;
             fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
 
-            DealDamageInZone();
             yield return null;
         }
 
@@ -79,15 +80,26 @@ public class Flamethrower : Weapon
         fireEffect.SetActive(false);
     }
 
-    void DealDamageInZone()
+    void DealDamageInZone(float amount)
     {
         int hitCount = DetectEnemies();
         for (int i = 0; i < hitCount; i++)
         {
             Collider2D enemyCollider = enemyHits[i];
             Health enemyHealth = enemyCollider.GetComponent<Health>();
-            enemyHealth.TakeDamage(dps * Time.deltaTime);
-            onEnemyHit.Invoke(enemyHealth);
+            enemyHealth.TakeDamage(amount);
+
+            if (i == 0) {
+                onEnemyHit.Invoke(enemyHealth);
+            }
+        }
+    }
+
+    private IEnumerator DamageTickLoop() {
+        while (attacking) {
+            DealDamageInZone(dps * Globals.TickRate);
+
+            yield return new WaitForSeconds(Globals.deltaTick);
         }
     }
 
