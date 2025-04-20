@@ -65,6 +65,9 @@ TagManager:
   - name: Entity
     uniqueID: 2307308633
     locked: 0
+  - name: Pickup
+    uniqueID: 3525467223
+    locked: 0
   - name: Weapon
     uniqueID: 785561067
     locked: 0

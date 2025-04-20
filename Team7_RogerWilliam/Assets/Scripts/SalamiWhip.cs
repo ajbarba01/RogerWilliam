@@ -30,7 +30,7 @@ public class SalamiWhip : MonoBehaviour
         {
             Debug.Log("Whipped: " + hit.collider.name);
 
-            var enemy = hit.collider.GetComponent<EnemyHealth>();
+            var enemy = hit.collider.GetComponent<Health>();
             if (enemy != null)
             {
                 enemy.TakeDamage(whipDamage);

@@ -5,9 +5,12 @@ using UnityEngine;
 public class DamageFlash : MonoBehaviour
 {
     [SerializeField] private Material flashMat;
-    [SerializeField] private Color flashColor = Color.white;
+    [SerializeField] private Color damageFlashColor = Color.white;
+    [SerializeField] private Color healFlashColor = Color.green;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Health health;
+
+    private Color flashColor;
 
     private Material flashInstance;
     private float cooldown = 0.15f;
@@ -17,7 +20,18 @@ public class DamageFlash : MonoBehaviour
     private bool flashing = false;
 
     private void Awake() {
-        health.onDamage.AddListener(Flash);
+        health.onDamage.AddListener(OnDamage);
+        health.onHeal.AddListener(OnHeal);
+    }
+
+    public void OnHeal() {
+        flashColor = healFlashColor;
+        Flash();
+    }
+
+    public void OnDamage() {
+        flashColor = damageFlashColor;
+        Flash();
     }
 
     void Flash() {

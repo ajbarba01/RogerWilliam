@@ -14,8 +14,8 @@ public class Health : MonoBehaviour {
 
     // Should only be used to destroy object
     public UnityEvent onDeath;
-    public UnityEvent onDamage;
-    public UnityEvent<float> tookDamage;
+    public UnityEvent onDamage, onHeal;
+    public UnityEvent<float> tookDamage, tookHeal;
 
     protected float health;
 
@@ -63,6 +63,8 @@ public class Health : MonoBehaviour {
 
     public void Heal(float value) {
         SetHealth(health + value);
+        onHeal.Invoke();
+        tookHeal.Invoke(value);
         if (health > maxHealth) {
             ResetHealth();
         }
