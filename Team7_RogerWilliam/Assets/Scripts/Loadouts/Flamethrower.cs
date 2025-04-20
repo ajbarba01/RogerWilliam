@@ -62,6 +62,7 @@ public class Flamethrower : Weapon
         attacking = true;
         fireEffect.SetActive(true);
         mover.SetSlow(slow);
+        anim.SetPriorityState("Player_Flamethrower");
 
         StartCoroutine(DamageTickLoop());
 
@@ -76,6 +77,7 @@ public class Flamethrower : Weapon
             yield return null;
         }
 
+        anim.RemovePriorityState();
         mover.RemoveSlow();
         fireEffect.SetActive(false);
     }

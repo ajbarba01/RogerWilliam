@@ -22,6 +22,8 @@ public class MolotovCocktail : Ability
             dist = dist.normalized * attackRange;
         }
 
+        anim.PlayOnce("Player_Punch");
+
         Vector3 target = transform.position + dist;
 
         Vector3 initialPos = transform.position + dist.normalized * 0.5f;

@@ -6,25 +6,48 @@ using UnityEngine;
 public class AnimationManager : MonoBehaviour
 {
     private Animator anim;
-    private string currentState;
+    private string currentState, priorityState;
 
-    private bool playing;
+    private bool playing, priority;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
+        playing = false;
+        priority = false;
     }
 
     public void ChangeState(string newState) {
         if (playing) return;
         if (newState == currentState) return;
-
+        
         currentState = newState;
-        anim.Play(newState);
+        if (!priority) {
+            PlayState(newState);
+        }
+    }
+
+    private void PlayState(string state) {
+        anim.Play(state);
+    }
+
+    public void SetPriorityState(string newPriorityState) {
+        Debug.Log(newPriorityState);
+        if (playing || priority) return;
+
+        priority = true;
+        priorityState = newPriorityState;
+        anim.Play(newPriorityState);
+    }
+
+    public void RemovePriorityState() {
+        if (!priority) return;
+
+        priority = false;
+        PlayState(currentState);
     }
 
     public void PlayOnce(string newState, float duration=-1f) {
-        // if (playing) return;
         StartCoroutine(_PlayOnce(newState, duration));
     }
 
