@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5733387606274045811}
   - component: {fileID: 135438623891523399}
   - component: {fileID: 3176788003087707793}
+  - component: {fileID: 4093166438314209985}
   m_Layer: 6
   m_Name: GiantSalami
   m_TagString: Enemy
@@ -34,7 +35,7 @@ Transform:
   - {fileID: 5467963429716964697}
   - {fileID: 3019435508184990676}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5733387606274045811
 BoxCollider2D:
@@ -125,6 +126,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4093166438314209985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258234203467825504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3550eeeb6691387499820117036dcb31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  sausageWhip: {fileID: 0}
+  whipRange: 3
+  whipCooldown: 2
+  whipSpeed: 10
+  damage: 10
 --- !u!1 &3299752378229540205
 GameObject:
   m_ObjectHideFlags: 0
