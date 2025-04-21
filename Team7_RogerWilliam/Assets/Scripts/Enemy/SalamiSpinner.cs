@@ -38,7 +38,7 @@ public class SalamiSpinner : MonoBehaviour
     void MoveTowardPlayer()
     {
         Vector2 direction = ((Vector2)player.position - rb.position).normalized;
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
+        //rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
     }
 
     void DoAOEDamage()
