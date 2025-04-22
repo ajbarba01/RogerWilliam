@@ -4,68 +4,37 @@ using UnityEngine;
 
 public class SalamiBoss : MonoBehaviour
 {
-   public Transform target;
-    public Transform sausageWhip; // The transform representing the sausage
-    public float whipRange = 3f;
-    public float whipCooldown = 2f;
-    public float whipSpeed = 10f;
-    public int damage = 10;
+   public Transform player;
+    public GameObject sausagePrefab;
+    public Transform firePoint;
+    public float throwCooldown = 2f;
+    public float sausageSpeed = 10f;
+    private float lastThrowTime = -Mathf.Infinity;
 
-    private float lastWhipTime = -Mathf.Infinity;
-    private Vector3 originalWhipPosition;
-
-    void Start()
+    private void Update()
     {
-        if (sausageWhip != null)
-            originalWhipPosition = sausageWhip.localPosition;
-    }
+        if (player == null || sausagePrefab == null || firePoint == null)
+            return;
 
-    void Update()
-    {
-        if (target == null) return;
+        Vector3 scale = transform.localScale;
+        scale.x = player.position.x < transform.position.x ? -1 : 1;
+        transform.localScale = scale;
 
-        // Face the player
-        Vector3 direction = target.position - transform.position;
-        direction.y = 0; // keep rotation flat
-        if (direction != Vector3.zero)
-            transform.rotation = Quaternion.LookRotation(direction);
-
-        // Try to whip
-        if (Time.time >= lastWhipTime + whipCooldown)
+        if (Time.time >= lastThrowTime + throwCooldown)
         {
-            StartCoroutine(WhipSausage());
-            lastWhipTime = Time.time;
+            ThrowSausage();
+            lastThrowTime = Time.time;
         }
     }
 
-    System.Collections.IEnumerator WhipSausage()
+    private void ThrowSausage()
     {
-        // Extend whip
-        Vector3 targetPosition = sausageWhip.localPosition + sausageWhip.forward * whipRange;
-
-        float t = 0;
-        while (t < 1)
+        GameObject sausage = Instantiate(sausagePrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D rb = sausage.GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            t += Time.deltaTime * whipSpeed;
-            sausageWhip.localPosition = Vector3.Lerp(originalWhipPosition, targetPosition, t);
-            yield return null;
-        }
-
-        // Deal damage if player is hit
-        if (Vector3.Distance(sausageWhip.position, target.position) < 1.5f)
-        {
-            Debug.Log("Whipped enemy with sausage!");
-            // If player has health script:
-            // target.GetComponent<PlayerHealth>()?.TakeDamage(damage);
-        }
-
-        // Retract whip
-        t = 0;
-        while (t < 1)
-        {
-            t += Time.deltaTime * whipSpeed;
-            sausageWhip.localPosition = Vector3.Lerp(targetPosition, originalWhipPosition, t);
-            yield return null;
+            Vector2 direction = (player.position - firePoint.position).normalized;
+            rb.velocity = direction * sausageSpeed;
         }
     }
 }
