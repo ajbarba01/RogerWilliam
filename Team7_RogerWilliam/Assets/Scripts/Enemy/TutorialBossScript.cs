@@ -8,10 +8,11 @@ public class TutorialBossScript : MonoBehaviour
     protected GameObject player;
 
     protected Rigidbody2D rb2D;
+    public Animator anim;
     [SerializeField] private float moveSpeed = 2.5f;
 
-    [SerializeField] private float attackRange = 4f;
-    [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float attackCooldown = 3f;
     [SerializeField] private float attackDamage = 20f;
 
     [SerializeField] public float knockBack = 10f;
@@ -27,6 +28,7 @@ public class TutorialBossScript : MonoBehaviour
         }
         rb2D = GetComponent<Rigidbody2D>();
         gameHandler = GameObject.FindWithTag("GameController");
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -38,8 +40,11 @@ public class TutorialBossScript : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
         } else 
         {
+            anim.SetBool("goblin_attack", true);
             BossAttack();
+            anim.SetBool("goblin_attack", false);
         }
+        
     }
 
     protected virtual void BossAttack()

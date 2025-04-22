@@ -8,6 +8,7 @@ public class GameHandler : MonoBehaviour
     public static GameHandler Instance;
     public static GameObject gameController;
     public static Health playerHealth;
+    public static bool tutorialBossDefeated = false;
 
     void Awake()
     {
@@ -53,5 +54,10 @@ public class GameHandler : MonoBehaviour
 
     public void HomeBase() {
         ChangeScene("HomeBase");
+    }
+    public void tutorialBossDeath()
+    {
+        tutorialBossDefeated = true;
+        Debug.Log("BoolCalled!");
     }
 }

@@ -11,46 +11,56 @@ public class NPCMonologue : MonoBehaviour {
        public bool playerInRange = false; //could be used to display an image: hit [e] to talk
        public int monologueLength;
 
+       // protected GameObject gameHandler;
+
        void Start(){
               //anim = gameObject.GetComponentInChildren<Animator>();
               monologueLength = monologue.Length;
               if (GameObject.FindWithTag("MonologueManager")!= null){
                      monologueMNGR = GameObject.FindWithTag("MonologueManager").GetComponent<NPCMonologueManager>();
               }
+              // gameHandler = GameObject.FindWithTag("GameController");
        }
 
        private void OnTriggerEnter2D(Collider2D other){
               if (other.gameObject.tag == "Player") {
                      playerInRange = true;
                      List<string> lines = new List<string>(monologue);
-                     if(LoadoutManager.Instance == null)
+                     if(GameHandler.tutorialBossDefeated == false)
                      {
-                            lines.Add("Nothing");
-                     } else
+                            Debug.Log("False");
+                     }
+                     if(GameHandler.tutorialBossDefeated)
                      {
-                            lines.Add("Congrats on using these to defeat the boss!");
-                            if(LoadoutManager.Instance.unlockedWeapons.Count > 0)
+                            if(LoadoutManager.Instance == null)
                             {
-                                   foreach (var weapon in LoadoutManager.Instance.unlockedWeapons)
-                                   {
-                                          lines.Add(" " + weapon.name);
-                                   }
-                            }
-                            if (LoadoutManager.Instance.unlockedAbilities.Count > 0)
+                                   lines.Add("Nothing");
+                            } else
                             {
-                                   foreach (var ability in LoadoutManager.Instance.unlockedAbilities)
+                                   lines.Add("Congrats on using these to defeat the boss!");
+                                   if(LoadoutManager.Instance.unlockedWeapons.Count > 0)
                                    {
-                                          lines.Add("- " + ability.name);
+                                          foreach (var weapon in LoadoutManager.Instance.unlockedWeapons)
+                                          {
+                                                 lines.Add(" " + weapon.name);
+                                          }
                                    }
-                            }
+                                   if (LoadoutManager.Instance.unlockedAbilities.Count > 0)
+                                   {
+                                          foreach (var ability in LoadoutManager.Instance.unlockedAbilities)
+                                          {
+                                                 lines.Add("- " + ability.name);
+                                          }
+                                   }
 
-                            if (LoadoutManager.Instance.unlockedPassives.Count > 0)
-                            {
-                                   foreach (var passive in LoadoutManager.Instance.unlockedPassives)
+                                   if (LoadoutManager.Instance.unlockedPassives.Count > 0)
                                    {
-                                          lines.Add("- " + passive.name);
-                                   }
-                            }      
+                                          foreach (var passive in LoadoutManager.Instance.unlockedPassives)
+                                          {
+                                                 lines.Add("- " + passive.name);
+                                          }
+                                   }      
+                            }
                      }
                      monologue = lines.ToArray();
                      monologueLength = monologue.Length;
