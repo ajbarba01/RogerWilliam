@@ -208,6 +208,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1436987239999540142, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436987239999540142, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1496105054859284250, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -286,11 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1496105054859284250, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -60
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 1496105054859284250, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -19
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1496105054859284250, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -310,6 +318,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2071672616676440160, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3231815122509843366, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 771552537}
+    - target: {fileID: 3231815122509843366, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MonologueNext
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758389153744730361, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758389153744730361, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7007317156115381442, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680234090682276373, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043394819907900996, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043394819907900996, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8043394819907900996, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -569,6 +613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &527829184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2071672616676440160, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+  m_PrefabInstance: {fileID: 106521012}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &668735201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2308,6 +2357,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &771552537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7779546325978243886, guid: f0b334a19530cae41b40ea3c46070c1f, type: 3}
+  m_PrefabInstance: {fileID: 1312037509}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8627578066ae8534185c583d49237bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &803856903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5684,7 +5744,7 @@ PrefabInstance:
     - target: {fileID: 7779546325978243886, guid: f0b334a19530cae41b40ea3c46070c1f, type: 3}
       propertyPath: monologueBox
       value: 
-      objectReference: {fileID: 2071672616676440160, guid: 409e3a15fce539b4c8558d6337ef3fcd, type: 3}
+      objectReference: {fileID: 527829184}
     - target: {fileID: 7779546325978243886, guid: f0b334a19530cae41b40ea3c46070c1f, type: 3}
       propertyPath: monologueText
       value: 
@@ -7439,6 +7499,32 @@ PrefabInstance:
     - target: {fileID: 3387253346074290389, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: m_Name
       value: NPCChat
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.data[1]
+      value: I'm here to help you on your journey. Ready to begin?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.data[2]
+      value: I know you are looking for the one true nickname to help find yourself.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.data[3]
+      value: I've created 5 different portals for you to go and fight nicknames so
+        you can concur the best one.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.data[4]
+      value: Use WASD to move and space to attack. You'll unlock more powers as you
+        go.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: monologue.Array.data[5]
+      value: Continue to the end of the level to get your first nickname!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
