@@ -15,7 +15,10 @@ public class NPCMonologueManager : MonoBehaviour {
               monologueBox.SetActive(false);
               monologueLength = monologue.Length; //allows us test dialogue without an NPC
        }
-
+       // public void getLoadoutInformation()
+       // {
+              
+       // }
        void Update(){
               //temporary testing before NPC is created
               if (Input.GetKeyDown("o")){
@@ -30,7 +33,6 @@ public class NPCMonologueManager : MonoBehaviour {
 
        public void OpenMonologue(){
               monologueBox.SetActive(true);
- 
               //auto-loads the first line of monologue
               monologueText.text = monologue[0];
               counter = 1;
