@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IceCubeLevel.unity
     guid: 9023aae870ebddf45970b7d0041f5411
+  - enabled: 1
+    path: Assets/Scenes/ProvisionalSalamiScene.unity
+    guid: 8432757377cb51f4099886e003052e77
   m_configObjects: {}

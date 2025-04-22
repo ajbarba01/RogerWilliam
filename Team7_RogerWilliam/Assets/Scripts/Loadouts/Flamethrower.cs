@@ -77,6 +77,8 @@ public class Flamethrower : Weapon
             fireEffect.transform.position = transform.position + direction * 2f;
             fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
 
+            flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+
             yield return null;
         }
 
