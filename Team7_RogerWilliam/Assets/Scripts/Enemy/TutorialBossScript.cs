@@ -19,6 +19,12 @@ public class TutorialBossScript : MonoBehaviour
     private float distance;
     private float attackTimer;
 
+    private string walkState = "goblin_front_walk";
+    private string attackState = "goblin_attack";
+    private string idleState = "Goblin_idle";
+
+    private AnimationManager animMgr;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -29,6 +35,18 @@ public class TutorialBossScript : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         gameHandler = GameObject.FindWithTag("GameController");
         anim = gameObject.GetComponent<Animator>();
+
+        animMgr = GetComponent<AnimationManager>();
+        if (animMgr == null) {
+            Debug.LogWarning("T boss scriot: no anim manager found!");
+        }
+
+        animMgr = GetComponent<AnimationManager>();
+        if (animMgr == null) {
+            Debug.LogError("No AnimationManager on ");
+        } else {
+            Debug.Log("AnimMgr found on ");
+        }
     }
 
     void Update()
@@ -38,11 +56,16 @@ public class TutorialBossScript : MonoBehaviour
         
         if (distance > attackRange) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
-        } else 
+        } 
+        if (animMgr != null) {
+            animMgr.ChangeState(walkState);
+        }     
+        else 
         {
-            anim.SetBool("goblin_attack", true);
-            BossAttack();
-            anim.SetBool("goblin_attack", false);
+            if (animMgr != null) {
+                animMgr.PlayOnce(attackState);
+                BossAttack();
+            }
         }
         
     }
