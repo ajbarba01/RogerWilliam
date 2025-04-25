@@ -11,6 +11,8 @@ public class NPCMonologue : MonoBehaviour {
        public bool playerInRange = false; //could be used to display an image: hit [e] to talk
        public int monologueLength;
 
+       public AudioClip dialogueClip;
+       private AudioSource _audioSource;
        // protected GameObject gameHandler;
 
        void Start(){
@@ -25,6 +27,12 @@ public class NPCMonologue : MonoBehaviour {
        private void OnTriggerEnter2D(Collider2D other){
               if (other.gameObject.tag == "Player") {
                      playerInRange = true;
+
+                     if (dialogueClip != null) {
+                            _audioSource.PlayOneShot(dialogueClip);
+                     }
+
+                     
                      List<string> lines = new List<string>(monologue);
                      if(GameHandler.tutorialBossDefeated == false)
                      {
