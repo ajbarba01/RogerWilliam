@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -11,10 +12,12 @@ public class Dialogue : MonoBehaviour
     private string[] dialogueSnippets;
     private int currentdialogue, maxDialogue;
 
-    private static Dialogue instance; 
+    public UnityEvent dialogueCompleted;
+
+    public static Dialogue Instance; 
 
     private void Awake() {
-        instance = this;
+        Instance = this;
         HideDialogue();
     }
 
@@ -39,11 +42,11 @@ public class Dialogue : MonoBehaviour
     }
 
     public static void ShowDialogue(string[] dialogueEntries) {
-        instance._ShowDialogue(dialogueEntries);
+        Instance._ShowDialogue(dialogueEntries);
     }
 
     public static void HideDialogue() {
-        instance._HideDialogue();
+        Instance._HideDialogue();
     }
 
     public void NextSnippet() {

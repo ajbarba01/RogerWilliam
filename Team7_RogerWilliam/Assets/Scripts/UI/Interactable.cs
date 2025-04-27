@@ -10,7 +10,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] private KeyCode key = KeyCode.E;
     private bool inRange = false;
     public UnityEvent onInteract;
-    private Collider2D interactArea;
+    [SerializeField] private Collider2D interactArea;
+
+    [SerializeField] private bool shouldDissapear;
 
     void Update() {
         if (Pause.isPaused) return;
