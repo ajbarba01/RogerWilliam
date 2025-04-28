@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockPassive : MonoBehaviour
+public class RockPassive : Passive
 {
     [SerializeField] private Health health;
 
-    public void DoubleHealth()
+    private void Start()
     {
         if (health == null)
         {
@@ -19,7 +19,6 @@ public class RockPassive : MonoBehaviour
 
         health.SetHealth(current * 2f);
 
-        // Double the maxHealth field too
         typeof(Health).GetField("maxHealth", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
             .SetValue(health, max * 2f);
     }

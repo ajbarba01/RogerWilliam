@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SalamiPassive : MonoBehaviour
 {
-    /*[SerializeField] private AgentMover mover;
+     [SerializeField] private AgentMover mover;
 
-    public void DoubleSpeed()
+    private void Start()
     {
         if (mover == null)
         {
@@ -14,8 +14,7 @@ public class SalamiPassive : MonoBehaviour
             return;
         }
 
-        float currentSpeed = mover.moveSpeed;
-        mover.moveSpeed = currentSpeed * 2f;
+        float currentSpeed = mover.GetMovement().magnitude;
+        mover.SetMovespeed(currentSpeed * 2f);
     }
-    */
 }
