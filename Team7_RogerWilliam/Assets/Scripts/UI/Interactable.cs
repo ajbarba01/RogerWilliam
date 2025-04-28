@@ -18,6 +18,10 @@ public class Interactable : MonoBehaviour
         if (Pause.isPaused) return;
         if (inRange && Input.GetKeyDown(key)) {
             onInteract.Invoke();
+
+            if (shouldDissapear) {
+                Interactions.SetEnabled(false);
+            }
         }
     }
 
@@ -25,6 +29,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player")) {
             inRange = true;
             Interactions.Show(text);
+            Interactions.SetEnabled(true);
         }
     }
 
