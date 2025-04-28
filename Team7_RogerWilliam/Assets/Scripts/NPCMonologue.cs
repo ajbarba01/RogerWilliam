@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using System.Collections;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,35 +41,15 @@ public class NPCMonologue : MonoBehaviour {
                      }
                      if(GameHandler.tutorialBossDefeated)
                      {
-                            if(LoadoutManager.Instance == null)
-                            {
-                                   lines.Add("Nothing");
-                            } else
-                            {
-                                   lines.Add("Congrats on using these to defeat the boss!");
-                                   if(LoadoutManager.Instance.unlockedWeapons.Count > 0)
-                                   {
-                                          foreach (var weapon in LoadoutManager.Instance.unlockedWeapons)
-                                          {
-                                                 lines.Add(" " + weapon.name);
-                                          }
-                                   }
-                                   if (LoadoutManager.Instance.unlockedAbilities.Count > 0)
-                                   {
-                                          foreach (var ability in LoadoutManager.Instance.unlockedAbilities)
-                                          {
-                                                 lines.Add("- " + ability.name);
-                                          }
-                                   }
-
-                                   if (LoadoutManager.Instance.unlockedPassives.Count > 0)
-                                   {
-                                          foreach (var passive in LoadoutManager.Instance.unlockedPassives)
-                                          {
-                                                 lines.Add("- " + passive.name);
-                                          }
-                                   }      
-                            }
+                            Array.Clear(monologue, 0, monologueLength);
+                            lines.Add("Congrats on beating Big Money!");
+                            lines.Add("That guy really liked to hit you far huh.");
+                            updateMonologue(lines);
+                            lines.Add("Hopefully Big Money is the name you're looking for.");
+                            lines.Add("It isn't? Wow you're really looking hard for this nickname.");
+                            lines.Add("I guess you can have a shot at my friend Hot Rod. He's a high temper guy who really likes the tropical weather.");
+                            lines.Add("Good Luck!");
+                            
                      }
                      monologue = lines.ToArray();
                      monologueLength = monologue.Length;
@@ -85,6 +66,28 @@ public class NPCMonologue : MonoBehaviour {
                      monologueMNGR.CloseMonologue();
                      //anim.SetBool("Chat", false);
                      //Debug.Log("Player left range");
+              }
+       }
+       private void updateMonologue(List<string> lines)
+       {
+              if(LoadoutManager.Instance == null)
+              {
+                     lines.Add("Nothing");
+              } else
+              {
+                     lines.Add("Here's a look at what you used to beat the boss.");
+                     if(LoadoutManager.Instance.currentWeapon.name != null)
+                     {
+                            lines.Add("Weapon used:" + LoadoutManager.Instance.currentWeapon.name);
+                     }
+                     if(LoadoutManager.Instance.currentAbility.name != null)
+                     {
+                            lines.Add("Ability used:" + LoadoutManager.Instance.currentAbility.name);
+                     }
+                     if(LoadoutManager.Instance.currentPassive.name != null)
+                     {
+                            lines.Add("Passive used:" + LoadoutManager.Instance.currentPassive.name);
+                     } 
               }
        }
 }

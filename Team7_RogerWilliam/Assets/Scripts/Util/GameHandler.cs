@@ -9,6 +9,11 @@ public class GameHandler : MonoBehaviour
     public static GameObject gameController;
     public static Health playerHealth;
     public static bool tutorialBossDefeated = false;
+    public static bool hotRodDefeated = false;
+    public static bool iceCubeDefeated = false;
+    public static bool guitarGeorgeDefeated = false;
+    public static  bool salamiSamDefeated = false;
+    public static bool finalBossDefeated = false;  
 
     void Awake()
     {
@@ -59,5 +64,25 @@ public class GameHandler : MonoBehaviour
     {
         tutorialBossDefeated = true;
         Debug.Log("BoolCalled!");
+    }
+    public void hotRodDeath()
+    {
+        hotRodDefeated = true;
+    }
+    public void iceCubeDeath()
+    {
+        iceCubeDefeated = true;
+    }
+    public void guitarGeorgeDeath()
+    {
+        guitarGeorgeDefeated = true;
+    }
+    public void salamiSamDeath()
+    {
+        salamiSamDefeated = true;
+    }
+    public void finalBossDeath()
+    {
+        finalBossDefeated = true;
     }
 }
