@@ -62,7 +62,7 @@ public class Interactions : MonoBehaviour
         if (!newEnabled) {
             Hide();
         }
-        else {
+        else if (instance.isActive) {
             instance.text.gameObject.SetActive(true);
             instance.pulse.Reset();
         }

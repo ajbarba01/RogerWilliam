@@ -21,13 +21,6 @@ public class Dialogue : MonoBehaviour
         HideDialogue();
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
-            string[] entries = {"Hello", "Goodbye"};
-            ShowDialogue(entries);
-        }
-    }
-
     private void _ShowDialogue(string[] dialogueEntries) {
         dialogueSnippets = dialogueEntries;
         window.SetActive(true);
