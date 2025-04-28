@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SalamiPassive : MonoBehaviour
 {
-    [SerializeField] private AgentMover mover;
+    /*[SerializeField] private AgentMover mover;
 
     public void DoubleSpeed()
     {
@@ -17,4 +17,5 @@ public class SalamiPassive : MonoBehaviour
         float currentSpeed = mover.moveSpeed;
         mover.moveSpeed = currentSpeed * 2f;
     }
+    */
 }
