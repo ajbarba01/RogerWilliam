@@ -12,7 +12,7 @@ public class TutorialBossScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 2.5f;
 
     [SerializeField] private float attackRange = 1f;
-    [SerializeField] private float attackCooldown = 3f;
+    [SerializeField] private float attackCooldown = 4f;
     [SerializeField] private float attackDamage = 20f;
 
     [SerializeField] public float knockBack = 10f;
