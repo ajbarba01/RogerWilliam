@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 3313326449128404255}
   - component: {fileID: 676343789207897765}
   - component: {fileID: 9201593388608403942}
+  - component: {fileID: 796166019633130732}
   m_Layer: 6
   m_Name: Fireball Goons
   m_TagString: Enemy
@@ -135,7 +136,16 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  tookHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7568874265010375899
@@ -154,7 +164,7 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 8117433055548014173, guid: d68dae087919226419e86fb3cdc84540, type: 3}
   projectileSpeed: 2
-  attackCooldown: 1
+  attackCooldown: 3
   attackRange: 10
   anim: {fileID: 0}
 --- !u!114 &-1523413079796406445
@@ -170,7 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  healFlashColor: {r: 0, g: 1, b: 0, a: 1}
   spriteRenderer: {fileID: 4433643534040477496}
   health: {fileID: 698274327335941688}
 --- !u!61 &3313326449128404255
@@ -253,6 +264,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &796166019633130732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301758031551305530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea48a7fc04f018e4aab552edc6a5f0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 0
+  cooldown: 0.25
 --- !u!1 &4635501758845413021
 GameObject:
   m_ObjectHideFlags: 0
