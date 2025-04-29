@@ -63,7 +63,7 @@ public class EnemyChase : MonoBehaviour
     {
         distance = Vector3.Distance(transform.position, Player.GetPosition());
 
-        int layerMask = ~LayerMask.GetMask("Enemy", "Projectile");
+        int layerMask = ~LayerMask.GetMask("Enemy", "Projectile", "Hazard");
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Player.GetPosition() - transform.position, Distance(), layerMask);
         if (ray.collider != null) {
             hasLOS = ray.collider.CompareTag("Player");
