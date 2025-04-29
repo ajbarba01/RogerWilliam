@@ -9,7 +9,7 @@ public class Interactions : MonoBehaviour
     private Pulse pulse;
     private bool isActive;
 
-    private bool enabled;
+    private bool isEnabled;
 
     private static Interactions instance;
 
@@ -20,7 +20,7 @@ public class Interactions : MonoBehaviour
             text = GetComponentInChildren<TextMeshProUGUI>(true);
             pulse = GetComponent<Pulse>();
             isActive = false;
-            enabled = false;
+            isEnabled = true;
             Hide();
         }
         else {
@@ -30,7 +30,7 @@ public class Interactions : MonoBehaviour
 
     private void _Show(string newText) {
         SetText(newText);
-        if (!isActive) {
+        if (!isActive && isEnabled) {
             text.gameObject.SetActive(true);
             isActive = true;
             pulse.Reset();
@@ -58,7 +58,7 @@ public class Interactions : MonoBehaviour
 
     public static void SetEnabled(bool newEnabled) {
         Debug.Log(newEnabled);
-        instance.enabled = newEnabled;
+        instance.isEnabled = newEnabled;
         if (!newEnabled) {
             Hide();
         }

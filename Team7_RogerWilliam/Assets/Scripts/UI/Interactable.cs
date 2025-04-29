@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player")) {
             inRange = true;
             Interactions.Show(text);
-            Interactions.SetEnabled(true);
+            // Interactions.SetEnabled(true);
         }
     }
 

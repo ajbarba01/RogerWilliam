@@ -10,9 +10,11 @@ public class IceCube_proj : MonoBehaviour
     //public GameObject hitEffectAnim;  When there is an animation implemented
     public float lifetime = 3f;
     public float freezetime = 2f;
+    public GameObject Ice;
 
     void Start()
     {
+        StartCoroutine(SpawnIcePuddle(lifetime - 0.15f));
         Destroy(gameObject, lifetime);
         player = GameObject.FindWithTag("Player");
     }
@@ -31,7 +33,15 @@ public class IceCube_proj : MonoBehaviour
                 player.GetComponent<Player>().ApplyFreeze(freezetime);
             }
 
+            Instantiate(Ice, transform.position, transform.rotation);
             Destroy(gameObject); //destroy after hitting
         }
+    }
+
+    IEnumerator SpawnIcePuddle(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        Instantiate(Ice, transform.position, transform.rotation);
     }
 }
