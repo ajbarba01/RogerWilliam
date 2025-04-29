@@ -64,14 +64,17 @@ public class GameHandler : MonoBehaviour
     {
         tutorialBossDefeated = true;
         Debug.Log("BoolCalled!");
+        LevelManager.Instance.UnlockLevelInst(2);
     }
     public void hotRodDeath()
     {
         hotRodDefeated = true;
+        LevelManager.Instance.UnlockLevelInst(3);
     }
     public void iceCubeDeath()
     {
         iceCubeDefeated = true;
+        LevelManager.Instance.UnlockLevelInst(4);
     }
     public void guitarGeorgeDeath()
     {
@@ -80,6 +83,7 @@ public class GameHandler : MonoBehaviour
     public void salamiSamDeath()
     {
         salamiSamDefeated = true;
+        LevelManager.Instance.UnlockLevelInst(5);
     }
     public void finalBossDeath()
     {
