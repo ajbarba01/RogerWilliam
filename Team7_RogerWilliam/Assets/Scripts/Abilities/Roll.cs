@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Roll : MonoBehaviour
 {
-    [SerializeField] private float rollSpeed, rollDuration, rollCooldown;
+    [SerializeField] public float rollSpeed, rollDuration, rollCooldown;
 
     [SerializeField] private Image cooldownBar;
 
