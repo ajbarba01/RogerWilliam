@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 [RequireComponent(typeof(TopDownDirection))]
+[RequireComponent(typeof(Animator))]
+
 public class HotRodMovement : MonoBehaviour
 {
     [SerializeField] private float minMoveSpeed = 2f;
@@ -9,10 +13,11 @@ public class HotRodMovement : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float preferredDistance = 2f;
     [SerializeField] private float detectionRadius = 8f;
-
-    // public Animator anim;
+    [SerializeField] private Animator anim;
 
     private float distance = 100f;
+    public int facing { get; private set; } = 1;
+    public UnityEvent onMove;
 
     private Vector2 movement;
     private Rigidbody2D rb;
@@ -25,7 +30,7 @@ public class HotRodMovement : MonoBehaviour
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
         rb = GetComponent<Rigidbody2D>();
         movement = new Vector2(0, 0);
-        // anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -38,12 +43,21 @@ public class HotRodMovement : MonoBehaviour
             Vector3 direction = Player.GetPosition() - transform.position;
             movement = new Vector2(direction.x, direction.y);
             movement.Normalize();
-            // anim.SetBool("Walk", true);
         }
         else {
             movement = new Vector2(0, 0);
-            // anim.SetBool("Walk", false);
         }
+
+        bool isWalking = movement.sqrMagnitude > 0f;       
+        anim.SetBool("Walk", isWalking);
+
+        if (isWalking)
+        {
+            onMove.Invoke();
+            anim.SetFloat("MoveX", movement.x);  
+            anim.SetFloat("MoveY", movement.y);
+        }                   
+
     }
 
     void FixedUpdate()
