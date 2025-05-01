@@ -36,12 +36,12 @@ public class TutorialBossScript : MonoBehaviour
         gameHandler = GameObject.FindWithTag("GameController");
         anim = gameObject.GetComponent<Animator>();
 
-        animMgr = GetComponent<AnimationManager>();
-        if (animMgr == null) {
-            Debug.LogWarning("T boss scriot: no anim manager found!");
-        }
+        animMgr = GetComponentInChildren<AnimationManager>();
+        // if (animMgr == null) {
+        //     Debug.LogWarning("T boss scriot: no anim manager found!");
+        // }
 
-        animMgr = GetComponent<AnimationManager>();
+        // animMgr = GetComponent<AnimationManager>();
         if (animMgr == null) {
             Debug.LogError("No AnimationManager on ");
         } else {
