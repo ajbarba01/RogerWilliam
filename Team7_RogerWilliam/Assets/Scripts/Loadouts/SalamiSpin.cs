@@ -2,30 +2,74 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SalamiSpin : MonoBehaviour
+public class SalamiSpin : Ability
 {
-     [SerializeField] private float radius = 3f;
-    [SerializeField] private float damage = 10f;
-    [SerializeField] private GameObject aoeEffectPrefab;
-    [SerializeField] public LayerMask enemyLayers;
+    [SerializeField] private float spinRange = 2f;        // Range of the spin attack
+    [SerializeField] private float spinDuration = 1f;     // Duration of the spin attack
+    [SerializeField] private float spinDamage = 5f;       // Damage dealt per hit
+    [SerializeField] private float spinCooldown = 3f;     // Cooldown between spins
+    [SerializeField] private float spinSpeed = 300f;      // Speed of the spin (degrees per second)
 
-    protected override void OnActivate() {
-        mover.FaceTowardsMouse(transform.position);
+    [SerializeField] private LayerMask enemyLayers;      // Layers to detect enemies on
 
-        Vector3 aoePosition = transform.position; // Could change to mouse position if needed
-        Instantiate(aoeEffectPrefab, aoePosition, Quaternion.identity);
+    private float currentSpinTime = 0f;
 
-        anim.PlayOnce("Player_Punch");
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(aoePosition, radius, enemyLayers);
-        foreach (var hit in hits) {
-            hit.GetComponent<Health>()?.TakeDamage(damage);
-        }
+    protected override void OnActivate()
+    {
+        // Activate the spin attack
+        StartCoroutine(SpinAttack());
     }
 
-    // Optional: visualize radius in editor
-    private void OnDrawGizmosSelected() {
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, radius);
+    private IEnumerator SpinAttack()
+    {
+        anim.PlayOnce("Player_SpinAttack");  // Play the spin animation
+        float elapsedTime = 0f;
+
+        // While the spin duration is not finished
+        while (elapsedTime < spinDuration)
+        {
+            // Rotate the character (you can also rotate the character's weapon/attack hitbox)
+            transform.Rotate(Vector3.forward * spinSpeed * Time.deltaTime);
+
+            // Check for enemies in the spin's range and apply damage
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, enemyLayers);
+            foreach (var hit in hits)
+            {
+                // Only apply damage if it's an enemy with health
+                var health = hit.GetComponent<Health>();
+                if (health != null)
+                {
+                    health.TakeDamage(spinDamage * Globals.deltaTick);
+                }
+            }
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Cooldown before the next spin
+        StartCoroutine(Cooldown());
+    }
+
+    private IEnumerator Cooldown()
+    {
+        // Prevent reactivation during cooldown
+        onCooldown = true;
+        currentSpinTime = 0f;
+
+        while (currentSpinTime < spinCooldown)
+        {
+            currentSpinTime += Time.deltaTime;
+            yield return null;
+        }
+
+        RefreshCooldown();
+    }
+
+    // Visual or functional feedback (optional)
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, spinRange); // Display the spin range in the editor
     }
 }
