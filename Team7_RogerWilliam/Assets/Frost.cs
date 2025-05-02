@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class Frost : Passive
 {
+    private struct FrostedEnemy {
+        public float start;
+        public Color ogColor;
+
+        public FrostedEnemy(float start, Color color) {
+            this.start = start;
+            this.ogColor = color;
+        }
+    };
+
     [SerializeField] private float frostDuration, frostMultiplier;
     [SerializeField] private Color frostColor;
+
+    private Dictionary<AgentMover, FrostedEnemy> frostedEnemies = new Dictionary<AgentMover, FrostedEnemy>();
 
     void Start()
     {
@@ -18,32 +30,41 @@ public class Frost : Passive
     }
 
     void EnemyHit(Health enemyHealth) {
-        StartCoroutine(ApplyFrost(enemyHealth.GetComponent<AgentMover>()));
-        Debug.Log("Enemy hit frost applied");
+        AgentMover mover = enemyHealth.GetComponent<AgentMover>();
+        if (frostedEnemies.ContainsKey(mover)) {
+            frostedEnemies[mover] = new FrostedEnemy(Time.time, frostedEnemies[mover].ogColor);
+        }
+        else {
+            StartCoroutine(ApplyFrost(mover));
+        }
     }
 
     private IEnumerator ApplyFrost(AgentMover mover) {
-        if (!mover.frosted) {
-            SpriteRenderer renderer = mover.GetComponentInChildren<SpriteRenderer>();
-            Color ogColor = renderer.color;
-            renderer.color = frostColor;
 
-            mover.frosted = true;
-            mover.SetSlow(frostMultiplier);
-            yield return new WaitForSeconds(frostDuration);
+        SpriteRenderer renderer = mover.GetComponentInChildren<SpriteRenderer>();
+        Color ogColor = renderer.color;
+        renderer.color = frostColor;
 
-            if (!mover) {
-                yield break;
-            }
+        frostedEnemies[mover] =  new FrostedEnemy(Time.time, ogColor);
 
-            mover.RemoveSlow();
-            mover.frosted = false;
+        mover.SetSlow(frostMultiplier);
 
-            renderer.color = ogColor;
+        while (frostedEnemies[mover].start + frostDuration > Time.time) {
+            yield return new WaitForSeconds(Globals.TickRate);
         }
+
+        mover.RemoveSlow();
+        renderer.color = ogColor;
+        
+        frostedEnemies.Remove(mover);
     }
 
     private void OnDestroy() {
         Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon().onEnemyHit.RemoveListener(EnemyHit);
+
+        foreach (KeyValuePair<AgentMover, FrostedEnemy> entry in frostedEnemies) {
+            entry.Key.RemoveSlow();
+            entry.Key.GetComponentInChildren<SpriteRenderer>().color = entry.Value.ogColor;
+        }
     }
 }

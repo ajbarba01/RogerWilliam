@@ -28,8 +28,6 @@ public class AgentMover : MonoBehaviour
 
     public UnityEvent onMove;
 
-    public bool frosted = false;
-
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationManager>();
