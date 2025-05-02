@@ -161,7 +161,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 740428885
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1952578949116356506
@@ -347,6 +347,8 @@ GameObject:
   - component: {fileID: 6845328341006671629}
   - component: {fileID: 5868824148577717403}
   - component: {fileID: 7764390537943000000}
+  - component: {fileID: 3548808420046251191}
+  - component: {fileID: 4348227865236723112}
   m_Layer: 6
   m_Name: TargetDummy
   m_TagString: Enemy
@@ -440,7 +442,13 @@ MonoBehaviour:
   onDamage:
     m_PersistentCalls:
       m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  tookHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &6845328341006671629
@@ -471,7 +479,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  healFlashColor: {r: 0, g: 1, b: 0, a: 1}
   spriteRenderer: {fileID: 7839907921070713000}
   health: {fileID: 898801496431799236}
 --- !u!114 &7764390537943000000
@@ -488,6 +497,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   cooldown: 0.25
+--- !u!50 &3548808420046251191
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042881145514726771}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &4348227865236723112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042881145514726771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603c026687c2dcb45bc5db8d95af49dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  knockbackResistance: 1
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
+  frosted: 0
 --- !u!1001 &5569358197208534372
 PrefabInstance:
   m_ObjectHideFlags: 0

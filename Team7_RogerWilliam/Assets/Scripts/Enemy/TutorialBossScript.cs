@@ -57,7 +57,7 @@ public class TutorialBossScript : MonoBehaviour
         if (distance > attackRange) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
             if (animMgr != null) {
-            Debug.Log("HERE!");
+            // Debug.Log("HERE!");
             animMgr.ChangeState(walkState);
             }  
         }   

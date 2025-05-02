@@ -28,6 +28,8 @@ public class AgentMover : MonoBehaviour
 
     public UnityEvent onMove;
 
+    public bool frosted = false;
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationManager>();
@@ -36,13 +38,13 @@ public class AgentMover : MonoBehaviour
     public void SetDirection(Vector2 newDirection) {
         direction = newDirection;
         direction.Normalize();
-        movement = direction * moveSpeed * slow;
+        movement = direction * moveSpeed;
     }
 
     public void SetIceDirection(Vector2 newDirection) {
         direction = newDirection;
         direction.Normalize();
-        Vector2 targetMovement = direction * moveSpeed * slow;
+        Vector2 targetMovement = direction * moveSpeed;
         movement = Vector2.Lerp(movement, targetMovement, iceInertia);
     }
 
@@ -136,7 +138,7 @@ public class AgentMover : MonoBehaviour
         
         SetFacing(facing);
 
-        rb.velocity = movement;
+        rb.velocity = movement * slow;
     }
 
     public void SetFacing(int newFacing) {

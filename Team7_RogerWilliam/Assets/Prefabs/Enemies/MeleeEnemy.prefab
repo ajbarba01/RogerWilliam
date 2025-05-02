@@ -137,7 +137,13 @@ MonoBehaviour:
   onDamage:
     m_PersistentCalls:
       m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  tookHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2089916773471608194
@@ -203,6 +209,7 @@ MonoBehaviour:
   onMove:
     m_PersistentCalls:
       m_Calls: []
+  frosted: 0
 --- !u!114 &2114324179697980892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  healFlashColor: {r: 0, g: 1, b: 0, a: 1}
   spriteRenderer: {fileID: 4421326837406588113}
   health: {fileID: 4001342048714713987}
 --- !u!114 &8651212645525667645
