@@ -12,7 +12,7 @@ public class TutorialBossScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 2.5f;
 
     [SerializeField] private float attackRange = 1f;
-    [SerializeField] private float attackCooldown = 3f;
+    [SerializeField] private float attackCooldown = 4f;
     [SerializeField] private float attackDamage = 20f;
 
     [SerializeField] public float knockBack = 10f;
@@ -36,12 +36,12 @@ public class TutorialBossScript : MonoBehaviour
         gameHandler = GameObject.FindWithTag("GameController");
         anim = gameObject.GetComponent<Animator>();
 
-        animMgr = GetComponent<AnimationManager>();
-        if (animMgr == null) {
-            Debug.LogWarning("T boss scriot: no anim manager found!");
-        }
+        animMgr = GetComponentInChildren<AnimationManager>();
+        // if (animMgr == null) {
+        //     Debug.LogWarning("T boss scriot: no anim manager found!");
+        // }
 
-        animMgr = GetComponent<AnimationManager>();
+        // animMgr = GetComponent<AnimationManager>();
         if (animMgr == null) {
             Debug.LogError("No AnimationManager on ");
         } else {

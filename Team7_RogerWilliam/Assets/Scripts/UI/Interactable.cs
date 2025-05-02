@@ -6,7 +6,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
 
-    [SerializeField] private string text = "E to Interact";
+    [SerializeField] private static string text = "E to Interact";
     [SerializeField] private KeyCode key = KeyCode.E;
     private bool inRange = false;
     public UnityEvent onInteract;
@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
         if (other.CompareTag("Player")) {
             inRange = true;
             Interactions.Show(text);
-            Interactions.SetEnabled(true);
+            // Interactions.SetEnabled(true);
         }
     }
 
