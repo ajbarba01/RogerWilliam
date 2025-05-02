@@ -611,6 +611,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
   passives:
   - {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
+  - {fileID: 11400000, guid: 8c6e1b10bd3bf464595a70e10d9847b4, type: 2}
   weapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
   ability: {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
   passive: {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}

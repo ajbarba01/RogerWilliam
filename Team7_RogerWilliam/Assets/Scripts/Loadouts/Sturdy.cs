@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RockPassive : Passive
+public class Sturdy : Passive
 {
-    [SerializeField] private Health health;
-
     private void Start()
     {
-        if (health == null)
-        {
-            Debug.LogError("Health not assigned!");
-            return;
-        }
+        Health health = Player.health;
 
         float current = health.GetHealth();
         float max = health.GetMaxHealth();

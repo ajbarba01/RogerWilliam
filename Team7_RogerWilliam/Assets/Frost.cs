@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Frost : MonoBehaviour
+public class Frost : Passive
 {
     [SerializeField] private float frostDuration, frostMultiplier;
     [SerializeField] private Color frostColor;
@@ -41,5 +41,9 @@ public class Frost : MonoBehaviour
 
             renderer.color = ogColor;
         }
+    }
+
+    private void OnDestroy() {
+        Player.Instance.GetComponentInChildren<WeaponHandler>().GetWeapon().onEnemyHit.RemoveListener(EnemyHit);
     }
 }
