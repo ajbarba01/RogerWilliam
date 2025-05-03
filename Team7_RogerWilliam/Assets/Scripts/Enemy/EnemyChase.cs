@@ -22,6 +22,8 @@ public class EnemyChase : MonoBehaviour
     private bool towards = true;
     private bool hasLOS = false;
 
+    public bool isConfused = false;
+
     void Awake()
     {
         moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
@@ -39,8 +41,8 @@ public class EnemyChase : MonoBehaviour
         if (!active) {
             return;
         }
-        
-        if (hasLOS && !GetInDistance() && Distance() <= detectionRadius) {
+        if (!isConfused) {
+            if (hasLOS && !GetInDistance() && Distance() <= detectionRadius) {
             Vector3 direction = Player.GetPosition() - transform.position;
 
             int directionTowards = -1;
@@ -50,10 +52,20 @@ public class EnemyChase : MonoBehaviour
             movement.Normalize();
             
             // anim.SetBool("Walk", true);
+            }
+            else {
+                movement = new Vector2(0, 0);
+                // anim.SetBool("Walk", false);
+            }
         }
         else {
-            movement = new Vector2(0, 0);
-            // anim.SetBool("Walk", false);
+            if (hasLOS && !GetInDistance() && Distance() <= detectionRadius) {
+            // walk in the opposite direction if confused
+            Vector3 direction = transform.position - Player.GetPosition();
+
+            movement = new Vector2(direction.x, direction.y).normalized;
+
+            }
         }
 
         mover.SetMovement(movement * moveSpeed);
@@ -62,12 +74,12 @@ public class EnemyChase : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, Player.GetPosition());
-
         int layerMask = ~LayerMask.GetMask("Enemy", "Projectile", "Hazard");
         RaycastHit2D ray = Physics2D.Raycast(transform.position, Player.GetPosition() - transform.position, Distance(), layerMask);
         if (ray.collider != null) {
             hasLOS = ray.collider.CompareTag("Player");
         }
+
     }
 
     public bool HasLOS() {
@@ -104,4 +116,17 @@ public class EnemyChase : MonoBehaviour
     public void SetTowards(bool newTowards) {
         towards = newTowards;
     }
+
+    public void Confuse(float duration) {
+        isConfused = true;
+        StartCoroutine(ConfuseDuration(duration));
+    }
+
+    private IEnumerator ConfuseDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isConfused = false;
+    }
+
+
 }
