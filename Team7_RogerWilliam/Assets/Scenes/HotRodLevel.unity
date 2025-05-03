@@ -13490,6 +13490,7 @@ MonoBehaviour:
   moveSpeed: 2
   attackRange: 0
   attackCooldown: 2
+  mover: {fileID: 1291511527}
 --- !u!114 &1291511527 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 243571960843128025, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
