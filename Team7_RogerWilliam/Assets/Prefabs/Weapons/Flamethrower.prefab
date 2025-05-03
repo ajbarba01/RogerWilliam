@@ -143,6 +143,9 @@ MonoBehaviour:
   attackTime: 3
   reloadTime: 5
   slow: 0.7
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!1001 &1363498930453380305
 PrefabInstance:
   m_ObjectHideFlags: 0

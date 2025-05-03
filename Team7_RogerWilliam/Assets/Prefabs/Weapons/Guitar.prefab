@@ -56,6 +56,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 1
   knockBackForce: 15
   swingVFX:
   - {fileID: 1577640233181018319, guid: 3be58d56b9b0e1d4492448c31b4e9ddc, type: 3}
@@ -132,7 +135,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 785561067
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a63734836cc5fa04c9f68b22e8a0f70e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

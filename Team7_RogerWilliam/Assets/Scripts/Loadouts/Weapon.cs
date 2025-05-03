@@ -8,6 +8,10 @@ public abstract class Weapon : Loadout {
     public UnityEvent<Health> onEnemyHit;
     [SerializeField] protected float cooldown;
 
+    
+    protected string targetTag = "Enemy";
+
+    protected Transform target;
     protected float cooldownProgress;
     protected bool onCooldown = false;
 
@@ -50,5 +54,18 @@ public abstract class Weapon : Loadout {
         }
         onCooldown = false;
         cooldownProgress = 0f;
+    }
+    public void setTargetTag(string tag)
+    {
+        targetTag = tag;
+    }
+    public string getTargetTag()
+    {
+        return targetTag;
+    }
+
+    public void SetTarget(Transform newTarget) 
+    {
+        target = newTarget;
     }
 }

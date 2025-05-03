@@ -149,4 +149,13 @@ public class AgentMover : MonoBehaviour
     public void FaceTowardsMouse(Vector3 fromPos) {
         SetFacing(Util.MouseFacing(fromPos));
     }
+    public void FaceTowards(Vector3 targetPosition)
+    {
+        Vector2 direction = (targetPosition - transform.position).normalized;
+        if (direction != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        }
+    }
 }

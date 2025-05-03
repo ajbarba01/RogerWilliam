@@ -55,6 +55,9 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 1
   punchSFX: {fileID: 0}
   punchVFX: {fileID: 6929182987974342463, guid: 71c93f1a57af07e469c2ce65ea346e4b, type: 3}
 --- !u!1 &7340886191583717866

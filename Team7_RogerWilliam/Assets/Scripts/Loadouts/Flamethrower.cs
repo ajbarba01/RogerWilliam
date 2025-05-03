@@ -13,6 +13,9 @@ public class Flamethrower : Weapon
     [SerializeField] private float reloadTime = 5f;
     [SerializeField] private float slow = 0.7f;
 
+
+    [SerializeField] private LayerMask playerLayers;
+
     private float reloadSpeed;
     private float fuelSpeed;
     private float capacity = 1f;
@@ -21,6 +24,7 @@ public class Flamethrower : Weapon
     private bool canAttack = true;
 
     private Collider2D[] enemyHits = new Collider2D[20];
+    private Collider2D[] playerHits = new Collider2D[20];
 
     private void Awake() {
         reloadSpeed = 1 / reloadTime;
@@ -38,11 +42,14 @@ public class Flamethrower : Weapon
     }
 
     private void Update() {
-        if (Input.GetMouseButtonUp(0)) {
+        if(targetTag == "Enemy")
+        {
+            if (Input.GetMouseButtonUp(0)) {
             attacking = false;
             canAttack = true;
+            }
         }
-
+        
         if (capacity <= 0) {
             capacity = 0f;
             attacking = false;
@@ -65,24 +72,42 @@ public class Flamethrower : Weapon
         attacking = true;
         fireEffect.SetActive(true);
         flamethrower.SetActive(true);
-        mover.SetSlow(slow);
-
+        if(targetTag == "Enemy")
+        {
+            mover.SetSlow(slow);
+        }
+    
         StartCoroutine(DamageTickLoop());
 
         while (attacking) {
             capacity -= fuelSpeed * Time.deltaTime;
-            Vector3 direction = Util.TowardsMouse(transform.position);
-            mover.FaceTowardsMouse(transform.position);
+            if(targetTag == "Enemy")
+            {
+                Vector3 direction = Util.TowardsMouse(transform.position);
+                mover.FaceTowardsMouse(transform.position);
 
-            fireEffect.transform.position = transform.position + direction * 2f;
-            fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
+                fireEffect.transform.position = transform.position + direction * 2f;
+                fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
 
-            flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+                flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+            } else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Vector3 direction = (player.transform.position - transform.position).normalized;
+                // mover.FaceTowards(player.transform.position);
+                fireEffect.transform.position = transform.position + direction * 2f;
+                fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
+
+                flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+            }
+            
 
             yield return null;
         }
-
-        mover.RemoveSlow();
+        if(targetTag == "Enemy")
+        {
+            mover.RemoveSlow();
+        }
         fireEffect.SetActive(false);
         flamethrower.SetActive(false);
     }
@@ -92,19 +117,37 @@ public class Flamethrower : Weapon
         int hitCount = DetectEnemies();
         for (int i = 0; i < hitCount; i++)
         {
-            Collider2D enemyCollider = enemyHits[i];
-            Health enemyHealth = enemyCollider.GetComponent<Health>();
-            enemyHealth.TakeDamage(amount);
+            if(targetTag == "Enemy")
+            {
+                Collider2D enemyCollider = enemyHits[i];
+                Health enemyHealth = enemyCollider.GetComponent<Health>();
+                enemyHealth.TakeDamage(amount);
 
-            if (i == 0) {
-                onEnemyHit.Invoke(enemyHealth);
+                if (i == 0) {
+                    onEnemyHit.Invoke(enemyHealth);
+                }
+            } else
+            {
+                Collider2D playerCollider = playerHits[i];
+                if(playerCollider.CompareTag("Player"))
+                {
+                    Player.health.TakeDamage(amount);
+                }
             }
+            
         }
     }
 
     private IEnumerator DamageTickLoop() {
         while (attacking) {
-            DealDamageInZone(dps * Globals.TickRate);
+            if(targetTag == "Enemy")
+            {
+                DealDamageInZone(dps * Globals.TickRate);
+            } else
+            {
+                DealDamageInZone((dps/3.0f) * Globals.TickRate);
+            }
+            
 
             yield return new WaitForSeconds(Globals.deltaTick);
         }
@@ -112,7 +155,15 @@ public class Flamethrower : Weapon
 
     private int DetectEnemies()
     {
-        int hitCount = Physics2D.OverlapCircleNonAlloc(fireEffect.transform.position, 1f, enemyHits, enemyLayers);
+        int hitCount;
+        if(targetTag == "Enemy")
+        {
+            hitCount = Physics2D.OverlapCircleNonAlloc(fireEffect.transform.position, 1f, enemyHits, enemyLayers);
+        } else
+        {
+            hitCount = Physics2D.OverlapCircleNonAlloc(fireEffect.transform.position, 1f, playerHits, playerLayers);
+        }
+        
 
         return hitCount;
     }
