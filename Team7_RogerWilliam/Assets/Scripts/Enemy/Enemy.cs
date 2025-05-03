@@ -22,4 +22,8 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    // public static Vector3 GetPosition() {
+    //     return Instance.transform.position;
+    // }
 }
