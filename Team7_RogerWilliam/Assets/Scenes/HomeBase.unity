@@ -2335,30 +2335,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477915190}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9449166a86015414ca084bc5f4c0c562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
-  - {fileID: 0}
   - {fileID: 11400000, guid: 730b57ff4d7072748af808c08fd1f2eb, type: 2}
   - {fileID: 11400000, guid: 3bbc8afef758c1a45a5a361fcc4805e1, type: 2}
   - {fileID: 11400000, guid: 70e5ad6aa650dcf4b9d690510a4f1dc7, type: 2}
   - {fileID: 11400000, guid: 42fa511e09db36540981f8491ac23308, type: 2}
   abilities:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7c5fc6482a8a21349bd84c6e5c649717, type: 2}
   - {fileID: 11400000, guid: 6ca0f98c37c9fac408b280d88e3b58aa, type: 2}
   - {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
   - {fileID: 11400000, guid: 54b4d7ac4ae76a84ea27b24acad08ea9, type: 2}
   - {fileID: 11400000, guid: 4a474a7a98f5c4c4c85bae6ebdbadf0f, type: 2}
   passives:
-  - {fileID: 11400000, guid: dc5fb23c89a59de46ab0252e70c96e6f, type: 2}
+  - {fileID: 11400000, guid: 49aa94d4b37e88448af1c6be072846c1, type: 2}
   - {fileID: 11400000, guid: 8c6e1b10bd3bf464595a70e10d9847b4, type: 2}
   - {fileID: 11400000, guid: 4d2c4e724cb23734e938f9323a69a178, type: 2}
   - {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
-  - {fileID: 11400000, guid: 49aa94d4b37e88448af1c6be072846c1, type: 2}
+  - {fileID: 11400000, guid: dc5fb23c89a59de46ab0252e70c96e6f, type: 2}
   weapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
   ability: {fileID: 11400000, guid: 4a474a7a98f5c4c4c85bae6ebdbadf0f, type: 2}
   passive: {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
@@ -15452,7 +15451,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
-      propertyPath: currentLevel
+      propertyPath: startLevel
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sturdy : Passive
+public class FireSpinPassive : MonoBehaviour
 {
     [SerializeField] private float healthAddition = 50f;
     private Health health;
@@ -24,4 +24,3 @@ public class Sturdy : Passive
         health.TakeDamage(healthAddition);
     }
 }
-

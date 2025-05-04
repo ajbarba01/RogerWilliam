@@ -46,7 +46,7 @@ public class Roll : MonoBehaviour
         while (rollProgress < rollDuration) {
             rollProgress += Time.deltaTime;
             float speedMod = Mathf.Lerp(1f, 0f, rollProgress / rollDuration);
-            mover.SetMovement(direction * (rollSpeed * speedMod));
+            mover.SetMovement(direction * (rollSpeed * speedMod * mover.GetTotalSpeed()));
             yield return null;
         }
         
