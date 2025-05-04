@@ -38,7 +38,7 @@ public class NPCMonologue : MonoBehaviour {
                      {
                             Debug.Log("False");
                      }
-                     if(GameHandler.tutorialBossDefeated)
+                     if(GameHandler.tutorialBossDefeated && !GameHandler.hotRodDefeated)
                      {
                             Array.Clear(monologue, 0, monologueLength);
                             lines.Add("Congrats on beating Big Money!");
@@ -60,6 +60,21 @@ public class NPCMonologue : MonoBehaviour {
                             lines.Add("You're really looking hard for this nickname huh.");
                             lines.Add("Maybe you should look a little bit deeper into your soul.");
                             lines.Add("Me personally i think hot rod fits just fine.");
+                            lines.Add("My recommendation is a butcher I used to buy from, Salami Sam.");
+                            lines.Add("He's a bit of a nutcase but he's got a good nickname.");
+                            lines.Add("If this isn't the one then I don't know what to do with you.");
+                            lines.Add("Good Luck!");
+                            
+                     }
+                     if(GameHandler.salamiSamDefeated)
+                     {
+                            Array.Clear(monologue, 0, monologueLength);
+                            lines.Add("Congrats on beating Salami Sam!");
+                            lines.Add("A bit sad to see his name go, but it is what it is.");
+                            updateMonologue(lines);
+                            lines.Add("Salami Sam has to be the one now.");
+                            lines.Add("You've got to be kidding me.");
+                            
                             lines.Add("I guess you can have a shot at my old friend Ice Cube.");
                             lines.Add("It would be a good day if you took his nickname. Better bring no vaseline!");
                             lines.Add("Sorry for that, just go ahead.");
@@ -90,19 +105,8 @@ public class NPCMonologue : MonoBehaviour {
                             lines.Add("Wow you are really making this difficult for me.");
                             lines.Add("Maybe you don't need a nickname. Why isn't Roger Williams good enough?");
                             lines.Add("Fine sorry I didn't mean to offend your entire \"quest\".");
-                            lines.Add("My last recommendation is a butcher I used to buy from, Salami Sam.");
-                            lines.Add("He's a bit of a nutcase but he's got a good nickname.");
-                            lines.Add("If this isn't the one then I don't know what to do with you.");
-                            lines.Add("Good Luck!");
-                     }
-                     if(GameHandler.salamiSamDefeated)
-                     {
-                            Array.Clear(monologue, 0, monologueLength);
-                            lines.Add("Congrats on beating Salami Sam!");
-                            lines.Add("A bit sad to see his name go, but it is what it is.");
-                            updateMonologue(lines);
-                            lines.Add("Salami Sam has to be the one now.");
-                            lines.Add("You've got to be kidding me.");
+                            
+
                             lines.Add("I mean, maybe you need to reflect a little bit on yourself.");
                             lines.Add("What is the true reason you are looking for this nickname?");
                             lines.Add("Why are you trying to change yourself?");
@@ -110,6 +114,7 @@ public class NPCMonologue : MonoBehaviour {
                             lines.Add("If you come in unprepared, you will die.");
                             lines.Add("Good Luck!");
                      }
+                     
                      if(lines.Count > 0)
                      {
                             monologue = lines.ToArray();
