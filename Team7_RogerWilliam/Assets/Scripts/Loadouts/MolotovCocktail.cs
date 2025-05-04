@@ -12,22 +12,42 @@ public class MolotovCocktail : Ability
     [SerializeField] private float dps = 3f;
     [SerializeField] private float radius = 1.5f;
     [SerializeField] public LayerMask enemyLayers;
+    [SerializeField] public LayerMask playerLayers;
 
 
     protected override void OnActivate() {
-        mover.FaceTowardsMouse(transform.position);
-
-        Vector3 dist = Util.DistToMouse(transform.position);
-        if (dist.magnitude > attackRange) {
-            dist = dist.normalized * attackRange;
+        Vector3 dist;
+        if(targetTag == "Enemy")
+        {
+            mover.FaceTowardsMouse(transform.position);
+            dist = Util.DistToMouse(transform.position);
+            if (dist.magnitude > attackRange) {
+                dist = dist.normalized * attackRange;
+            }
+            anim.PlayOnce("Player_Punch");
+        } else
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            // Bossmover.FaceTowards(direction);
+            dist = player.transform.position - transform.position;
+            if (dist.magnitude > attackRange) {
+                dist = dist.normalized * attackRange;
+            }
         }
-
-        anim.PlayOnce("Player_Punch");
-
         Vector3 target = transform.position + dist;
 
         Vector3 initialPos = transform.position + dist.normalized * 0.5f;
-        GameObject proj = Instantiate(molotovProjectile, initialPos, Util.QuaternionTowardsMouse(transform.position));
+        Quaternion rotation;
+        if(targetTag == "Enemy")
+        {
+            rotation = Util.QuaternionTowardsMouse(transform.position);
+        } else {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 directionToPlayer = (player.transform.position - transform.position).normalized;
+            rotation = Util.QuaternionOfVector3(directionToPlayer, 0f);
+        }
+        GameObject proj = Instantiate(molotovProjectile, initialPos, rotation);
         TargetProjectile targetProj = proj.GetComponent<TargetProjectile>();
         targetProj.SetTarget(target);
         targetProj.SetSpeed(speed);
@@ -44,12 +64,23 @@ public class MolotovCocktail : Ability
         float fireProgress = 0f;
 
         while (fireProgress < fireDuration) {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(fireObject.transform.position, radius, enemyLayers);
-            foreach (var hit in hits) {
-                hit.GetComponent<Health>()?.TakeDamage(dps * Globals.deltaTick);
+            if(targetTag == "Enemy")
+            {
+                Collider2D[] hits = Physics2D.OverlapCircleAll(fireObject.transform.position, radius, enemyLayers);
+                foreach (var hit in hits) {
+                    hit.GetComponent<Health>()?.TakeDamage(dps * Globals.deltaTick);
+                }
+                fireProgress += Globals.deltaTick;
+            } else
+            {
+                Collider2D[] hits = Physics2D.OverlapCircleAll(fireObject.transform.position, radius, playerLayers);
+                foreach (var hit in hits) {
+                    Player.health.TakeDamage(dps/2 * Globals.deltaTick);
+                    // hit.GetComponent<Health>()?.TakeDamage(dps * Globals.deltaTick);
+                }
+                fireProgress += Globals.deltaTick;
             }
-
-            fireProgress += Globals.deltaTick;
+            
             yield return new WaitForSeconds(Globals.TickRate);
         }
 

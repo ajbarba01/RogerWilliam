@@ -17,30 +17,55 @@ public class Slingshot : Weapon
     private bool charging;
 
     private void Start() {
+        Debug.Log("start");
         art.SetActive(false);
         charging = false;
     }
 
     private void Update() {
-        if (Input.GetMouseButtonUp(0)) {
-            Release();
+        if(targetTag == "Enemy")
+        {
+            if (Input.GetMouseButtonUp(0)) {
+                Release();
+            }
+        } else
+        {
+            if(charge >= maxCharge)
+            {
+                
+                Release();
+            }
         }
+        
     }
 
     private IEnumerator Charging() {
         art.SetActive(true);
-        mover.SetSlow(slow);
-
+        if(targetTag == "Enemy")
+        {
+            mover.SetSlow(slow);
+        }
         charging = true;
         charge = 0f;
         while (charging) {
             charge += Time.deltaTime;
-            transform.rotation = Util.QuaternionTowardsMouse(transform.position);
-            mover.FaceTowardsMouse(transform.position);
+            if(targetTag == "Enemy")
+            {
+                transform.rotation = Util.QuaternionTowardsMouse(transform.position);
+                mover.FaceTowardsMouse(transform.position);
+            } else
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Vector3 direction = (player.transform.position - transform.position).normalized;
+                transform.rotation = Util.QuaternionOfVector3(direction, -90f);
+            }
+            
             yield return null;
         }
-
-        mover.RemoveSlow();
+        if(targetTag == "Enemy")
+        {
+            mover.RemoveSlow();
+        }
         art.SetActive(false);
     }
 
@@ -71,10 +96,21 @@ public class Slingshot : Weapon
         GameObject rock = Instantiate(projectile, attackPt.position, transform.rotation);
         Projectile proj = rock.GetComponent<Projectile>();
         proj.SetDamage(damage);
-        proj.SetDamageTag("Enemy");
+        proj.SetDamageTag(targetTag);
         proj.SetSpeed(velocity);
-        proj.SetDirection((Vector2)(Util.TowardsMouse(transform.position)));
-        proj.onTagHit.AddListener(EnemyHit);
+        if(targetTag == "Enemy")
+        {
+            proj.SetDirection((Vector2)(Util.TowardsMouse(transform.position)));
+            proj.onTagHit.AddListener(EnemyHit);
+        } else
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            proj.SetDirection((Vector2)direction);
+            proj.onTagHit.AddListener(playerHit);
+            Debug.Log("projectile code");
+        }
+        
 
         StartCoroutine(Cooldown());
     }
@@ -92,5 +128,15 @@ public class Slingshot : Weapon
         Projectile proj = projectile.GetComponent<Projectile>();
         Vector3 direction = (Vector3)(proj.GetDirection());
         enemyMover.ApplyKnockback(direction, knockBackForce * proj.GetSpeed() / maxVelocity);
+    }
+    public void playerHit(GameObject projectile, GameObject player)
+    {
+        
+        AgentMover playerMover = player.GetComponent<AgentMover>();
+        if(playerMover == null) return;
+        Projectile proj = projectile.GetComponent<Projectile>();
+        Vector3 direction = (Vector3)(proj.GetDirection());
+        playerMover.ApplyKnockback(direction, knockBackForce * proj.GetSpeed() / maxVelocity);
+        Debug.Log("PlayerHit fuction");
     }
 }

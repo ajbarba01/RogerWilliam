@@ -63,10 +63,19 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageTag != "" && other.CompareTag(damageTag))
+        Debug.Log(damageTag);
+        if (damageTag != "")
         {
-            onTagHit.Invoke(gameObject, other.gameObject);
-            other.GetComponent<Health>().TakeDamage(damage);
+            if(damageTag == "Player")
+            {
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+                Player.health.TakeDamage(damage/2);
+            } else
+            {
+                onTagHit.Invoke(gameObject, other.gameObject);
+                other.GetComponent<Health>().TakeDamage(damage);
+            }
+    
             OnHit();
         }
         else if (other.CompareTag(Globals.WallTag))

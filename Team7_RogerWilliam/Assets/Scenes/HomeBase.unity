@@ -609,13 +609,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3bbc8afef758c1a45a5a361fcc4805e1, type: 2}
   abilities:
   - {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
+  - {fileID: 11400000, guid: 54b4d7ac4ae76a84ea27b24acad08ea9, type: 2}
+  - {fileID: 11400000, guid: 4a474a7a98f5c4c4c85bae6ebdbadf0f, type: 2}
   passives:
   - {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
   - {fileID: 11400000, guid: 8c6e1b10bd3bf464595a70e10d9847b4, type: 2}
   - {fileID: 11400000, guid: 49aa94d4b37e88448af1c6be072846c1, type: 2}
   - {fileID: 11400000, guid: dc5fb23c89a59de46ab0252e70c96e6f, type: 2}
   weapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
-  ability: {fileID: 11400000, guid: e0aef20f62024bc4796990773f2f31e5, type: 2}
+  ability: {fileID: 11400000, guid: 4a474a7a98f5c4c4c85bae6ebdbadf0f, type: 2}
   passive: {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
 --- !u!114 &496232506 stripped
 MonoBehaviour:

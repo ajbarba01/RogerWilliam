@@ -21,6 +21,8 @@ public abstract class Ability : Loadout
 
     protected AnimationManager anim;
     protected AgentMover mover;
+    protected string targetTag = "Enemy";
+    protected Transform target;
 
     public void Initialize(AnimationManager animManage, AgentMover agentMover) {
         anim = animManage;
@@ -94,5 +96,18 @@ public abstract class Ability : Loadout
     private void Interrupt() {
         Warning.ShowWarning("Ability Interrupted");
         OnInterrupt();
+    }
+    public void setTargetTag(string tag)
+    {
+        targetTag = tag;
+    }
+    public string getTargetTag()
+    {
+        return targetTag;
+    }
+
+    public void SetTarget(Transform newTarget) 
+    {
+        target = newTarget;
     }
 }

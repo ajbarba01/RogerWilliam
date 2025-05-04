@@ -11,6 +11,7 @@ public class SalamiSpin : Ability
     [SerializeField] private float spinSpeed = 300f;      // Speed of the spin (degrees per second)
 
     [SerializeField] private LayerMask enemyLayers;      // Layers to detect enemies on
+    [SerializeField] private LayerMask playerLayers;
 
     private float currentSpinTime = 0f;
 
@@ -22,7 +23,11 @@ public class SalamiSpin : Ability
 
     private IEnumerator SpinAttack()
     {
-        anim.PlayOnce("Player_SpinAttack");  // Play the spin animation
+        if(targetTag == "Enemy")
+        {
+            anim.PlayOnce("Player_SpinAttack");  // Play the spin animation
+        }
+        
         float elapsedTime = 0f;
 
         // While the spin duration is not finished
@@ -30,18 +35,31 @@ public class SalamiSpin : Ability
         {
             // Rotate the character (you can also rotate the character's weapon/attack hitbox)
             transform.Rotate(Vector3.forward * spinSpeed * Time.deltaTime);
+            if(targetTag == "Enemy")
+            {
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, enemyLayers);
+                foreach (var hit in hits)
+                {
+                    // Only apply damage if it's an enemy with health
+                    var health = hit.GetComponent<Health>();
+                    if (health != null)
+                    {
+                        health.TakeDamage(spinDamage * Globals.deltaTick);
+                    }
+                }
+            } else
+            {
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, playerLayers);
+                foreach (var hit in hits)
+                {
+                    // Only apply damage if it's an enemy with health
+                    Player.health.TakeDamage(spinDamage);
+                }
+
+            }
 
             // Check for enemies in the spin's range and apply damage
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, enemyLayers);
-            foreach (var hit in hits)
-            {
-                // Only apply damage if it's an enemy with health
-                var health = hit.GetComponent<Health>();
-                if (health != null)
-                {
-                    health.TakeDamage(spinDamage * Globals.deltaTick);
-                }
-            }
+            
 
             elapsedTime += Time.deltaTime;
             yield return null;

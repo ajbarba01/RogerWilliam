@@ -16,11 +16,16 @@ public class bossFight : MonoBehaviour
     // [SerializeField] private float attackDamage;
     private float distance;
     private float attackTimer;
-
+    private float abilityTimer;
+    private float abilityCD;
     private LoadoutManager bossLoadout;
     private bossWeaponHandler BossWeaponHandler;
+    private bossAbilityHandler BossAbilityHandler;
+    private bossPassiveHandler BossPassiveHandler;
     private Weapon bossWeapon;
-    public AgentMover mover;
+    private Ability bossAbility;
+    private Passive bossPassive;
+    public AgentMover Bossmover;
 
 
     // Start is called before the first frame update
@@ -29,10 +34,16 @@ public class bossFight : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         bossLoadout = GetComponent<LoadoutManager>();
         BossWeaponHandler = GetComponentInChildren<bossWeaponHandler>();
+        BossAbilityHandler = GetComponentInChildren<bossAbilityHandler>();
+        BossPassiveHandler = GetComponentInChildren<bossPassiveHandler>();
+        bossPassive = BossPassiveHandler.GetPassive();
+        bossAbility = BossAbilityHandler.GetAbility();
         attackTimer = attackCooldown;
         bossWeapon = BossWeaponHandler.GetWeapon();
-        mover = GetComponent<AgentMover>();
+        string abilityName = bossAbility.name;
+        Bossmover = GetComponent<AgentMover>();
         string weaponName = bossWeapon.name;
+        Debug.Log(abilityName);
         Debug.Log(weaponName);
         if(weaponName == "Fists(Clone)" || weaponName == "Guitar(Clone)")
         {
@@ -41,6 +52,27 @@ public class bossFight : MonoBehaviour
         if(weaponName == "Flamethrower(Clone)")
         {
             attackTimer = 10f;
+            attackRange = 5f;
+        }
+        if(weaponName == "Slingshot(Clone)")
+        {
+            attackRange = 10f;
+        }
+        if(abilityName == "MolotovCocktail(Clone)")
+        {
+            abilityTimer = 5f;
+            abilityCD = 5f;
+
+        }
+        if(abilityName == "ConfuseAbility(Clone)")
+        {
+            abilityTimer = 10f;
+            abilityCD = 10f;
+        }
+        if(abilityName == "SalamiSpin(Clone)")
+        {
+            abilityTimer = 0f;
+            abilityCD = 2f;
         }
     }
 
@@ -62,8 +94,14 @@ public class bossFight : MonoBehaviour
                 bossWeapon.Attack();
                 attackTimer = attackCooldown;
             }
-            
+        }
+        if(abilityTimer <= 0)
+        {
+            Debug.Log("AbilityActivated");
+            bossAbility.Activate();
+            abilityTimer = abilityCD;
         }
         attackTimer -= Time.deltaTime;
+        abilityTimer -= Time.deltaTime;
     }
 }

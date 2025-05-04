@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -82,6 +82,8 @@ public class AgentMover : MonoBehaviour
         slow = 1f;
     }
 
+      private bool isConfusedPlayer;
+
     public void ApplyKnockback(Vector2 knockbackDirection, float knockbackStrength) {
         StopAllCoroutines();
         StartCoroutine(_ApplyKnockback(knockbackDirection, knockbackStrength));
@@ -158,4 +160,17 @@ public class AgentMover : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, 0f, angle);
         }
     }
+
+    public void ConfusePlayer(float duration) {
+        isConfusedPlayer = true;
+        StartCoroutine(ConfuseDurationPlayer(duration));
+    }
+
+    private IEnumerator ConfuseDurationPlayer(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isConfusedPlayer = false;
+    }
+
+    
 }

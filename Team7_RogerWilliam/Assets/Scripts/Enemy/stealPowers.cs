@@ -16,6 +16,10 @@ public class stealPowers : MonoBehaviour
     {
         bossLoadout.SetWeapon(LoadoutManager.Instance.currentWeapon);
         bossLoadout.SetAbility(LoadoutManager.Instance.currentAbility);
+        // if(bossLoadout.GetAbility().name == "Roll(Clone)")
+        // {
+        //     bossLoadout.SetAbility()
+        // }
         bossLoadout.SetPassive(LoadoutManager.Instance.currentPassive);
     }
 }

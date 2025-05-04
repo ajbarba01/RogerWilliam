@@ -44,3 +44,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 264c5d5fe96559646807355b5b98f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onEnemyHit:
+    m_PersistentCalls:
+      m_Calls: []
+  cooldown: 0
+  duration: 0
+  spinRange: 2
+  spinDuration: 1
+  spinDamage: 5
+  spinCooldown: 3
+  spinSpeed: 300
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 1
