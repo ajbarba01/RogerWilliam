@@ -41,6 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1321186717889592702}
   - component: {fileID: 2275929685723475652}
+  - component: {fileID: 5273041515676450210}
+  - component: {fileID: 338052754367558032}
   m_Layer: 0
   m_Name: IceCube_0
   m_TagString: Untagged
@@ -115,6 +117,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5273041515676450210
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807898782651551222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a2faca88ce28498992eb310b37ea05e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &338052754367558032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3807898782651551222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c767ed5ead640ed4a96c9d6e1f252744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5496117795686131446
 GameObject:
   m_ObjectHideFlags: 0

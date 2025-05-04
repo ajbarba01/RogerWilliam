@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7315531928352496757}
   - component: {fileID: 8647861362189446891}
+  - component: {fileID: 8826506771116975997}
+  - component: {fileID: 2455281939388918848}
   m_Layer: 0
   m_Name: HotRodEnemy2_0
   m_TagString: Untagged
@@ -84,6 +86,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8826506771116975997
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751205420082203334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d77a58de0cdd45f9b78b917f6e0a214, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2455281939388918848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751205420082203334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c767ed5ead640ed4a96c9d6e1f252744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7740461814769937013
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +194,7 @@ MonoBehaviour:
   preferredDistance: 2
   detectionRadius: 8
   anim: {fileID: 0}
+  isConfused: 0
 --- !u!114 &2036421993520178620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +248,7 @@ Animator:
   m_GameObject: {fileID: 7740461814769937013}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55fc5c7a232364b829cbb53013cb036c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4d77a58de0cdd45f9b78b917f6e0a214, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3757892991064126910}
   - component: {fileID: 8560020797130680833}
+  - component: {fileID: 5939073745864803404}
+  - component: {fileID: 6086093910851612696}
   m_Layer: 0
   m_Name: bodyguards_gun_0
   m_TagString: Untagged
@@ -84,6 +86,39 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5939073745864803404
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613865681227198495}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e92dcc4f73c8c408eb8ac2f8716f1b34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6086093910851612696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613865681227198495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c767ed5ead640ed4a96c9d6e1f252744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1284941078559557815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2055762081146438325, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,6 +283,7 @@ MonoBehaviour:
   preferredDistance: 5
   detectionRadius: 8
   anim: {fileID: 0}
+  isConfused: 0
 --- !u!4 &8609324483035257926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7399255972712699121, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
