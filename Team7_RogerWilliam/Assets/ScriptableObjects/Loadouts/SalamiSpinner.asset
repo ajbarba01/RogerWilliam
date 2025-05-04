@@ -16,4 +16,4 @@ MonoBehaviour:
   tooltipText: 
   nickname: 
   icon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 2556248469265929688, guid: d57f2bfc56e7b5c4daa71e1ac3a21f4f, type: 3}
