@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 6402578357179533640, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
       propertyPath: currentWeapon
       value: 
-      objectReference: {fileID: 11400000, guid: 3bbc8afef758c1a45a5a361fcc4805e1, type: 2}
+      objectReference: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
     - target: {fileID: 6402578357179533640, guid: 7447cc6e0f51b264ca72ecbb25b37fb4, type: 3}
       propertyPath: currentAbility
       value: 
@@ -14189,12 +14189,20 @@ PrefabInstance:
       value: Rod _HotRod_ Johnson
       objectReference: {fileID: 0}
     - target: {fileID: 811730105316794709, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5156345
+      objectReference: {fileID: 0}
+    - target: {fileID: 811730105316794709, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
       propertyPath: m_Size.y
-      value: 4.1992416
+      value: 4.471401
+      objectReference: {fileID: 0}
+    - target: {fileID: 811730105316794709, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04066944
       objectReference: {fileID: 0}
     - target: {fileID: 811730105316794709, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
       propertyPath: m_Offset.y
-      value: 0.03084755
+      value: 0.008167267
       objectReference: {fileID: 0}
     - target: {fileID: 1166434387670210189, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
       propertyPath: m_RootOrder

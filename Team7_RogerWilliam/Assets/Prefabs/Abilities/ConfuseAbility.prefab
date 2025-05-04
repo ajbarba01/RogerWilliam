@@ -51,9 +51,12 @@ MonoBehaviour:
   duration: 0
   attackRange: 7
   musicProjectile: {fileID: 4867187080979785701, guid: 6c1cf58b8f476814582528d04fce9575, type: 3}
-  spalshArea: {fileID: 7467644880013365749, guid: 9ef2d9d722a197044a4e358c9aa5841a, type: 3}
   confuseDuration: 5
+  splashArea: 1.5
   speed: 4
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 1

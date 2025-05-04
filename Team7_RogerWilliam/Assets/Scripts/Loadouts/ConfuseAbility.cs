@@ -10,6 +10,7 @@ public class ConfuseAbility : Ability{
     [SerializeField] private float splashArea = 1.5f;
     [SerializeField] private float speed = 4f;
     [SerializeField] public LayerMask enemyLayers;
+    [SerializeField] public LayerMask playerLayers;
   
 
 
@@ -67,13 +68,13 @@ public class ConfuseAbility : Ability{
                 }
         } 
         else {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(projectile.transform.position, splashArea, enemyLayers);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(projectile.transform.position, splashArea, playerLayers);
 
                 foreach (var player in hits) {
                     if (player.CompareTag("Player")) {
                         Debug.Log("Confused Player");
                         AgentMover confusedPlayer = player.GetComponent<AgentMover>();
-                        confusedPlayer.ConfusePlayer(confuseDuration);
+                        confusedPlayer.ConfusePlayer(confuseDuration/2);
                     }
                 }
         }

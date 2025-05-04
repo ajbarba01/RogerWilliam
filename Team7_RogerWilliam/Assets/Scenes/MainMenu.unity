@@ -652,13 +652,29 @@ PrefabInstance:
       propertyPath: menus.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1788013329965243415, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1848758527104989630, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3939198870221567508, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5014890511960738480, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6221333765183267252, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324004774880859861, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6384434226534129395, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_Pivot.x

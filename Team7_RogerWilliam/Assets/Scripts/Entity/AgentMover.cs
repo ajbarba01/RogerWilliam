@@ -162,14 +162,14 @@ public class AgentMover : MonoBehaviour
     }
 
     public void ConfusePlayer(float duration) {
-        isConfusedPlayer = true;
+        Freeze();
         StartCoroutine(ConfuseDurationPlayer(duration));
     }
 
     private IEnumerator ConfuseDurationPlayer(float duration)
     {
         yield return new WaitForSeconds(duration);
-        isConfusedPlayer = false;
+        Unfreeze();
     }
 
     
