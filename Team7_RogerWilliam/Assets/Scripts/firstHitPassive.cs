@@ -17,10 +17,10 @@ public class firstHitPassive : Passive
     }
     void onEnemyHit(Health enemyHealth)
     {
-        Debug.Log("On hit");
+        // Debug.Log("On hit");
         if (Mathf.Approximately(enemyHealth.GetHealth(), enemyHealth.GetMaxHealth()))
         {
-            Debug.Log("Made it to damage");
+            // Debug.Log("Made it to damage");
             enemyHealth.TakeDamage(5);
         }
     }
