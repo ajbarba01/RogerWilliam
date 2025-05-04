@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
-  m_Name: ConfusingVoice
+  m_Name: GroundPound
   m_EditorClassIdentifier: 
-  loadoutName: Confusing Voice
-  tooltipText: Confusing Voice
-  nickname: Ice-cube
-  icon: {fileID: 21300000, guid: a3b7dc5c9299649429678cc9ce250da6, type: 3}
-  prefab: {fileID: 7555516241031502220, guid: e9e0d0a0936e4a94894957e50ffc4846, type: 3}
+  loadoutName: Ground Pound
+  tooltipText: Ground Pound
+  nickname: Ground Pound
+  icon: {fileID: 21300000, guid: 7efd5de1a0b876d48a062482b24de3f2, type: 3}
+  prefab: {fileID: 0}

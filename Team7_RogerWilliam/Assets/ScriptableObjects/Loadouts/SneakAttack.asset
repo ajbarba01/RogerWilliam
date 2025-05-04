@@ -15,5 +15,5 @@ MonoBehaviour:
   loadoutName: Sneak Attack
   tooltipText: Sneak Attack (Extra damage on first hit on enemy)
   nickname: Robin Hood
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 63a5c1b994f934b4fb9fdd336afb6015, type: 3}
   prefab: {fileID: 8195049744758123550, guid: 8de3905f0ee246b4aa353e65be48991b, type: 3}

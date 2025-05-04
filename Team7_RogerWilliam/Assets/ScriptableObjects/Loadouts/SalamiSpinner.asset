@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
   m_Name: SalamiSpinner
   m_EditorClassIdentifier: 
-  loadoutName: 
-  tooltipText: 
-  nickname: 
-  icon: {fileID: 0}
+  loadoutName: Salami Spin
+  tooltipText: Salami Spin
+  nickname: Salami Spin
+  icon: {fileID: 21300000, guid: 582f405afe251ed49bd37014b9ceacb8, type: 3}
   prefab: {fileID: 2556248469265929688, guid: d57f2bfc56e7b5c4daa71e1ac3a21f4f, type: 3}

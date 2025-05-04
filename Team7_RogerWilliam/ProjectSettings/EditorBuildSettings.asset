@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProvisionalSalamiScene.unity
     guid: 8432757377cb51f4099886e003052e77
+  - enabled: 1
+    path: Assets/Scenes/TheRockLevel.unity
+    guid: e5c965268674f4fb88fa1a044c0855ab
   m_configObjects: {}
