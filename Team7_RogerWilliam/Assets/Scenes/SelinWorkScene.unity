@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HotRodGoons
       objectReference: {fileID: 0}
+    - target: {fileID: 7740461814769937013, guid: 4292febecf21ace44a99fc09330cfeb8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -281,6 +285,10 @@ PrefabInstance:
     - target: {fileID: 2356901996380481523, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: m_Name
       value: TutorialBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 2356901996380481523, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5373547962051346934, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: anim
@@ -728,6 +736,10 @@ PrefabInstance:
     - target: {fileID: 2301758031551305530, guid: e1f9221e0cffb6747b93fe155a14e203, type: 3}
       propertyPath: m_Name
       value: Fireball Goons
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301758031551305530, guid: e1f9221e0cffb6747b93fe155a14e203, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4496804918393432540, guid: e1f9221e0cffb6747b93fe155a14e203, type: 3}
       propertyPath: m_RootOrder
@@ -1336,6 +1348,10 @@ PrefabInstance:
     - target: {fileID: 2073367528732251391, guid: 1cc7698d5fc05eb42abd7ca899072452, type: 3}
       propertyPath: m_Name
       value: IceCubeGoonRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073367528732251391, guid: 1cc7698d5fc05eb42abd7ca899072452, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3757892991064126910, guid: 1cc7698d5fc05eb42abd7ca899072452, type: 3}
       propertyPath: m_LocalScale.x
@@ -3718,6 +3734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SalamiSoldier
       objectReference: {fileID: 0}
+    - target: {fileID: 2368411487650542194, guid: 429199131f44fa04fab8bbac0098999e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4320,6 +4340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceCubGoon_melee
       objectReference: {fileID: 0}
+    - target: {fileID: 942118541295082568, guid: 18d63f4867469dc448f7d036b29e110b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2055762081146438325, guid: 18d63f4867469dc448f7d036b29e110b, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -4461,6 +4485,10 @@ PrefabInstance:
     - target: {fileID: 5496117795686131446, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: m_Name
       value: IceCubeBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 5496117795686131446, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4923,6 +4951,79 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 756f5db2f01181c49bdf7963df71bbc5, type: 3}
+--- !u!1001 &1558981640
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 826237113899971052, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_Name
+      value: FinalBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143492358904993779, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143492358904993779, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143492358904993779, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341986566758073607, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 510a72c5bd571f248bd2bcc2577161b3, type: 3}
 --- !u!114 &1582858701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 107141447355913251, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
@@ -6834,6 +6935,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rod _HotRod_ Johnson
       objectReference: {fileID: 0}
+    - target: {fileID: 457570364735805743, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1166434387670210189, guid: ec1265d0fefd8074089fbddf7531a6ce, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -6910,6 +7015,10 @@ PrefabInstance:
     - target: {fileID: 1258234203467825504, guid: 2c7b01cea4e97ff439706045254fd669, type: 3}
       propertyPath: m_Name
       value: GiantSalami
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258234203467825504, guid: 2c7b01cea4e97ff439706045254fd669, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1614603061055806647, guid: 2c7b01cea4e97ff439706045254fd669, type: 3}
       propertyPath: m_RootOrder
