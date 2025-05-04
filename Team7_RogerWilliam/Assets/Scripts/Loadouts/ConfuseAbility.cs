@@ -7,6 +7,7 @@ public class ConfuseAbility : Ability{
     [SerializeField] private float attackRange;
     [SerializeField] private GameObject musicProjectile;
     [SerializeField] private float confuseDuration = 5f;
+    [SerializeField] private float splashArea = 1.5f;
     [SerializeField] private float speed = 4f;
     [SerializeField] public LayerMask enemyLayers;
   
@@ -52,23 +53,25 @@ public class ConfuseAbility : Ability{
         targetProj.onHit.AddListener(ProjHit);
     }
 
-    private void ProjHit(GameObject hitEnemy) {
-        if(targetTag == "Enemy")
-        {
-            EnemyChase confusedEnemy = hitEnemy.GetComponent<EnemyChase>();
-            if (confusedEnemy != null) {
-                confusedEnemy.Confuse(confuseDuration); 
-            }
-        } else
-        {
-            if(hitEnemy.CompareTag("Player"))
-            {
-                Debug.Log("IN HERE");
-                AgentMover confusedPlayer = hitEnemy.GetComponent<AgentMover>();
-                confusedPlayer.ConfusePlayer(confuseDuration);
-            }
-        }
-    }
+    private void ProjHit(GameObject projectile) {
 
-    
+        if(targetTag == "Enemy") {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(projectile.transform.position, splashArea, enemyLayers);
+
+                foreach (var enemy in hits) {
+                    EnemyChase confusedEnemy = enemy.GetComponent<EnemyChase>();
+                    if (confusedEnemy != null) {
+                        confusedEnemy.Confuse(confuseDuration); 
+                    }
+                }
+        } 
+        // else {
+        //     if(hitEnemy.CompareTag("Player")) {
+        //         Debug.Log("IN HERE");
+        //         AgentMover confusedPlayer = hitEnemy.GetComponent<AgentMover>();
+        //         confusedPlayer.ConfusePlayer(confuseDuration);
+        //     }
+        // }
+
+    }
 }

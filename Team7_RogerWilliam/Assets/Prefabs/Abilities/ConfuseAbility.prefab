@@ -47,10 +47,11 @@ MonoBehaviour:
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
-  cooldown: 10
+  cooldown: 7
   duration: 0
-  attackRange: 5
+  attackRange: 7
   musicProjectile: {fileID: 4867187080979785701, guid: 6c1cf58b8f476814582528d04fce9575, type: 3}
+  spalshArea: {fileID: 7467644880013365749, guid: 9ef2d9d722a197044a4e358c9aa5841a, type: 3}
   confuseDuration: 5
   speed: 4
   enemyLayers:
