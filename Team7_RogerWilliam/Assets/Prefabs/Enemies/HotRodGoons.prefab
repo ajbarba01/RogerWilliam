@@ -193,7 +193,7 @@ MonoBehaviour:
   moveSpeed: 0
   preferredDistance: 2
   detectionRadius: 8
-  anim: {fileID: 0}
+  anim: {fileID: 8826506771116975997}
   isConfused: 0
 --- !u!114 &2036421993520178620
 MonoBehaviour:
@@ -210,7 +210,7 @@ MonoBehaviour:
   attackCooldown: 1
   attackDamage: 5
   attackRange: 2
-  anim: {fileID: 0}
+  anim: {fileID: 8826506771116975997}
 --- !u!50 &4603005431929581901
 Rigidbody2D:
   serializedVersion: 4
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61706c9a3367ca041abe90c41de89881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  art: {fileID: 0}
+  art: {fileID: 7315531928352496757}
 --- !u!61 &6459116468269024867
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -380,8 +380,8 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
   damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
   healFlashColor: {r: 0, g: 1, b: 0, a: 1}
-  spriteRenderer: {fileID: 0}
-  health: {fileID: 0}
+  spriteRenderer: {fileID: 8647861362189446891}
+  health: {fileID: 2947968019133794176}
 --- !u!114 &1296771994825668189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e9ad6ff3a169441b388f10500f6b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  art: {fileID: 7740461814769937013}
+  art: {fileID: 1751205420082203334}
   deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
 --- !u!114 &5555766651062255983
 MonoBehaviour:

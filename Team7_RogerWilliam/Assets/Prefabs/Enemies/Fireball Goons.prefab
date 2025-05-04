@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603c026687c2dcb45bc5db8d95af49dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 1
   knockbackResistance: 0
   onMove:
     m_PersistentCalls:
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 121673a87ea8ff347876401f903af722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBase: {fileID: 0}
-  firePoint: {fileID: 0}
+  fireBase: {fileID: 1605971462496660120}
+  firePoint: {fileID: 1605971462496660120}
   projectilePrefab: {fileID: 8117433055548014173, guid: d68dae087919226419e86fb3cdc84540, type: 3}
   projectileSpeed: 2
   attackCooldown: 3
