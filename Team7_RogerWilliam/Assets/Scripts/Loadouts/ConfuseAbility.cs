@@ -56,6 +56,7 @@ public class ConfuseAbility : Ability{
     private void ProjHit(GameObject projectile) {
 
         if(targetTag == "Enemy") {
+            Debug.Log("Confused Enemy");
             Collider2D[] hits = Physics2D.OverlapCircleAll(projectile.transform.position, splashArea, enemyLayers);
 
                 foreach (var enemy in hits) {
@@ -65,13 +66,16 @@ public class ConfuseAbility : Ability{
                     }
                 }
         } 
-        // else {
-        //     if(hitEnemy.CompareTag("Player")) {
-        //         Debug.Log("IN HERE");
-        //         AgentMover confusedPlayer = hitEnemy.GetComponent<AgentMover>();
-        //         confusedPlayer.ConfusePlayer(confuseDuration);
-        //     }
-        // }
+        else {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(projectile.transform.position, splashArea, enemyLayers);
 
+                foreach (var player in hits) {
+                    if (player.CompareTag("Player")) {
+                        Debug.Log("Confused Player");
+                        AgentMover confusedPlayer = player.GetComponent<AgentMover>();
+                        confusedPlayer.ConfusePlayer(confuseDuration);
+                    }
+                }
+        }
     }
 }
