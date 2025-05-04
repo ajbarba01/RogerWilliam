@@ -10,6 +10,13 @@ public class GroundPound : Ability
     [SerializeField] public LayerMask enemyLayers;
     [SerializeField] public LayerMask playerLayers;
 
+    [SerializeField] private GameObject VFX;
+    private float VFXLength = 0.25f;
+
+    private void Awake() {
+        VFX.SetActive(false);
+    }
+
     protected override void OnActivate() {
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
@@ -26,5 +33,14 @@ public class GroundPound : Ability
             hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
         }
         anim.PlayOnce("Player_Punch");
+
+        StartCoroutine(ShowVFX());
+    }
+
+    private IEnumerator ShowVFX() {
+        VFX.SetActive(true);
+        yield return new WaitForSeconds(VFXLength);
+        VFX.SetActive(false);
+
     }
 }
