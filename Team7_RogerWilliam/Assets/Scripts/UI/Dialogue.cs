@@ -30,7 +30,6 @@ public class Dialogue : MonoBehaviour
     }
 
     private void _HideDialogue() {
-        dialogueCompleted.Invoke();
         window.SetActive(false);
         currentdialogue = 0;
     }
@@ -50,6 +49,7 @@ public class Dialogue : MonoBehaviour
         }
 
         else {
+            dialogueCompleted.Invoke();
             HideDialogue();
         }
     }

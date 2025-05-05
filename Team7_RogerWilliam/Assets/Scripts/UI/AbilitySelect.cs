@@ -102,20 +102,7 @@ public class LoadoutSelect : Menu
     }
 
     private void UpdateNickname() {
-        currentNickname = "\"";
-        if (ability.GetOption() != null) {
-            currentNickname += ability.GetOption().GetNickname() + " ";
-        }
-
-        if (weapon.GetOption() != null) {
-            currentNickname += weapon.GetOption().GetNickname() + " ";
-        }
-
-        if (passive.GetOption() != null) {
-            currentNickname += passive.GetOption().GetNickname();
-        }
-
-        nickname.text = currentNickname.Trim() + "\"";
-
+        currentNickname = "\"" + LoadoutManager.Instance.GetNickname() + "\"";
+        nickname.text = currentNickname.Trim();
     }
 }

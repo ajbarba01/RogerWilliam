@@ -22,6 +22,7 @@ public class NPCGuide : MonoBehaviour
     private void Awake() {
         dialogue = GetComponent<DialogueTrigger>();
         dialogue.onFinishTalk.AddListener(OnFinishTalk);
+        dialogue.onTalk.AddListener(UpdateLines);
     }
 
     private void Start() {
@@ -31,10 +32,14 @@ public class NPCGuide : MonoBehaviour
         }
 
         exclamationMark.SetActive(!talkedTo);
-        GetLines();
         transform.position = positions[LevelManager.currentLevel - 1].position;
-        dialogue.SetDialogueOptions(monologue);
+        UpdateLines();
         LevelManager.Instance.UpdateDoors();
+    }
+
+    private void UpdateLines() {
+        GetLines();
+        dialogue.SetDialogueOptions(monologue);
     }
 
     private void OnFinishTalk() {
@@ -54,7 +59,7 @@ public class NPCGuide : MonoBehaviour
         Debug.Log(LevelManager.currentLevel);
         switch (LevelManager.currentLevel) {
             case 1:
-                lines.Add("Hello Roger!");
+                lines.Add("Hello " + GetNickname() + "!");
                 lines.Add("I'm here to help you on your journey. Ready to begin?");
                 lines.Add("I know you are looking for the one true nickname to help find yourself.");
                 lines.Add("I've created 5 different portals for you to go and fight nicknames so you can concur the best one.");
@@ -66,6 +71,7 @@ public class NPCGuide : MonoBehaviour
                 break;
 
             case 2:
+                lines.Add("Welcome back " + GetNickname() + "!");
                 lines.Add("Congrats on beating Big Money!");
                 lines.Add("That guy really liked to hit you far huh.");
                 updateMonologue(lines);
@@ -77,6 +83,7 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Good Luck!");
                 break;
             case 3:
+                lines.Add("Welcome back " + GetNickname() + "!");
                 lines.Add("Congrats on beating the Rock!");
                 lines.Add("Bet you're pretty jealous I was friends with him.");
                 lines.Add("Hopefully he wasn't too hard on you.");
@@ -89,6 +96,7 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Good luck with him!");
                 break;
             case 4:
+                lines.Add("Welcome back " + GetNickname() + "!");
                 lines.Add("Congrats on beating Rod \"Hot Rod\" Johnson!");
                 lines.Add("Hope the heat didn't get to you in there.");
                 updateMonologue(lines);
@@ -104,6 +112,7 @@ public class NPCGuide : MonoBehaviour
                 break;
 
             case 5:
+                lines.Add("Welcome back " + GetNickname() + "!");
                 lines.Add("Congrats on beating Salami Sam!");
                 lines.Add("A bit sad to see his name go, but it is what it is.");
                 updateMonologue(lines);
@@ -116,6 +125,7 @@ public class NPCGuide : MonoBehaviour
                 break;
 
             case 6:
+                lines.Add("Welcome back " + GetNickname() + "!");
                 lines.Add("Congrats on beating Ice Cube!");
                 lines.Add("Bit of a change going from heat to cold, hope you didn't get too chilly.");
                 updateMonologue(lines);
@@ -179,5 +189,9 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Passive used: " + LoadoutManager.Instance.currentPassive.name);
             } 
         }
+    }
+
+    private string GetNickname() {
+        return LoadoutManager.Instance.GetNickname();
     }
 }

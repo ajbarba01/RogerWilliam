@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
         if (started) {
             return;
         }
-        
+
         LoadoutManager.Instance.UnlockWeapon(weapons[0]);
         for (int i = 1; i <= startLevel; i++) {
             UnlockLevelInst(i);

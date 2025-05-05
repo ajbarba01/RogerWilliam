@@ -95,4 +95,13 @@ public class LoadoutManager : MonoBehaviour
         unlockedAbilities = new HashSet<LoadoutOption>();
         unlockedPassives = new HashSet<LoadoutOption>();
     }
+
+    public string GetNickname() {
+        string currentNickname = "";
+        currentNickname += currentAbility.GetNickname() + " ";
+        currentNickname += currentWeapon.GetNickname() + " ";
+        currentNickname += currentPassive.GetNickname();
+
+        return currentNickname.Trim();
+    }
 }

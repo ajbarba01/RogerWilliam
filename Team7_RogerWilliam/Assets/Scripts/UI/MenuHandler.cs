@@ -33,6 +33,7 @@ public class MenuHandler : MonoBehaviour
     }
 
     void OpenMenu(Menu menu) {
+        Dialogue.HideDialogue();
         if (openMenu != null) {
             CloseMenu();
         }
