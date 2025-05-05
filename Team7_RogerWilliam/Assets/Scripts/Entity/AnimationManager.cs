@@ -72,7 +72,7 @@ public class AnimationManager : MonoBehaviour
         anim.speed = 1f;
     }
 
-    public void SetFacing(int facing) {
+    public void SetFacing(float facing) {
         if (!playing) {
             Vector3 newScale = transform.localScale;
             newScale.x = facing;

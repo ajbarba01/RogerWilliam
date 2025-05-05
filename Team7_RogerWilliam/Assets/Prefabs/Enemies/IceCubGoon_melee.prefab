@@ -42,7 +42,7 @@ Transform:
   - {fileID: 5121260097883696878}
   - {fileID: 7730559350365266762}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &767954002486541685
 BoxCollider2D:
@@ -208,6 +208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   knockbackResistance: 0
+  x_scale: 2
   onMove:
     m_PersistentCalls:
       m_Calls: []

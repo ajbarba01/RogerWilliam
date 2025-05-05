@@ -325,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   knockbackResistance: 50
+  x_scale: 1.5
   onMove:
     m_PersistentCalls:
       m_Calls: []
