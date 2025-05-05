@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4eeadf92a499ae4bb78720b0ce3062e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: E to Talk
   key: 101
   onInteract:
     m_PersistentCalls:

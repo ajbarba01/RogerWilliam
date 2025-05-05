@@ -12799,8 +12799,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: dialogueOptions.Array.data[4]
-      value: Use WASD to move and space to attack. You'll unlock more powers as you
-        go.
+      value: Use WASD to move, left click to attack, and right click to use your
+        ability. You'll unlock more powers as you go.
       objectReference: {fileID: 0}
     - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: dialogueOptions.Array.data[5]
