@@ -133,9 +133,9 @@ MonoBehaviour:
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
-  cooldown: 5
+  cooldown: 10
   duration: 2
-  splashArea: 5
+  splashArea: 2.5
   DPS: 40
   enemyLayers:
     serializedVersion: 2

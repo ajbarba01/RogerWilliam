@@ -39,8 +39,11 @@ public class LevelManager : MonoBehaviour
                 return;
             }
             LoadoutManager.Instance.UnlockWeapon(weapons[currentLevel - 1]);
-            LoadoutManager.Instance.UnlockAbility(actives[currentLevel - 1]);
-            LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 1]);
+            if (currentLevel >= 2) {
+
+            }
+            LoadoutManager.Instance.UnlockAbility(actives[currentLevel - 2]);
+            LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 2]);
         }
         Debug.Log(Instance.currentLevel);
     }

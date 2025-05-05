@@ -134,7 +134,7 @@ MonoBehaviour:
       m_Calls: []
   cooldown: 5
   duration: 0
-  splashArea: 5
+  splashArea: 2.5
   knockbackStrength: 30
   attackDamage: 20
   artDuration: 0.25

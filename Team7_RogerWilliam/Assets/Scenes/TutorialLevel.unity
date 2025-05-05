@@ -9828,14 +9828,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 2839828508351368964, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2839828508351368964, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 3002539446517006195, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: art
       value: 

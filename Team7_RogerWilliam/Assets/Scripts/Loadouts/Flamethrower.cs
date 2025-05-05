@@ -7,7 +7,7 @@ public class Flamethrower : Weapon
     [SerializeField] private float dps = 30f;
     [SerializeField] private LayerMask enemyLayers;
     [SerializeField] private GameObject fireEffect;
-    [SerializeField] private GameObject flamethrower;
+    // [SerializeField] private GameObject flamethrower;
 
     [SerializeField] private float attackTime = 3f;
     [SerializeField] private float reloadTime = 5f;
@@ -38,7 +38,7 @@ public class Flamethrower : Weapon
             fireEffect.SetActive(false);
         }
 
-        flamethrower.SetActive(false);
+        // flamethrower.SetActive(false);
     }
 
     private void Update() {
@@ -71,7 +71,7 @@ public class Flamethrower : Weapon
         canAttack = false;
         attacking = true;
         fireEffect.SetActive(true);
-        flamethrower.SetActive(true);
+        // flamethrower.SetActive(true);
         if(targetTag == "Enemy")
         {
             mover.SetSlow(slow);
@@ -89,7 +89,7 @@ public class Flamethrower : Weapon
                 fireEffect.transform.position = transform.position + direction * 2f;
                 fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
 
-                flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+                // flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
             } else
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -98,7 +98,7 @@ public class Flamethrower : Weapon
                 fireEffect.transform.position = transform.position + direction * 2f;
                 fireEffect.transform.rotation = Util.QuaternionOfVector3(direction, -45f);
 
-                flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
+                // flamethrower.transform.rotation = Util.QuaternionOfVector3(direction, 0f);
             }
             
 
@@ -109,7 +109,7 @@ public class Flamethrower : Weapon
             mover.RemoveSlow();
         }
         fireEffect.SetActive(false);
-        flamethrower.SetActive(false);
+        // flamethrower.SetActive(false);
     }
 
     void DealDamageInZone(float amount)

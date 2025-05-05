@@ -55,9 +55,20 @@ public class Slingshot : Weapon
                 mover.FaceTowardsMouse(transform.position);
             } else
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                Vector3 direction = (player.transform.position - transform.position).normalized;
+                Vector3 direction = (Player.GetPosition() - transform.position).normalized;
                 transform.rotation = Util.QuaternionOfVector3(direction, -90f);
+            }
+
+            Vector3 scale = transform.localScale;
+            scale.x = mover.facing;
+            transform.localScale = scale;
+
+            
+            if (mover.facing == -1) {
+                Quaternion rot = transform.rotation;
+                Vector3 euler = rot.eulerAngles;
+                euler.z += 180;
+                transform.rotation = Quaternion.Euler(euler);
             }
             
             yield return null;
