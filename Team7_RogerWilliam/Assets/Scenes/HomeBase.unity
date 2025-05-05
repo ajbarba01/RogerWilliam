@@ -15962,6 +15962,10 @@ PrefabInstance:
       propertyPath: menus.Array.data[1]
       value: 
       objectReference: {fileID: 938841077}
+    - target: {fileID: 1572973368787152933, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1848758527104989630, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -15993,6 +15997,14 @@ PrefabInstance:
     - target: {fileID: 2145583425995002254, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: currentWeapon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748124427723618123, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748124427723618123, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4627876372809630556, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_IsActive
@@ -16029,6 +16041,18 @@ PrefabInstance:
     - target: {fileID: 5124950221855376810, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630700239184293628, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630700239184293628, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630700239184293628, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6384434226534129395, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_Pivot.x
