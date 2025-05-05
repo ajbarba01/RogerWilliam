@@ -30,7 +30,7 @@ public class PassiveHandler : MonoBehaviour
     void RemovePassive() {
         if (currentPassive != null) {
             // currentPassive.onEnemyHit.RemoveListener(lastHit.EnemyHit);
-            Destroy(currentPassive);
+            Destroy(currentPassive.gameObject);
         }
 
     }

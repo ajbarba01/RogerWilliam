@@ -66,8 +66,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 54b4d7ac4ae76a84ea27b24acad08ea9, type: 2}
   - {fileID: 11400000, guid: 4a474a7a98f5c4c4c85bae6ebdbadf0f, type: 2}
   passives:
-  - {fileID: 11400000, guid: dc5fb23c89a59de46ab0252e70c96e6f, type: 2}
+  - {fileID: 11400000, guid: 49aa94d4b37e88448af1c6be072846c1, type: 2}
   - {fileID: 11400000, guid: 8c6e1b10bd3bf464595a70e10d9847b4, type: 2}
   - {fileID: 11400000, guid: 4d2c4e724cb23734e938f9323a69a178, type: 2}
   - {fileID: 11400000, guid: 7d12b02f32d7d4c408a7c12fde791fd1, type: 2}
-  - {fileID: 11400000, guid: 49aa94d4b37e88448af1c6be072846c1, type: 2}
+  - {fileID: 11400000, guid: dc5fb23c89a59de46ab0252e70c96e6f, type: 2}

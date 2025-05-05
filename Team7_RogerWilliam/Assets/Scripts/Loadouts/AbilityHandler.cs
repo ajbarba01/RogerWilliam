@@ -61,7 +61,7 @@ public class AbilityHandler : MonoBehaviour
     void RemoveAbility() {
         if (currentAbility != null) {
             currentAbility.onEnemyHit.RemoveListener(lastHit.EnemyHit);
-            Destroy(currentAbility);
+            Destroy(currentAbility.gameObject);
         }
 
     }

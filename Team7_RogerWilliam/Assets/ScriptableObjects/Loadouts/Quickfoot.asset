@@ -16,4 +16,4 @@ MonoBehaviour:
   tooltipText: Quickfoot (Increased Speed)
   nickname: Gonzalez
   icon: {fileID: 21300000, guid: 0bf9a9b76d91a634aa8c4581b5420504, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 981294512643970810, guid: b378273705cd59b4fb0becd13f14df33, type: 3}

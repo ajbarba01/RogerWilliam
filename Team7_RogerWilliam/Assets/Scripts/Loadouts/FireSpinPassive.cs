@@ -2,25 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireSpinPassive : MonoBehaviour
+public class FireSpinPassive : Passive
 {
-    [SerializeField] private float healthAddition = 50f;
-    private Health health;
+    [SerializeField] private GameObject fireSpinner;
+    [SerializeField] private int numSpinners;
+    [SerializeField] private float radius = 1.5f;
+    [SerializeField] private float spinSpeed = 90f; // degrees per second
 
-    private void Start()
-    {
-        health = Player.health;
+    private GameObject[] spinners;
+    private float currentAngle;
 
-        float newMax = health.GetMaxHealth() + healthAddition;
-
-        health.SetMaxHealth(newMax);
-        health.Heal(healthAddition);
+    private void Awake() {
+        spinners = new GameObject[numSpinners];
+        for (int i = 0; i < numSpinners; i++) {
+            spinners[i] = Instantiate(fireSpinner, transform.position, Quaternion.identity, transform);
+        }
     }
 
-    private void OnDestroy() {
-        float newMax = health.GetMaxHealth() - healthAddition;
+    private void Update()
+    {
+        float angleStep = 360f / numSpinners;
+        currentAngle += spinSpeed * Time.deltaTime;
 
-        health.SetMaxHealth(newMax);
-        health.TakeDamage(healthAddition);
+        for (int i = 0; i < numSpinners; i++)
+        {
+            float angle = currentAngle + i * angleStep;
+            float rad = angle * Mathf.Deg2Rad;
+            Vector3 offset = new Vector3(Mathf.Cos(rad), Mathf.Sin(rad), 0) * radius;
+            spinners[i].transform.position = transform.position + offset;
+        }
     }
 }
