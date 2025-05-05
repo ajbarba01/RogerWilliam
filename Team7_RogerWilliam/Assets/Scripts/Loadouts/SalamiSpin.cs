@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class SalamiSpin : Ability
 {
-     [SerializeField] private float splashArea;
-    [SerializeField] private float knockbackStrength;
-    [SerializeField] private float attackDamage;
-    [SerializeField] private float artDuration;
-    [SerializeField] private GameObject groundBreakArt;
+    [SerializeField] private float splashArea;
+    [SerializeField] private float DPS;
     [SerializeField] public LayerMask enemyLayers;
     [SerializeField] public LayerMask playerLayers;
 
@@ -20,39 +17,26 @@ public class SalamiSpin : Ability
     }
 
     protected override void OnActivate() {
-
-        
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
-        foreach (var enemy in hits) {
-            AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
-            Health enemyHealth = enemy.GetComponent<Health>();
-            
-            // damage
-            onEnemyHit.Invoke(enemyHealth);
-            enemyHealth.TakeDamage(attackDamage);
-
-            // knockback
-            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-            hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
-        }
         anim.PlayOnce("Player_Punch");
-        StartCoroutine(GroundEffect(artDuration));
+        StartCoroutine(AbilityDuration());
     }
 
-    private IEnumerator GroundEffect(float Duration) {
-        GameObject groundBreak = Instantiate(groundBreakArt, transform.position, Quaternion.identity);
-
-        yield return new WaitForSeconds(Duration);
-        Destroy(groundBreak);
-
-        StartCoroutine(ShowVFX());
-    }
-
-    private IEnumerator ShowVFX() {
+    private IEnumerator AbilityDuration() {
         VFX.SetActive(true);
-        yield return new WaitForSeconds(VFXLength);
-        VFX.SetActive(false);
 
+        while (channeling) {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
+            foreach (var enemy in hits) {
+                AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
+                Health enemyHealth = enemy.GetComponent<Health>();
+                
+                // damage
+                onEnemyHit.Invoke(enemyHealth);
+                enemyHealth.TakeDamage(DPS * Globals.TickRate);
+            }
+            yield return new WaitForSeconds(Globals.TickRate);
+        }
+
+        VFX.SetActive(false);
     }
 }
