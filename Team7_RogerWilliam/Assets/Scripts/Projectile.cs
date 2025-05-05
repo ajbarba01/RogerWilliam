@@ -63,12 +63,15 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(damageTag);
+        
         if (damageTag != "")
         {
             if(other.CompareTag(damageTag))
             {
+                Debug.Log(damageTag);
+                Debug.Log("Made past other Comparisoin");
                 if (damageTag == "Player") {
+                    Debug.Log("Player");
                     Player.health.TakeDamage(damage / 2);
                 }
                 else {

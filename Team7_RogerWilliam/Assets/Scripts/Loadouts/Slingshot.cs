@@ -30,9 +30,9 @@ public class Slingshot : Weapon
             }
         } else
         {
+            // Debug.Log(charge);
             if(charge >= maxCharge)
             {
-                
                 Release();
             }
         }
@@ -53,31 +53,33 @@ public class Slingshot : Weapon
             {
                 transform.rotation = Util.QuaternionTowardsMouse(transform.position);
                 mover.FaceTowardsMouse(transform.position);
+                Vector3 scale = transform.localScale;
+                scale.x = mover.facing;
+                transform.localScale = scale;
+
+                
+                if (mover.facing == -1) {
+                    Quaternion rot = transform.rotation;
+                    Vector3 euler = rot.eulerAngles;
+                    euler.z += 180;
+                    transform.rotation = Quaternion.Euler(euler);
+                }
+                
             } else
             {
                 Vector3 direction = (Player.GetPosition() - transform.position).normalized;
                 transform.rotation = Util.QuaternionOfVector3(direction, -90f);
             }
-
-            Vector3 scale = transform.localScale;
-            scale.x = mover.facing;
-            transform.localScale = scale;
-
-            
-            if (mover.facing == -1) {
-                Quaternion rot = transform.rotation;
-                Vector3 euler = rot.eulerAngles;
-                euler.z += 180;
-                transform.rotation = Quaternion.Euler(euler);
-            }
-            
             yield return null;
+
+            
         }
         if(targetTag == "Enemy")
         {
             mover.RemoveSlow();
         }
         art.SetActive(false);
+        
     }
 
     public override void Attack() {
@@ -107,6 +109,7 @@ public class Slingshot : Weapon
         GameObject rock = Instantiate(projectile, attackPt.position, transform.rotation);
         Projectile proj = rock.GetComponent<Projectile>();
         proj.SetDamage(damage);
+        Debug.Log(targetTag);
         proj.SetDamageTag(targetTag);
         proj.SetSpeed(velocity);
         if(targetTag == "Enemy")
@@ -119,7 +122,6 @@ public class Slingshot : Weapon
             Vector3 direction = (player.transform.position - transform.position).normalized;
             proj.SetDirection((Vector2)direction);
             proj.onTagHit.AddListener(playerHit);
-            Debug.Log("projectile code");
         }
         
 
@@ -142,7 +144,6 @@ public class Slingshot : Weapon
     }
     public void playerHit(GameObject projectile, GameObject player)
     {
-        
         AgentMover playerMover = player.GetComponent<AgentMover>();
         if(playerMover == null) return;
         Projectile proj = projectile.GetComponent<Projectile>();

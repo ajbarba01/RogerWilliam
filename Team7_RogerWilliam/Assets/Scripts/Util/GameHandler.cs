@@ -11,9 +11,10 @@ public class GameHandler : MonoBehaviour
     public static bool tutorialBossDefeated = false;
     public static bool hotRodDefeated = false;
     public static bool iceCubeDefeated = false;
-    public static bool guitarGeorgeDefeated = false;
     public static  bool salamiSamDefeated = false;
     public static bool finalBossDefeated = false;  
+
+    public static bool rockBossDefeated = false;
 
     void Awake()
     {
@@ -68,7 +69,7 @@ public class GameHandler : MonoBehaviour
     }
     public void rockBossDeath()
     {
-        tutorialBossDefeated = true;
+        rockBossDefeated = true;
         LevelManager.Instance.UnlockLevelInst(3);
     }
     public void hotRodDeath()
@@ -80,10 +81,6 @@ public class GameHandler : MonoBehaviour
     {
         iceCubeDefeated = true;
         LevelManager.Instance.UnlockLevelInst(5);
-    }
-    public void guitarGeorgeDeath()
-    {
-        guitarGeorgeDefeated = true;
     }
     public void salamiSamDeath()
     {

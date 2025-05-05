@@ -144,5 +144,5 @@ MonoBehaviour:
     m_Bits: 64
   playerLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1
   VFX: {fileID: 1995509745096429823}

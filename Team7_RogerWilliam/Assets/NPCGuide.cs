@@ -34,7 +34,6 @@ public class NPCGuide : MonoBehaviour
         GetLines();
         transform.position = positions[LevelManager.currentLevel - 1].position;
         dialogue.SetDialogueOptions(monologue);
-
         LevelManager.Instance.UpdateDoors();
     }
 
@@ -61,6 +60,9 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("I've created 5 different portals for you to go and fight nicknames so you can concur the best one.");
                 lines.Add("Use WASD to move, left click to attack, and right click to use your ability. You'll unlock more powers as you go.");
                 lines.Add("Continue to the end of the level to get your first nickname!");
+                lines.Add("Your first challenge will be to fight Big Money.");
+                lines.Add("he's going to be in the door at the bottom of the room.");
+                lines.Add("Good Luck!");
                 break;
 
             case 2:
@@ -69,10 +71,23 @@ public class NPCGuide : MonoBehaviour
                 updateMonologue(lines);
                 lines.Add("Hopefully Big Money is the name you're looking for.");
                 lines.Add("It isn't? Wow you're really looking hard for this nickname.");
-                lines.Add("I guess you can have a shot at my friend Hot Rod. He's a high temper fiery guy!");
+                lines.Add("You can go try and take the nickname of my old pal Rock.");
+                lines.Add("He's a pretty tough guy to crack so be warned.");
+                lines.Add("Head to the room at the bottom right.");
                 lines.Add("Good Luck!");
                 break;
-
+            case 3:
+                lines.Add("Congrats on beating the Rock!");
+                lines.Add("Bet you're pretty jealous I was friends with him.");
+                lines.Add("Hopefully he wasn't too hard on you.");
+                updateMonologue(lines);
+                lines.Add("The rock sounds like a good nickname for you.");
+                lines.Add("Not this one either? You're a picky one.");
+                lines.Add("I didn't know a nickname was this important to anyone.");
+                lines.Add("I guess you can have a shot at my friend Hot Rod. He's a high temper fiery guy!");
+                lines.Add("Head to the room at the bottom left.");
+                lines.Add("Good luck with him!");
+                break;
             case 4:
                 lines.Add("Congrats on beating Rod \"Hot Rod\" Johnson!");
                 lines.Add("Hope the heat didn't get to you in there.");
@@ -84,10 +99,23 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("My recommendation is a butcher I used to buy from, Salami Sam.");
                 lines.Add("He's a bit of a nutcase but he's got a good nickname.");
                 lines.Add("If this isn't the one then I don't know what to do with you.");
+                lines.Add("Head to the room at the top left.");
                 lines.Add("Good Luck!");
                 break;
 
             case 5:
+                lines.Add("Congrats on beating Salami Sam!");
+                lines.Add("A bit sad to see his name go, but it is what it is.");
+                updateMonologue(lines);
+                lines.Add("Salami Sam has to be the one now.");
+                lines.Add("No? You've got to be kidding me.");
+                lines.Add("I guess you can have a shot at my old friend Ice Cube.");
+                lines.Add("It would be a good day if you took his nickname. Better bring no vaseline!");
+                lines.Add("Sorry for that, just go ahead to the door at the top right.");
+                lines.Add("Good Luck!");
+                break;
+
+            case 6:
                 lines.Add("Congrats on beating Ice Cube!");
                 lines.Add("Bit of a change going from heat to cold, hope you didn't get too chilly.");
                 updateMonologue(lines);
@@ -95,22 +123,11 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Wow, if hot rod and ice cube both don't work for you, I'm not sure what will.");
                 lines.Add("I'm starting to think you're just taking these nicknames just for fun.");
                 lines.Add("Nothing wrong with that, you just don't have to beat up my friends.");
-                lines.Add("I'll give you another shot at an old enemy of mine.");
-                lines.Add("Don't ask what happened, all you need to know is that his name is Guitar George.");
-                lines.Add("Go ahead and pluck some of his strings for me please.");
-                lines.Add("Good Luck!");
-                break;
-
-            case 6:
-                lines.Add("Congrats on beating Salami Sam!");
-                lines.Add("A bit sad to see his name go, but it is what it is.");
-                updateMonologue(lines);
-                lines.Add("Salami Sam has to be the one now.");
-                lines.Add("You've got to be kidding me.");
-                
-                lines.Add("I guess you can have a shot at my old friend Ice Cube.");
-                lines.Add("It would be a good day if you took his nickname. Better bring no vaseline!");
-                lines.Add("Sorry for that, just go ahead.");
+                lines.Add("I mean, maybe you need to reflect a little bit on yourself.");
+                lines.Add("What is the true reason you are looking for this nickname?");
+                lines.Add("Why are you trying to change yourself?");
+                lines.Add("Once you have found your answer, meet me in the room all the way at the front.");
+                lines.Add("If you come in unprepared, you will die.");
                 lines.Add("Good Luck!");
                 break;
 
