@@ -23,6 +23,8 @@ public class DamagePopup : MonoBehaviour
 
     private TextMeshPro text;
 
+    private float maxAlpha = 0.5f;
+
     // private float dissapearProgress = 0f;
     private float fadeProgress = 0f;
 
@@ -41,6 +43,7 @@ public class DamagePopup : MonoBehaviour
     public void Setup(int amount, Color color) {
         text.text = amount.ToString();
         text.color = color;
+        ChangeAlpha(maxAlpha);
     }
 
     private void Update() {
@@ -64,7 +67,7 @@ public class DamagePopup : MonoBehaviour
         while (fadeProgress < fadeTime) {
             fadeProgress += Time.deltaTime;
 
-            ChangeAlpha(Mathf.Lerp(1f, 0f, fadeProgress / fadeTime));
+            ChangeAlpha(Mathf.Lerp(maxAlpha, 0f, fadeProgress / fadeTime));
 
             yield return null;
         }

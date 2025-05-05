@@ -35,8 +35,10 @@ public class PopoutSelector : MonoBehaviour
                     continue;
                 }
 
-                options[i].gameObject.SetActive(true);
-                options[i].SetOption(option);
+                if (i < options.Length) {
+                    options[i].gameObject.SetActive(true);
+                    options[i].SetOption(option);
+                }
                 i++;
             }
 
