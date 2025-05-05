@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
   m_Name: EvilPassive
   m_EditorClassIdentifier: 
-  loadoutName: 
+  loadoutName: Evil Passive
   tooltipText: 
-  nickname: 
-  icon: {fileID: 0}
+  nickname: Cheater
+  icon: {fileID: 21300000, guid: cb10d97b08932a343b07366d40275aa8, type: 3}
   prefab: {fileID: 0}
