@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadoutName: Ground Pound
   tooltipText: Ground Pound
-  nickname: Ground Pound
+  nickname: The
   icon: {fileID: 21300000, guid: 7efd5de1a0b876d48a062482b24de3f2, type: 3}
   prefab: {fileID: 7870616358094800764, guid: e172a9b61bb14674cbe5e5fcd9bf6bcc, type: 3}

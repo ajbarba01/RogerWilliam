@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc1eaf7485ed4446a84d347ea159f41, type: 3}
   m_Name: Medpack
   m_EditorClassIdentifier: 
-  loadoutName: Medpack
-  tooltipText: Medpack (Heal)
+  loadoutName: Medikit
+  tooltipText: Medikit
   nickname: Dr.
   icon: {fileID: 21300000, guid: 3e765d1817b558f489519d15d09274e1, type: 3}
   prefab: {fileID: 6588139377218525476, guid: cb1572653a40a3148b5ca7163ec13415, type: 3}
