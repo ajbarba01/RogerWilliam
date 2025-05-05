@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4165390049400786313
 Transform:
   m_ObjectHideFlags: 0
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db36881e5f4e9b94983ba30da1f76e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 5
-  maxMoveSpeed: 10
+  minMoveSpeed: 4
+  maxMoveSpeed: 7
   moveSpeed: 0
   preferredDistance: 2
   detectionRadius: 8
@@ -310,7 +310,7 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
   damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
   healFlashColor: {r: 0, g: 1, b: 0, a: 1}
-  spriteRenderer: {fileID: 3889622867906166323}
+  spriteRenderer: {fileID: 5318434342426234457}
   health: {fileID: 1483964463268741226}
 --- !u!114 &4318358237215861939
 MonoBehaviour:
