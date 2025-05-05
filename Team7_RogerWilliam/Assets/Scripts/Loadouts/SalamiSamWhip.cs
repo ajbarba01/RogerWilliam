@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Guitar : Weapon
+public class SalamiSamWhip : Weapon
 {
     private int numAttacks = 3;
     private int currentAttack = 0;
 
     [SerializeField] public Transform attackPt;
-    [SerializeField] public float attackRange = 1.0f;
-    [SerializeField] public int attackDamage = 20;
+    [SerializeField] public float attackRange = 0.5f;
+    [SerializeField] public int attackDamage = 40;
     [SerializeField] public LayerMask enemyLayers;
     [SerializeField] public LayerMask playerLayers;
-    [SerializeField] private float knockBackForce = .5f;
+    [SerializeField] private float knockBackForce = 10f;
 
     [SerializeField] private GameObject[] swingVFX;
 
