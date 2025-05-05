@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 2114324179697980892, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8560020797130680833}
     - target: {fileID: 2768249325191831170, guid: f21fcfafd1941f14b81e6897c0035a1d, type: 3}
       propertyPath: x_scale
       value: 2

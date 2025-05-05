@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2114324179697980892, guid: 18d63f4867469dc448f7d036b29e110b, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2115291101}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4855,6 +4859,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3748124427723618123, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3748124427723618123, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6384434226534129395, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -36904,3 +36916,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d63f4867469dc448f7d036b29e110b, type: 3}
+--- !u!212 &2115291101 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1007660593252109142, guid: 18d63f4867469dc448f7d036b29e110b, type: 3}
+  m_PrefabInstance: {fileID: 39925557}
+  m_PrefabAsset: {fileID: 0}
