@@ -68,7 +68,7 @@ public class SalamiSamWhip : Weapon
             {
                 if(player.CompareTag("Player"))
                 {
-                    Player.health.TakeDamage(attackDamage);
+                    Player.health.TakeDamage(attackDamage/2);
                     AgentMover mover = player.GetComponent<AgentMover>();
                 }
                 

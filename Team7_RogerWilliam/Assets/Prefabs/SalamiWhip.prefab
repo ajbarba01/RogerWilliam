@@ -142,7 +142,7 @@ MonoBehaviour:
     m_Bits: 64
   playerLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1
   knockBackForce: 20
   swingVFX:
   - {fileID: 1577640233181018319, guid: b4e3aa905e44dd74193c41feec20d3e9, type: 3}

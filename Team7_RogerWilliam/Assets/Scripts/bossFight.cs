@@ -59,6 +59,11 @@ public class bossFight : MonoBehaviour
             attackRange = 10f;
             // attackTimer = 3f;
         }
+        if(weaponName == "SalamiWhip(Clone)")
+        {
+            attackRange = 1f;
+            attackTimer = 2f;
+        }
         if(abilityName == "MolotovCocktail(Clone)")
         {
             abilityTimer = 5f;
