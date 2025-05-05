@@ -7,28 +7,34 @@ public class SoundMixerManager : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixerInstance;
     private static AudioMixer audioMixer;
+
     public static float masterVol = 0.5f;
 
-    void Start() {
+    void Awake() {
         audioMixer = audioMixerInstance;
-        audioMixerInstance = null;
-        
-        SetMasterVolume(masterVol);
+        if (audioMixer == null) {
+            Debug.LogError("SoundMixerManager: AudioMixer reference not set in inspector.");
+        } else {
+            SetMasterVolume(masterVol);
+        }
     }
-    
-    public static void SetMasterVolume (float level) 
-    {
+
+    public static void SetMasterVolume(float level) {
         masterVol = level;
-        audioMixer.SetFloat("masterVolume", Mathf.Log10(level) * 20f);
+        if (audioMixer != null) {
+            audioMixer.SetFloat("masterVolume", Mathf.Log10(Mathf.Clamp(level, 0.0001f, 1f)) * 20f);
+        }
     }
 
-    public static void SetSoundFXVolume (float level) 
-    {
-        audioMixer.SetFloat("soundFXVolume", Mathf.Log10(level) * 20f);
+    public static void SetSoundFXVolume(float level) {
+        if (audioMixer != null) {
+            audioMixer.SetFloat("soundFXVolume", Mathf.Log10(Mathf.Clamp(level, 0.0001f, 1f)) * 20f);
+        }
     }
 
-    public static void SetMusicVolume (float level) 
-    {
-        audioMixer.SetFloat("musicVolume", Mathf.Log10(level) * 20f);
+    public static void SetMusicVolume(float level) {
+        if (audioMixer != null) {
+            audioMixer.SetFloat("musicVolume", Mathf.Log10(Mathf.Clamp(level, 0.0001f, 1f)) * 20f);
+        }
     }
 }
