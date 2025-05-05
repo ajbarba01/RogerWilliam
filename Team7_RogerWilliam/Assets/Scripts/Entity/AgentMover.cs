@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,9 +19,12 @@ public class AgentMover : MonoBehaviour
     private Vector2 direction;
     private Vector2 movement;
 
+    public float x_scale = 1f;
+
+
     private float iceInertia = 0.005f;
 
-    public int facing { get; private set; } = 1;
+    public float facing { get; private set; } = 1f;
 
     private bool frozen = false;
     // private bool trueFrozen = false;
@@ -29,6 +32,7 @@ public class AgentMover : MonoBehaviour
     public UnityEvent onMove;
 
     private void Awake() {
+        facing = x_scale;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationManager>();
     }
@@ -133,11 +137,11 @@ public class AgentMover : MonoBehaviour
         }
 
         if (movement.x > 0) {
-            facing = 1;
+            facing = x_scale;
         }
 
         else if (movement.x < 0) {
-            facing = -1;
+            facing = -1 * x_scale;
         }
         
         SetFacing(facing);
@@ -145,7 +149,7 @@ public class AgentMover : MonoBehaviour
         rb.velocity = movement * slow;
     }
 
-    public void SetFacing(int newFacing) {
+    public void SetFacing(float newFacing) {
         facing = newFacing;
 
         if (anim == null) return;

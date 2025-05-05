@@ -72,8 +72,9 @@ public class AnimationManager : MonoBehaviour
         anim.speed = 1f;
     }
 
-    public void SetFacing(int facing) {
+    public void SetFacing(float facing) {
         if (!playing) {
+            Debug.Log("facing: " + facing.ToString());
             Vector3 newScale = transform.localScale;
             newScale.x = facing;
             transform.localScale = newScale;

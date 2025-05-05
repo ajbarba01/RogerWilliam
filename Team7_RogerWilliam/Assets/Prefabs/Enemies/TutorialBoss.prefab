@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1230482090229013227}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.09, y: 0.03, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.35, z: 1}
+  m_LocalScale: {x: 1.6, y: 1.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8745091009319158066}
@@ -152,12 +152,12 @@ Transform:
   m_GameObject: {fileID: 2356901996380481523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: -3.29, z: 0}
-  m_LocalScale: {x: 1.7125, y: 2.675, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2839828508351368964}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2738847852347084276
 BoxCollider2D:
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd9da76c25141846b412fb305d0945b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   moveSpeed: 2.5
   attackRange: 4
   attackCooldown: 1
@@ -294,7 +295,13 @@ MonoBehaviour:
   onDamage:
     m_PersistentCalls:
       m_Calls: []
+  onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   tookDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  tookHeal:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &1003449932052795260
@@ -310,7 +317,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
+  healFlashColor: {r: 0, g: 1, b: 0, a: 1}
   spriteRenderer: {fileID: 0}
   health: {fileID: 0}
 --- !u!114 &3002539446517006195

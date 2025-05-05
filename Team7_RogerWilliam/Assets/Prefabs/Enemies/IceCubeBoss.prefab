@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 3807898782651551222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3132678338545890526}
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicProjectile: {fileID: 1482281509341788806, guid: 5ca78f6030c6e2f4f91d486a9b10dde2, type: 3}
   firePoint: {fileID: 2833576233254879155}
+  anim: {fileID: 0}
   moveSpeed: 2.3
   Range1: 5
   attack1Range: 2
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   knockbackResistance: 1
+  x_scale: 1
   onMove:
     m_PersistentCalls:
       m_Calls: []

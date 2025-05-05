@@ -10,6 +10,7 @@ public class IceCube_boss : MonoBehaviour
     public Transform firePoint;
     protected Transform player_transform;
 
+    public Animator anim;
     protected Rigidbody2D rb2D;
     [SerializeField] private float moveSpeed = 2.5f;
 
@@ -27,6 +28,12 @@ public class IceCube_boss : MonoBehaviour
     private float attack1Timer;
     private float attack2Timer;
 
+    private string walkState = "icecube_walk";
+    private string attackState = "icecube_hit";
+    private string idleState = "icecube_idle";
+
+    private AnimationManager animMgr;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -35,9 +42,22 @@ public class IceCube_boss : MonoBehaviour
         {
             Debug.Log("ERROR: Player not found");
         }
-        rb2D = GetComponent<Rigidbody2D>();
         gameHandler = GameHandler.Instance.gameObject;
+        
+        rb2D = GetComponent<Rigidbody2D>();
+        gameHandler = GameObject.FindWithTag("GameController");
+        anim = gameObject.GetComponent<Animator>();
 
+        animMgr = GetComponentInChildren<AnimationManager>();
+        // if (animMgr == null) {
+        //     Debug.LogWarning("T boss scriot: no anim manager found!");
+        // }
+
+        if (animMgr == null) {
+            Debug.LogError("No AnimationManager on ");
+        } else {
+            Debug.Log("AnimMgr found on ");
+        }
         GetComponent<Health>().onDeath.AddListener(OnDeath);
     }
 
@@ -45,15 +65,24 @@ public class IceCube_boss : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
-        
+
         if (distance <= Range2 && distance > attack2Range) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            if (animMgr != null) {
+                // Debug.Log("HERE!");
+                animMgr.ChangeState(walkState);
+            } 
         } 
         else if (distance <= attack2Range && distance > Range1) {
+            
             BossAttack2();
         }
         else if (distance <= Range1 && distance > attack1Range) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            if (animMgr != null) {
+                // Debug.Log("HERE!");
+                animMgr.ChangeState(walkState);
+            } 
         }
         else if (distance <= attack1Range) {
             BossAttack1();
@@ -62,6 +91,9 @@ public class IceCube_boss : MonoBehaviour
 
     protected void BossAttack1() {
         attack1Timer -= Time.deltaTime;
+        if (animMgr != null) {
+                animMgr.PlayOnce(attackState);
+        }
         if (attack1Timer <= 0)
         {
             attack1Timer = attack1Cooldown;
@@ -76,10 +108,13 @@ public class IceCube_boss : MonoBehaviour
 
     protected void BossAttack2() {
         attack2Timer -= Time.deltaTime;
+        if (animMgr != null) {
+            animMgr.PlayOnce(attackState);
+        }
+
         if (attack2Timer <= 0)
         {
             attack2Timer = attack2Cooldown;
-
             if (gameHandler != null)
             {
                 GameObject projectile = Instantiate(MusicProjectile, firePoint.position, Quaternion.identity);
