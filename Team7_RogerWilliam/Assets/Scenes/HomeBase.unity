@@ -12776,36 +12776,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[0]
-      value: Hello Roger!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[1]
-      value: I'm here to help you on your journey. Ready to begin?
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[2]
-      value: I know you are looking for the one true nickname to help find yourself.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[3]
-      value: I've created 5 different portals for you to go and fight nicknames so
-        you can concur the best one.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[4]
-      value: Use WASD to move, left click to attack, and right click to use your
-        ability. You'll unlock more powers as you go.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2735093750111236861, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
-      propertyPath: dialogueOptions.Array.data[5]
-      value: Continue to the end of the level to get your first nickname!
-      objectReference: {fileID: 0}
     - target: {fileID: 3387253346074290389, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: m_Name
       value: NPCChat
@@ -15411,7 +15381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: startLevel
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.size

@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Interactable))]
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private Collider2D dialogueBox;
     [SerializeField] private string[] dialogueOptions;
+
+    public UnityEvent onTalk;
+    public UnityEvent onFinishTalk;
 
     private Interactable interactable;
     private bool showing;
@@ -36,17 +40,28 @@ public class DialogueTrigger : MonoBehaviour
         if (showing) {
             showing = false;
             Dialogue.HideDialogue();
-            Dialogue.Instance.dialogueCompleted.RemoveListener(Hide);
+            Dialogue.Instance.dialogueCompleted.RemoveListener(DialogueCompleted);
             Interactions.SetEnabled(true);
         }
     }
 
+    public void DialogueCompleted() {
+        onFinishTalk.Invoke();
+        Hide();
+    }
+
     private void Show() {
         if (inRange && !showing) {
+            onTalk.Invoke();
             showing = true;
             Dialogue.ShowDialogue(dialogueOptions);
-            Dialogue.Instance.dialogueCompleted.AddListener(Hide);
+            Dialogue.Instance.dialogueCompleted.AddListener(DialogueCompleted);
             Interactions.SetEnabled(false);
         }
+    }
+
+    public void SetDialogueOptions(string[] newOptions) {
+        Debug.Log("SETTING DIALOGUE");
+        dialogueOptions = newOptions;
     }
 }

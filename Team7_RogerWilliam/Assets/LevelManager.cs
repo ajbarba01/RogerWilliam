@@ -5,10 +5,11 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    private static bool started;
 
     public int[] levels;
     public Door[] doors;
-    public int currentLevel = 0;
+    public static int currentLevel = 0;
     [SerializeField] private int startLevel;
 
     private int numUnlocks = 6;
@@ -18,17 +19,17 @@ public class LevelManager : MonoBehaviour
     public LoadoutOption[] passives;
 
     private void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(this);
-            currentLevel = 0;
-            LoadoutManager.Instance.UnlockWeapon(weapons[0]);
-            for (int i = 1; i <= startLevel; i++) {
-                UnlockLevelInst(i);
-            }
+        Instance = this;
+        // DontDestroyOnLoad(this);
+        // currentLevel = 0;
+
+        if (started) {
+            return;
         }
-        else {
-            Destroy(gameObject);
+        
+        LoadoutManager.Instance.UnlockWeapon(weapons[0]);
+        for (int i = 1; i <= startLevel; i++) {
+            UnlockLevelInst(i);
         }
     }
 
@@ -45,10 +46,17 @@ public class LevelManager : MonoBehaviour
                 LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 2]);
             }
         }
-        Debug.Log(Instance.currentLevel);
+        Debug.Log(currentLevel);
+    }
+
+    public void UpdateDoors() {
+        foreach (Door door in doors) {
+            door.UpdateLock();
+        }
     }
 
     public static void UnlockLevel(int level) {
         Instance.UnlockLevelInst(level);
     }
+
 }

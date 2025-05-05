@@ -20,10 +20,6 @@ public class Door : MonoBehaviour
         interactable = GetComponentInChildren<Interactable>();
         interactable.onInteract.AddListener(Open);
         unlockable.SetActive(false);
-        
-        if (level <= LevelManager.Instance.currentLevel) {
-            Unlock();
-        }
     }
     
 
@@ -36,5 +32,16 @@ public class Door : MonoBehaviour
     public void Unlock() {
         unlocked = true;
         unlockable.SetActive(true);
+    }
+
+    public void UpdateLock() {
+        if (level == LevelManager.currentLevel) {
+            if (NPCGuide.talkedTo) {
+                Unlock();
+            }
+        }
+        else if (level < LevelManager.currentLevel) {
+            Unlock();
+        }
     }
 }
