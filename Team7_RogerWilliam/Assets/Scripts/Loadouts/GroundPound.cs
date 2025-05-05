@@ -7,6 +7,8 @@ public class GroundPound : Ability
     [SerializeField] private float splashArea;
     [SerializeField] private float knockbackStrength;
     [SerializeField] private float attackDamage;
+    [SerializeField] private float artDuration;
+    [SerializeField] private GameObject groundBreakArt;
     [SerializeField] public LayerMask enemyLayers;
     [SerializeField] public LayerMask playerLayers;
 
@@ -18,6 +20,8 @@ public class GroundPound : Ability
     }
 
     protected override void OnActivate() {
+
+        
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
         foreach (var enemy in hits) {
@@ -33,6 +37,14 @@ public class GroundPound : Ability
             hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
         }
         anim.PlayOnce("Player_Punch");
+        StartCoroutine(GroundEffect(artDuration));
+    }
+
+    private IEnumerator GroundEffect(float Duration) {
+        GameObject groundBreak = Instantiate(groundBreakArt, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(Duration);
+        Destroy(groundBreak);
 
         StartCoroutine(ShowVFX());
     }

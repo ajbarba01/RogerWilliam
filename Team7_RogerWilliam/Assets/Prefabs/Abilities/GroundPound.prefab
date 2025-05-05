@@ -132,11 +132,13 @@ MonoBehaviour:
   onEnemyHit:
     m_PersistentCalls:
       m_Calls: []
-  cooldown: 10
+  cooldown: 5
   duration: 0
   splashArea: 5
   knockbackStrength: 30
   attackDamage: 20
+  artDuration: 0.25
+  groundBreakArt: {fileID: 2084141971180794318, guid: 5d5855e0d00711345be1549e21fb05b9, type: 3}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64

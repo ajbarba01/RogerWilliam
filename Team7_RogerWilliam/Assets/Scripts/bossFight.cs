@@ -74,6 +74,16 @@ public class bossFight : MonoBehaviour
             abilityTimer = 0f;
             abilityCD = 2f;
         }
+        if(abilityName == "GroundPound(Clone)")
+        {
+            abilityTimer = 10f;
+            abilityCD = 10f;
+        }
+        if(abilityName == "Medpack(Clone)")
+        {
+            abilityTimer = 12f;
+            abilityCD = 12f;
+        }
     }
 
     // Update is called once per frame
