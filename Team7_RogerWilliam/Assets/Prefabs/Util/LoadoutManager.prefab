@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentWeapon: {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}
-  currentAbility: {fileID: 0}
-  currentPassive: {fileID: 0}
+  currentAbility: {fileID: 11400000, guid: ab40d896c00c3d5419a7ddbaefb1442e, type: 2}
+  currentPassive: {fileID: 11400000, guid: ab40d896c00c3d5419a7ddbaefb1442e, type: 2}
   postWeaponUpdated:
     m_PersistentCalls:
       m_Calls: []

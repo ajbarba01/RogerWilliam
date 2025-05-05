@@ -28,6 +28,9 @@ public class Guitar : Weapon
             attackPt.position = targetPosition;
         }
         
+        Vector3 scale = transform.localScale;
+        scale.x = -1 * mover.facing;
+        transform.localScale = scale;
     }
 
     public override void OnAttack() {
