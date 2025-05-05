@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SalamiSpin : Ability
 {
-     [SerializeField] private float splashArea;
+    [SerializeField] private float splashArea;
     [SerializeField] private float knockbackStrength;
     [SerializeField] private float attackDamage;
     [SerializeField] private float artDuration;
@@ -20,9 +20,6 @@ public class SalamiSpin : Ability
     }
 
     protected override void OnActivate() {
-
-        
-
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
         foreach (var enemy in hits) {
             AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
@@ -37,7 +34,8 @@ public class SalamiSpin : Ability
             hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
         }
         anim.PlayOnce("Player_Punch");
-        StartCoroutine(GroundEffect(artDuration));
+        StartCoroutine(ShowVFX());
+        //StartCoroutine(GroundEffect(artDuration));
     }
 
     private IEnumerator GroundEffect(float Duration) {

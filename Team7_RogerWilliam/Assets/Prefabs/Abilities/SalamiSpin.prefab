@@ -134,7 +134,7 @@ MonoBehaviour:
       m_Calls: []
   cooldown: 5
   duration: 1
-  splashArea: 5
+  splashArea: 100
   knockbackStrength: 0
   attackDamage: 40
   artDuration: 1
@@ -145,4 +145,4 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 513
-  VFX: {fileID: 0}
+  VFX: {fileID: 68329714148071435}
