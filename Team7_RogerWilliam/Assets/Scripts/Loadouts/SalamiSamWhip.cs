@@ -28,6 +28,9 @@ public class SalamiSamWhip : Weapon
             attackPt.position = targetPosition;
         }
         
+        Vector3 scale = transform.localScale;
+        scale.x = mover.facing;
+        transform.localScale = scale;
     }
 
     public override void OnAttack() {
