@@ -4,90 +4,55 @@ using UnityEngine;
 
 public class SalamiSpin : Ability
 {
-    [SerializeField] private float spinRange = 2f;        // Range of the spin attack
-    [SerializeField] private float spinDuration = 1f;     // Duration of the spin attack
-    [SerializeField] private float spinDamage = 5f;       // Damage dealt per hit
-    [SerializeField] private float spinCooldown = 3f;     // Cooldown between spins
-    [SerializeField] private float spinSpeed = 300f;      // Speed of the spin (degrees per second)
+     [SerializeField] private float splashArea;
+    [SerializeField] private float knockbackStrength;
+    [SerializeField] private float attackDamage;
+    [SerializeField] private float artDuration;
+    [SerializeField] private GameObject groundBreakArt;
+    [SerializeField] public LayerMask enemyLayers;
+    [SerializeField] public LayerMask playerLayers;
 
-    [SerializeField] private LayerMask enemyLayers;      // Layers to detect enemies on
-    [SerializeField] private LayerMask playerLayers;
+    [SerializeField] private GameObject VFX;
+    private float VFXLength = 0.25f;
 
-    private float currentSpinTime = 0f;
-
-    protected override void OnActivate()
-    {
-        // Activate the spin attack
-        StartCoroutine(SpinAttack());
+    private void Awake() {
+        VFX.SetActive(false);
     }
 
-    private IEnumerator SpinAttack()
-    {
-        if(targetTag == "Enemy")
-        {
-            anim.PlayOnce("Player_SpinAttack");  // Play the spin animation
-        }
+    protected override void OnActivate() {
+
         
-        float elapsedTime = 0f;
 
-        // While the spin duration is not finished
-        while (elapsedTime < spinDuration)
-        {
-            // Rotate the character (you can also rotate the character's weapon/attack hitbox)
-            transform.Rotate(Vector3.forward * spinSpeed * Time.deltaTime);
-            if(targetTag == "Enemy")
-            {
-                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, enemyLayers);
-                foreach (var hit in hits)
-                {
-                    // Only apply damage if it's an enemy with health
-                    var health = hit.GetComponent<Health>();
-                    if (health != null)
-                    {
-                        health.TakeDamage(spinDamage * Globals.deltaTick);
-                    }
-                }
-            } else
-            {
-                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, spinRange, playerLayers);
-                foreach (var hit in hits)
-                {
-                    // Only apply damage if it's an enemy with health
-                    Player.health.TakeDamage(spinDamage);
-                }
-
-            }
-
-            // Check for enemies in the spin's range and apply damage
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
+        foreach (var enemy in hits) {
+            AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
+            Health enemyHealth = enemy.GetComponent<Health>();
             
+            // damage
+            onEnemyHit.Invoke(enemyHealth);
+            enemyHealth.TakeDamage(attackDamage);
 
-            elapsedTime += Time.deltaTime;
-            yield return null;
+            // knockback
+            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+            hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
         }
-
-        // Cooldown before the next spin
-        StartCoroutine(Cooldown());
+        anim.PlayOnce("Player_Punch");
+        StartCoroutine(GroundEffect(artDuration));
     }
 
-    private IEnumerator Cooldown()
-    {
-        // Prevent reactivation during cooldown
-        onCooldown = true;
-        currentSpinTime = 0f;
+    private IEnumerator GroundEffect(float Duration) {
+        GameObject groundBreak = Instantiate(groundBreakArt, transform.position, Quaternion.identity);
 
-        while (currentSpinTime < spinCooldown)
-        {
-            currentSpinTime += Time.deltaTime;
-            yield return null;
-        }
+        yield return new WaitForSeconds(Duration);
+        Destroy(groundBreak);
 
-        RefreshCooldown();
+        StartCoroutine(ShowVFX());
     }
 
-    // Visual or functional feedback (optional)
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, spinRange); // Display the spin range in the editor
+    private IEnumerator ShowVFX() {
+        VFX.SetActive(true);
+        yield return new WaitForSeconds(VFXLength);
+        VFX.SetActive(false);
+
     }
 }
