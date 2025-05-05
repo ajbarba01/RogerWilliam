@@ -15,5 +15,5 @@ MonoBehaviour:
   loadoutName: Empty
   tooltipText: Empty
   nickname: 
-  icon: {fileID: 21300000, guid: cc2bec366d8caad4889e7ea3cdedf89c, type: 3}
+  icon: {fileID: 0}
   prefab: {fileID: 0}

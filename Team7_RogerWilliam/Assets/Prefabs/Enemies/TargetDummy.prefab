@@ -505,7 +505,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6042881145514726771}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -541,7 +541,6 @@ MonoBehaviour:
   onMove:
     m_PersistentCalls:
       m_Calls: []
-  frosted: 0
 --- !u!1001 &5569358197208534372
 PrefabInstance:
   m_ObjectHideFlags: 0
