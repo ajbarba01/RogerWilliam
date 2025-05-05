@@ -10,4 +10,8 @@ public class HealthPickup : Pickupable
     protected override void Pickup() {
         Player.health.Heal(healAmount);
     }
+
+    public void SetHeal(float amount) {
+        healAmount = amount;
+    }
 }

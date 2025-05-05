@@ -74,6 +74,10 @@ public class AgentMover : MonoBehaviour
         moveSpeed = newSpeed;
     }
 
+    public float GetMoveSpeed() {
+        return moveSpeed;
+    }
+
     public void SetSlow(float newSlow) {
         slow = newSlow;
     }
@@ -172,5 +176,7 @@ public class AgentMover : MonoBehaviour
         Unfreeze();
     }
 
-    
+    public float GetTotalSpeed() {
+        return moveSpeed * slow;
+    }
 }

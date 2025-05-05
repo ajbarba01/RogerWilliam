@@ -11,6 +11,7 @@ public class Pickupable : MonoBehaviour
     public UnityEvent onPickup;
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.gameObject.tag);
         if (other.CompareTag(pickupLayerString)) {
             onPickup.Invoke();
             OnPickup();

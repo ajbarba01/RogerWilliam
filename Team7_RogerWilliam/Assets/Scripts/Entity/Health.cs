@@ -74,4 +74,8 @@ public class Health : MonoBehaviour {
         beforeDeath.Invoke();
         onDeath.Invoke();
     }
+
+    public void SetMaxHealth(float newMaxHealth) {
+        maxHealth = newMaxHealth;
+    }
 }
