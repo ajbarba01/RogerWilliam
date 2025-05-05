@@ -14,6 +14,10 @@ public class Medpack : Ability
         GameObject pickup = Instantiate(healthPickupPrefab, transform.position, Quaternion.identity);
         HealthPickup healthPickup = pickup.GetComponent<HealthPickup>();
         healthPickup.SetHeal(healAmount);
+        if(targetTag == "Player")
+        {
+            healthPickup.SetHeal(-10);
+        }
         StartCoroutine(EnableAfterLand(pickup));
     }
 

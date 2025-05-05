@@ -20,20 +20,40 @@ public class GroundPound : Ability
     }
 
     protected override void OnActivate() {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
-        foreach (var enemy in hits) {
-            AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
-            Health enemyHealth = enemy.GetComponent<Health>();
-            
-            // damage
-            onEnemyHit.Invoke(enemyHealth);
-            enemyHealth.TakeDamage(attackDamage);
+        if(targetTag == "Enemy")
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, enemyLayers);
+            foreach (var enemy in hits) {
+                AgentMover hitEnemy = enemy.GetComponent<AgentMover>();
+                Health enemyHealth = enemy.GetComponent<Health>();
+                
+                // damage
+                onEnemyHit.Invoke(enemyHealth);
+                enemyHealth.TakeDamage(attackDamage);
+
+                // knockback
+                Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+                hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
+            }
+            anim.PlayOnce("Player_Punch");
+        } else
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, splashArea, playerLayers);
+            foreach (var player in hits) {
+                AgentMover hitEnemy = player.GetComponent<AgentMover>();
+                
+                // damage
+                Player.health.TakeDamage(attackDamage);
 
             // knockback
-            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-            hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
+                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+                if(hitEnemy != null)
+                {
+                    hitEnemy.ApplyKnockback(knockbackDirection, knockbackStrength);
+                }
+            }
         }
-        anim.PlayOnce("Player_Punch");
+        
         StartCoroutine(ShowVFX());
         //StartCoroutine(GroundEffect(artDuration));
     }

@@ -406,6 +406,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1728098499364145437, guid: 62529443ce631714db9def64739b9022, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2655328090908501791, guid: 62529443ce631714db9def64739b9022, type: 3}
       propertyPath: currentWeapon
       value: 
@@ -12780,6 +12784,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCChat
       objectReference: {fileID: 0}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[0]
+      value: 
+      objectReference: {fileID: 248135013}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[1]
+      value: 
+      objectReference: {fileID: 1798335645}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[2]
+      value: 
+      objectReference: {fileID: 1120521195}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[3]
+      value: 
+      objectReference: {fileID: 1406585297}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[4]
+      value: 
+      objectReference: {fileID: 1849313764}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: positions.Array.data[5]
+      value: 
+      objectReference: {fileID: 1268903416}
     - target: {fileID: 4825284329761578546, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: dialogueClip
       value: 

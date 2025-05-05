@@ -57,6 +57,7 @@ public class bossFight : MonoBehaviour
         if(weaponName == "Slingshot(Clone)")
         {
             attackRange = 10f;
+            // attackTimer = 3f;
         }
         if(abilityName == "MolotovCocktail(Clone)")
         {
