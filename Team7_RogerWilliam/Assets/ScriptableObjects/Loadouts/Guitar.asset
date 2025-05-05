@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadoutName: Guitar
   tooltipText: Guitar
-  nickname: Guitar George
+  nickname: Ice-Cube
   icon: {fileID: 21300000, guid: a63734836cc5fa04c9f68b22e8a0f70e, type: 3}
   prefab: {fileID: 2546560845256757535, guid: 77dcd25d82dd4ac41b6bff86b45d6061, type: 3}

@@ -66,14 +66,15 @@ public class Projectile : MonoBehaviour
         Debug.Log(damageTag);
         if (damageTag != "")
         {
-            if(damageTag == "Player")
+            if(other.CompareTag(damageTag))
             {
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-                Player.health.TakeDamage(damage/2);
-            } else
-            {
-                onTagHit.Invoke(gameObject, other.gameObject);
-                other.GetComponent<Health>().TakeDamage(damage);
+                if (damageTag == "Player") {
+                    Player.health.TakeDamage(damage / 2);
+                }
+                else {
+                    other.GetComponent<Health>().TakeDamage(damage);
+                    onTagHit.Invoke(gameObject, other.gameObject);
+                }
             }
     
             OnHit();

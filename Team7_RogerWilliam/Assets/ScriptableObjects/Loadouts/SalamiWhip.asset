@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadoutName: Salami Whip
   tooltipText: Salami Whip
-  nickname: Salami Whip
+  nickname: Salami Sam
   icon: {fileID: 21300000, guid: f8db7022203360d4ea07d07f5272183c, type: 3}
   prefab: {fileID: 6580605660344724270, guid: 1e9e5952d966f794786f14458da1eb40, type: 3}
