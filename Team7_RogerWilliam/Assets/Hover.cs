@@ -12,7 +12,9 @@ public class Hover : MonoBehaviour
     void Start()
     {
         startPos = art.localPosition;
-        shadow.localPosition = new Vector3(startPos.x, startPos.y - hoverDelta, startPos.z);
+        if (shadow != null) {
+            shadow.localPosition = new Vector3(startPos.x, startPos.y - hoverDelta, startPos.z);
+        }
     }
 
     void Update() 
