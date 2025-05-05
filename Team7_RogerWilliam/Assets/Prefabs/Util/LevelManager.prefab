@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  currentLevel: 1
+  currentLevel: 0
   startLevel: 1
   weapons:
   - {fileID: 11400000, guid: 326f1793b10e2b248b3c5004444969cb, type: 2}

@@ -255,12 +255,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db36881e5f4e9b94983ba30da1f76e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMoveSpeed: 10
-  maxMoveSpeed: 15
+  minMoveSpeed: 5
+  maxMoveSpeed: 10
   moveSpeed: 0
   preferredDistance: 2
   detectionRadius: 8
   anim: {fileID: 0}
+  isConfused: 0
 --- !u!114 &8910935781603139185
 MonoBehaviour:
   m_ObjectHideFlags: 0

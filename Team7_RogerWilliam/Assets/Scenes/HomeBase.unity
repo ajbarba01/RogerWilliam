@@ -15411,7 +15411,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: startLevel
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.size

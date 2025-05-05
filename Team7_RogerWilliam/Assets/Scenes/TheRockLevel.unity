@@ -25295,7 +25295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: HomeBase
+      value: rockBossDeath
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

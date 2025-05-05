@@ -8,10 +8,10 @@ public class LevelManager : MonoBehaviour
 
     public int[] levels;
     public Door[] doors;
-    public int currentLevel = 1;
+    public int currentLevel = 0;
     [SerializeField] private int startLevel;
 
-    private int numUnlocks = 5;
+    private int numUnlocks = 6;
 
     public LoadoutOption[] weapons;
     public LoadoutOption[] actives;
@@ -33,17 +33,17 @@ public class LevelManager : MonoBehaviour
     }
 
     public void UnlockLevelInst(int level) {
+        Debug.Log("UNLOCKING");
         if (level == currentLevel + 1) {
             currentLevel++;
             if (currentLevel > numUnlocks) {
                 return;
             }
-            LoadoutManager.Instance.UnlockWeapon(weapons[currentLevel - 1]);
             if (currentLevel >= 2) {
-
+                LoadoutManager.Instance.UnlockWeapon(weapons[currentLevel - 2]);
+                LoadoutManager.Instance.UnlockAbility(actives[currentLevel - 2]);
+                LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 2]);
             }
-            LoadoutManager.Instance.UnlockAbility(actives[currentLevel - 2]);
-            LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 2]);
         }
         Debug.Log(Instance.currentLevel);
     }
