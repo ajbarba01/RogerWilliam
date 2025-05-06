@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HotRodBoss : MonoBehaviour
 {
+    protected GameObject gameHandler;
+    protected GameObject player;
+    protected Rigidbody2D rb2D;
+
     public float damage = 10f; // Amount of damage dealt per second
     public float zoneWidth = 3f; // Width of the damage zone
     public float zoneLength = 5f; // Length of the damage zone
@@ -18,10 +22,21 @@ public class HotRodBoss : MonoBehaviour
 
     [SerializeField] private float fireBreathCD = 5f;
     private float fireBreathTimer = 0f;
-    // public Animator anim;
+    public Animator anim;
     private HotRodMovement enemyChase;
     private float attackChannel = 0f;
     private bool attacking = false;
+
+        
+    private float distance;
+    private float attack1Timer;
+    private float attack2Timer;
+
+    private string walkState = "HR_johnson_walk";
+    private string attackState = "HR_johnson_hit";
+    private string idleState = "HR_johnson_idle";
+
+    private AnimationManager animMgr;
 
     private float attackTimer;
 
@@ -32,12 +47,28 @@ public class HotRodBoss : MonoBehaviour
 
     private void Start() {
         enemyChase.SetDistance(attackRange);
+
+        gameHandler = GameHandler.Instance.gameObject;
+
+        rb2D = GetComponent<Rigidbody2D>();
+        gameHandler = GameObject.FindWithTag("GameController");
+        anim = gameObject.GetComponent<Animator>();
+
+        animMgr = GetComponentInChildren<AnimationManager>();
+
+        if (animMgr == null) {
+            Debug.LogError("No AnimationManager on ");
+        } else {
+            Debug.Log("AnimMgr found on ");
+        }
+
     }
 
     void Update()
     {
         if (!enemyChase.HasLOS())
         {
+
             attacking = false;
             attackChannel = 0f;
             fireBreathTimer = 0f; // optional: reset when out of sight
@@ -71,6 +102,10 @@ public class HotRodBoss : MonoBehaviour
         else
         {
             enemyChase.SetActive(true); // Resume chasing
+            if (animMgr != null) {
+                // Debug.Log("HERE!");
+                animMgr.ChangeState(walkState);
+            }
             attacking = false;
         }
     }
@@ -99,6 +134,9 @@ public class HotRodBoss : MonoBehaviour
     void Attack() {
         Debug.Log("Attacking");
         if (enemyChase.GetInDistance()) {
+            if (animMgr != null) {
+            animMgr.PlayOnce(attackState);
+            }
             // anim.SetBool("Attack", true);
             Player.health.TakeDamage(attackDamage);
             StartCoroutine(applyBurn(Player.health, 3f, 1f, 4f));

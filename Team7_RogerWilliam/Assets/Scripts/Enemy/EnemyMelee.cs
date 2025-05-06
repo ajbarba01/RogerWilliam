@@ -56,6 +56,7 @@ public class EnemyMelee : MonoBehaviour
         attackChannel += Time.deltaTime;
         if (attackChannel >= attackCooldown) {
             Attack();
+            // GetComponent<EnemyAttackInvoker>().StateAttack();
             attackChannel = 0;
             attacking = false;
             enemyChase.SetActive(false);
