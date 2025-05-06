@@ -43,6 +43,9 @@ public class NPCGuide : MonoBehaviour
     }
 
     private void OnFinishTalk() {
+        if (LevelManager.currentLevel == 7) {
+            GameHandler.Instance.Credits();
+        }
         if (!talkedTo) {
             talkedTo = true;
             exclamationMark.SetActive(false);
@@ -56,7 +59,6 @@ public class NPCGuide : MonoBehaviour
         }
         
         List<string> lines = new List<string>();
-        Debug.Log(LevelManager.currentLevel);
         switch (LevelManager.currentLevel) {
             case 1:
                 lines.Add("Hello " + GetNickname() + "!");
