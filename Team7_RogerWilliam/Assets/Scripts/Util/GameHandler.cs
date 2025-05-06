@@ -80,12 +80,12 @@ public class GameHandler : MonoBehaviour
     public void iceCubeDeath()
     {
         iceCubeDefeated = true;
-        LevelManager.Instance.UnlockLevelInst(5);
+        LevelManager.Instance.UnlockLevelInst(6);
     }
     public void salamiSamDeath()
     {
         salamiSamDefeated = true;
-        LevelManager.Instance.UnlockLevelInst(6);
+        LevelManager.Instance.UnlockLevelInst(5);
     }
     public void finalBossDeath()
     {
