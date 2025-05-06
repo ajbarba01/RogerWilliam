@@ -140,9 +140,20 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("If you come in unprepared, you will die.");
                 lines.Add("Good Luck!");
                 break;
-
+            case 7:
+                lines.Add("Welcome back " + GetNickname() + "!");
+                lines.Add("You have completed your quest!");
+                lines.Add("Congratulations on collecting all of the nicknames!");
+                updateMonologue(lines);
+                lines.Add("Can I ask you something Roger? Are you.. satisfied? ");
+                lines.Add("Have you found solace in your quest?");
+                lines.Add("Or has what you have been looking for all this time...");
+                lines.Add("Has it been within you?");
+                lines.Add("You began this journey to find the perfect name...");
+                lines.Add("Food for thought Roger... enjoy the nicknames.");
+                break;
             default:
-                lines.Add("DIALOGUE NOT IMPLEMENTED YET");
+                lines.Add("ERROR");
                 break;
         }
             // Array.Clear(monologue, 0, monologueLength);
