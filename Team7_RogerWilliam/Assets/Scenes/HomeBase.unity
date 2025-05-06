@@ -15695,7 +15695,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: startLevel
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.size
@@ -15716,11 +15716,11 @@ PrefabInstance:
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.data[3]
       value: 
-      objectReference: {fileID: 1096898256}
+      objectReference: {fileID: 311003276}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.data[4]
       value: 
-      objectReference: {fileID: 311003276}
+      objectReference: {fileID: 1096898256}
     - target: {fileID: 2147324063442825114, guid: f18c3e9a41d83174fab3af194f5551d6, type: 3}
       propertyPath: doors.Array.data[5]
       value: 
