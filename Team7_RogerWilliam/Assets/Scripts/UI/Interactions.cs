@@ -57,7 +57,6 @@ public class Interactions : MonoBehaviour
     }
 
     public static void SetEnabled(bool newEnabled) {
-        Debug.Log(newEnabled);
         instance.isEnabled = newEnabled;
         if (!newEnabled) {
             Hide();

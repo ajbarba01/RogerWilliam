@@ -31,10 +31,14 @@ public class LevelManager : MonoBehaviour
         for (int i = 1; i <= startLevel; i++) {
             UnlockLevelInst(i);
         }
+        started = true;
+    }
+
+    private void Start() {
+        UpdateDoors();
     }
 
     public void UnlockLevelInst(int level) {
-        Debug.Log("UNLOCKING");
         if (level == currentLevel + 1) {
             currentLevel++;
             if (currentLevel > numUnlocks) {
@@ -46,10 +50,10 @@ public class LevelManager : MonoBehaviour
                 LoadoutManager.Instance.UnlockPassive(passives[currentLevel - 2]);
             }
         }
-        Debug.Log(currentLevel);
     }
 
     public void UpdateDoors() {
+        Debug.Log("UPDATING DOORS");
         foreach (Door door in doors) {
             door.UpdateLock();
         }

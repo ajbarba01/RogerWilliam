@@ -27,6 +27,14 @@ public class bossFight : MonoBehaviour
     private Passive bossPassive;
     public AgentMover Bossmover;
 
+    public Animator anim;
+
+    private string walkState = "finalboss_walk";
+    private string attackState = "finalboss_hit";
+    private string idleState = "finalboss_idle";
+
+    private AnimationManager animMgr;
+
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +98,21 @@ public class bossFight : MonoBehaviour
             abilityTimer = 12f;
             abilityCD = 12f;
         }
+
+        gameHandler = GameHandler.Instance.gameObject;
+
+        rb2D = GetComponent<Rigidbody2D>();
+        gameHandler = GameObject.FindWithTag("GameController");
+        anim = gameObject.GetComponent<Animator>();
+
+        animMgr = GetComponentInChildren<AnimationManager>();
+
+        if (animMgr == null) {
+            Debug.LogError("No AnimationManager on ");
+        } else {
+            Debug.Log("AnimMgr found on ");
+        }
+
     }
 
     // Update is called once per frame
@@ -100,6 +123,10 @@ public class bossFight : MonoBehaviour
         
         if (distance > attackRange) {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+            if (animMgr != null) {
+                // Debug.Log("HERE!");
+                animMgr.ChangeState(walkState);
+            }
         }   
         else 
         {
@@ -107,6 +134,10 @@ public class bossFight : MonoBehaviour
             // bossWeapon.attackPt.position = attackTarget;
             if(attackTimer <= 0)
             {
+                Debug.Log("About to Attack");
+                if (animMgr != null) {
+                    animMgr.PlayOnce(attackState);
+                }
                 bossWeapon.Attack();
                 attackTimer = attackCooldown;
             }

@@ -13,13 +13,18 @@ public class Door : MonoBehaviour
 
     private bool unlocked = false;
 
+    private void Awake() {
+        unlockable.SetActive(false);
+    }
+
     void Start()
     {
         gameHandler = GameObject.FindWithTag("GameController").GetComponent<GameHandler>();
         
+        Debug.Log(scene);
         interactable = GetComponentInChildren<Interactable>();
         interactable.onInteract.AddListener(Open);
-        unlockable.SetActive(false);
+        // unlockable.SetActive(false);
     }
     
 
@@ -35,10 +40,8 @@ public class Door : MonoBehaviour
     }
 
     public void UpdateLock() {
-        if (level == LevelManager.currentLevel) {
-            if (NPCGuide.talkedTo) {
-                Unlock();
-            }
+        if (level == LevelManager.currentLevel && NPCGuide.talkedTo) {
+            Unlock();
         }
         else if (level < LevelManager.currentLevel) {
             Unlock();
