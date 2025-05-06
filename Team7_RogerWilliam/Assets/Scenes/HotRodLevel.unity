@@ -15625,14 +15625,6 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1828766764}
-    - target: {fileID: 7315531928352496757, guid: 4292febecf21ace44a99fc09330cfeb8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 36.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 7315531928352496757, guid: 4292febecf21ace44a99fc09330cfeb8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -21.05
-      objectReference: {fileID: 0}
     - target: {fileID: 7740461814769937013, guid: 4292febecf21ace44a99fc09330cfeb8, type: 3}
       propertyPath: m_Name
       value: HotRodGoons (7)
