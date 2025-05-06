@@ -15962,10 +15962,6 @@ PrefabInstance:
       propertyPath: menus.Array.data[1]
       value: 
       objectReference: {fileID: 938841077}
-    - target: {fileID: 1572973368787152933, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1848758527104989630, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1
