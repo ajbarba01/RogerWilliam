@@ -140,6 +140,13 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("If you come in unprepared, you will die.");
                 lines.Add("Good Luck!");
                 break;
+            case 7:
+                lines.Add("Well, you should know what your true nickname is now.");
+                lines.Add("If you can defeat even yourself, you can find your true nickname.");
+                lines.Add("Sometimes your name itself is the greatest nickname.");
+                lines.Add("Roger Williams is the best nickname for you, Roger Williams.");
+                lines.Add("You should not have been trying to imitate others, rather you should have been trying to make a name for yourself.");
+                lines.Add("You are not Hot Rod or Ice Cube, you are the first and only Roger \"Roger Williams\" Williams");
 
             default:
                 lines.Add("DIALOGUE NOT IMPLEMENTED YET");
