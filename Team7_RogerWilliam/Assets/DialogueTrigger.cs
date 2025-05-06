@@ -38,6 +38,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Hide() {
         if (showing) {
+            Debug.Log("HIDDEN");
             showing = false;
             Dialogue.HideDialogue();
             Dialogue.Instance.dialogueCompleted.RemoveListener(DialogueCompleted);
@@ -61,7 +62,6 @@ public class DialogueTrigger : MonoBehaviour
     }
 
     public void SetDialogueOptions(string[] newOptions) {
-        Debug.Log("SETTING DIALOGUE");
         dialogueOptions = newOptions;
     }
 }
