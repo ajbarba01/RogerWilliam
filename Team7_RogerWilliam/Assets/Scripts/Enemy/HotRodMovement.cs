@@ -48,8 +48,8 @@ public class HotRodMovement : MonoBehaviour
             movement = new Vector2(0, 0);
         }
 
-        bool isWalking = movement.sqrMagnitude > 0f;       
-        anim.SetBool("Walk", isWalking);
+        bool isWalking = movement.sqrMagnitude > 0f;
+        // anim.SetBool("Walk", isWalking);
 
         if (isWalking)
         {
