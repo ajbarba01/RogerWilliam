@@ -141,17 +141,14 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Good Luck!");
                 break;
             case 7:
-                lines.Add("Welcome back " + GetNickname() + "!");
-                lines.Add("You have completed your quest!");
-                lines.Add("Congratulations on collecting all of the nicknames!");
-                updateMonologue(lines);
-                lines.Add("Can I ask you something Roger? Are you.. satisfied? ");
-                lines.Add("Have you found solace in your quest?");
-                lines.Add("Or has what you have been looking for all this time...");
-                lines.Add("Has it been within you?");
-                lines.Add("You began this journey to find the perfect name...");
-                lines.Add("Food for thought Roger... enjoy the nicknames.");
+                lines.Add("Well, you should know what your true nickname is now.");
+                lines.Add("If you can defeat even yourself, you can find your true nickname.");
+                lines.Add("Sometimes your name itself is the greatest nickname.");
+                lines.Add("Roger Williams is the best nickname for you, Roger Williams.");
+                lines.Add("You should not have been trying to imitate others, rather you should have been trying to make a name for yourself.");
+                lines.Add("You are not Hot Rod or Ice Cube, you are the first and only Roger \"Roger Williams\" Williams");
                 break;
+
             default:
                 lines.Add("ERROR");
                 break;
