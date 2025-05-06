@@ -13,13 +13,13 @@ public class Door : MonoBehaviour
 
     private bool unlocked = false;
 
-    private void Awake() {
-        unlockable.SetActive(false);
-    }
+    // private void Awake() {
+    //     unlockable.SetActive(false);
+    // }
 
-    void Start()
+    void Awake()
     {
-        gameHandler = GameObject.FindWithTag("GameController").GetComponent<GameHandler>();
+        gameHandler = GameHandler.Instance;
         
         Debug.Log(scene);
         interactable = GetComponentInChildren<Interactable>();
