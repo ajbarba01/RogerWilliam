@@ -147,6 +147,7 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("Roger Williams is the best nickname for you, Roger Williams.");
                 lines.Add("You should not have been trying to imitate others, rather you should have been trying to make a name for yourself.");
                 lines.Add("You are not Hot Rod or Ice Cube, you are the first and only Roger \"Roger Williams\" Williams");
+                break;
 
             default:
                 lines.Add("DIALOGUE NOT IMPLEMENTED YET");
