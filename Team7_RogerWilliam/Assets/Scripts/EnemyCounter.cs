@@ -28,7 +28,8 @@ public class EnemyCounter : MonoBehaviour
         remaining_kills = goal - kill_count;
 
         if (goal <= kill_count) {
-            GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject);
+            
         }
         if (remaining_kills >= 0) {
             remainingKills_text.text = remaining_kills.ToString();
