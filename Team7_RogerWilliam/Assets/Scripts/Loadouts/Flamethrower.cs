@@ -49,11 +49,15 @@ public class Flamethrower : Weapon
             attacking = false;
             canAttack = true;
             }
-        }
+        } else
         
         if (capacity <= 0) {
             capacity = 0f;
             attacking = false;
+        }
+        if(capacity == 5)
+        {
+            canAttack = true;
         }
 
         if (!attacking && capacity != 1) {
