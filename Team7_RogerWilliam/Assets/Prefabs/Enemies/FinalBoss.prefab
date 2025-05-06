@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5cb5443947f7542ad8c30c425cd346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 700
   beforeDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -345,6 +345,7 @@ MonoBehaviour:
   attackRange: 0
   attackCooldown: 2
   Bossmover: {fileID: 243571960843128025}
+  anim: {fileID: 0}
 --- !u!1 &4512075809217161228
 GameObject:
   m_ObjectHideFlags: 0
