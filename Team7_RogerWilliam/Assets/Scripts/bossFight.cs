@@ -59,8 +59,9 @@ public class bossFight : MonoBehaviour
         }
         if(weaponName == "Flamethrower(Clone)")
         {
-            attackTimer = 10f;
+            attackTimer = 7f;
             attackRange = 2f;
+            attackCooldown = 7f;
         }
         if(weaponName == "Slingshot(Clone)")
         {

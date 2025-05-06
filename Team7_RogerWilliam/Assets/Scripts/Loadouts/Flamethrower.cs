@@ -49,25 +49,30 @@ public class Flamethrower : Weapon
             attacking = false;
             canAttack = true;
             }
-        } else
-        
-        if (capacity <= 0) {
+        } else if (capacity <= 0) {
             capacity = 0f;
             attacking = false;
         }
-        if(capacity == 5)
+        if(capacity >= 5)
         {
+            Debug.Log(capacity);
             canAttack = true;
         }
 
         if (!attacking && capacity != 1) {
             capacity += reloadSpeed * Time.deltaTime;
             if (capacity > 1) capacity = 1f;
+            if(targetTag == "Player")
+            {
+                capacity += 4f;
+            }   
         }
     }
 
     public override void Attack() {
+        Debug.Log(canAttack);
         if (canAttack) {
+            Debug.Log("Boss can tatack");
             StartCoroutine(StartAttack());
         }
     }
