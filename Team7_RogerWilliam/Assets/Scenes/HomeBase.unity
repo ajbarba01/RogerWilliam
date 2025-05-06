@@ -13192,6 +13192,14 @@ PrefabInstance:
       value: NPCChat
       objectReference: {fileID: 0}
     - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1875503802}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
+      propertyPath: dialogueClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f19aa3e1e05ae40079435ccc6f09f584, type: 3}
+    - target: {fileID: 4206952179056189480, guid: 739cbc05f6e768c469f5ccf586c61879, type: 3}
       propertyPath: positions.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -13343,16 +13351,16 @@ AudioSource:
   m_GameObject: {fileID: 1875503794}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8697023969720772319, guid: 208fed065111b384ba700f4d69edc2f0, type: 2}
   m_audioClip: {fileID: 8300000, guid: f19aa3e1e05ae40079435ccc6f09f584, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 65
   DopplerLevel: 1
   MinDistance: 1.7704525
   MaxDistance: 500

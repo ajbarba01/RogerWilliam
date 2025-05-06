@@ -25,6 +25,7 @@ public class Flamethrower : Weapon
 
     private Collider2D[] enemyHits = new Collider2D[20];
     private Collider2D[] playerHits = new Collider2D[20];
+    [SerializeField] private AudioSource flamethrowerSFX;
 
     private void Awake() {
         reloadSpeed = 1 / reloadTime;
@@ -76,7 +77,10 @@ public class Flamethrower : Weapon
         {
             mover.SetSlow(slow);
         }
-    
+        if(!flamethrowerSFX.isPlaying)
+        {
+            flamethrowerSFX.Play();
+        }
         StartCoroutine(DamageTickLoop());
 
         while (attacking) {

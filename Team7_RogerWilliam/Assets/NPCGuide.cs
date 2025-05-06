@@ -17,7 +17,7 @@ public class NPCGuide : MonoBehaviour
     [SerializeField] private Transform[] positions;
 
     [SerializeField] private AudioClip dialogueClip;
-    private AudioSource _audioSource;
+    [SerializeField] private AudioSource _audioSource;
 
     private void Awake() {
         dialogue = GetComponent<DialogueTrigger>();
@@ -30,7 +30,6 @@ public class NPCGuide : MonoBehaviour
             level = LevelManager.currentLevel;
             talkedTo = false;
         }
-
         exclamationMark.SetActive(!talkedTo);
         transform.position = positions[LevelManager.currentLevel - 1].position;
         UpdateLines();
