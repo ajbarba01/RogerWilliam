@@ -150,7 +150,7 @@ public class NPCGuide : MonoBehaviour
                 break;
 
             default:
-                lines.Add("DIALOGUE NOT IMPLEMENTED YET");
+                lines.Add("ERROR");
                 break;
         }
             // Array.Clear(monologue, 0, monologueLength);
