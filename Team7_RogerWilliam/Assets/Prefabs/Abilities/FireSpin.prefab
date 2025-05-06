@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe17a816c4cb3947bd2e02a3aeec691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpinner: {fileID: 8994455089302477330, guid: 1b036722cc7bc4144b4881c92a43d168, type: 3}
+  fireSpinner: {fileID: 3964654785281113117, guid: 1b036722cc7bc4144b4881c92a43d168, type: 3}
   numSpinners: 3
   radius: 1.5
   spinSpeed: 150
