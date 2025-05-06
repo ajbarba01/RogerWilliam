@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
     public void UnlockLevelInst(int level) {
         if (level == currentLevel + 1) {
             currentLevel++;
+            NPCGuide.talkedTo = false;
             if (currentLevel > numUnlocks) {
                 return;
             }

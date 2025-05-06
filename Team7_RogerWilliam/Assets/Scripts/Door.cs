@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField] private Color DEFAULT_LIGHT, NOVEL_LIGHT;
+
     [SerializeField] private string scene;
     [SerializeField] private GameObject unlockable;
     [SerializeField] private int level;
+    [SerializeField] private Light2D light;
     private Interactable interactable;
     private GameHandler gameHandler;
 
@@ -24,7 +28,7 @@ public class Door : MonoBehaviour
         Debug.Log(scene);
         interactable = GetComponentInChildren<Interactable>();
         interactable.onInteract.AddListener(Open);
-        // unlockable.SetActive(false);
+        unlockable.SetActive(false);
     }
     
 
@@ -42,9 +46,15 @@ public class Door : MonoBehaviour
     public void UpdateLock() {
         if (level == LevelManager.currentLevel && NPCGuide.talkedTo) {
             Unlock();
+            SetLightColor(NOVEL_LIGHT);
         }
         else if (level < LevelManager.currentLevel) {
             Unlock();
+            SetLightColor(DEFAULT_LIGHT);
         }
+    }
+
+    private void SetLightColor(Color newColor) {
+        light.color = newColor;
     }
 }
