@@ -144,8 +144,8 @@ public class bossFight : MonoBehaviour
         }
         if(abilityTimer <= 0)
         {
-            Debug.Log("AbilityActivated");
-            bossAbility.Activate();
+            // Debug.Log("AbilityActivated");
+            bossAbility?.Activate();
             abilityTimer = abilityCD;
         }
         attackTimer -= Time.deltaTime;

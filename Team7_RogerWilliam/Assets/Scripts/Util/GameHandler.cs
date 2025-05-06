@@ -77,18 +77,20 @@ public class GameHandler : MonoBehaviour
         hotRodDefeated = true;
         LevelManager.Instance.UnlockLevelInst(4);
     }
-    public void iceCubeDeath()
-    {
-        iceCubeDefeated = true;
-        LevelManager.Instance.UnlockLevelInst(6);
-    }
     public void salamiSamDeath()
     {
         salamiSamDefeated = true;
         LevelManager.Instance.UnlockLevelInst(5);
     }
+    public void iceCubeDeath()
+    {
+        iceCubeDefeated = true;
+        LevelManager.Instance.UnlockLevelInst(6);
+    }
+
     public void finalBossDeath()
     {
         finalBossDefeated = true;
+        LevelManager.Instance.UnlockLevelInst(7);
     }
 }

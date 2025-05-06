@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4444084267199400105
+--- !u!1 &6032388747218833293
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,74 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7770068636645985346}
-  - component: {fileID: 6260121324983378308}
-  - component: {fileID: 2258605390516682926}
+  - component: {fileID: 3912876432037176057}
+  - component: {fileID: 1757862690446822856}
   m_Layer: 0
-  m_Name: Fists
+  m_Name: LevelMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7770068636645985346
+--- !u!4 &3912876432037176057
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444084267199400105}
+  m_GameObject: {fileID: 6032388747218833293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.8043845, y: -2.2703762, z: -0.27844834}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4847195472637749049}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6260121324983378308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444084267199400105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a4b7f952f87804c9fb1782f503753f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onEnemyHit:
-    m_PersistentCalls:
-      m_Calls: []
-  cooldown: 0.5
-  attackPt: {fileID: 4847195472637749049}
-  attackRange: 0.5
-  attackDamage: 20
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 64
-  playerLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  punchSFX: {fileID: 2258605390516682926}
-  punchVFX: {fileID: 6929182987974342463, guid: 71c93f1a57af07e469c2ce65ea346e4b, type: 3}
---- !u!82 &2258605390516682926
+--- !u!82 &1757862690446822856
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4444084267199400105}
+  m_GameObject: {fileID: 6032388747218833293}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 8697023969720772319, guid: 208fed065111b384ba700f4d69edc2f0, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e68cd587a47d24e43b4a29d27b443f20, type: 3}
+  OutputAudioMixerGroup: {fileID: 2466039908735828551, guid: 208fed065111b384ba700f4d69edc2f0, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 9359aecad3e187840a743a4edeeba004, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.624
+  m_Volume: 0.115
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -157,34 +128,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &7340886191583717866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4847195472637749049}
-  m_Layer: 0
-  m_Name: FirePt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4847195472637749049
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7340886191583717866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7770068636645985346}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
