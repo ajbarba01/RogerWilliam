@@ -108,7 +108,7 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("My recommendation is a butcher I used to buy from, Salami Sam.");
                 lines.Add("He's a bit of a nutcase but he's got a good nickname.");
                 lines.Add("If this isn't the one then I don't know what to do with you.");
-                lines.Add("Head to the room at the top left.");
+                lines.Add("Head to the room at the top right.");
                 lines.Add("Good Luck!");
                 break;
 
@@ -121,7 +121,7 @@ public class NPCGuide : MonoBehaviour
                 lines.Add("No? You've got to be kidding me.");
                 lines.Add("I guess you can have a shot at my old friend Ice Cube.");
                 lines.Add("It would be a good day if you took his nickname. Better bring no vaseline!");
-                lines.Add("Sorry for that, just go ahead to the door at the top right.");
+                lines.Add("Sorry for that, just go ahead to the door at the top left.");
                 lines.Add("Good Luck!");
                 break;
 
