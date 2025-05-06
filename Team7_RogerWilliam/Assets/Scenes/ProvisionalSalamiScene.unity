@@ -10104,6 +10104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AbilitySelect
       objectReference: {fileID: 0}
+    - target: {fileID: 4676592135225954666, guid: 94497e5c400a1994994c192696502e0b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5717717494283944915, guid: 94497e5c400a1994994c192696502e0b, type: 3}
       propertyPath: m_IsActive
       value: 0
