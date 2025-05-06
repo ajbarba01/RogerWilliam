@@ -276,6 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicProjectile: {fileID: 1482281509341788806, guid: 5ca78f6030c6e2f4f91d486a9b10dde2, type: 3}
   firePoint: {fileID: 2833576233254879155}
+  anim: {fileID: 0}
   moveSpeed: 2.3
   Range1: 5
   attack1Range: 2
@@ -330,7 +331,7 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
   damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
   healFlashColor: {r: 0, g: 1, b: 0, a: 1}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 2275929685723475652}
   health: {fileID: 8619128322032597052}
 --- !u!114 &8012711814268951379
 MonoBehaviour:
