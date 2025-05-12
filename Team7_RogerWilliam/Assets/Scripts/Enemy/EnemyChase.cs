@@ -8,7 +8,7 @@ public class EnemyChase : MonoBehaviour
     [SerializeField] private float minMoveSpeed = 2f;
     [SerializeField] private float maxMoveSpeed = 2.5f;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float preferredDistance = 2f;
+    public float preferredDistance = 2f;
     [SerializeField] private float detectionRadius = 8f;
 
     private AgentMover mover;

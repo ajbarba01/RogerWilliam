@@ -11,21 +11,27 @@ public class EnemyMelee : MonoBehaviour
     [SerializeField] private float attackDamage = 10f;
     [SerializeField] private float attackRange = 2f;
 
-    public Animator anim;
+    private Animator anim;
     private EnemyChase enemyChase;
     private float attackChannel = 0f;
     private bool attacking = false;
 
     private float attackTimer;
 
+    public GameObject attackRangeObj;
+
     private void Awake() {
         enemyChase = GetComponent<EnemyChase>();
         anim = gameObject.GetComponent<Animator>();
+        attackRangeObj.SetActive(false);
+        
     }
 
     private void Start() {
         enemyChase.SetDistance(attackRange);
         GetComponent<Health>().onDamage.AddListener(Damaged);
+
+        attackRangeObj.transform.localScale = new Vector3(enemyChase.preferredDistance*2, enemyChase.preferredDistance*2, 1);
     }
 
     void Update()
@@ -38,11 +44,13 @@ public class EnemyMelee : MonoBehaviour
             else if (enemyChase.GetInDistance()) {
                 enemyChase.SetActive(false);
                 attacking = true;
+                attackRangeObj.SetActive(true);
             }
 
             else {
                 attacking = false;
                 enemyChase.SetActive(true);
+                attackRangeObj.SetActive(false);
             }
         }
         else {
