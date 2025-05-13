@@ -16,6 +16,8 @@ public class GameHandler : MonoBehaviour
 
     public static bool rockBossDefeated = false;
 
+    [SerializeField] private Menu winMenu;
+
     void Awake()
     {
         Instance = this;
@@ -66,31 +68,37 @@ public class GameHandler : MonoBehaviour
         tutorialBossDefeated = true;
         Debug.Log("BoolCalled!");
         LevelManager.Instance.UnlockLevelInst(2);
+        winMenu.Open();
     }
     public void rockBossDeath()
     {
         rockBossDefeated = true;
         LevelManager.Instance.UnlockLevelInst(3);
+        winMenu.Open();
     }
     public void hotRodDeath()
     {
         hotRodDefeated = true;
         LevelManager.Instance.UnlockLevelInst(4);
+        winMenu.Open();
     }
     public void salamiSamDeath()
     {
         salamiSamDefeated = true;
         LevelManager.Instance.UnlockLevelInst(5);
+        winMenu.Open();
     }
     public void iceCubeDeath()
     {
         iceCubeDefeated = true;
         LevelManager.Instance.UnlockLevelInst(6);
+        winMenu.Open();
     }
 
     public void finalBossDeath()
     {
         finalBossDefeated = true;
         LevelManager.Instance.UnlockLevelInst(7);
+        winMenu.Open();
     }
 }

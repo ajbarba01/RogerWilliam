@@ -18868,7 +18868,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -18887,6 +18891,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 337742133}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -18895,11 +18903,23 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 337742133}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: HomeBase
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: rockBossDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: rockBossDeath
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
@@ -18911,11 +18931,19 @@ PrefabInstance:
       value: GameHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6209550720267149971, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}
+      propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8519220013906016108, guid: 984cea6e2cc454d91b0179d63e26ec32, type: 3}

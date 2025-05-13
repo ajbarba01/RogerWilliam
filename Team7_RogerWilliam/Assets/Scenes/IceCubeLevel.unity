@@ -35961,7 +35961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619128322032597052, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8619128322032597052, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -35989,11 +35989,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619128322032597052, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HomeBase
+      value: iceCubeDeath
       objectReference: {fileID: 0}
     - target: {fileID: 8619128322032597052, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: iceCubeDeath
+      value: HomeBase
       objectReference: {fileID: 0}
     - target: {fileID: 8619128322032597052, guid: 6f2404bacee857f4998831c5adbec262, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

@@ -9881,7 +9881,7 @@ PrefabInstance:
       objectReference: {fileID: 1481868805}
     - target: {fileID: 1611400972872901752, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1611400972872901752, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.size
@@ -9921,11 +9921,11 @@ PrefabInstance:
       objectReference: {fileID: 1558957020}
     - target: {fileID: 1611400972872901752, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HomeBase
+      value: tutorialBossDeath
       objectReference: {fileID: 0}
     - target: {fileID: 1611400972872901752, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: tutorialBossDeath
+      value: HomeBase
       objectReference: {fileID: 0}
     - target: {fileID: 1611400972872901752, guid: cdd2b7cf5c8afce48a37dc99141c2b78, type: 3}
       propertyPath: beforeDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -25254,14 +25254,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 268116018034657686, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
-      propertyPath: menus.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 268116018034657686, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
-      propertyPath: menus.Array.data[1]
-      value: 
-      objectReference: {fileID: 41517699}
     - target: {fileID: 1848758527104989630, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -25293,6 +25285,14 @@ PrefabInstance:
     - target: {fileID: 2531146322217389410, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_text
       value: EXIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063542463100576281, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3063542463100576281, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3748124427723618123, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_AnchorMax.x
@@ -25421,6 +25421,14 @@ PrefabInstance:
     - target: {fileID: 7339968490231968398, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
       propertyPath: m_Name
       value: GameHandlerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873839379002651373, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873839379002651373, guid: ad94e02ac9770f540bd19acbd6cd9488, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
