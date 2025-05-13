@@ -18,7 +18,9 @@ public class EnemyMelee : MonoBehaviour
 
     private float attackTimer;
 
+//attack Range display
     public GameObject attackRangeObj;
+
 
     private void Awake() {
         enemyChase = GetComponent<EnemyChase>();
@@ -31,7 +33,8 @@ public class EnemyMelee : MonoBehaviour
         enemyChase.SetDistance(attackRange);
         GetComponent<Health>().onDamage.AddListener(Damaged);
 
-        attackRangeObj.transform.localScale = new Vector3(enemyChase.preferredDistance*2, enemyChase.preferredDistance*2, 1);
+        //attackRangeObj.transform.localScale = new Vector3(enemyChase.preferredDistance*2, enemyChase.preferredDistance*2, 1);
+        attackRangeObj.transform.localScale = new Vector3(0.01f, 0.01f, 1);
     }
 
     void Update()
@@ -62,11 +65,17 @@ public class EnemyMelee : MonoBehaviour
 
     void ChannelAttack() {
         attackChannel += Time.deltaTime;
+
+        //float attackSize = attackChannel;
+        float attackSize = (attackChannel/attackCooldown);
+        attackRangeObj.transform.localScale = new Vector3(enemyChase.preferredDistance*2*attackSize, enemyChase.preferredDistance*2*attackSize, 1);
+
         if (attackChannel >= attackCooldown) {
             Attack();
             // GetComponent<EnemyAttackInvoker>().StateAttack();
             attackChannel = 0;
             attacking = false;
+            StartCoroutine(AttackRangeCooldown());
             enemyChase.SetActive(false);
         }
     }
@@ -84,5 +93,10 @@ public class EnemyMelee : MonoBehaviour
             attacking = false;
             attackChannel = 0f;
         }
+    }
+
+    IEnumerator AttackRangeCooldown(){
+        yield return new WaitForSeconds(0.2f);
+        attackRangeObj.transform.localScale = new Vector3(0.01f, 0.01f, 1);
     }
 }
