@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8795092801341706472}
   - component: {fileID: 8883382037928793717}
   - component: {fileID: 4594031127398926328}
+  - component: {fileID: 6741032842809208728}
   m_Layer: 6
   m_Name: GiantSalami
   m_TagString: Enemy
@@ -219,6 +220,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2227068520858e4459e3f3c17e84ef33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6741032842809208728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258234203467825504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23941d384e9313b4ab1e3a62568f5b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  loadingColor: {r: 0.4716981, g: 0.14417942, b: 0.14417942, a: 0}
+  attackColor: {r: 0.9716981, g: 0.07700242, b: 0.07700242, a: 0}
+  finishDuration: 0.1
+  maxAlpha: 0.5
 --- !u!1 &1695464988406264751
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 676343789207897765}
   - component: {fileID: 9201593388608403942}
   - component: {fileID: 796166019633130732}
+  - component: {fileID: 2257750427452009633}
   m_Layer: 6
   m_Name: Fireball Goons
   m_TagString: Enemy
@@ -97,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   knockbackResistance: 0
+  x_scale: 1
   onMove:
     m_PersistentCalls:
       m_Calls: []
@@ -280,6 +282,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   cooldown: 0.25
+--- !u!114 &2257750427452009633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301758031551305530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23941d384e9313b4ab1e3a62568f5b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  loadingColor: {r: 0.9056604, g: 0.054681327, b: 0.054681327, a: 0}
+  attackColor: {r: 0.9245283, g: 0.34094614, b: 0.06454251, a: 0}
+  finishDuration: 0.1
+  maxAlpha: 0.5
 --- !u!1 &4635501758845413021
 GameObject:
   m_ObjectHideFlags: 0
