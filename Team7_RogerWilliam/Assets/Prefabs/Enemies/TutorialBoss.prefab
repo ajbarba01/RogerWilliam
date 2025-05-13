@@ -320,8 +320,8 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: 7c1e4bb2709da3a49a7fea9b63535c9d, type: 2}
   damageFlashColor: {r: 1, g: 1, b: 1, a: 1}
   healFlashColor: {r: 0, g: 1, b: 0, a: 1}
-  spriteRenderer: {fileID: 0}
-  health: {fileID: 0}
+  spriteRenderer: {fileID: 6537883978627170775}
+  health: {fileID: 1611400972872901752}
 --- !u!114 &3002539446517006195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e9ad6ff3a169441b388f10500f6b94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  art: {fileID: 0}
+  art: {fileID: 1230482090229013227}
   deathEffect: {fileID: 1925965154131862806, guid: 819274e3c2c3b41408c2c4b59819144b, type: 3}
 --- !u!114 &3823588200886703562
 MonoBehaviour:
