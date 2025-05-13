@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(MeleeAnimation))]
 [RequireComponent(typeof(Enemy))]
 [RequireComponent(typeof(EnemyChase))]
-public class EnemyMelee : MonoBehaviour
+public class TestEnemyMelee : MonoBehaviour
 {
 
     [SerializeField] private float attackCooldown = 1f;

@@ -54,7 +54,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  fireEffect: {fileID: 0}
+  fireEffect: {fileID: 8409812317709880498}
   attackTime: 3
   reloadTime: 5
   slow: 0.7
@@ -166,6 +166,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2799202231157476677}
     m_Modifications:
+    - target: {fileID: 4201821269510789171, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -219,6 +223,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
+--- !u!1 &8409812317709880498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7498668794469920739, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
+  m_PrefabInstance: {fileID: 2064117813200741201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9119648831368077018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}

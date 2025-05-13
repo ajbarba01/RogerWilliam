@@ -14,14 +14,14 @@ GameObject:
   - component: {fileID: 4001342048714713987}
   - component: {fileID: 2089916773471608194}
   - component: {fileID: 5150451799459543671}
-  - component: {fileID: 1385606772897501140}
+  - component: {fileID: 9038349743109293268}
   - component: {fileID: 2768249325191831170}
   - component: {fileID: 2114324179697980892}
   - component: {fileID: 8651212645525667645}
   - component: {fileID: 5967033885826821340}
-  - component: {fileID: 5271491239992794968}
+  - component: {fileID: 5445697618738685738}
   m_Layer: 6
-  m_Name: MeleeEnemy
+  m_Name: TestEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   detectionRadius: 8
   anim: {fileID: 0}
   isConfused: 0
---- !u!114 &1385606772897501140
+--- !u!114 &9038349743109293268
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,11 +188,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 942118541295082568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c597318bff510744989abe3c157d836, type: 3}
+  m_Script: {fileID: 11500000, guid: cd334f4df95dec544b93452559398495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  attackDamage: 5
+  attackDamage: 10
   attackRange: 2
 --- !u!114 &2768249325191831170
 MonoBehaviour:
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   cooldown: 0.25
---- !u!114 &5271491239992794968
+--- !u!114 &5445697618738685738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
   VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
-  loadingColor: {r: 1, g: 0.9124241, b: 0, a: 0}
-  attackColor: {r: 1, g: 0, b: 0, a: 0}
+  loadingColor: {r: 1, g: 0.91832733, b: 0, a: 0}
+  attackColor: {r: 1, g: 0, b: 0, a: 1}
   finishDuration: 0.1
   maxAlpha: 0.5
 --- !u!1 &951648529272508137
