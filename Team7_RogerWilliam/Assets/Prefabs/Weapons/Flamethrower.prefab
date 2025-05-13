@@ -114,7 +114,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8126366684919267674}
+  - {fileID: 9119648831368077018}
   - {fileID: 8995912088439531375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  fireEffect: {fileID: 8862099473059533618}
+  fireEffect: {fileID: 0}
   attackTime: 3
   reloadTime: 5
   slow: 0.7
@@ -243,7 +243,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1363498930453380305
+--- !u!1001 &2064117813200741201
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -251,10 +251,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2799202231157476677}
     m_Modifications:
-    - target: {fileID: 4201821269510789171, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -548511807, guid: 46456d06b7fff4ca493ffb39e3293e00, type: 3}
     - target: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -306,39 +302,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7498668794469920739, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7711338379236147940}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
---- !u!4 &8126366684919267674 stripped
+--- !u!4 &9119648831368077018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7073669008668687755, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-  m_PrefabInstance: {fileID: 1363498930453380305}
+  m_PrefabInstance: {fileID: 2064117813200741201}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8862099473059533618 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7498668794469920739, guid: 86990227b6264b84fa10ea93cb3f9b22, type: 3}
-  m_PrefabInstance: {fileID: 1363498930453380305}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7711338379236147940
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8862099473059533618}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ae9cfd2a6d2f74a839c65cea009e835f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
