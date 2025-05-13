@@ -8,12 +8,16 @@ public class BurnAttack : MonoBehaviour
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private float attackRange = 2f;
 
+    protected GameObject gameHandler;
     public Animator anim;
     private EnemyChase enemyChase;
     private float attackChannel = 0f;
     private bool attacking = false;
 
+    private string attackState = "hotrodgoon_hit";
+     private AnimationManager animMgr;
     private float attackTimer;
+
 
     private void Awake() {
         enemyChase = GetComponent<EnemyChase>();
@@ -22,6 +26,17 @@ public class BurnAttack : MonoBehaviour
 
     private void Start() {
         enemyChase.SetDistance(attackRange);
+
+        gameHandler = GameObject.FindWithTag("GameController");
+        anim = gameObject.GetComponent<Animator>();
+
+        animMgr = GetComponentInChildren<AnimationManager>();
+
+        if (animMgr == null) {
+            Debug.LogError("No AnimationManager on ");
+        } else {
+            Debug.Log("AnimMgr found on ");
+        }
     }
 
     void Update()
@@ -29,6 +44,10 @@ public class BurnAttack : MonoBehaviour
         if (enemyChase.HasLOS()) {
             if (attacking) {
             ChannelAttack();
+            Debug.Log("About to Attack");
+            if (animMgr != null) {
+                animMgr.PlayOnce(attackState);
+            }
             }
 
             else if (enemyChase.GetInDistance()) {
