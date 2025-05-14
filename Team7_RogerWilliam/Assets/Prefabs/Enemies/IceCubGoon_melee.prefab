@@ -269,8 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23941d384e9313b4ab1e3a62568f5b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artPrefab: {fileID: 0}
-  VFXPrefab: {fileID: 0}
+  artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
   loadingColor: {r: 0.8584906, g: 0.1652189, b: 0.1652189, a: 0}
   attackColor: {r: 0.1977925, g: 0.13357063, b: 0.6320754, a: 0}
   finishDuration: 0.1
