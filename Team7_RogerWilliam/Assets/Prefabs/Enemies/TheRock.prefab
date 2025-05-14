@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
-  attackDamage: 5
+  attackDamage: 10
   attackRange: 2
 --- !u!114 &2233015583427861090
 MonoBehaviour:
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  knockbackResistance: 0
+  knockbackResistance: 0.5
   x_scale: 1.5
   onMove:
     m_PersistentCalls:
@@ -408,10 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
   VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
-  loadingColor: {r: 0.40784317, g: 0.3137255, b: 0.3137255, a: 0}
-  attackColor: {r: 0.3018868, g: 0.043859016, b: 0.043859016, a: 0}
   finishDuration: 0.1
-  maxAlpha: 0.5
 --- !u!1001 &779700538681476292
 PrefabInstance:
   m_ObjectHideFlags: 0

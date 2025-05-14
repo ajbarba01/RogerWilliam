@@ -269,12 +269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23941d384e9313b4ab1e3a62568f5b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
+  artPrefab: {fileID: 3020785788273920753, guid: e9b5434b5443b8d4ea9d65760a85e346, type: 3}
   VFXPrefab: {fileID: 238124026763935706, guid: d0fd2d08885c978409b172f8f1d007d6, type: 3}
-  loadingColor: {r: 1, g: 0.9124241, b: 0, a: 0}
-  attackColor: {r: 1, g: 0, b: 0, a: 0}
+  loadingColor: {r: 1, g: 1, b: 1, a: 0}
+  attackColor: {r: 1, g: 1, b: 1, a: 0}
   finishDuration: 0.1
-  maxAlpha: 0.5
+  maxAlpha: 1
 --- !u!1 &951648529272508137
 GameObject:
   m_ObjectHideFlags: 0

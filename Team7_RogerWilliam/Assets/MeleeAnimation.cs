@@ -6,10 +6,11 @@ public class MeleeAnimation : MonoBehaviour
 {
     [SerializeField] private GameObject artPrefab;
     [SerializeField] private GameObject VFXPrefab;
-    [SerializeField] private Color loadingColor, attackColor;
+    private Color loadingColor = Color.white;
+    private Color attackColor = Color.white;
     [SerializeField] private float finishDuration = 0.1f;
 
-    [SerializeField] private float maxAlpha = 0.5f;
+    private float maxAlpha = 1f;
 
     private float radius = 0f;
 
